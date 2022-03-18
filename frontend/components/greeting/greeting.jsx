@@ -7,7 +7,7 @@ class Greeting extends React.Component{
   }
 
   render(){
-    const {currentUser, logout} = this.props;
+    const {currentUser, logout, login} = this.props;
 
     if (currentUser) {
       return (
@@ -21,6 +21,10 @@ class Greeting extends React.Component{
         <nav>
           <Link to="/signup">Sign up</Link>
           <Link to="/login">Login</Link>
+          <button onClick={()=>login({
+            email: 'demo_user@email.com',
+            password: 'password'
+          })}>Demo Login</button>
         </nav>
       )
     }
