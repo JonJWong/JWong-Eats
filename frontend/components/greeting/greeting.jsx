@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-class Greeting extends React.Component{
-  constructor(props){
+class Greeting extends React.Component {
+  constructor(props) {
     super(props)
   }
 
-  render(){
+  render() {
     const {currentUser, logout, login} = this.props;
 
     if (currentUser) {
@@ -21,10 +21,10 @@ class Greeting extends React.Component{
         <nav>
           <Link to="/signup">Sign up</Link>
           <Link to="/login">Login</Link>
-          <button onClick={()=>login({
+          <Link onClick={()=>login({
             email: 'demo_user@email.com',
             password: 'password'
-          })}>Demo Login</button>
+          })}>Demo Login</Link>
         </nav>
       )
     }

@@ -12,18 +12,18 @@ class LoginForm extends React.Component{
   }
 
   //CONTROLLED INPUT FORM METHODS
-  handleSubmit(e){
+  handleSubmit(e) {
     e.preventDefault()
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
   }
 
-  update(field){
+  update(field) {
     return e => this.setState({[field]: e.currentTarget.value})
   }
 
   //DISPLAY ERROR MESSAGES
-  renderErrors(){
+  renderErrors() {
     const {errors} = this.props
     if(!errors) return null;
     return(
@@ -38,7 +38,7 @@ class LoginForm extends React.Component{
   }
 
   // LIFECYCLE METHODS
-  componentDidMount(){
+  componentDidMount() {
     this.unlisten = this.props.history.listen(() => {
       this.props.clearSessionErrors();
     });
@@ -48,7 +48,7 @@ class LoginForm extends React.Component{
     this.unlisten();
   }  
 
-  render(){
+  render() {
     const {formType} = this.props;
     const signup = (formType === 'signup');
 
