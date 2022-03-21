@@ -1,18 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import UserModalContainer from '../user_modal/user_modal_container';
+import CartContainer from "../cart/cart_container";
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      modalOpen: false
+      modalOpen: false,
+      cartOpen: false
     }
-    this.toggle = this.toggle.bind(this);
+    this.toggle = this.toggleModal.bind(this);
     this.renderModal = this.renderModal.bind(this);
   }
 
-  toggle() {
+  toggleModal() {
     let setValue = !this.state.modalOpen;
     this.setState({ modalOpen: setValue })
   }
@@ -23,12 +25,23 @@ class NavBar extends React.Component {
     }
   }
 
+  toggleCart() {
+    let setValue = !this.state.cartOpen;
+    this.setState({ cartOpen: setValue })
+  }
+
+  renderCart() {
+    if (this.state.cartOpen) {
+      return <CartContainer />
+    }
+  }
+
   render() {
     return (
       <nav className="nav-bar">
         <div className="nav-contents">
           <div className="left">
-            <button onClick={() => this.toggle()} className="hamburger">Hamburger</button>
+            <button onClick={() => this.toggleModal()} className="hamburger">Hamburger</button>
             <Link to="/" className="eats-logo" />
             <div className="method-slider">
               {/* <Link className="delivery-button">Delivery</Link>
@@ -38,10 +51,11 @@ class NavBar extends React.Component {
               {/* Search Bar would go here. */}
           </div>
           <div className="right">
-            <Link className="cart-button">Cart</Link>
+            <button onClick={() => this.toggleCart()} className="cart-button">Cart</button>
           </div>
         </div>
         {this.renderModal()}
+        {this.renderCart()}
       </nav>
     )
   }

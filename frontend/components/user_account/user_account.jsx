@@ -10,7 +10,7 @@ class UserAccount extends React.Component {
     }
     this.unToggle = this.unToggle.bind(this)
   }
-
+  
   unToggle() {
     this.setState({ toggled: false })
   }

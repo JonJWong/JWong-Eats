@@ -21,10 +21,10 @@ class Greeting extends React.Component {
         <div className="greeting">
           <Link to="/signup">Sign up</Link>
           <Link to="/login">Login</Link>
-          <Link onClick={()=>login({
+          <button onClick={()=>login({
             email: 'demo_user@email.com',
             password: 'password'
-          })}>Demo Login</Link>
+          })}>Demo Login</button>
         </div>
       )
     }

@@ -59,10 +59,10 @@ class LoginForm extends React.Component{
           <Link to={signup ? "/login" : "/signup"}>{signup ? "Log in" : "Sign up"}</Link>
         </header>
         {this.renderErrors()}
-        <Link onClick={()=>login({
+        <button onClick={()=>login({
             email: 'demo_user@email.com',
             password: 'password'
-          })}>Demo Login</Link>
+          })}>Demo Login</button>
         <form onSubmit={this.handleSubmit}>
           <label>Email
             <input 

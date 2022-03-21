@@ -12,7 +12,7 @@ const cartReducer = (state={}, action) => {
       nextState.cart.push(action.cartItem);
       return nextState;
     case REMOVE_CART_ITEM:
-      delete nextState.cart[action.cartItem];
+      delete nextState.cart[action.itemId];
       return nextState;
     case CHECKOUT:
       nextState.cart = [];

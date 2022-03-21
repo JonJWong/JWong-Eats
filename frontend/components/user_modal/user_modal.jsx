@@ -34,8 +34,8 @@ class UserModal extends React.Component {
           <span>{currentUser.first_name}</span>
           <button onClick={() => this.toggleTab()}
             >{open ? "Close" : "View Account"}</button>
-          <Link className="orders-link">Orders</Link>
-          <Link onClick={() => logout()}>Sign Out</Link>
+          {/* <Link className="orders-link">Orders</Link> */}
+          <button onClick={() => logout()}>Sign Out</button>
         </div>
       )
     } else if (currentUser && open) {
@@ -44,17 +44,17 @@ class UserModal extends React.Component {
           <button onClick={() => this.toggleTab()}
             >{open ? "Close" : "View Account"}</button>
           {this.renderTab()}
-          <Link onClick={() => logout()}>Sign Out</Link>
+          <button onClick={() => logout()}>Sign Out</button>
         </div>
       )
     } else {
       return (
         <div className="user-modal">
           <Link to="/login" className="modal-login-button">Sign In</Link>
-          <Link onClick={()=>login({
+          <button onClick={()=>login({
             email: 'demo_user@email.com',
             password: 'password'
-          })} className="modal-login-button">Demo Login</Link>
+          })} className="modal-login-button">Demo Login</button>
         </div>
       )
     }
