@@ -34,8 +34,8 @@ class NavBar extends React.Component {
               {/* <Link className="delivery-button">Delivery</Link>
               <Link className="pickup-button">Pickup</Link> */}
             </div>
-            {/* Delivery Details/Address Modal button here */}
-            {/* Search Bar would go here. */}
+              {/* Delivery Details/Address Modal button here */}
+              {/* Search Bar would go here. */}
           </div>
           <div className="right">
             <Link className="cart-button">Cart</Link>

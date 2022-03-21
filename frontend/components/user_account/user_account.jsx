@@ -8,6 +8,11 @@ class UserAccount extends React.Component {
     this.state = {
       toggled: false
     }
+    this.unToggle = this.unToggle.bind(this)
+  }
+
+  unToggle() {
+    this.setState({ toggled: false })
   }
 
   render() {
@@ -17,7 +22,7 @@ class UserAccount extends React.Component {
         <div>
           <span className="profile-photo"></span>
           <span>{currentUser.first_name} {currentUser.last_name}</span>
-          <UpdateUserFormContainer />
+            <UpdateUserFormContainer unToggle={this.unToggle} />
           <button onClick={() => this.setState({ toggled: false })}
           >Cancel</button>
         </div>

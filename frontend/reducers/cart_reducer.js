@@ -1,16 +1,25 @@
-import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_CART_ITEMS, RECEIVE_CART_ITEM, REMOVE_CART_ITEM } from '../actions/cart_actions';
 
-const usersReducer = (state={}, action) => {
+const cartReducer = (state={}, action) => {
   Object.freeze(state);
+  const nextState =  Object.assign({}, state);
 
   switch (action.type) {
-    case RECEIVE_CURRENT_USER:
-      const nextState =  Object.assign({}, state);
-      nextState[action.user.id] = action.user;
+    case RECEIVE_CART_ITEMS:
+      nextState.cart.push(action.cartItems);
+      return nextState;
+    case RECEIVE_CART_ITEM:
+      nextState.cart.push(action.cartItem);
+      return nextState;
+    case REMOVE_CART_ITEM:
+      delete nextState.cart[action.cartItem];
+      return nextState;
+    case CHECKOUT:
+      nextState.cart = [];
       return nextState;
     default:
       return state;
   }
 };
 
-export default usersReducer;
+export default cartReducer;

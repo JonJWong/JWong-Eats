@@ -8,12 +8,14 @@ class UpdateUserForm extends React.Component {
     this.state.password = "";
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
+    this.update = this.update.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state)
-    this.props.changeUserInfo(user)
+    const user = Object.assign({}, this.state);
+    this.props.changeUserInfo(user).then(() => this.props.unToggle())
   }
 
   renderErrors() {
@@ -22,7 +24,7 @@ class UpdateUserForm extends React.Component {
       return null;
     }
     return (
-      <ul>
+      <ul className="auth-errors">
         {errors.map((error, idx) => {
           return <li key={ idx }>
             {error}
@@ -38,7 +40,7 @@ class UpdateUserForm extends React.Component {
 
   render() {
     if (this.state.id === 1) {
-      return <div className="no-modify-default">You cannot modify the demo user.</div>
+      return <div className="auth-errors">You cannot modify the demo user.</div>
     } else {
       return(
         <div>

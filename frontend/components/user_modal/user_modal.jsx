@@ -33,7 +33,7 @@ class UserModal extends React.Component {
           <span className="profile-photo"></span>
           <span>{currentUser.first_name}</span>
           <button onClick={() => this.toggleTab()}
-          >{open ? "Close" : "View Account"}</button>
+            >{open ? "Close" : "View Account"}</button>
           <Link className="orders-link">Orders</Link>
           <Link onClick={() => logout()}>Sign Out</Link>
         </div>
@@ -42,7 +42,7 @@ class UserModal extends React.Component {
       return (
         <div className="user-modal">
           <button onClick={() => this.toggleTab()}
-          >{open ? "Close" : "View Account"}</button>
+            >{open ? "Close" : "View Account"}</button>
           {this.renderTab()}
           <Link onClick={() => logout()}>Sign Out</Link>
         </div>
