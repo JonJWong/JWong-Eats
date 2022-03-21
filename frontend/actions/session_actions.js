@@ -6,7 +6,7 @@ export const REMOVE_CURRENT_USER = "REMOVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS";
 
-// ACTION CREATORS
+// action creators
 export const receiveCurrentUser = (user) => {
   return {
     type: RECEIVE_CURRENT_USER,
@@ -33,8 +33,8 @@ export const clearSessionErrors = () => {
   }
 };
 
-// THUNK ACTION CREATORS
-export const login = (user) => dispatch => {
+// thunk action creators
+export const login = (user) => (dispatch) => {
   return SessionAPIUtil.logIn(user)
     .then(
       user => dispatch(receiveCurrentUser(user)),
@@ -42,12 +42,12 @@ export const login = (user) => dispatch => {
     )
 };
 
-export const logout = () => dispatch => {
+export const logout = () => (dispatch) => {
   return SessionAPIUtil.logOut()
     .then(() => dispatch(logoutCurrentUser()) )
 };
 
-export const signup = (user) => dispatch => {
+export const signup = (user) => (dispatch) => {
   return SessionAPIUtil.signUp(user)
     .then(
       user => dispatch(receiveCurrentUser(user)),

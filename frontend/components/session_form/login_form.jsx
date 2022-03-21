@@ -15,11 +15,11 @@ class LoginForm extends React.Component{
   handleSubmit(e) {
     e.preventDefault()
     const user = Object.assign({}, this.state);
-    this.props.processForm(user)
+    this.props.login(user)
   }
 
   update(field) {
-    return e => this.setState({[field]: e.currentTarget.value})
+    return e => this.setState({ [field]: e.currentTarget.value })
   }
 
   //DISPLAY ERROR MESSAGES
@@ -46,19 +46,23 @@ class LoginForm extends React.Component{
 
   componentWillUnmount() {
     this.unlisten();
-  }  
+  }
 
   render() {
-    const {formType} = this.props;
+    const { formType, login } = this.props;
     const signup = (formType === 'signup');
 
     return(
-      <div>
+      <div className="login-form">
         <header>
           <h2>Log In</h2>
           <Link to={signup ? "/login" : "/signup"}>{signup ? "Log in" : "Sign up"}</Link>
         </header>
         {this.renderErrors()}
+        <Link onClick={()=>login({
+            email: 'demo_user@email.com',
+            password: 'password'
+          })}>Demo Login</Link>
         <form onSubmit={this.handleSubmit}>
           <label>Email
             <input 

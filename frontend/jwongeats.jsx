@@ -5,7 +5,6 @@ import configureStore from './store/store';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
-  let store;
   if (window.currentUser) {
     const preloadedState = {
       entities: {
@@ -13,10 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       session: { id: window.currentUser.id }
     };
-    store = configureStore(preloadedState);
+    window.store = configureStore(preloadedState);
     delete window.currentUser;
   } else {
-    store = configureStore();
+    window.store = configureStore();
   };
 
   ReactDOM.render(

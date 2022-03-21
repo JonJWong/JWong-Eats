@@ -5,27 +5,27 @@ class Greeting extends React.Component {
   constructor(props) {
     super(props)
   }
-
+  
   render() {
     const {currentUser, logout, login} = this.props;
 
     if (currentUser) {
       return (
-        <nav>
+        <div className="greeting">
           <span>{`Welcome, ${currentUser.first_name}`}</span>
-          <button onClick={()=>logout()}>Logout</button>
-        </nav>
+          <Link to="/" onClick={()=>logout()}>Logout</Link>
+        </div>
       )
     } else {
       return (
-        <nav>
+        <div className="greeting">
           <Link to="/signup">Sign up</Link>
           <Link to="/login">Login</Link>
           <Link onClick={()=>login({
             email: 'demo_user@email.com',
             password: 'password'
           })}>Demo Login</Link>
-        </nav>
+        </div>
       )
     }
   }

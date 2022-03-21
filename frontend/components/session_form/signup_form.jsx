@@ -18,7 +18,7 @@ class SignUpForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
     const user = Object.assign({}, this.state);
-    this.props.processForm(user)
+    this.props.signup(user)
   }
 
   update(field) {
@@ -52,7 +52,7 @@ class SignUpForm extends React.Component {
   }  
 
   render() {
-    const {formType} = this.props;
+    const { formType, login } = this.props;
     const signup = (formType === 'signup');
 
     return(
@@ -62,6 +62,10 @@ class SignUpForm extends React.Component {
           <Link to={signup ? "/login" : "/signup"}>{signup ? "Log in" : "Sign up"}</Link>
         </header>
         {this.renderErrors()}
+        <Link onClick={()=>login({
+            email: 'demo_user@email.com',
+            password: 'password'
+          })}>Demo Login</Link>
         <form onSubmit={this.handleSubmit}>
           <label>Email
             <input 
@@ -103,7 +107,7 @@ class SignUpForm extends React.Component {
             />
           </label>
           <br/>
-          <input type="submit" value={'Sign Up'}/>
+          <input type="submit" value='Sign Up'/>
         </form>
       </div>
     )
