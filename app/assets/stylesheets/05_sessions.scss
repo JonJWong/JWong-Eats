@@ -26,8 +26,12 @@
   padding-left: 30px;
 }
 
-.login-email-prompt, .login-password-prompt, .login-noaccount {
+.login-text, .login-prompt {
   margin-bottom: 15px;
+}
+
+.login-prompt {
+  text-align: left;
 }
 
 .login-input-field {
@@ -60,5 +64,74 @@
 }
 
 .login-demo-button {
+  margin-right: 15px;
+}
+
+.signup-form-contents {
+  width: 432px;
+  position: absolute;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  top: 20%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  font-size: 24px;
+}
+
+.signup-top-bar {
+  background: black;
+}
+
+.eats-logo-white {
+  content: image_url('JWongEatsWhite.png');
+  height: 48px;
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+}
+
+.signup-text, .signup-prompt {
+  margin-bottom: 15px;
+}
+
+.signup-prompt {
+  text-align: left;
+}
+
+.signup-input-field {
+  width: 100%;
+  font-size: 18px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #eeeeee;
+  margin-bottom: 15px;
+}
+
+.signup-legal {
+  text-align: left;
+  font-size: 14px;
+  color: #757575;
+  margin-bottom: 15px;
+}
+
+.signup-signup-button, #signup-signup-button, .signup-demo-button {
+  font-size: 20px;
+  background: black;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 23px;
+  margin-bottom: 15px;
+}
+
+.signup-demo-button {
   margin-right: 15px;
 }

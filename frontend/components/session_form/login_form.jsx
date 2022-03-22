@@ -59,7 +59,7 @@ class LoginForm extends React.Component{
           {this.renderErrors()}
 
           <form onSubmit={this.handleSubmit}>
-            <h1 className="login-email-prompt">What's your email?</h1>
+            <h1 className="login-prompt">Email</h1>
               <input 
                 type="text" 
                 onChange={this.update("email")}
@@ -67,7 +67,7 @@ class LoginForm extends React.Component{
                 className="login-input-field"
                 placeholder="Enter email"
               />
-            <h1 className="login-password-prompt">What password would you like?</h1>
+            <h1 className="login-prompt">Password</h1>
             <input 
               type="password" 
               onChange={this.update("password")}
@@ -75,21 +75,18 @@ class LoginForm extends React.Component{
               className="login-input-field"
               placeholder="Enter password"
             />
-            <p className="login-legal">By proceeding, you DO NOT consent to get calls or SMS messages, 
-            including by automated dialer, from JWongEats and its affiliates to this number. 
-            Text “STOP” to 89203 to opt out.</p>
             <button type="submit" className="login-login-button">
               Login <i className="fas fa-arrow-right fa-lg"></i>
             </button>
-            <p className="login-noaccount">Don't have an account with us?</p>
+            <p className="login-text">Don't have an account with us?</p>
             <button onClick={()=>login({
               email: 'demo_user@email.com',
               password: 'password'
             })}
-            className="login-demo-button"><i class="fas fa-save fa-lg"></i> Demo Login</button>
+            className="login-demo-button"><i className="fas fa-save fa-lg"></i> Demo Login</button>
             <Link to={signup ? "/login" : "/signup"}
               id="login-signup-button"
-              ><i class="fas fa-sign-in"></i> {signup ? "Log in" : "Sign up"}</Link>
+              ><i className="fas fa-sign-in"></i>{signup ? "Log in" : "Sign up"}</Link>
           </form>
         </div>
       </div>

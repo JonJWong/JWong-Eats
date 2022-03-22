@@ -52,64 +52,67 @@ class SignUpForm extends React.Component {
   }  
 
   render() {
-    const { formType, login } = this.props;
-    const signup = (formType === 'signup');
+    const { login } = this.props;
 
     return(
-      <div>
-        <header>
-          <h2>Sign Up</h2>
-          <Link to={signup ? "/login" : "/signup"}>{signup ? "Log in" : "Sign up"}</Link>
-        </header>
+      <div className="signup-form-container">
+        <div className="signup-top-bar"><div className="eats-logo-white" /></div>
+        <div className="signup-form-contents">
         {this.renderErrors()}
-        <button onClick={()=>login({
+        
+          <form onSubmit={this.handleSubmit}>
+            <p className="signup-prompt">Email</p>
+              <input 
+                type="text" 
+                onChange={this.update("email")}
+                value={this.state.email}
+                className="signup-input-field"
+                placeholder="Enter email"
+              />
+            <p className="signup-prompt">Password</p>
+              <input 
+                type="password" 
+                onChange={this.update("password")}
+                value={this.state.password}
+                className="signup-input-field"
+                placeholder="Enter password"
+              />
+            <p className="signup-prompt">First Name</p>
+              <input 
+                type="text" 
+                onChange={this.update("first_name")}
+                value={this.state.first_name}
+                className="signup-input-field"
+                placeholder="Your first name"
+              />
+            <p className="signup-prompt">Last Name</p>
+              <input 
+                type="text" 
+                onChange={this.update("last_name")}
+                value={this.state.last_name}
+                className="signup-input-field"
+                placeholder="Your last name"
+              />
+            <p className="signup-prompt">Address</p>
+              <input 
+                type="text" 
+                onChange={this.update("address")}
+                value={this.state.address}
+                className="signup-input-field"
+                placeholder="Your address"
+              />
+            <p className="login-legal">By proceeding, you DO NOT consent to get calls or SMS messages, 
+              including by automated dialer, from JWongEats and its affiliates to this number. 
+              Text “STOP” to 89203 to opt out.</p>
+            <button className="signup-signup-button" type="submit">Sign Up! <i className="fas fa-sign-in"></i></button>
+          </form>
+          <p className="signup-text">Don't want to sign up?</p>
+          <button onClick={()=>login({
             email: 'demo_user@email.com',
             password: 'password'
           })}
-          className="demo-login-button">Demo Login</button>
-        <form onSubmit={this.handleSubmit}>
-          <label>Email
-            <input 
-              type="text" 
-              onChange={this.update("email")}
-              value={this.state.email}
-            />
-          </label>
-          <br/>
-          <label>Password
-            <input 
-              type="password" 
-              onChange={this.update("password")}
-              value={this.state.password}
-            />
-          </label>
-          <br/>
-          <label>First Name
-            <input 
-              type="text" 
-              onChange={this.update("first_name")}
-              value={this.state.first_name}
-            />
-          </label>
-          <br/>
-          <label>Last Name
-            <input 
-              type="text" 
-              onChange={this.update("last_name")}
-              value={this.state.last_name}
-            />
-          </label>
-          <br/>
-          <label>Address
-            <input 
-              type="text" 
-              onChange={this.update("address")}
-              value={this.state.address}
-            />
-          </label>
-          <br/>
-          <input type="submit" value='Sign Up'/>
-        </form>
+          className="signup-demo-button"><i className="fas fa-save fa-lg"></i> Demo Login</button>
+        </div>
       </div>
     )
   }
