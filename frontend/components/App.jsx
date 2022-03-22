@@ -17,10 +17,10 @@ const App = () => {
         <AuthRoute path="/" component={SplashContainer} />
       </Switch>
       <ProtectedRoute path="/" component={Nav} />
+      <Route exact path="/delivery" component={DeliveryContainer} />
       <ProtectedRoute exact path="/pickup" component={PickupContainer} />
       {/* <Route path="/" component={SplashContainer} /> */}
       {/* <Route exact path="/cart" component={CartContainer} /> */}
-      {/* <Route exact path="/delivery" component={DeliveryContainer} /> */}
       {/* <Route exact path="/account" component={UserAccountContainer} />
       <Route exact path="/modal" component={UserModalContainer} /> */}
     </div>

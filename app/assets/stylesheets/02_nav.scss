@@ -63,6 +63,7 @@
   padding-left: 11px;
   padding-right: 11px;
 }
+
 .pickup-button {
   width: 140%;
   margin-left: -5px;
@@ -71,7 +72,7 @@
   padding-right: 11px;
 }
 
-.delivery-button:focus, .pickup-button:focus {
+.focused-button {
   background-color: white;
   border-radius: 24px;
 }

@@ -8,11 +8,14 @@ class NavBar extends React.Component {
     super(props)
     this.state = {
       modalOpen: false,
-      cartOpen: false
+      cartOpen: false,
+      currentButton: "pickup"
     }
     this.toggleModal = this.toggleModal.bind(this);
     this.renderModal = this.renderModal.bind(this);
     this.cartButton = this.cartButton.bind(this);
+    this.clickPickup = this.clickPickup.bind(this);
+    this.clickDelivery = this.clickDelivery.bind(this);
   }
 
   toggleModal() {
@@ -43,6 +46,18 @@ class NavBar extends React.Component {
     }
   }
 
+  clickPickup() {
+    if (this.state.currentButton === "delivery") {
+      this.setState({ currentButton: "pickup" })
+    }
+  }
+
+  clickDelivery() {
+    if (this.state.currentButton === "pickup") {
+      this.setState({ currentButton: "delivery" })
+    }
+  }
+
   render() {
     return (
       <nav className="nav-bar">
@@ -52,8 +67,18 @@ class NavBar extends React.Component {
             <button onClick={() => this.toggleModal()} className="hamburger"><i className="fas fa-bars fa-xl"></i></button>
             <Link to="/" className="eats-logo" />
             <div className="method-slider">
-              <Link className="delivery-button">Delivery</Link>
-              <Link to="/pickup" className="pickup-button">Pickup</Link>
+              <Link
+                to="/delivery"
+                className={ this.state.currentButton === "delivery"
+                  ? "delivery-button focused-button"
+                  : "delivery-button" }
+                onClick={() => this.clickDelivery}>Delivery</Link>
+              <Link
+                to="/pickup"
+                className={ this.state.currentButton === "pickup"
+                  ? "pickup-button focused-button"
+                  : "pickup-button" }
+                onClick={() => this.clickPickup}>Pickup</Link>
             </div>
               {/* Delivery Details/Address Modal button here */}
           <div className="search-bar">
