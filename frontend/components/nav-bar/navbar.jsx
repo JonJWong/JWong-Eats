@@ -72,13 +72,13 @@ class NavBar extends React.Component {
                 className={ this.state.currentButton === "delivery"
                   ? "delivery-button focused-button"
                   : "delivery-button" }
-                onClick={() => this.clickDelivery}>Delivery</Link>
+                onClick={() => this.clickDelivery()}>Delivery</Link>
               <Link
                 to="/pickup"
                 className={ this.state.currentButton === "pickup"
                   ? "pickup-button focused-button"
                   : "pickup-button" }
-                onClick={() => this.clickPickup}>Pickup</Link>
+                onClick={() => this.clickPickup()}>Pickup</Link>
             </div>
               {/* Delivery Details/Address Modal button here */}
           <div className="search-bar">
