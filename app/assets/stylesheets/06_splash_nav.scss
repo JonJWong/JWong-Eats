@@ -1,0 +1,86 @@
+.splash {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: image_url('BG1.png');
+}
+
+.hamburger {
+  border-style: none;
+  background-color: rgba(0, 0, 0, 0);
+  height: auto;
+  margin-right: 20px;
+  cursor: pointer
+}
+
+.eats-logo {
+  content: image_url('JWongEats.png');
+  height: 48px;
+  margin-right: 2vw;
+  width: auto;
+}
+
+.splash-nav-bar {
+  height: 48px;
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.splash-nav-contents {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+}
+
+.splash-nav-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  width: 90px;
+  text-align: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 24px;
+  border-style: none;
+  font-size: 16px;
+  color: white;
+  background-color: #eeeeee;
+}
+
+.splash-nav-login:hover {
+  background-color: rgb(62, 62, 62);
+}
+
+.splash-body {
+  margin-top: 35%;
+  margin-left: 40px;
+}
+
+.splash-title {
+  font-size: 34px;
+  margin-bottom: 30px;
+}
+
+.splash-prefill-search {
+  width: 30%;
+  background-color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.fa-map-marker-alt {
+  margin-right: 15px;
+  margin-left: 15px;
+}

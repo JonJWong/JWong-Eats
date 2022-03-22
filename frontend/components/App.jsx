@@ -6,7 +6,7 @@ import SignupFormContainer from "./session_form/signup_form_container";
 import PickupContainer from "./map/pickup_container";
 import Main from "./main/main";
 import { Route } from "react-router-dom";
-import { AuthRoute } from "../util/route_util";
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => {
   return (
@@ -14,11 +14,12 @@ const App = () => {
       <Switch>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
-        <Route path="/" component={Main} />
       </Switch>
+      <ProtectedRoute exact path="/pickup" component={PickupContainer} />
+      <ProtectedRoute exact path="/" component={Main} />
+      <Route exact path="/splash" component={SplashContainer} />
       {/* <Route path="/" component={SplashContainer} /> */}
       {/* <Route exact path="/cart" component={CartContainer} /> */}
-      <Route exact path="/pickup" component={PickupContainer} />
       {/* <Route exact path="/delivery" component={DeliveryContainer} /> */}
       {/* <Route exact path="/account" component={UserAccountContainer} />
       <Route exact path="/modal" component={UserModalContainer} /> */}

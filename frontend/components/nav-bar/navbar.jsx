@@ -12,6 +12,7 @@ class NavBar extends React.Component {
     }
     this.toggleModal = this.toggleModal.bind(this);
     this.renderModal = this.renderModal.bind(this);
+    this.cartButton = this.cartButton.bind(this);
   }
 
   toggleModal() {
@@ -36,9 +37,16 @@ class NavBar extends React.Component {
     }
   }
 
+  cartButton() {
+    if (this.props.location === "/splash") {
+      console.log(this.props.location)
+    }
+  }
+
   render() {
     return (
       <nav className="nav-bar">
+        {this.cartButton()}
         <div className="nav-contents">
           <div className="left">
             <button onClick={() => this.toggleModal()} className="hamburger"><i className="fas fa-bars fa-xl"></i></button>
