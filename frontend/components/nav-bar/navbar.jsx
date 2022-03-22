@@ -48,7 +48,10 @@ class NavBar extends React.Component {
               <Link to="/pickup" className="pickup-button">Pickup</Link>
             </div>
               {/* Delivery Details/Address Modal button here */}
-              {/* Search Bar would go here. */}
+          <div className="search-bar">
+            <i class="fas fa-search"></i>
+            <input type='text' className="search-area" placeholder="Food, groceries, drinks, etc" />
+          </div>
           </div>
           <div className="right">
             <button onClick={() => this.toggleCart()} className="cart-button"><i className="fas fa-shopping-cart"></i>Cart</button>

@@ -20,10 +20,11 @@
   padding-bottom: 24px;
   padding-right: 40px;
   padding-left: 40px;
+  border-bottom: #eeeeee 2px solid;
 }
 
 .nav-contents {
-  height: 50%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -34,14 +35,14 @@
   display: flex;
 }
 
-.method-slider {
+.method-slider, .search-bar {
   width: 170px;
   height: auto;
   border-radius: 25px;
   display: flex;
   flex-direction: row;
   align-content: center;
-  background-color: lightgray;
+  background-color:#eeeeee;
 }
 
 .delivery-button, .pickup-button {
@@ -85,10 +86,28 @@
   background-color: black;
 }
 
+.fa-search {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .fa-shopping-cart {
   margin-right: 10px;
 }
 
 .cart-button:hover {
   background-color: rgb(62, 62, 62);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30vw;
+  margin-left: 3vw;
+}
+
+.search-area {
+  width: 90%;
+  font-size: 16px;
 }

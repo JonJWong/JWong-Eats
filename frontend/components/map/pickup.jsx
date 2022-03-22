@@ -8,10 +8,10 @@ class Pickup extends React.Component {
 
   render() {
     return (
-      <div className="pickup-container">
-        <h3 className="pickup-title">Pickup Nearby</h3>
+      <span className="pickup-container">
+        <span className="pickup-title">Pickup Nearby</span>
         <PickupMap />
-      </div>
+      </span>
     )
   }
 }

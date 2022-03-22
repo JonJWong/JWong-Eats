@@ -47,6 +47,12 @@ table {
 	border-spacing: 0;
 }
 
+button {
+	border-style: none;
+	background: none;
+	cursor: pointer;
+}
+
 a:link {
 	text-decoration: none;
 	color: inherit;
@@ -55,4 +61,13 @@ a:link {
 a:visited {
 	text-decoration: none;
 	color: inherit;
+}
+
+input {
+	border: none;
+	background: none;
+}
+
+input:focus {
+	outline: none;
 }

@@ -23,10 +23,10 @@ class UserAccount extends React.Component {
           <div className="user-info">
             <span className="profile-photo"></span>
             <span className="profile-name">{currentUser.first_name} {currentUser.last_name}</span>
+            <button onClick={() => this.setState({ toggled: false })}
+            >Cancel</button>
           </div>
             <UpdateUserFormContainer unToggle={this.unToggle} />
-          <button onClick={() => this.setState({ toggled: false })}
-          >Cancel</button>
         </div>
       )
     } else {
@@ -35,10 +35,10 @@ class UserAccount extends React.Component {
           <div className="user-info">
             <span className="profile-photo"></span>
             <span className="profile-name">{currentUser.first_name} {currentUser.last_name}</span>
+            <button
+              onClick={() => this.setState({ toggled: true })}
+            >Edit Account</button>
           </div>
-          <button
-            onClick={() => this.setState({ toggled: true })}
-          >Edit Account</button>
         </div>
       )
     }

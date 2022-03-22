@@ -34,9 +34,9 @@ class UserModal extends React.Component {
             <div className="user-info">
               <span className="profile-photo"></span>
               <span className="profile-name">{currentUser.first_name}</span>
+              <button onClick={() => this.toggleTab()}
+                >{open ? "Close" : "View Account"}</button>
             </div>
-            <button onClick={() => this.toggleTab()}
-              >{open ? "Close" : "View Account"}</button>
             {/* <Link className="orders-link">Orders</Link> */}
             <button onClick={() => logout()}>Sign Out</button>
           </div>
