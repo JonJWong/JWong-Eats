@@ -23,5 +23,42 @@
   width: auto;
   padding-top: 10px;
   padding-bottom: 10px;
+  padding-left: 30px;
+}
+
+.login-email-prompt, .login-password-prompt, .login-noaccount {
+  margin-bottom: 15px;
+}
+
+.login-input-field {
+  width: 100%;
+  font-size: 18px;
   padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #eeeeee;
+  margin-bottom: 15px;
+}
+
+.login-legal {
+  text-align: left;
+  font-size: 14px;
+  color: #757575;
+  margin-bottom: 15px;
+}
+
+.login-login-button, #login-signup-button, .login-demo-button {
+  font-size: 20px;
+  background: black;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 23px;
+  margin-bottom: 15px;
+}
+
+.login-demo-button {
+  margin-right: 15px;
 }

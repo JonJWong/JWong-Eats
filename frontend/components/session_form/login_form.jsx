@@ -56,34 +56,40 @@ class LoginForm extends React.Component{
       <div className="login-form-container">
         <div className="login-top-bar"><div className="eats-logo-white" /></div>
         <div className="login-form-contents">
-          <header>
-            <h2>Log In</h2>
-            <Link to={signup ? "/login" : "/signup"}>{signup ? "Log in" : "Sign up"}</Link>
-          </header>
           {this.renderErrors()}
-          <button onClick={()=>login({
-              email: 'demo_user@email.com',
-              password: 'password'
-            })}
-            className="demo-login-button">Demo Login</button>
+
           <form onSubmit={this.handleSubmit}>
-            <label>Email
+            <h1 className="login-email-prompt">What's your email?</h1>
               <input 
                 type="text" 
                 onChange={this.update("email")}
                 value={this.state.email}
+                className="login-input-field"
+                placeholder="Enter email"
               />
-            </label>
-            <br/>
-            <label>Password
-              <input 
-                type="password" 
-                onChange={this.update("password")}
-                value={this.state.password}
-              />
-            </label>
-            <br/>
-            <input type="submit" value={'Log In'}/>
+            <h1 className="login-password-prompt">What password would you like?</h1>
+            <input 
+              type="password" 
+              onChange={this.update("password")}
+              value={this.state.password}
+              className="login-input-field"
+              placeholder="Enter password"
+            />
+            <p className="login-legal">By proceeding, you DO NOT consent to get calls or SMS messages, 
+            including by automated dialer, from JWongEats and its affiliates to this number. 
+            Text “STOP” to 89203 to opt out.</p>
+            <button type="submit" className="login-login-button">
+              Login <i className="fas fa-arrow-right fa-lg"></i>
+            </button>
+            <p className="login-noaccount">Don't have an account with us?</p>
+            <button onClick={()=>login({
+              email: 'demo_user@email.com',
+              password: 'password'
+            })}
+            className="login-demo-button"><i class="fas fa-save fa-lg"></i> Demo Login</button>
+            <Link to={signup ? "/login" : "/signup"}
+              id="login-signup-button"
+              ><i class="fas fa-sign-in"></i> {signup ? "Log in" : "Sign up"}</Link>
           </form>
         </div>
       </div>
