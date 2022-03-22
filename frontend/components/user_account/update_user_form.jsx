@@ -43,7 +43,7 @@ class UpdateUserForm extends React.Component {
       return <div className="auth-errors">You cannot modify the demo user.</div>
     } else {
       return(
-        <div>
+        <div className="update-form-container">
           {this.renderErrors()}
           <form onSubmit={this.handleSubmit}>
             <label>Email

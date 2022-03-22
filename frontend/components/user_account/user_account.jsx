@@ -35,7 +35,7 @@ class UserAccount extends React.Component {
           <div className="user-info">
             <span className="profile-photo"></span>
             <span className="profile-name">{currentUser.first_name} {currentUser.last_name}</span>
-            <button
+            <button className="profile-edit-button"
               onClick={() => this.setState({ toggled: true })}
             >Edit Account</button>
           </div>

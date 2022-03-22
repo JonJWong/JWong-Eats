@@ -24,7 +24,8 @@ class Greeting extends React.Component {
           <button onClick={()=>login({
             email: 'demo_user@email.com',
             password: 'password'
-          })}>Demo Login</button>
+          })}
+          className="demo-login-button">Demo Login</button>
         </div>
       )
     }

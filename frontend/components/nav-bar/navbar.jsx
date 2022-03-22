@@ -49,7 +49,7 @@ class NavBar extends React.Component {
             </div>
               {/* Delivery Details/Address Modal button here */}
           <div className="search-bar">
-            <i class="fas fa-search"></i>
+            <i className="fas fa-search"></i>
             <input type='text' className="search-area" placeholder="Food, groceries, drinks, etc" />
           </div>
           </div>

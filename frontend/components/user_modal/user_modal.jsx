@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import UserAccountContainer from "../user_account/user_account_container";
+import LoginFormContainer from "../session_form/login_form_container";
+import SignUpFormContainer from "../session_form/signup_form_container";
 
 class UserModal extends React.Component {
   constructor(props) {
@@ -21,6 +23,12 @@ class UserModal extends React.Component {
   renderTab() {
     if (this.state.tabOpen) {
       return <UserAccountContainer />
+    }
+  }
+
+  renderLogin() {
+    if (this.state.loginOpen) {
+      return <LoginFormContainer />
     }
   }
 
@@ -67,7 +75,7 @@ class UserModal extends React.Component {
             <button onClick={()=>login({
               email: 'demo_user@email.com',
               password: 'password'
-            })} className="modal-login-button">Demo Login</button>
+            })} className="modal-demo-login-button">Demo Login</button>
           </div>
           <div className="user-modal-block" onClick={() => this.props.toggleModal()} />
         </div>

@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 17%;
+  left: 0;
   right: 0;
   z-index: 2;
   opacity: .8;
@@ -15,7 +15,8 @@
   top: 0;
   bottom: 0;
   left: 0;
-  right: 83%;
+  right: auto;
+  width: 200px;
   background: rgb(255, 255, 255);
   z-index: 3;
   padding-left: 2%;
@@ -25,25 +26,46 @@
 }
 
 .user-info {
-  display: block;
+  display: grid;
   width: 100%;
+  grid-template-columns: [col1-start] 40px [col2-start] 200px [col3-start] 200px;
+  grid-template-rows: [row1-start] auto [row2-start] auto [row2-end];
+}
+
+.profile-photo {
+  grid-column: col1-start;
+  grid-row: row1-start / row2-end;
 }
 
 .profile-name {
   font-size: 20px;
+  grid-column: col2-start;
+  grid-row: row1-start;
+  justify-self: center;
 }
 
-.view-account-button {
+.view-account-button, .profile-edit-button {
   font-size: 16px;
   color: #048848;
+  grid-column: col2-start;
+  grid-row: row2-start;
+  justify-self: center;
 }
 
 .close-account-button {
+  font-size: 16px;
   color: #000000;
+  grid-column: col2-start;
+  grid-row: row2-start;
+  justify-self: center;
 }
 
 .modal-signout {
   margin-top: 80%;
   font-size: 18px;
   color: rgb(107, 107, 107);
+}
+
+.update-form-container {
+  z-index: 4;
 }

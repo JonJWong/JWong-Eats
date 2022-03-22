@@ -65,7 +65,8 @@ class SignUpForm extends React.Component {
         <button onClick={()=>login({
             email: 'demo_user@email.com',
             password: 'password'
-          })}>Demo Login</button>
+          })}
+          className="demo-login-button">Demo Login</button>
         <form onSubmit={this.handleSubmit}>
           <label>Email
             <input 
