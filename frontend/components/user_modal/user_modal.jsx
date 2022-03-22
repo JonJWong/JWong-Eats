@@ -69,15 +69,15 @@ class UserModal extends React.Component {
       )
     } else {
       return (
-        <div className="user-modal">
-          <div className="modal-contents">
-            <Link to="/login" className="modal-login-button">Sign In</Link>
+        <div className="splash-user-modal">
+          <div className="splash-modal-contents">
+            <button to="/login" id="splash-modal-login">Sign In</button>
             <button onClick={()=>login({
               email: 'demo_user@email.com',
               password: 'password'
-            })} className="modal-demo-login-button">Demo Login</button>
+            })} className="splash-modal-demo">Demo Login</button>
           </div>
-          <div className="user-modal-block" onClick={() => this.props.toggleModal()} />
+          <div className="splash-user-modal-block" onClick={() => this.props.toggleModal()} />
         </div>
       )
     }

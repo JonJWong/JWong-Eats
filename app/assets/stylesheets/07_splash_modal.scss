@@ -1,0 +1,38 @@
+.splash-user-modal-block {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  opacity: .8;
+  transition-property: opacity;
+  background: rgb(0, 0, 0);
+}
+
+.splash-modal-contents {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: auto;
+  width: 200px;
+  background: rgb(255, 255, 255);
+  z-index: 3;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+#splash-modal-login, .splash-modal-demo {
+  font-size: 16px;
+  width: 200px;
+  height: 50px;
+  background-color: black;
+  color: white;
+}
+
+#splash-modal-login {
+  margin-bottom: 20px;
+}
