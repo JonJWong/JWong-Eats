@@ -19,12 +19,14 @@ class Splash extends React.Component {
     this.promptSignin = this.promptSignin.bind(this);
   }
 
+  // pseudo-error when Find Food is clicked
   signinPrompt() {
     if (this.state.prompt) {
       return <div className="splash-signin-error">Please sign in first.</div>
     }
   }
 
+  // helper method to toggle whether or not pseudo-error is displayed
   promptSignin() {
     this.setState({ prompt: true })
   }

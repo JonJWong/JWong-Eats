@@ -18,6 +18,8 @@ class NavBar extends React.Component {
     this.clickDelivery = this.clickDelivery.bind(this);
   }
 
+
+  // modal state helper-methods
   toggleModal() {
     let setValue = !this.state.modalOpen;
     this.setState({ modalOpen: setValue })
@@ -29,6 +31,7 @@ class NavBar extends React.Component {
     }
   }
 
+  // cart state helper-methods
   toggleCart() {
     let setValue = !this.state.cartOpen;
     this.setState({ cartOpen: setValue })
@@ -46,6 +49,8 @@ class NavBar extends React.Component {
     }
   }
 
+
+  // button state helper-methods
   clickPickup() {
     if (this.state.currentButton === "delivery") {
       this.setState({ currentButton: "pickup" })
@@ -80,7 +85,9 @@ class NavBar extends React.Component {
                   : "pickup-button" }
                 onClick={() => this.clickPickup()}>Pickup</Link>
             </div>
-              {/* Delivery Details/Address Modal button here */}
+            <div className="nav-address-info">
+              <i className="fas fa-map-marker-alt"></i>{ this.state.currentButton === "delivery" ? "Union, NJ  •  now" : "Union, NJ  •  Pick up now"}
+            </div>
           <div className="search-bar">
             <i className="fas fa-search"></i>
             <input type='text' className="search-area" placeholder="Food, groceries, drinks, etc" />
