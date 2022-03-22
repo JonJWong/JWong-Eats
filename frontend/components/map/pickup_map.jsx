@@ -1,11 +1,10 @@
 import React from "react";
-// import MarkerManager from "../../util/marker_manager";
 import { withRouter } from "react-router-dom";
 
 // circle marker params
 const LIGHT_CIRCLE = {
   path: google.maps.SymbolPath.CIRCLE,
-  scale: 10,
+  scale: 15,
   fillColor: "#FFFFFF",
   strokeColor: "#FFFFFF",
   fillOpacity: 1.0,
@@ -15,7 +14,7 @@ const LIGHT_CIRCLE = {
 // dark circle marker params
 const DARK_CIRCLE = {
   path: google.maps.SymbolPath.CIRCLE,
-  scale: 10,
+  scale: 15,
   fillColor: "#000000",
   strokeColor: "#000000",
   fillOpacity: 1.0,
@@ -25,10 +24,10 @@ const DARK_CIRCLE = {
 // map options for controls
 const MAP_OPTIONS = {
   center: { lat: 40.6962131, lng: -74.302344 }, // Union, NJ
-  zoom: 13,
+  zoom: 15,
   streetViewControl: false,
   mapTypeControl: false,
-  fullScreenControl: false
+  fullscreenControl: false
 };
 
 // maps query params
@@ -150,10 +149,10 @@ class BenchMap extends React.Component{
 
   // remove map, service, attributes when component unmounts
   componentWillUnmount() {
-    // this.map = null;
-    // this.service = null;
-    // this.markers = null;
-    // this.infoWindows = null;
+    this.map = null;
+    this.service = null;
+    this.markers = null;
+    this.infoWindows = null;
   }
 
   render() {
