@@ -11,6 +11,22 @@ function randomBG() {
 class Splash extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      prompt: false
+    }
+
+    this.signinPrompt = this.signinPrompt.bind(this);
+    this.promptSignin = this.promptSignin.bind(this);
+  }
+
+  signinPrompt() {
+    if (this.state.prompt) {
+      return <div className="splash-signin-error">Please sign in first.</div>
+    }
+  }
+
+  promptSignin() {
+    this.setState({ prompt: true })
   }
 
   render() {
@@ -21,10 +37,22 @@ class Splash extends React.Component {
         <SplashNavContainer />
         <div className="splash-body">
           <h1 className="splash-title">Order food to your door</h1>
-          <p className="splash-prefill-search">
-            <i class="fas fa-map-marker-alt"></i> Union, NJ
-          </p>
-          <div className="splash-signin-prompt">Sign in to see restauraunts in the area.</div>
+          <div className="splash-fake-bar">
+            <div className="splash-prefill-search">
+              <i className="fas fa-map-marker-alt"></i> Union, NJ
+            </div>
+            <div className="splash-deliver">
+              <i className="fas fa-clock"></i>
+              <div className="splash-deliver-text">Deliver now </div>
+              <i className="fas fa-angle-down"></i>
+            </div>
+            <button onClick={() => this.promptSignin()} className="splash-find-food">Find Food</button>
+          </div>
+          {this.signinPrompt()}
+          <div className="splash-signin-prompt">
+            <Link to="/login" id="splash-bottom-signin">
+              Sign in</Link> to see restauraunts in the area.
+          </div>
         </div>
       </div>
     )

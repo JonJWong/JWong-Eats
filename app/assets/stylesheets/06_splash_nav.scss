@@ -67,8 +67,12 @@
 }
 
 .splash-title {
-  font-size: 34px;
+  font-size: 55px;
   margin-bottom: 30px;
+}
+
+.splash-fake-bar {
+  display: flex;
 }
 
 .splash-prefill-search {
@@ -80,7 +84,53 @@
   margin-bottom: 25px;
 }
 
+.splash-deliver {
+  display: flex;
+  margin-left: 10px;
+  background-color: white;
+  height: 20px;
+  padding-left: 15px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.splash-deliver-text {
+  font-size: 16px;
+  padding-top: 3px;
+}
+
 .fa-map-marker-alt {
   margin-right: 15px;
   margin-left: 15px;
+}
+
+.fa-clock {
+  padding-top: 3px;
+  margin-right: 20px;
+}
+
+.fa-angle-down {
+  margin-left: 15px;
+  padding-top: 3px;
+}
+
+.splash-find-food {
+  background-color: black;
+  color: white;
+  height: 20px;
+  font-size: 16px;
+  padding-top: 15px;
+  padding-bottom: 35px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 15px;
+}
+
+.splash-signin-error {
+  color: red;
+}
+
+#splash-bottom-signin {
+  text-decoration: underline;
 }
