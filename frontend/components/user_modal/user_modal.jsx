@@ -30,31 +30,42 @@ class UserModal extends React.Component {
     if (currentUser && !open) {
       return (
         <div className="user-modal">
-          <span className="profile-photo"></span>
-          <span>{currentUser.first_name}</span>
-          <button onClick={() => this.toggleTab()}
-            >{open ? "Close" : "View Account"}</button>
-          {/* <Link className="orders-link">Orders</Link> */}
-          <button onClick={() => logout()}>Sign Out</button>
+          <div className="modal-contents">
+            <div className="user-info">
+              <span className="profile-photo"></span>
+              <span className="profile-name">{currentUser.first_name}</span>
+            </div>
+            <button onClick={() => this.toggleTab()}
+              >{open ? "Close" : "View Account"}</button>
+            {/* <Link className="orders-link">Orders</Link> */}
+            <button onClick={() => logout()}>Sign Out</button>
+          </div>
+          <div className="user-modal-block" onClick={() => this.props.toggleModal()} />
         </div>
       )
     } else if (currentUser && open) {
       return (
         <div className="user-modal">
-          <button onClick={() => this.toggleTab()}
-            >{open ? "Close" : "View Account"}</button>
-          {this.renderTab()}
-          <button onClick={() => logout()}>Sign Out</button>
+          <div className="modal-contents">
+            {this.renderTab()}
+            <button onClick={() => this.toggleTab()}
+              >{open ? "Close" : "View Account"}</button>
+            <button onClick={() => logout()}>Sign Out</button>
+          </div>
+          <div className="user-modal-block" onClick={() => this.props.toggleModal()} />
         </div>
       )
     } else {
       return (
         <div className="user-modal">
-          <Link to="/login" className="modal-login-button">Sign In</Link>
-          <button onClick={()=>login({
-            email: 'demo_user@email.com',
-            password: 'password'
-          })} className="modal-login-button">Demo Login</button>
+          <div className="modal-contents">
+            <Link to="/login" className="modal-login-button">Sign In</Link>
+            <button onClick={()=>login({
+              email: 'demo_user@email.com',
+              password: 'password'
+            })} className="modal-login-button">Demo Login</button>
+          </div>
+          <div className="user-modal-block" onClick={() => this.props.toggleModal()} />
         </div>
       )
     }

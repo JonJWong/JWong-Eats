@@ -1,0 +1,26 @@
+.user-modal-block {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 17%;
+  right: 0;
+  z-index: 2;
+  opacity: .8;
+  transition-property: opacity;
+  background: rgb(0, 0, 0);
+}
+
+.modal-contents {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 83%;
+  background: rgb(255, 255, 255);
+  z-index: 3;
+}
+
+.user-info {
+  display: block;
+  width: 100%;
+}

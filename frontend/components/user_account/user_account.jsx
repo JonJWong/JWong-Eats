@@ -20,8 +20,10 @@ class UserAccount extends React.Component {
     if (this.state.toggled === true) {
       return(
         <div>
-          <span className="profile-photo"></span>
-          <span>{currentUser.first_name} {currentUser.last_name}</span>
+          <div className="user-info">
+            <span className="profile-photo"></span>
+            <span className="profile-name">{currentUser.first_name} {currentUser.last_name}</span>
+          </div>
             <UpdateUserFormContainer unToggle={this.unToggle} />
           <button onClick={() => this.setState({ toggled: false })}
           >Cancel</button>
@@ -30,8 +32,10 @@ class UserAccount extends React.Component {
     } else {
       return (
         <div>
-          <span className="profile-photo"></span>
-          <span>{currentUser.first_name} {currentUser.last_name}</span>
+          <div className="user-info">
+            <span className="profile-photo"></span>
+            <span className="profile-name">{currentUser.first_name} {currentUser.last_name}</span>
+          </div>
           <button
             onClick={() => this.setState({ toggled: true })}
           >Edit Account</button>

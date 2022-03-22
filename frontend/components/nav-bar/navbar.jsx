@@ -10,7 +10,7 @@ class NavBar extends React.Component {
       modalOpen: false,
       cartOpen: false
     }
-    this.toggle = this.toggleModal.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
     this.renderModal = this.renderModal.bind(this);
   }
 
@@ -21,7 +21,7 @@ class NavBar extends React.Component {
 
   renderModal() {
     if (this.state.modalOpen) {
-      return <UserModalContainer modalOpen={this.state.modalOpen} />
+      return <UserModalContainer toggleModal={this.toggleModal} />
     }
   }
 
@@ -51,7 +51,7 @@ class NavBar extends React.Component {
               {/* Search Bar would go here. */}
           </div>
           <div className="right">
-            <button onClick={() => this.toggleCart()} className="cart-button">Cart</button>
+            <button onClick={() => this.toggleCart()} className="cart-button"><i className="fas fa-shopping-cart"></i>Cart</button>
           </div>
         </div>
         {this.renderModal()}
