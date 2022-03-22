@@ -1,0 +1,22 @@
+#map-container {
+  width: 500px;
+  height: 500px;
+}
+
+.infowindow-photo {
+  width: 200px;
+  height: 120px;
+}
+
+.infowindow-title {
+  font-size: 16px;
+}
+
+.infowindow-rating, .infowindow-price {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.infowindow-reviewcount {
+  font-size: 12px;
+}

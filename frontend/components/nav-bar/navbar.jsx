@@ -41,11 +41,11 @@ class NavBar extends React.Component {
       <nav className="nav-bar">
         <div className="nav-contents">
           <div className="left">
-            <button onClick={() => this.toggleModal()} className="hamburger">Hamburger</button>
+            <button onClick={() => this.toggleModal()} className="hamburger"><i className="fas fa-bars fa-lg"></i></button>
             <Link to="/" className="eats-logo" />
             <div className="method-slider">
-              {/* <Link className="delivery-button">Delivery</Link>
-              <Link className="pickup-button">Pickup</Link> */}
+              <Link className="delivery-button">Delivery</Link>
+              <Link to="/pickup" className="pickup-button">Pickup</Link>
             </div>
               {/* Delivery Details/Address Modal button here */}
               {/* Search Bar would go here. */}

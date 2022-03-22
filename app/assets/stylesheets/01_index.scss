@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Uber Medium";
+  src: asset-url("UberMoveMedium.otf");
+}
+
+@font-face {
+  font-family: "Uber Bold";
+  src: asset-url("UberMoveBold.otf");
+}
+
+* {
+  font-family: "Uber Medium";
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+.auth-errors {
+  color: red;
+}
+
+.profile-photo {
+  content: image_url('silhouette.png');
+  width: 50px;
+  border-radius: 50%;
+  height: auto;
+}
