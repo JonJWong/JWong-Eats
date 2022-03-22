@@ -41,7 +41,7 @@ class NavBar extends React.Component {
       <nav className="nav-bar">
         <div className="nav-contents">
           <div className="left">
-            <button onClick={() => this.toggleModal()} className="hamburger"><i className="fas fa-bars fa-lg"></i></button>
+            <button onClick={() => this.toggleModal()} className="hamburger"><i className="fas fa-bars fa-xl"></i></button>
             <Link to="/" className="eats-logo" />
             <div className="method-slider">
               <Link className="delivery-button">Delivery</Link>

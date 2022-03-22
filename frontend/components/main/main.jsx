@@ -11,7 +11,6 @@ class Main extends React.Component {
     return (
       <div className="main">
         <NavbarContainer />
-        {/* <GreetingContainer /> */}
       </div>
     )
   }

@@ -11,7 +11,6 @@ class Splash extends React.Component {
     return (
       <div className="splash">
         <NavbarContainer />
-        {/* <GreetingContainer /> */}
       </div>
     )
   }
