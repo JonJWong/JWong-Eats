@@ -18,9 +18,32 @@
   right: 83%;
   background: rgb(255, 255, 255);
   z-index: 3;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 .user-info {
   display: block;
   width: 100%;
+}
+
+.profile-name {
+  font-size: 20px;
+}
+
+.view-account-button {
+  font-size: 16px;
+  color: #048848;
+}
+
+.close-account-button {
+  color: #000000;
+}
+
+.modal-signout {
+  margin-top: 80%;
+  font-size: 18px;
+  color: rgb(107, 107, 107);
 }
