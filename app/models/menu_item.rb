@@ -15,9 +15,5 @@ class MenuItem < ApplicationRecord
   belongs_to :menu,
     foreign_key: :menu_id,
     class_name: :Menu
-  
-  belongs_to :restaurant,
-    through: :menu,
-    source: :restaurant
     
 end

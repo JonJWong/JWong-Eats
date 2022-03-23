@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 function addZero(num) {
   if (num % 1 === 0) {
@@ -19,6 +20,8 @@ class Delivery extends React.Component {
   render() {
     const { restaurants } = this.props;
 
+    console.log(this.props)
+
     return (
       <div className="delivery-container">
         <div className="delivery-categories">
@@ -37,9 +40,10 @@ class Delivery extends React.Component {
         <div className="delivery-restaurant-list">
             {Object.keys(restaurants).map(id => {
               return (
-                <div 
-                  className="delivery-restaurant-container"
-                  key={id}>
+                <Link
+                  key={id}
+                  to={`/restaurants/${id}`}>
+                <div className="delivery-restaurant-container">
                     <div className="delivery-restaurant-image"></div>
                     <div className="delivery-restaurant-bottom">
                       <h5 className="delivery-restaurant-name">
@@ -56,6 +60,7 @@ class Delivery extends React.Component {
                       </div>
                     </div>
                 </div>
+              </Link>
               )
             })}
           </div>
