@@ -1,0 +1,30 @@
+.delivery-categories {
+  width: 100vw;
+  height: 10vh;
+  background-color: aqua;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: #eeeeee 2px solid;
+}
+
+.delivery-banner-ads {
+  width: 100vw;
+  height: 20vh;
+  background-color: plum;
+  margin-top: 30px;
+}
+
+.delivery-restaurant-list {
+  position: absolute;
+  left: auto;
+  bottom: 0;
+  top: auto;
+  right: 0;
+  width: 70vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.delivery-restaurant-container {
+
+}
