@@ -37,6 +37,42 @@ const REQUEST = {
   type: ['restaurant']
 }
 
+// map styling to hide default pois
+const STYLES = {
+  default: [],
+  hide: [
+    {
+      featureType: "poi.business",
+      stylers: [{ visibility: "off" }],
+    },
+    {
+      featureType: "transit",
+      elementType: "labels.icon",
+      stylers: [{ visibility: "off" }],
+    },
+    {
+      featureType: "poi.park",
+      elementType: "labels.text.fill",
+      stylers: [{ visibility: "off" }],
+    },
+    {
+      featureType: "transit.station",
+      elementType: "geometry",
+      stylers: [{ visibility: "off" }],
+    },
+    {
+      featureType: "transit.line",
+      elementType: "labels.text.fill",
+      stylers: [{ visibility: "off" }],
+    },
+    {
+      featureType: "transit.line",
+      elementType: "labels.text.stroke",
+      stylers: [{ visibility: "off" }],
+    },
+  ],
+};
+
 class BenchMap extends React.Component{
 
   constructor(props){
@@ -136,10 +172,11 @@ class BenchMap extends React.Component{
   }
 
   // set up map when component mounts;
-  componentDidMount() {    
+  componentDidMount() {
+    
     // wrap this.mapNode in a Google Map
     // this.map = new google.maps.Map(this.mapNode, MAP_OPTIONS);
-    
+    // this.map.setOptions({ styles: STYLES["hide"] })
     // initialize places service
     // this.service = new google.maps.places.PlacesService(this.map);
 
@@ -157,9 +194,9 @@ class BenchMap extends React.Component{
 
   render() {
     return (
-      // <div ref={ map => this.mapNode = map } id='map-container'>
-      // </div>
-      <div id='map-container'>Map goes here</div>
+      <div ref={ map => this.mapNode = map } id='map-container'>
+      </div>
+      // <div id='map-container'>Map goes here</div>
     )
   }
 }

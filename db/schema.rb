@@ -10,10 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_18_191110) do
+ActiveRecord::Schema.define(version: 2022_03_23_132207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "menu_items", force: :cascade do |t|
+    t.integer "menu_id", null: false
+    t.string "item_name", null: false
+    t.decimal "item_price", null: false
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_name"], name: "index_menu_items_on_item_name", unique: true
+    t.index ["item_price"], name: "index_menu_items_on_item_price", unique: true
+  end
+
+  create_table "menus", force: :cascade do |t|
+    t.string "restaurant_name"
+    t.integer "restaurant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "address", null: false
+    t.text "description"
+    t.float "rating"
+    t.integer "review_count"
+    t.string "price_rating"
+    t.string "hours", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["address"], name: "index_restaurants_on_address", unique: true
+    t.index ["name"], name: "index_restaurants_on_name", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false

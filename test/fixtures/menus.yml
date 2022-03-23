@@ -1,14 +1,10 @@
 # == Schema Information
 #
-# Table name: users
+# Table name: menus
 #
 #  id              :bigint           not null, primary key
-#  email           :string           not null
-#  password_digest :string
-#  first_name      :string           not null
-#  last_name       :string           not null
-#  address         :string           not null
-#  session_token   :string           not null
+#  restaurant_name :string
+#  restaurant_id   :integer
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #

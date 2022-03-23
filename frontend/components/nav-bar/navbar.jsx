@@ -2,20 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import UserModalContainer from '../user_modal/user_modal_container';
 import CartContainer from "../cart/cart_container";
+import { withRouter } from "react-router-dom";
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       modalOpen: false,
-      cartOpen: false,
-      currentButton: "pickup"
+      cartOpen: false
     }
     this.toggleModal = this.toggleModal.bind(this);
     this.renderModal = this.renderModal.bind(this);
-    this.cartButton = this.cartButton.bind(this);
-    this.clickPickup = this.clickPickup.bind(this);
-    this.clickDelivery = this.clickDelivery.bind(this);
   }
 
 
@@ -43,50 +40,29 @@ class NavBar extends React.Component {
     }
   }
 
-  cartButton() {
-    if (this.props.location === "/splash") {
-      console.log(this.props.location)
-    }
-  }
-
-
-  // button state helper-methods
-  clickPickup() {
-    if (this.state.currentButton === "delivery") {
-      this.setState({ currentButton: "pickup" })
-    }
-  }
-
-  clickDelivery() {
-    if (this.state.currentButton === "pickup") {
-      this.setState({ currentButton: "delivery" })
-    }
-  }
-
   render() {
     return (
       <nav className="nav-bar">
-        {this.cartButton()}
         <div className="nav-contents">
           <div className="left">
             <button onClick={() => this.toggleModal()} className="hamburger"><i className="fas fa-bars fa-xl"></i></button>
-            <Link to="/" className="eats-logo" />
+            <Link to="/pickup" className="eats-logo" />
             <div className="method-slider">
               <Link
                 to="/delivery"
-                className={ this.state.currentButton === "delivery"
+                className={ this.props.location.pathname === "/delivery"
                   ? "delivery-button focused-button"
                   : "delivery-button" }
-                onClick={() => this.clickDelivery()}>Delivery</Link>
+                >Delivery</Link>
               <Link
                 to="/pickup"
-                className={ this.state.currentButton === "pickup"
+                className={ this.props.location.pathname === "/pickup"
                   ? "pickup-button focused-button"
                   : "pickup-button" }
-                onClick={() => this.clickPickup()}>Pickup</Link>
+                >Pickup</Link>
             </div>
             <div className="nav-address-info">
-              <i className="fas fa-map-marker-alt"></i>{ this.state.currentButton === "delivery" ? "Union, NJ  •  now" : "Union, NJ  •  Pick up now"}
+              <i className="fas fa-map-marker-alt"></i>{ this.props.location.pathname === "/delivery" ? "Union, NJ  •  now" : "Union, NJ  •  Pick up now"}
             </div>
           <div className="search-bar">
             <i className="fas fa-search"></i>
@@ -104,4 +80,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
