@@ -71,7 +71,7 @@ class UserModal extends React.Component {
       return (
         <div className="splash-user-modal">
           <div className="splash-modal-contents">
-            <button to="/login" id="splash-modal-login">Sign In</button>
+            <Link to="/login"><div className="splash-modal-login">Sign In</div></Link>
             <button onClick={()=>login({
               email: 'demo_user@email.com',
               password: 'password'
