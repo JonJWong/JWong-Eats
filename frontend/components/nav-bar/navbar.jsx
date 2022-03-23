@@ -9,10 +9,12 @@ class NavBar extends React.Component {
     super(props)
     this.state = {
       modalOpen: false,
-      cartOpen: false
+      cartOpen: false,
+      currentButton: "delivery"
     }
     this.toggleModal = this.toggleModal.bind(this);
     this.renderModal = this.renderModal.bind(this);
+    this.setButton = this.setButton.bind(this);
   }
 
 
@@ -40,6 +42,16 @@ class NavBar extends React.Component {
     }
   }
 
+  // pickup-delivery toggle
+  setButton() {
+    if (this.props.location.pathname === "/delivery" && this.state.currentButton === "pickup") {
+      this.setState({ currentButton: "delivery" })
+    }
+    if (this.props.location.pathname === "/pickup" && this.state.currentButton === "delivery") {
+      this.setState({ currentButton: "pickup" })
+    }
+  }
+
   render() {
     return (
       <nav className="nav-bar">
@@ -50,19 +62,19 @@ class NavBar extends React.Component {
             <div className="method-slider">
               <Link
                 to="/delivery"
-                className={ this.props.location.pathname === "/delivery"
+                className={ this.state.currentButton === "delivery"
                   ? "delivery-button focused-button"
                   : "delivery-button" }
                 >Delivery</Link>
               <Link
                 to="/pickup"
-                className={ this.props.location.pathname === "/pickup"
+                className={ this.state.currentButton === "pickup"
                   ? "pickup-button focused-button"
                   : "pickup-button" }
                 >Pickup</Link>
             </div>
             <div className="nav-address-info">
-              <i className="fas fa-map-marker-alt"></i>{ this.props.location.pathname === "/delivery" ? "Union, NJ  •  now" : "Union, NJ  •  Pick up now"}
+              <i className="fas fa-map-marker-alt"></i>{ this.state.currentButton === "delivery" ? "Union, NJ  •  now" : "Union, NJ  •  Pick up now"}
             </div>
           <div className="search-bar">
             <i className="fas fa-search"></i>
@@ -75,6 +87,7 @@ class NavBar extends React.Component {
         </div>
         {this.renderModal()}
         {this.renderCart()}
+        {this.setButton()}
       </nav>
     )
   }

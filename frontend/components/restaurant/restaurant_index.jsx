@@ -4,10 +4,13 @@ import { withRouter } from "react-router-dom";
 class RestaurantIndex extends React.Component {
   constructor(props) {
     super(props)
+    this.state = this.props.restaurant;
   }
 
   componentDidMount() {
-    this.props.fetchRestaurant(this.props.match.params.restaurantId)
+    const id = this.props.match.params.restaurantId
+    || this.props.match.params.restaurant.id;
+    this.props.fetchRestaurant(id);
   }
 
   render() {

@@ -19,13 +19,11 @@ const App = () => {
         <AuthRoute path="/" component={SplashContainer} />
       </Switch>
       <ProtectedRoute path="/" component={MainContainer} />
-      <ProtectedRoute exact path="/delivery" component={DeliveryContainer} />
-      <ProtectedRoute exact path="/pickup" component={PickupContainer} />
-      <ProtectedRoute path="/restaurants/:restaurantId" component={RestaurantIndexContainer} />
-      {/* <Route path="/" component={SplashContainer} /> */}
-      {/* <Route exact path="/cart" component={CartContainer} /> */}
-      {/* <Route exact path="/account" component={UserAccountContainer} />
-      <Route exact path="/modal" component={UserModalContainer} /> */}
+      <Switch>
+        <ProtectedRoute exact path="/delivery" component={DeliveryContainer} />
+        <ProtectedRoute exact path="/pickup" component={PickupContainer} />
+        <ProtectedRoute path="/restaurants/:restaurantId" component={RestaurantIndexContainer} />
+      </Switch>
     </div>
   )
 }
