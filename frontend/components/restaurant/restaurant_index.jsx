@@ -11,10 +11,12 @@ class RestaurantIndex extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="restaurant-page-container">
-        Working
+        <div className="restaurant-banner"></div>
+        <div className="restaurant-info">
+          <div className="restaurant-title"></div>
+        </div>
       </div>
     )
   }

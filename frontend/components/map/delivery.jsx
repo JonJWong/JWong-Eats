@@ -20,8 +20,6 @@ class Delivery extends React.Component {
   render() {
     const { restaurants } = this.props;
 
-    console.log(this.props)
-
     return (
       <div className="delivery-container">
         <div className="delivery-categories">

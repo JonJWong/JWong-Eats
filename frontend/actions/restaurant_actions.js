@@ -12,10 +12,10 @@ const receiveRestaurants = (restaurants) => {
   }
 }
 
-const receiveRestaurant = (restaurantId) => {
+const receiveRestaurant = (restaurant) => {
   return {
     type: RECEIVE_RESTAURANT,
-    restaurantId
+    restaurant
   }
 }
 

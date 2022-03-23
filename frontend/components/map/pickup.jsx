@@ -19,7 +19,6 @@ class Pickup extends React.Component {
 
   render() {
     const { restaurants, fetchRestaurant } = this.props;
-    console.log(restaurants);
     return (
       <div className="pickup-container">
         <div className="pickup-restaurants">
