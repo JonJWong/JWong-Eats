@@ -1,9 +1,14 @@
 #map-container {
+  display: inline-block;
   position: absolute;
-  right: 0px;
+  top: 98px;
+  right: 0;
+  bottom: 0;
   width: 45%;
-  height: 90vh;
+  height: auto;
+  background-color: black;
 }
+
 
 .infowindow-photo {
   width: 200px;
@@ -21,4 +26,11 @@
 
 .infowindow-reviewcount {
   font-size: 12px;
+}
+
+.pickup-restaurants {
+  overflow: auto;
+  display: block;
+  width: 55%;
+  height: auto;
 }

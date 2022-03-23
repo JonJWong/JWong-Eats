@@ -17,7 +17,7 @@
  @import url(./00_reset.scss);
  @import url(./01_index.scss);
  @import url(./02_nav.scss);
- @import url(./03_map.scss);
+ @import url(./03_pickup_map.scss);
  @import url(./04_account_modal.scss);
  @import url(./05_sessions.scss);
  @import url(./06_splash_nav.scss);

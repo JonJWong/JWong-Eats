@@ -6,12 +6,35 @@ class Pickup extends React.Component {
     super(props)
   }
 
+  componentDidMount() {
+    this.props.fetchRestaurants()
+  }
+
   render() {
+    const { restaurants, fetchRestaurant } = this.props;
+    console.log(restaurants);
     return (
-      <span className="pickup-container">
-        <span className="pickup-title">Pickup Nearby</span>
+      <div className="pickup-container">
+        <div className="pickup-restaurants">
+          <div className="pickup-title">Pickup Nearby</div>
+          {Object.keys(restaurants).map(id => {
+            return (
+              <div 
+                className="restaurant-container"
+                key={id}
+                fetchRestaurant={fetchRestaurant}>
+                  <div className="restaurant-name">
+                    {restaurants[id].name}
+                  </div>
+                  <div className="restaurant-rating">
+                    {restaurants[id].rating}
+                  </div>
+              </div>
+            )
+          })}
+        </div>
         <PickupMap />
-      </span>
+      </div>
     )
   }
 }
