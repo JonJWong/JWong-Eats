@@ -54,9 +54,6 @@ class Delivery extends React.Component {
                       <div className="delivery-restaurant-rating">
                         {addZero(restaurants[id].rating)}
                       </div>
-                      <div className="delivery-restaurant-reviewcount">
-                        Reviews: {restaurants[id].review_count}
-                      </div>
                     </div>
                 </div>
               )
