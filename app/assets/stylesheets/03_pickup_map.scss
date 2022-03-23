@@ -1,10 +1,10 @@
 #map-container {
   display: inline-block;
-  position: absolute;
+  position: fixed;
   top: 98px;
   right: 0;
   bottom: 0;
-  width: 55%;
+  width: 55vw;
   height: auto;
   background-color: black;
 }
@@ -32,9 +32,15 @@
 }
 
 .pickup-restaurants {
-  display: block;
-  width: 43%;
+  background-color: white;
+  position: fixed;
+  margin-top: 96px;
+  top: 0;
+  bottom: 0;
+  width: 44%;
   height: auto;
+  overflow-y: scroll;
+  z-index: 1;
 }
 
 .pickup-title {
@@ -47,9 +53,11 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+  margin-bottom: 20px;
 }
 
 .restaurant-container {
+  min-width: 230px;
   width: 20vw;
   height: auto;
 }

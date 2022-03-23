@@ -15,12 +15,17 @@
 
 .nav-bar {
   height: 48px;
+  background-color: white;
+  width: 100%;
   display: block;
   padding-top: 24px;
   padding-bottom: 24px;
   padding-right: 40px;
   padding-left: 40px;
   border-bottom: #eeeeee 2px solid;
+  position: fixed;
+  top: 0;
+  z-index: 5;
 }
 
 .nav-contents {
@@ -78,12 +83,15 @@
 }
 
 .cart-button {
+  position: fixed;
+  right: 2vw;
   height: 40px;
-  width: 120%;
+  width: 100px;
   border-radius: 20px;
   border-style: none;
   font-size: 16px;
   color: white;
+  margin-top: -20px;
   background-color: black;
 }
 

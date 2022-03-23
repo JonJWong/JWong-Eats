@@ -29,8 +29,7 @@ class Pickup extends React.Component {
                 return (
                   <div 
                     className="restaurant-container"
-                    key={id}
-                    onClick={() => fetchRestaurant(id)}>
+                    key={id}>
                       <div className="restaurant-image"></div>
                       <div className="restaurant-bottom">
                         <h5 className="restaurant-name">
