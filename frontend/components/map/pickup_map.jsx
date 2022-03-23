@@ -194,9 +194,9 @@ class BenchMap extends React.Component{
 
   render() {
     return (
-      <div ref={ map => this.mapNode = map } id='map-container'>
-      </div>
-      // <div id='map-container'>Map goes here</div>
+      // <div ref={ map => this.mapNode = map } id='map-container'>
+      // </div>
+      <div id='map-container'>Map goes here</div>
     )
   }
 }

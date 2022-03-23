@@ -22,8 +22,6 @@ ActiveRecord::Schema.define(version: 2022_03_23_132207) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_name"], name: "index_menu_items_on_item_name", unique: true
-    t.index ["item_price"], name: "index_menu_items_on_item_price", unique: true
   end
 
   create_table "menus", force: :cascade do |t|
