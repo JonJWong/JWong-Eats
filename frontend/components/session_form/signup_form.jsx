@@ -104,14 +104,19 @@ class SignUpForm extends React.Component {
             <p className="login-legal">By proceeding, you DO NOT consent to get calls or SMS messages, 
               including by automated dialer, from JWongEats and its affiliates to this number. 
               Text “STOP” to 89203 to opt out.</p>
-            <button className="signup-signup-button" type="submit">Sign Up! <i className="fas fa-sign-in"></i></button>
+            <button className="signup-signup-button" type="submit"><i className="fas fa-sign-in"></i>Sign Up</button>
           </form>
           <p className="signup-text">Don't want to sign up?</p>
           <button onClick={()=>login({
             email: 'demo_user@email.com',
             password: 'password'
-          })}
-          className="signup-demo-button"><i className="fas fa-save fa-lg"></i> Demo Login</button>
+            })}
+            className="signup-demo-button"><i className="fas fa-save fa-lg"></i>
+            Demo Login
+          </button>
+          <Link to="/login" id="signup-login-button">
+            Login <i className="fas fa-arrow-right fa-lg"></i>
+          </Link>
         </div>
       </div>
     )

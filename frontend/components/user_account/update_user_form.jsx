@@ -46,47 +46,45 @@ class UpdateUserForm extends React.Component {
         <div className="update-form-container">
           {this.renderErrors()}
           <form onSubmit={this.handleSubmit}>
-            <label>Email
+            <div className="edit-form-text">Email</div>
               <input
+                className="edit-form-input"
                 type='text'
                 onChange={this.update("email")}
                 value={this.state.email}
               />
-            </label>
-            <br/>
-            <label>Password
+            <div className="edit-form-text">Password</div>
               <input
+                className="edit-form-input"
                 type='password'
                 onChange={this.update("password")}
                 value={this.state.password}
               />
-            </label>
-            <br/>
-            <label>First Name
+            <div className="edit-form-text">First Name</div>
               <input
+                className="edit-form-input"
                 type='text'
                 onChange={this.update("first_name")}
                 value={this.state.first_name}
               />
-            </label>
-            <br/>
-            <label>Last Name
+            <div className="edit-form-text">Last Name</div>
               <input
+                className="edit-form-input"
                 type='text'
                 onChange={this.update("last_name")}
                 value={this.state.last_name}
               />
-            </label>
-            <br/>
-            <label>Address
+            <div className="edit-form-text">Address</div>
               <input
+                className="edit-form-input"
                 type='text'
                 onChange={this.update("address")}
                 value={this.state.address}
               />
-            </label>
-            <br/>
-            <input type="submit" value="Update Account" />
+            <input
+              type="submit"
+              value="Update Account"
+              className="edit-form-submit" />
           </form>
         </div>
       )

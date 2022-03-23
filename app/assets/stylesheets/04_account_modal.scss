@@ -55,17 +55,11 @@
 .close-account-button {
   font-size: 16px;
   color: #000000;
-  grid-column: col2-start;
-  grid-row: row2-start;
-  justify-self: center;
+  margin-top: 0px;
 }
 
 .modal-signout {
   margin-top: 80%;
   font-size: 18px;
   color: rgb(107, 107, 107);
-}
-
-.update-form-container {
-  z-index: 4;
 }

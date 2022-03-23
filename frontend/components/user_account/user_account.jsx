@@ -22,8 +22,10 @@ class UserAccount extends React.Component {
         <div>
           <div className="user-info">
             <span className="profile-photo"></span>
-            <span className="profile-name">{currentUser.first_name} {currentUser.last_name}</span>
-            <button onClick={() => this.setState({ toggled: false })}
+            {/* <span className="profile-name">{currentUser.first_name} {currentUser.last_name}</span> */}
+            <button 
+              onClick={() => this.setState({ toggled: false })}
+              className="profile-cancel"
             >Cancel</button>
           </div>
             <UpdateUserFormContainer unToggle={this.unToggle} />

@@ -32,6 +32,7 @@
 
 .login-prompt {
   text-align: left;
+  margin-left: 15px;
 }
 
 .login-input-field {
@@ -101,6 +102,7 @@
 
 .signup-prompt {
   text-align: left;
+  margin-left: 15px;
 }
 
 .signup-input-field {
@@ -120,7 +122,7 @@
   margin-bottom: 15px;
 }
 
-.signup-signup-button, #signup-signup-button, .signup-demo-button {
+.signup-signup-button, #signup-signup-button, .signup-demo-button, #signup-login-button {
   font-size: 20px;
   background: black;
   color: white;
@@ -134,4 +136,12 @@
 
 .signup-demo-button {
   margin-right: 15px;
+}
+
+.fa-sign-in {
+  margin-right: 10px;
+}
+
+.fa-save {
+  margin-right: 10px;
 }
