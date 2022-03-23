@@ -1,6 +1,13 @@
 import React from "react";
 import PickupMap from "./pickup_map";
 
+function addZero(num) {
+  if (num % 1 === 0) {
+    return `${num}` + `.0`
+  }
+  return num
+}
+
 class Pickup extends React.Component {
   constructor(props) {
     super(props)
@@ -36,7 +43,7 @@ class Pickup extends React.Component {
                           Hours: {restaurants[id].hours}
                         </div>
                         <div className="restaurant-rating">
-                          {restaurants[id].rating}
+                          {addZero(restaurants[id].rating)}
                         </div>
                         <div className="restaurant-reviewcount">
                           Reviews: {restaurants[id].review_count}
