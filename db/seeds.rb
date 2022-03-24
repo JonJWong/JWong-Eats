@@ -982,8 +982,8 @@ menu9_item1 = MenuItem.create({
     item_price: "8.99",
     description: "Our Spicy Italian sandwich is a combo of pepperoni and Genoa salami. Pile on cheese, crunchy veggies, and finish it with your favorite sauce. Or don't. Your call."
   })
-menu9_item1img = open("")
-menu9_item1.photo.attach(io: menu9_item1img, filename: 'applepie.jpeg')
+menu9_item1img = open("https://jwong-eats-seeds.s3.amazonaws.com/subitalian.jpeg")
+menu9_item1.photo.attach(io: menu9_item1img, filename: 'subitalian.jpeg')
 
 menu9_item2 = MenuItem.create({
     menu_id: 9,
@@ -991,6 +991,8 @@ menu9_item2 = MenuItem.create({
     item_price: "8.99",
     description: "The Meatball Marinara sandwich is drenched in irresistible marinara sauce, sprinkled with Parmesan cheese, topped with whatever you want (no judgement) and perfectly toasted just for you."
   })
+menu9_item2img = open("https://jwong-eats-seeds.s3.amazonaws.com/submeatball.jpeg")
+menu9_item2.photo.attach(io: menu9_item2img, filename: 'submeatball.jpeg')
 
 menu9_item3 = MenuItem.create({
     menu_id: 9,
@@ -998,6 +1000,8 @@ menu9_item3 = MenuItem.create({
     item_price: "8.99",
     description: "Our Black Forest Ham sandwich is a true classic. We add lettuce, baby spinach, cucumbers, green peppers and red onions to our delicious, thin-sliced ham and serve it on our Hearty Multigrain bread. Want cheese? Just ask."
   })
+menu9_item3img = open("https://jwong-eats-seeds.s3.amazonaws.com/subblackham.jpeg")
+menu9_item3.photo.attach(io: menu9_item3img, filename: 'subblackham.jpeg')
 
 menu9_item4 = MenuItem.create({
     menu_id: 9,
@@ -1005,6 +1009,8 @@ menu9_item4 = MenuItem.create({
     item_price: "6.71",
     description: "The sub that proves great things come in threes. In this case, those three things happen to be hickory smoked bacon, lettuce and juicy tomatoes. While there’s no scientific way of proving it, this B.L.T might be the most perfect sub in existence."
   })
+menu9_item4img = open("https://jwong-eats-seeds.s3.amazonaws.com/subblt.jpeg")
+menu9_item4.photo.attach(io: menu9_item4img, filename: 'subblt.jpeg')
 
 menu9_item5 = MenuItem.create({
     menu_id: 9,
@@ -1012,6 +1018,8 @@ menu9_item5 = MenuItem.create({
     item_price: "14.02",
     description: "The Italian B.M.T.® sandwich is filled with Genoa salami, spicy pepperoni, and Black Forest Ham. Big. Meaty. Tasty. Get it."
   })
+menu9_item5img = open("https://jwong-eats-seeds.s3.amazonaws.com/subbmt.jpeg")
+menu9_item5.photo.attach(io: menu9_item5img, filename: 'subbmt.jpeg')
 
 menu9_item6 = MenuItem.create({
     menu_id: 9,
@@ -1019,6 +1027,8 @@ menu9_item6 = MenuItem.create({
     item_price: "7.67",
     description: "Delicious vegan patties with lettuce, tomatoes, cucumbers, green peppers and red onions, all served on our freshly baked Hearty Multigrain bread."
   })
+menu9_item6img = open("https://jwong-eats-seeds.s3.amazonaws.com/subveg.jpeg")
+menu9_item6.photo.attach(io: menu9_item6img, filename: 'subveg.jpeg')
 
 menu9_item7 = MenuItem.create({
     menu_id: 9,
@@ -1026,6 +1036,8 @@ menu9_item7 = MenuItem.create({
     item_price: "0.69",
     description: "Chunks of Macadamia nuts and white chips in a ridiculously delicious cookie."
   })
+menu9_item7img = open("https://jwong-eats-seeds.s3.amazonaws.com/subwhitechoc.jpeg")
+menu9_item7.photo.attach(io: menu9_item7img, filename: 'subwhitechoc.jpeg')
 
 menu9_item8 = MenuItem.create({
     menu_id: 9,
@@ -1033,6 +1045,8 @@ menu9_item8 = MenuItem.create({
     item_price: "0.60",
     description: "The flavor of sweet raspberry. The richness of cheesecake. Together in one awesome cookie creation."
   })
+menu9_item8img = open("https://jwong-eats-seeds.s3.amazonaws.com/subrasp.jpeg")
+menu9_item8.photo.attach(io: menu9_item8img, filename: 'subrasp.jpeg')
 
 menu9_item9 = MenuItem.create({
     menu_id: 9,
@@ -1040,6 +1054,8 @@ menu9_item9 = MenuItem.create({
     item_price: "1.42",
     description: "Made with jalapeño seasoning for enough heat to make things deliciously interesting. And every spicy bite is made with no artificial flavors or preservatives."
   })
+menu9_item9img = open("https://jwong-eats-seeds.s3.amazonaws.com/subchips.jpeg")
+menu9_item9.photo.attach(io: menu9_item9img, filename: 'subchips.jpeg')
 
 menu9_item10 = MenuItem.create({
     menu_id: 9,
@@ -1047,6 +1063,8 @@ menu9_item10 = MenuItem.create({
     item_price: "2.19",
     description: "As delicious as our sandwiches are, they are even better when paired with the perfect side and drink or even adding a little something extra. With such a variety to choose from, there's truly something for every taste."
   })
+menu9_item10img = open("https://jwong-eats-seeds.s3.amazonaws.com/subwater.jpeg")
+menu9_item10.photo.attach(io: menu9_item10img, filename: 'subwater.jpeg')
 
 puts("Seeding Union Plaza Diner...")
 # Union Plaza Diner
@@ -1131,6 +1149,8 @@ menu11_item1 = MenuItem.create({
     item_price: "1.00",
     description: "Our Original Slider, made with 100% beef, steam grilled on a bed of onions and served on a signature bun. NJ/NY topped with Ketchup."
   })
+menu11_item1img = open("https://jwong-eats-seeds.s3.amazonaws.com/wcslider.jpeg")
+menu11_item1.photo.attach(io: menu11_item1img, filename: 'wcslider.jpeg')
 
 menu11_item2 = MenuItem.create({
     menu_id: 11,
@@ -1138,6 +1158,8 @@ menu11_item2 = MenuItem.create({
     item_price: "1.15",
     description: "Our Original Sliders, made with 100% beef, steamed grilled on a bed of onions and topped with a slice of American, Jalapeno, or Cheddar cheese."
   })
+menu11_item2img = open("https://jwong-eats-seeds.s3.amazonaws.com/wccheeseslider.jpeg")
+menu11_item2.photo.attach(io: menu11_item2img, filename: 'wccheeseslider.jpeg')
 
 menu11_item3 = MenuItem.create({
     menu_id: 11,
@@ -1145,6 +1167,8 @@ menu11_item3 = MenuItem.create({
     item_price: "2.29",
     description: "Our Double Cheese Slider includes two 100% beef patties steam-grilled on a bed of onions plus two slices of melted cheese: American, Jalapeno, or Cheddar."
   })
+menu11_item3img = open("https://jwong-eats-seeds.s3.amazonaws.com/wcdoublecheese.jpeg")
+menu11_item3.photo.attach(io: menu11_item3img, filename: 'wcdoublecheese.jpeg')
 
 menu11_item4 = MenuItem.create({
     menu_id: 11,
@@ -1152,6 +1176,8 @@ menu11_item4 = MenuItem.create({
     item_price: "2.29",
     description: "Tender, flaky Alaska Pollock with seasoned and crispy panko breading topped with American cheese."
   })
+menu11_item4img = open("https://jwong-eats-seeds.s3.amazonaws.com/wcfishslider.jpeg")
+menu11_item4.photo.attach(io: menu11_item4img, filename: 'wcfishslider.jpeg')
 
 menu11_item5 = MenuItem.create({
     menu_id: 11,
@@ -1159,6 +1185,8 @@ menu11_item5 = MenuItem.create({
     item_price: "34.50",
     description: "30 Original Sliders, made with 100% beef, topped with cheese."
   })
+menu11_item5img = open("https://jwong-eats-seeds.s3.amazonaws.com/wccrave.jpeg")
+menu11_item5.photo.attach(io: menu11_item5img, filename: 'wccrave.jpeg')
 
 menu11_item6 = MenuItem.create({
     menu_id: 11,
@@ -1166,6 +1194,8 @@ menu11_item6 = MenuItem.create({
     item_price: "2.29",
     description: "Classic crinkle cut fries, crispy on the outside and tender on the inside."
   })
+menu11_item6img = open("https://jwong-eats-seeds.s3.amazonaws.com/wcfries.jpeg")
+menu11_item6.photo.attach(io: menu11_item6img, filename: 'wcfries.jpeg')
 
 menu11_item7 = MenuItem.create({
     menu_id: 11,
@@ -1173,6 +1203,8 @@ menu11_item7 = MenuItem.create({
     item_price: "2.99",
     description: "A classic – made with real mozzarella cheese and served with zesty marinara dipping sauce."
   })
+menu11_item7img = open("https://jwong-eats-seeds.s3.amazonaws.com/wcmozzstick.jpeg")
+menu11_item7.photo.attach(io: menu11_item7img, filename: 'wcmozzstick.jpeg')
 
 menu11_item8 = MenuItem.create({
     menu_id: 11,
@@ -1180,6 +1212,8 @@ menu11_item8 = MenuItem.create({
     item_price: "2.99",
     description: "SMALL VANILLA OR CHOCOLATE"
   })
+menu11_item8img = open("https://jwong-eats-seeds.s3.amazonaws.com/wcshakes.jpeg")
+menu11_item8.photo.attach(io: menu11_item8img, filename: 'wcshakes.jpeg')
 
 menu11_item9 = MenuItem.create({
     menu_id: 11,
@@ -1187,6 +1221,8 @@ menu11_item9 = MenuItem.create({
     item_price: "2.39",
     description: "SMALL COCA-COLA DRINK"
   })
+menu11_item9img = open("https://jwong-eats-seeds.s3.amazonaws.com/wcdrinks.jpeg")
+menu11_item9.photo.attach(io: menu11_item9img, filename: 'wcdrinks.jpeg')
 
 menu11_item10 = MenuItem.create({
     menu_id: 11,
@@ -1194,6 +1230,8 @@ menu11_item10 = MenuItem.create({
     item_price: "2.99",
     description: "Tear into a 16 ounce can of the meanest energy drink on the planet. Monster packs a powerful punch but has a smooth easy drinking flavor."
   })
+menu11_item10img = open("https://jwong-eats-seeds.s3.amazonaws.com/wcmonster.jpeg")
+menu11_item10.photo.attach(io: menu11_item10img, filename: 'wcmonster.jpeg')
 
 
 puts("Seeding Red Lobster...")
@@ -1205,6 +1243,8 @@ menu12_item1 = MenuItem.create({
     item_price: "43.99",
     description: "A roasted rock lobster tail, butter-poached Maine lobster tail and lobster-and-shrimp linguini in a creamy lobster sauce. Served with melted butter, lemon and choice of two sides."
   })
+menu12_item1img = open("https://jwong-eats-seeds.s3.amazonaws.com/redlover.jpeg")
+menu12_item1.photo.attach(io: menu12_item1img, filename: 'redlover.jpeg')
 
 menu12_item2 = MenuItem.create({
     menu_id: 12,
@@ -1212,6 +1252,8 @@ menu12_item2 = MenuItem.create({
     item_price: "71.99",
     description: "Two butter-poached Maine lobster tails, two 7 oz. sirloins**, two jumbo grilled shrimp skewers, a shareable bacon mac & cheese in a creamy lobster cheese sauce and choice of sides."
   })
+menu12_item2img = open("https://jwong-eats-seeds.s3.amazonaws.com/reddate.jpeg")
+menu12_item2.photo.attach(io: menu12_item2img, filename: 'reddate.jpeg')
 
 menu12_item3 = MenuItem.create({
     menu_id: 12,
@@ -1219,6 +1261,8 @@ menu12_item3 = MenuItem.create({
     item_price: "43.49",
     description: "A 6 oz. filet mignon**, butter-poached Maine lobster tail and bacon-wrapped sea scallops. Served with lemon and choice of two sides."
   })
+menu12_item3img = open("https://jwong-eats-seeds.s3.amazonaws.com/redsurf.jpeg")
+menu12_item3.photo.attach(io: menu12_item3img, filename: 'redsurf.jpeg')
 
 menu12_item4 = MenuItem.create({
     menu_id: 12,
@@ -1226,6 +1270,8 @@ menu12_item4 = MenuItem.create({
     item_price: "16.99",
     description: "Tender shrimp in a creamy garlic Alfredo sauce on a bed of linguini."
   })
+menu12_item4img = open("https://jwong-eats-seeds.s3.amazonaws.com/redshrimp.jpeg")
+menu12_item4.photo.attach(io: menu12_item4img, filename: 'redshrimp.jpeg')
 
 menu12_item5 = MenuItem.create({
     menu_id: 12,
@@ -1233,6 +1279,8 @@ menu12_item5 = MenuItem.create({
     item_price: "5.49",
     description: ""
   })
+menu12_item5img = open("https://jwong-eats-seeds.s3.amazonaws.com/redchow.jpeg")
+menu12_item5.photo.attach(io: menu12_item5img, filename: 'redchow.jpeg')
 
 menu12_item6 = MenuItem.create({
     menu_id: 12,
@@ -1240,6 +1288,8 @@ menu12_item6 = MenuItem.create({
     item_price: "5.29",
     description: "All entrées come with two warm, house-made Cheddar Bay Biscuits. Not enough? Order extra here."
   })
+menu12_item6img = open("https://jwong-eats-seeds.s3.amazonaws.com/redbiscuit.jpeg")
+menu12_item6.photo.attach(io: menu12_item6img, filename: 'redbiscuit.jpeg')
 
 menu12_item7 = MenuItem.create({
     menu_id: 12,
@@ -1247,6 +1297,8 @@ menu12_item7 = MenuItem.create({
     item_price: "13.99",
     description: "Served with lemon and melted butter."
   })
+menu12_item7img = open("https://jwong-eats-seeds.s3.amazonaws.com/redtail.jpeg")
+menu12_item7.photo.attach(io: menu12_item7img, filename: 'redtail.jpeg')
 
 menu12_item8 = MenuItem.create({
     menu_id: 12,
@@ -1254,6 +1306,8 @@ menu12_item8 = MenuItem.create({
     item_price: "24.99",
     description: "Choose from Chocolate Wave, Vanilla Bean Cheesecake, Key Lime Pie or Triple-Chocolate Brownie."
   })
+menu12_item8img = open("https://jwong-eats-seeds.s3.amazonaws.com/reddessert.jpeg")
+menu12_item8.photo.attach(io: menu12_item8img, filename: 'reddessert.jpeg')
 
 menu12_item9 = MenuItem.create({
     menu_id: 12,
@@ -1261,6 +1315,8 @@ menu12_item9 = MenuItem.create({
     item_price: "1.85",
     description: ""
   })
+menu12_item9img = open("https://jwong-eats-seeds.s3.amazonaws.com/reddew.jpeg")
+menu12_item9.photo.attach(io: menu12_item9img, filename: 'reddew.jpeg')
 
 menu12_item10 = MenuItem.create({
     menu_id: 12,
@@ -1268,6 +1324,8 @@ menu12_item10 = MenuItem.create({
     item_price: "5.00",
     description: ""
   })
+menu12_item10img = open("https://jwong-eats-seeds.s3.amazonaws.com/redpepsi.jpeg")
+menu12_item10.photo.attach(io: menu12_item10img, filename: 'redpepsi.jpeg')
 
 
 puts("Seeding Popeyes...")
@@ -1279,6 +1337,8 @@ menu13_item1 = MenuItem.create({
     item_price: "6.09",
     description: "Sandwich only"
   })
+menu13_item1img = open("https://jwong-eats-seeds.s3.amazonaws.com/popspicychick.jpeg")
+menu13_item1.photo.attach(io: menu13_item1img, filename: 'popspicychick.jpeg')
 
 menu13_item2 = MenuItem.create({
     menu_id: 13,
@@ -1286,6 +1346,8 @@ menu13_item2 = MenuItem.create({
     item_price: "31.70",
     description: "Includes one large signature side and four hot buttermilk biscuits."
   })
+menu13_item2img = open("https://jwong-eats-seeds.s3.amazonaws.com/pop8pc.jpeg")
+menu13_item2.photo.attach(io: menu13_item2img, filename: 'pop8pc.jpeg')
 
 menu13_item3 = MenuItem.create({
     menu_id: 13,
@@ -1293,6 +1355,8 @@ menu13_item3 = MenuItem.create({
     item_price: "4.86",
     description: ""
   })
+menu13_item3img = open("https://jwong-eats-seeds.s3.amazonaws.com/pop8nugg.jpeg")
+menu13_item3.photo.attach(io: menu13_item3img, filename: 'pop8nugg.jpeg')
 
 menu13_item4 = MenuItem.create({
     menu_id: 13,
@@ -1300,6 +1364,8 @@ menu13_item4 = MenuItem.create({
     item_price: "54.88",
     description: "Includes three large signature sides and eight hot buttermilk biscuits."
   })
+menu13_item4img = open("https://jwong-eats-seeds.s3.amazonaws.com/pop16pc.jpeg")
+menu13_item4.photo.attach(io: menu13_item4img, filename: 'pop16pc.jpeg')
 
 menu13_item5 = MenuItem.create({
     menu_id: 13,
@@ -1307,6 +1373,8 @@ menu13_item5 = MenuItem.create({
     item_price: "5.39",
     description: "Sandwich only"
   })
+menu13_item5img = open("https://jwong-eats-seeds.s3.amazonaws.com/popfish.jpeg")
+menu13_item5.photo.attach(io: menu13_item5img, filename: 'popfish.jpeg')
 
 menu13_item6 = MenuItem.create({
     menu_id: 13,
@@ -1314,6 +1382,8 @@ menu13_item6 = MenuItem.create({
     item_price: "20.72",
     description: "Include three sauces"
   })
+menu13_item6img = open("https://jwong-eats-seeds.s3.amazonaws.com/pop8tender.jpeg")
+menu13_item6.photo.attach(io: menu13_item6img, filename: 'pop8tender.jpeg')
 
 menu13_item7 = MenuItem.create({
     menu_id: 13,
@@ -1321,6 +1391,8 @@ menu13_item7 = MenuItem.create({
     item_price: "5.39",
     description: "Sandwich only"
   })
+menu13_item7img = open("https://jwong-eats-seeds.s3.amazonaws.com/popspicyfish.jpeg")
+menu13_item7.photo.attach(io: menu13_item7img, filename: 'popspicyfish.jpeg')
 
 menu13_item8 = MenuItem.create({
     menu_id: 13,
@@ -1328,6 +1400,8 @@ menu13_item8 = MenuItem.create({
     item_price: "36.58",
     description: "Include five sauces"
   })
+menu13_item1img = open("https://jwong-eats-seeds.s3.amazonaws.com/popspicychick.jpeg")
+menu13_item1.photo.attach(io: menu13_item1img, filename: 'popspicychick.jpeg')
 
 menu13_item9 = MenuItem.create({
     menu_id: 13,
@@ -1335,6 +1409,8 @@ menu13_item9 = MenuItem.create({
     item_price: "4.62",
     description: ""
   })
+menu13_item9img = open("https://jwong-eats-seeds.s3.amazonaws.com/popmash.jpeg")
+menu13_item9.photo.attach(io: menu13_item9img, filename: 'popmash.jpeg')
 
 menu13_item10 = MenuItem.create({
     menu_id: 13,
@@ -1342,6 +1418,8 @@ menu13_item10 = MenuItem.create({
     item_price: "4.62",
     description: ""
   })
+menu13_item10img = open("https://jwong-eats-seeds.s3.amazonaws.com/popfries.jpeg")
+menu13_item10.photo.attach(io: menu13_item10img, filename: 'popfries.jpeg')
 
 
 puts("Seeding IHOP...")
@@ -1353,6 +1431,8 @@ menu14_item1 = MenuItem.create({
     item_price: "9.27",
     description: "Our house-made golden-brown Belgian waffle topped with whipped real butter."
   })
+menu14_item1img = open("https://jwong-eats-seeds.s3.amazonaws.com/ihopwaffle.jpeg")
+menu14_item1.photo.attach(io: menu14_item1img, filename: 'ihopwaffle.jpeg')
 
 menu14_item2 = MenuItem.create({
     menu_id: 14,
@@ -1360,6 +1440,8 @@ menu14_item2 = MenuItem.create({
     item_price: "4.51",
     description: ""
   })
+menu14_item2img = open("https://jwong-eats-seeds.s3.amazonaws.com/ihophash.jpeg")
+menu14_item2.photo.attach(io: menu14_item2img, filename: 'ihophash.jpeg')
 
 menu14_item3 = MenuItem.create({
     menu_id: 14,
@@ -1367,6 +1449,8 @@ menu14_item3 = MenuItem.create({
     item_price: "4.51",
     description: ""
   })
+menu14_item3img = open("https://jwong-eats-seeds.s3.amazonaws.com/ihoplinks.jpeg")
+menu14_item3.photo.attach(io: menu14_item3img, filename: 'ihoplinks.jpeg')
 
 menu14_item4 = MenuItem.create({
     menu_id: 14,
@@ -1374,6 +1458,8 @@ menu14_item4 = MenuItem.create({
     item_price: "4.51",
     description: ""
   })
+menu14_item4img = open("https://jwong-eats-seeds.s3.amazonaws.com/ihopbacon.jpeg")
+menu14_item4.photo.attach(io: menu14_item4img, filename: 'ihopbacon.jpeg')
 
 menu14_item5 = MenuItem.create({
     menu_id: 14,
@@ -1381,6 +1467,8 @@ menu14_item5 = MenuItem.create({
     item_price: "10.89",
     description: "As tasty as the original, just gluten-friendlier. Four fluffy gluten-friendly pancakes topped with whipped real butter."
   })
+menu14_item5img = open("https://jwong-eats-seeds.s3.amazonaws.com/ihopplainstack.jpeg")
+menu14_item5.photo.attach(io: menu14_item5img, filename: 'ihopplainstack.jpeg')
 
 menu14_item6 = MenuItem.create({
     menu_id: 14,
@@ -1388,6 +1476,8 @@ menu14_item6 = MenuItem.create({
     item_price: "11.24",
     description: "Little known fact: Strawberries and Bananas are best friends. Four fluffy buttermilk pancakes filled with fresh banana slices. Topped with glazed strawberries & more banana slices."
   })
+menu14_item6img = open("https://jwong-eats-seeds.s3.amazonaws.com/ihopstrawbstack.jpeg")
+menu14_item6.photo.attach(io: menu14_item6img, filename: 'ihopstrawbstack.jpeg')
 
 menu14_item7 = MenuItem.create({
     menu_id: 14,
@@ -1395,6 +1485,8 @@ menu14_item7 = MenuItem.create({
     item_price: "11.47",
     description: "We’ve combined a New York classic with our classic pancakes. Four fluffy buttermilk pancakes filled with cheesecake bites & topped with glazed strawberries."
   })
+menu14_item7img = open("https://jwong-eats-seeds.s3.amazonaws.com/ihopnycstack.jpeg")
+menu14_item7.photo.attach(io: menu14_item7img, filename: 'ihopnycstack.jpeg')
 
 menu14_item8 = MenuItem.create({
     menu_id: 14,
@@ -1402,6 +1494,8 @@ menu14_item8 = MenuItem.create({
     item_price: "10.20",
     description: "Four delicate crepes topped with sweet-tart lingonberries & lingonberry butter."
   })
+menu14_item8img = open("https://jwong-eats-seeds.s3.amazonaws.com/ihopcrepe.jpeg")
+menu14_item8.photo.attach(io: menu14_item8img, filename: 'ihopcrepe.jpeg')
 
 menu14_item9 = MenuItem.create({
     menu_id: 14,
@@ -1409,6 +1503,8 @@ menu14_item9 = MenuItem.create({
     item_price: "14.95",
     description: "Your hunger won’t be at steak with this one. Our omelette stuffed with steak, hash browns, green peppers, onions, mushrooms, tomatoes & Cheddar cheese. Served with our salsa."
   })
+menu14_item9img = open("https://jwong-eats-seeds.s3.amazonaws.com/ihopsteakom.jpeg")
+menu14_item9.photo.attach(io: menu14_item9img, filename: 'ihopsteakom.jpeg')
 
 menu14_item10 = MenuItem.create({
     menu_id: 14,
@@ -1416,6 +1512,8 @@ menu14_item10 = MenuItem.create({
     item_price: "13.91",
     description: "The perfect fiesta in one package. Our omelette stuffed with grilled chicken breast with Poblano & red bell peppers, roasted onions & Jack & Cheddar cheese blend. Served with salsa, sour cream & grilled Serrano pepper."
   })
+menu14_item10img = open("https://jwong-eats-seeds.s3.amazonaws.com/ihopchickom.jpeg")
+menu14_item10.photo.attach(io: menu14_item10img, filename: 'ihopchickom.jpeg')
 
 
 puts("Seeding Starbucks...")
@@ -1427,6 +1525,8 @@ menu15_item1 = MenuItem.create({
     item_price: "3.75",
     description: "Two generous pieces of chocolate wrapped in a butter croissant with soft, flaky layers and a golden-brown crust. - VEGETARIAN"
   })
+menu15_item1img = open("https://jwong-eats-seeds.s3.amazonaws.com/sbuxchoccr.jpeg")
+menu15_item1.photo.attach(io: menu15_item1img, filename: 'sbuxchoccr.jpeg')
 
 menu15_item2 = MenuItem.create({
     menu_id: 15,
@@ -1434,6 +1534,9 @@ menu15_item2 = MenuItem.create({
     item_price: "3.75",
     description: "Flaky, butter croissant dough with soft, warm cheese in the center. - VEGETARIAN"
   })
+menu15_item2img = open("https://jwong-eats-seeds.s3.amazonaws.com/sbuxdanish.jpeg")
+menu15_item2.photo.attach(io: menu15_item2img, filename: 'sbuxdanish.jpeg')
+
 
 menu15_item3 = MenuItem.create({
     menu_id: 15,
@@ -1441,6 +1544,9 @@ menu15_item3 = MenuItem.create({
     item_price: "5.95",
     description: "Our signature espresso meets white chocolate sauce and steamed milk, and then is finished off with sweetened whipped cream to create this supreme white chocolate delight."
   })
+menu15_item3img = open("https://jwong-eats-seeds.s3.amazonaws.com/sbuxwhitechoc.jpeg")
+menu15_item3.photo.attach(io: menu15_item3img, filename: 'sbuxwhitechoc.jpeg')
+
 
 menu15_item4 = MenuItem.create({
     menu_id: 15,
@@ -1448,6 +1554,9 @@ menu15_item4 = MenuItem.create({
     item_price: "4.85",
     description: "Smooth and creamy matcha sweetened just right and served with steamed milk. This favorite will transport your senses to pure green delight."
   })
+menu15_item4img = open("https://jwong-eats-seeds.s3.amazonaws.com/sbuxmatcha.jpeg")
+menu15_item4.photo.attach(io: menu15_item4img, filename: 'sbuxmatcha.jpeg')
+
 
 menu15_item5 = MenuItem.create({
     menu_id: 15,
@@ -1455,6 +1564,9 @@ menu15_item5 = MenuItem.create({
     item_price: "5.15",
     description: "We blend mocha sauce and Frappuccino® chips with coffee, milk and ice, then top it off with whipped cream and a mocha drizzle to bring you endless java joy."
   })
+menu15_item5img = open("https://jwong-eats-seeds.s3.amazonaws.com/sbuxjava.jpeg")
+menu15_item5.photo.attach(io: menu15_item5img, filename: 'sbuxjava.jpeg')
+
 
 menu15_item6 = MenuItem.create({
     menu_id: 15,
@@ -1462,6 +1574,9 @@ menu15_item6 = MenuItem.create({
     item_price: "5.75",
     description: "Sweet pistachio flavor blended with coffee, milk and ice, then finished with whipped cream and a salted brown-buttery topping—an icy-smooth, creamy delight to bring you into the new year."
   })
+menu15_item6img = open("https://jwong-eats-seeds.s3.amazonaws.com/sbuxpistachio.jpeg")
+menu15_item6.photo.attach(io: menu15_item6img, filename: 'sbuxpistachio.jpeg')
+
 
 menu15_item7 = MenuItem.create({
     menu_id: 15,
@@ -1469,6 +1584,9 @@ menu15_item7 = MenuItem.create({
     item_price: "4.55",
     description: "Our slow-steeped custom blend of Starbucks® Cold Brew coffee accented with vanilla and topped with a delicate float of house-made vanilla sweet cream that cascades throughout the cup. It's over-the-top and super-smooth."
   })
+menu15_item7img = open("https://jwong-eats-seeds.s3.amazonaws.com/sbuxcold.jpeg")
+menu15_item7.photo.attach(io: menu15_item7img, filename: 'sbuxcold.jpeg')
+
 
 menu15_item8 = MenuItem.create({
     menu_id: 15,
@@ -1476,6 +1594,9 @@ menu15_item8 = MenuItem.create({
     item_price: "6.85",
     description: "Roasted tomatoes, mozzarella, spinach and basil pesto layered on toasted focaccia bread. - VEGETARIAN - HIGH-PROTEIN"
   })
+menu15_item8img = open("https://jwong-eats-seeds.s3.amazonaws.com/sbuxfocaccia.jpeg")
+menu15_item8.photo.attach(io: menu15_item8img, filename: 'sbuxfocaccia.jpeg')
+
 
 menu15_item9 = MenuItem.create({
     menu_id: 15,
@@ -1483,6 +1604,9 @@ menu15_item9 = MenuItem.create({
     item_price: "7.95",
     description: "Slow-cooked chicken breast, mozzarella, balsamic-marinated tomatoes, basil pesto and spinach on soft ciabatta bread."
   })
+menu15_item9img = open("https://jwong-eats-seeds.s3.amazonaws.com/sbuxciabatta.jpeg")
+menu15_item9.photo.attach(io: menu15_item9img, filename: 'sbuxciabatta.jpeg')
+
 
 menu15_item10 = MenuItem.create({
     menu_id: 15,
@@ -1490,6 +1614,9 @@ menu15_item10 = MenuItem.create({
     item_price: "4.35",
     description: "Steel-cut oats, quinoa, chia seeds and coconutmilk combined with fresh strawberries and topped with shaved coconut and toasted almonds. - VEGAN"
   })
+menu15_item10img = open("https://jwong-eats-seeds.s3.amazonaws.com/sbuxgrains.jpeg")
+menu15_item10.photo.attach(io: menu15_item10img, filename: 'sbuxgrains.jpeg')
+
 
 puts("Seeding Panda Express...")
 # Panda Express
@@ -1500,6 +1627,9 @@ menu16_item1 = MenuItem.create({
     item_price: "4.50",
     description: ""
   })
+menu16_item1img = open("https://jwong-eats-seeds.s3.amazonaws.com/pandachowmein.jpeg")
+menu16_item1.photo.attach(io: menu16_item1img, filename: 'pandachowmein.jpeg')
+
 
 menu16_item2 = MenuItem.create({
     menu_id: 16,
@@ -1507,6 +1637,9 @@ menu16_item2 = MenuItem.create({
     item_price: "4.50",
     description: ""
   })
+menu16_item2img = open("https://jwong-eats-seeds.s3.amazonaws.com/pandafriedrice.jpeg")
+menu16_item2.photo.attach(io: menu16_item2img, filename: 'pandafriedrice.jpeg')
+
 
 menu16_item3 = MenuItem.create({
     menu_id: 16,
@@ -1514,6 +1647,9 @@ menu16_item3 = MenuItem.create({
     item_price: "5.75",
     description: ""
   })
+menu16_item3img = open("https://jwong-eats-seeds.s3.amazonaws.com/pandaorangechick.jpeg")
+menu16_item3.photo.attach(io: menu16_item3img, filename: 'pandaorangechick.jpeg')
+
 
 menu16_item4 = MenuItem.create({
     menu_id: 16,
@@ -1521,6 +1657,9 @@ menu16_item4 = MenuItem.create({
     item_price: "7.35",
     description: ""
   })
+menu16_item4img = open("https://jwong-eats-seeds.s3.amazonaws.com/pandawalnutshrimp.jpeg")
+menu16_item4.photo.attach(io: menu16_item4img, filename: 'pandawalnutshrimp.jpeg')
+
 
 menu16_item5 = MenuItem.create({
     menu_id: 16,
@@ -1528,6 +1667,9 @@ menu16_item5 = MenuItem.create({
     item_price: "5.75",
     description: ""
   })
+menu16_item5img = open("https://jwong-eats-seeds.s3.amazonaws.com/pandakungpao.jpeg")
+menu16_item5.photo.attach(io: menu16_item5img, filename: 'pandakungpao.jpeg')
+
 
 menu16_item6 = MenuItem.create({
     menu_id: 16,
@@ -1535,6 +1677,9 @@ menu16_item6 = MenuItem.create({
     item_price: "2.50",
     description: "2pcs"
   })
+menu16_item6img = open("https://jwong-eats-seeds.s3.amazonaws.com/pandaspringroll.jpeg")
+menu16_item6.photo.attach(io: menu16_item6img, filename: 'pandaspringroll.jpeg')
+
 
 menu16_item7 = MenuItem.create({
     menu_id: 16,
@@ -1542,6 +1687,9 @@ menu16_item7 = MenuItem.create({
     item_price: "4.50",
     description: ""
   })
+menu16_item7img = open("https://jwong-eats-seeds.s3.amazonaws.com/pandagreens.jpeg")
+menu16_item7.photo.attach(io: menu16_item7img, filename: 'pandagreens.jpeg')
+
 
 menu16_item8 = MenuItem.create({
     menu_id: 16,
@@ -1549,6 +1697,9 @@ menu16_item8 = MenuItem.create({
     item_price: "2.50",
     description: "3pcs"
   })
+menu16_item8img = open("https://jwong-eats-seeds.s3.amazonaws.com/pandarangoon.jpeg")
+menu16_item8.photo.attach(io: menu16_item8img, filename: 'pandarangoon.jpeg')
+
 
 menu16_item9 = MenuItem.create({
     menu_id: 16,
@@ -1556,6 +1707,9 @@ menu16_item9 = MenuItem.create({
     item_price: "2.65",
     description: "20oz Bottle"
   })
+menu16_item9img = open("https://jwong-eats-seeds.s3.amazonaws.com/pandagingerale.jpeg")
+menu16_item9.photo.attach(io: menu16_item9img, filename: 'pandagingerale.jpeg')
+
 
 menu16_item10 = MenuItem.create({
     menu_id: 16,
@@ -1563,6 +1717,8 @@ menu16_item10 = MenuItem.create({
     item_price: "3.00",
     description: "16oz Bottle"
   })
+menu16_item10img = open("https://jwong-eats-seeds.s3.amazonaws.com/pandatea.jpeg")
+menu16_item10.photo.attach(io: menu16_item10img, filename: 'pandatea.jpeg')
 
 puts("Seeding TGI Fridays...")
 # TGI Fridays
@@ -1573,6 +1729,8 @@ menu17_item1 = MenuItem.create({
     item_price: "17.35",
     description: "Signature Whiskey-Glaze, cheddar, lettuce, red onions, tomato, pickles and bacon."
   })
+menu17_item1img = open("https://jwong-eats-seeds.s3.amazonaws.com/tgifburger.jpeg")
+menu17_item1.photo.attach(io: menu17_item1img, filename: 'tgifburger.jpeg')
 
 menu17_item2 = MenuItem.create({
     menu_id: 17,
@@ -1580,6 +1738,8 @@ menu17_item2 = MenuItem.create({
     item_price: "22.18",
     description: "Sauteed shrimp, chicken, red bell peppers, spicy Cajun Alfredo sauce, Parmesan-Romano, fettuccine and a warm garlic breadstick."
   })
+menu17_item2img = open("https://jwong-eats-seeds.s3.amazonaws.com/tgifcajunpasta.jpeg")
+menu17_item2.photo.attach(io: menu17_item2img, filename: 'tgifcajunpasta.jpeg')
 
 menu17_item3 = MenuItem.create({
     menu_id: 17,
@@ -1587,6 +1747,8 @@ menu17_item3 = MenuItem.create({
     item_price: "27.93",
     description: "Half Rack double-based pork Big Ribs with Whiskey-Glaze and crispy Fried Shrimp served with Whiskey-Glaze on the side. Served with mashed potatoes and lemon-butter broccoli."
   })
+menu17_item3img = open("https://jwong-eats-seeds.s3.amazonaws.com/tgifcrispy.jpeg")
+menu17_item3.photo.attach(io: menu17_item3img, filename: 'tgifcrispy.jpeg')
 
 menu17_item4 = MenuItem.create({
     menu_id: 17,
@@ -1594,6 +1756,8 @@ menu17_item4 = MenuItem.create({
     item_price: "16.43",
     description: "Loaded with poblano queso, mixed cheese, bacon, pickled jalapenos, green onions and a side of BBQ Ranch."
   })
+menu17_item4img = open("https://jwong-eats-seeds.s3.amazonaws.com/tgiffries.jpeg")
+menu17_item4.photo.attach(io: menu17_item4img, filename: 'tgiffries.jpeg')
 
 menu17_item5 = MenuItem.create({
     menu_id: 17,
@@ -1601,6 +1765,8 @@ menu17_item5 = MenuItem.create({
     item_price: "15.74",
     description: "Battered and golden-brown fried whole button mushrooms served with our tangy remix sauce. A true classic."
   })
+menu17_item5img = open("https://jwong-eats-seeds.s3.amazonaws.com/tgiffriedshroom.jpeg")
+menu17_item5.photo.attach(io: menu17_item5img, filename: 'tgiffriedshroom.jpeg')
 
 menu17_item6 = MenuItem.create({
     menu_id: 17,
@@ -1608,6 +1774,8 @@ menu17_item6 = MenuItem.create({
     item_price: "15.74",
     description: "We brought back the OG blackened-to-order chicken on a toasted sub roll with cheddar, lettuce, tomato and mayo. Served with seasoned fries."
   })
+menu17_item6img = open("https://jwong-eats-seeds.s3.amazonaws.com/tgifblackenedchick.jpeg")
+menu17_item6.photo.attach(io: menu17_item6img, filename: 'tgifblackenedchick.jpeg')
 
 menu17_item7 = MenuItem.create({
     menu_id: 17,
@@ -1615,6 +1783,8 @@ menu17_item7 = MenuItem.create({
     item_price: "25.17",
     description: "Spinach, artichokes, Romano, sauteed onions & red bell peppers. Topped with Parmesan bread crumbs. Served with tortilla chips & salsa. Feeds 4-6"
   })
+menu17_item7img = open("https://jwong-eats-seeds.s3.amazonaws.com/tgifdip.jpeg")
+menu17_item7.photo.attach(io: menu17_item7img, filename: 'tgifdip.jpeg')
 
 menu17_item8 = MenuItem.create({
     menu_id: 17,
@@ -1622,6 +1792,8 @@ menu17_item8 = MenuItem.create({
     item_price: "22.53",
     description: "6 ounces of flavorful center-cut sirloin topped with Signature Whiskey-Glaze. Served with mashed potatoes and lemon-butter broccoli."
   })
+menu17_item8img = open("https://jwong-eats-seeds.s3.amazonaws.com/tgifsirloin.jpeg")
+menu17_item8.photo.attach(io: menu17_item8img, filename: 'tgifsirloin.jpeg')
 
 menu17_item9 = MenuItem.create({
     menu_id: 17,
@@ -1629,6 +1801,8 @@ menu17_item9 = MenuItem.create({
     item_price: "22.41",
     description: "Half-Rack of double-basted pork ribs basted in our Signature Whiskey-Glaze served with seasoned fries & coleslaw."
   })
+menu17_item9img = open("https://jwong-eats-seeds.s3.amazonaws.com/tgifribs.jpeg")
+menu17_item9.photo.attach(io: menu17_item9img, filename: 'tgifribs.jpeg')
 
 menu17_item10 = MenuItem.create({
     menu_id: 17,
@@ -1636,6 +1810,8 @@ menu17_item10 = MenuItem.create({
     item_price: "21.84",
     description: "12 Crispy shrimp served with coleslaw, seasoned fries and cocktail sauce."
   })
+menu17_item10img = open("https://jwong-eats-seeds.s3.amazonaws.com/tgiffriedshrimp.jpeg")
+menu17_item10.photo.attach(io: menu17_item10img, filename: 'tgiffriedshrimp.jpeg')
 
 puts("Seeding Chipotle Mexican Grill...")
 # Chipotle
@@ -1646,60 +1822,90 @@ menu18_item1 = MenuItem.create({
     item_price: "15.80",
     description: "White Rice, Chicken, Steak, Black Beans, Tomatillo-Red Chili Salsa, Cheese and Shredded Romaine Lettuce"
   })
+menu18_item1img = open("https://jwong-eats-seeds.s3.amazonaws.com/chipotleprotein.jpeg")
+menu18_item1.photo.attach(io: menu18_item1img, filename: 'chipotleprotein.jpeg')
+
 menu18_item2 = MenuItem.create({
     menu_id: 18,
     item_name: "Keto Salad Bowl",
     item_price: "13.50",
     description: "Supergreens Lettuce Blend, Chicken, Fresh Tomato Salsa, Cheese and Guacamole"
   })
+menu18_item2img = open("https://jwong-eats-seeds.s3.amazonaws.com/chipotleketo.jpeg")
+menu18_item2.photo.attach(io: menu18_item2img, filename: 'chipotleketo.jpeg')
+
 menu18_item3 = MenuItem.create({
     menu_id: 18,
     item_name: "Vegan Bowl",
     item_price: "10.40",
     description: "Sofritas, Brown Rice, Black Beans, Fresh Tomato Salsa, Roasted Chili-Corn Salsa, and Shredded Romaine Lettuce"
   })
+menu18_item3img = open("https://jwong-eats-seeds.s3.amazonaws.com/chipotlevegan.jpeg")
+menu18_item3.photo.attach(io: menu18_item3img, filename: 'chipotlevegan.jpeg')
+
 menu18_item4 = MenuItem.create({
     menu_id: 18,
     item_name: "Burrito",
     item_price: "10.40",
     description: "Your choice of freshly grilled meat or sofritas wrapped in a warm flour tortilla with rice, beans, or fajita veggies, and topped with guac, salsa, queso blanco, sour cream or cheese."
   })
+menu18_item4img = open("https://jwong-eats-seeds.s3.amazonaws.com/chipotleburrito.jpeg")
+menu18_item4.photo.attach(io: menu18_item4img, filename: 'chipotleburrito.jpeg')
+
 menu18_item5 = MenuItem.create({
     menu_id: 18,
     item_name: "Three Tacos",
     item_price: "10.40",
     description: "3 Tacos"
   })
+menu18_item5img = open("https://jwong-eats-seeds.s3.amazonaws.com/chipotletaco.jpeg")
+menu18_item5.photo.attach(io: menu18_item5img, filename: 'chipotletaco.jpeg')
+
 menu18_item6 = MenuItem.create({
     menu_id: 18,
     item_name: "Salad",
     item_price: "10.40",
     description: "Your choice of meat or sofritas served with our fresh supergreens lettuce blend made of Romaine, Baby Kale, and Baby Spinach. Add beans, queso blanco, salsa, guacamole, sour cream or cheese and top it off with our signature Chipotle-Honey Vinaigrette."
   })
+menu18_item6img = open("https://jwong-eats-seeds.s3.amazonaws.com/chipotlesalad.jpeg")
+menu18_item6.photo.attach(io: menu18_item6img, filename: 'chipotlesalad.jpeg')
+
 menu18_item7 = MenuItem.create({
     menu_id: 18,
     item_name: "Chips & Guacamole",
     item_price: "5.20",
     description: ""
   })
+menu18_item7img = open("https://jwong-eats-seeds.s3.amazonaws.com/chipotlechipguac.jpeg")
+menu18_item7.photo.attach(io: menu18_item7img, filename: 'chipotlechipguac.jpeg')
+
 menu18_item8 = MenuItem.create({
     menu_id: 18,
     item_name: "Chips & Queso Blanco",
     item_price: "5.20",
     description: ""
   })
+menu18_item8img = open("https://jwong-eats-seeds.s3.amazonaws.com/chipotlechipqueso.jpeg")
+menu18_item8.photo.attach(io: menu18_item8img, filename: 'chipotlechipqueso.jpeg')
+
 menu18_item9 = MenuItem.create({
     menu_id: 18,
     item_name: "Chips & Roasted Chili-Corn Salsa",
     item_price: "2.70",
     description: ""
   })
+menu18_item9img = open("https://jwong-eats-seeds.s3.amazonaws.com/chipotlechipcorn.jpeg")
+menu18_item9.photo.attach(io: menu18_item9img, filename: 'chipotlechipcorn.jpeg')
+
 menu18_item10 = MenuItem.create({
     menu_id: 18,
     item_name: "Chips & Fresh Tomato Salsa",
     item_price: "2.70",
     description: ""
   })
+menu18_item10img = open("https://jwong-eats-seeds.s3.amazonaws.com/chipotlechipsalsa.jpeg")
+menu18_item10.photo.attach(io: menu18_item10img, filename: 'chipotlechipsalsa.jpeg')
+
 
 puts("Seeding Olive Garden...")
 # Olive Garden
@@ -1710,6 +1916,8 @@ menu19_item1 = MenuItem.create({
     item_price: "18.49",
     description: "Not everyone knows our signature alfredo sauce is made from scratch daily. This homemade sauce combines simple, fresh ingredients like butter, cream and parmesan cheese to make a rich topping to our fettuccine pasta. Then it is topped with tender, sliced grilled chicken. Sprinkle some parsley flakes on top and buon appetito! Olive Garden's classic Chicken Alfredo is an easy and delicious choice for dinner."
   })
+menu19_item1img = open("https://jwong-eats-seeds.s3.amazonaws.com/olivealfredo.webp")
+menu19_item1.photo.attach(io: menu19_item1img, filename: 'olivealfredo.webp')
 
 menu19_item2 = MenuItem.create({
     menu_id: 19,
@@ -1717,6 +1925,8 @@ menu19_item2 = MenuItem.create({
     item_price: "20.29",
     description: "Sautéed seasoned chicken, shrimp and spaghetti tossed in a creamy sauce with bacon and roasted red peppers."
   })
+menu19_item2img = open("https://jwong-eats-seeds.s3.amazonaws.com/olivecarbo.webp")
+menu19_item2.photo.attach(io: menu19_item2img, filename: 'olivecarbo.webp')
 
 menu19_item3 = MenuItem.create({
     menu_id: 19,
@@ -1724,6 +1934,8 @@ menu19_item3 = MenuItem.create({
     item_price: "17.99",
     description: "Two lightly fried parmesan-breaded chicken breasts are smothered with Olive Garden’s homemade marinara sauce and melted Italian cheeses. We serve our Chicken Parmigiana with a side of spaghetti for dinner. Try this classic pairing of Italian comfort foods that will leave you saying 'yum!'"
   })
+menu19_item3img = open("https://jwong-eats-seeds.s3.amazonaws.com/olivechickparm.webp")
+menu19_item3.photo.attach(io: menu19_item3img, filename: 'olivechickparm.webp')
 
 menu19_item4 = MenuItem.create({
     menu_id: 19,
@@ -1731,6 +1943,8 @@ menu19_item4 = MenuItem.create({
     item_price: "15.49",
     description: "The key to Olive Garden's rich and creamy alfredo sauce is its freshness. Our chefs make it in house throughout the day with parmesan cheese, heavy cream, and garlic. Served with fettuccine pasta, and even the pickiest eaters can agree this simple Fettuccine Alfredo meal is delightful! (V) Vegetarian option"
   })
+menu19_item4img = open("https://jwong-eats-seeds.s3.amazonaws.com/olivefettu.webp")
+menu19_item4.photo.attach(io: menu19_item4img, filename: 'olivefettu.webp')
 
 menu19_item5 = MenuItem.create({
     menu_id: 19,
@@ -1738,6 +1952,8 @@ menu19_item5 = MenuItem.create({
     item_price: "16.79",
     description: "Five shells filled with four-cheeses and topped with marinara, alfredo and toasted breadcrumbs."
   })
+menu19_item5img = open("https://jwong-eats-seeds.s3.amazonaws.com/oliveshells.webp")
+menu19_item5.photo.attach(io: menu19_item5img, filename: 'oliveshells.webp')
 
 menu19_item6 = MenuItem.create({
     menu_id: 19,
@@ -1745,6 +1961,8 @@ menu19_item6 = MenuItem.create({
     item_price: "20.79",
     description: "Filet grilled to perfection and topped with garlic herb butter. Served with parmesan garlic broccoli."
   })
+menu19_item6img = open("https://jwong-eats-seeds.s3.amazonaws.com/olivesalmon.webp")
+menu19_item6.photo.attach(io: menu19_item6img, filename: 'olivesalmon.webp')
 
 menu19_item7 = MenuItem.create({
     menu_id: 19,
@@ -1752,6 +1970,8 @@ menu19_item7 = MenuItem.create({
     item_price: "9.99",
     description: "Filled with a blend of indulgent Italian cheeses, topped with your choice of homemade marinara or meat sauce** and melted mozzarella. **Our meat sauce is made with pan-seared beef and Italian sausage."
   })
+menu19_item7img = open("https://jwong-eats-seeds.s3.amazonaws.com/oliveravioli.webp")
+menu19_item7.photo.attach(io: menu19_item7img, filename: 'oliveravioli.webp')
 
 menu19_item8 = MenuItem.create({
     menu_id: 19,
@@ -1759,6 +1979,8 @@ menu19_item8 = MenuItem.create({
     item_price: "8.29",
     description: "Ricotta cheesecake with a shortbread cookie crust, topped with strawberry sauce."
   })
+menu19_item8img = open("https://jwong-eats-seeds.s3.amazonaws.com/olivecheesecake.webp")
+menu19_item8.photo.attach(io: menu19_item8img, filename: 'olivecheesecake.webp')
 
 menu19_item9 = MenuItem.create({
     menu_id: 19,
@@ -1766,6 +1988,8 @@ menu19_item9 = MenuItem.create({
     item_price: "8.29",
     description: "The classic Italian dessert. A layer of creamy custard set atop espresso-soaked ladyfingers."
   })
+menu19_item9img = open("https://jwong-eats-seeds.s3.amazonaws.com/olivetiramisu.webp")
+menu19_item9.photo.attach(io: menu19_item9img, filename: 'olivetiramisu.webp')
 
 menu19_item10 = MenuItem.create({
     menu_id: 19,
@@ -1773,5 +1997,7 @@ menu19_item10 = MenuItem.create({
     item_price: "4.29",
     description: "Enjoy a freshly-baked, Olive Garden favorite."
   })
+menu19_item10img = open("https://jwong-eats-seeds.s3.amazonaws.com/olivebread.webp")
+menu19_item10.photo.attach(io: menu19_item10img, filename: 'olivebread.webp')
 
 puts("Done seeding!")
