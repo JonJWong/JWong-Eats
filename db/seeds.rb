@@ -1231,324 +1231,335 @@ menu14_items = MenuItem.create([
   },
 ])
 
-puts("Seeding ...")
-# menu15_items = MenuItem.create([
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-# ])
+puts("Seeding Starbucks...")
+# Starbucks
+# https://www.ubereats.com/store/starbucks-rt-22-center-island/gGp7vDqSTDSqMeO2zk7plg?diningMode=DELIVERY&ps=1
+menu15_items = MenuItem.create([
+  {
+    menu_id: 15,
+    item_name: "Chocolate Croissant",
+    item_price: "3.75",
+    description: "Two generous pieces of chocolate wrapped in a butter croissant with soft, flaky layers and a golden-brown crust. - VEGETARIAN"
+  },
+  {
+    menu_id: 15,
+    item_name: "Cheese Danish",
+    item_price: "3.75",
+    description: "Flaky, butter croissant dough with soft, warm cheese in the center. - VEGETARIAN"
+  },
+  {
+    menu_id: 15,
+    item_name: "White Chocolate Mocha",
+    item_price: "5.95",
+    description: "Our signature espresso meets white chocolate sauce and steamed milk, and then is finished off with sweetened whipped cream to create this supreme white chocolate delight."
+  },
+  {
+    menu_id: 15,
+    item_name: "Matcha Tea Latte",
+    item_price: "4.85",
+    description: "Smooth and creamy matcha sweetened just right and served with steamed milk. This favorite will transport your senses to pure green delight."
+  },
+  {
+    menu_id: 15,
+    item_name: "Java Chip Frappuccino® Blended Beverage",
+    item_price: "5.15",
+    description: "We blend mocha sauce and Frappuccino® chips with coffee, milk and ice, then top it off with whipped cream and a mocha drizzle to bring you endless java joy."
+  },
+  {
+    menu_id: 15,
+    item_name: "Pistachio Coffee Frappuccino® Blended Beverage",
+    item_price: "5.75",
+    description: "Sweet pistachio flavor blended with coffee, milk and ice, then finished with whipped cream and a salted brown-buttery topping—an icy-smooth, creamy delight to bring you into the new year."
+  },
+  {
+    menu_id: 15,
+    item_name: "Vanilla Sweet Cream Cold Brew",
+    item_price: "4.55",
+    description: "Our slow-steeped custom blend of Starbucks® Cold Brew coffee accented with vanilla and topped with a delicate float of house-made vanilla sweet cream that cascades throughout the cup. It's over-the-top and super-smooth."
+  },
+  {
+    menu_id: 15,
+    item_name: "Tomato & Mozzarella on Focaccia",
+    item_price: "6.85",
+    description: "Roasted tomatoes, mozzarella, spinach and basil pesto layered on toasted focaccia bread. - VEGETARIAN - HIGH-PROTEIN"
+  },
+  {
+    menu_id: 15,
+    item_name: "Chicken Caprese on Ciabatta",
+    item_price: "7.95",
+    description: "Slow-cooked chicken breast, mozzarella, balsamic-marinated tomatoes, basil pesto and spinach on soft ciabatta bread."
+  },
+  {
+    menu_id: 15,
+    item_name: "Strawberry Overnight Grains",
+    item_price: "4.35",
+    description: "Steel-cut oats, quinoa, chia seeds and coconutmilk combined with fresh strawberries and topped with shaved coconut and toasted almonds. - VEGAN"
+  },
+])
 
-puts("Seeding ...")
-# menu16_items = MenuItem.create([
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-# ])
+puts("Seeding Panda Express...")
+# Panda Express
+#nhttps://www.ubereats.com/store/panda-express-2704-us-22/pTOvVR1yRlizxzLH7_QlqA?diningMode=DELIVERY
+menu16_items = MenuItem.create([
+  {
+    menu_id: 16,
+    item_name: "Chow Mein",
+    item_price: "4.50",
+    description: ""
+  },
+  {
+    menu_id: 16,
+    item_name: "Fried Rice",
+    item_price: "4.50",
+    description: ""
+  },
+  {
+    menu_id: 16,
+    item_name: "The Original Orange Chicken",
+    item_price: "5.75",
+    description: ""
+  },
+  {
+    menu_id: 16,
+    item_name: "Honey Walnut Shrimp",
+    item_price: "7.35",
+    description: ""
+  },
+  {
+    menu_id: 16,
+    item_name: "Kung Pao Chicken",
+    item_price: "5.75",
+    description: ""
+  },
+  {
+    menu_id: 16,
+    item_name: "Veggie Spring Roll",
+    item_price: "2.50",
+    description: "2pcs"
+  },
+  {
+    menu_id: 16,
+    item_name: "Super Greens",
+    item_price: "4.50",
+    description: ""
+  },
+  {
+    menu_id: 16,
+    item_name: "Cream Cheese Rangoon",
+    item_price: "2.50",
+    description: "3pcs"
+  },
+  {
+    menu_id: 16,
+    item_name: "Seagrams Ginger Ale",
+    item_price: "2.65",
+    description: "20oz Bottle"
+  },
+  {
+    menu_id: 16,
+    item_name: "Honest Half Tea Half Lemonade",
+    item_price: "3.00",
+    description: "16oz Bottle"
+  },
+])
 
-puts("Seeding ...")
-# menu17_items = MenuItem.create([
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-# ])
+puts("Seeding TGI Fridays...")
+# TGI Fridays
+# https://www.ubereats.com/store/tgi-fridays-699-springfield-nj/tp2iG1oSRsiapFXk4BX0cw?diningMode=DELIVERY
+menu17_items = MenuItem.create([
+  {
+    menu_id: 17,
+    item_name: "Fridays Signature Whiskey-Glazed Burger",
+    item_price: "17.35",
+    description: "Signature Whiskey-Glaze, cheddar, lettuce, red onions, tomato, pickles and bacon."
+  },
+  {
+    menu_id: 17,
+    item_name: "Cajun Shrimp & Chicken Pasta",
+    item_price: "22.18",
+    description: "Sauteed shrimp, chicken, red bell peppers, spicy Cajun Alfredo sauce, Parmesan-Romano, fettuccine and a warm garlic breadstick."
+  },
+  {
+    menu_id: 17,
+    item_name: "CRISPY WHISKEY COMBO",
+    item_price: "27.93",
+    description: "Half Rack double-based pork Big Ribs with Whiskey-Glaze and crispy Fried Shrimp served with Whiskey-Glaze on the side. Served with mashed potatoes and lemon-butter broccoli."
+  },
+  {
+    menu_id: 17,
+    item_name: "NEW! Amazing Blazing Pound of Cheese Fries",
+    item_price: "16.43",
+    description: "Loaded with poblano queso, mixed cheese, bacon, pickled jalapenos, green onions and a side of BBQ Ranch."
+  },
+  {
+    menu_id: 17,
+    item_name: "Fried Mushrooms",
+    item_price: "15.74",
+    description: "Battered and golden-brown fried whole button mushrooms served with our tangy remix sauce. A true classic."
+  },
+  {
+    menu_id: 17,
+    item_name: "Blackened Cajun Chicken Sandwich",
+    item_price: "15.74",
+    description: "We brought back the OG blackened-to-order chicken on a toasted sub roll with cheddar, lettuce, tomato and mayo. Served with seasoned fries."
+  },
+  {
+    menu_id: 17,
+    item_name: "Spinach & Artichoke Dip Platter",
+    item_price: "25.17",
+    description: "Spinach, artichokes, Romano, sauteed onions & red bell peppers. Topped with Parmesan bread crumbs. Served with tortilla chips & salsa. Feeds 4-6"
+  },
+  {
+    menu_id: 17,
+    item_name: "Center-cut Sirloin topped with Whiskey Glaze",
+    item_price: "22.53",
+    description: "6 ounces of flavorful center-cut sirloin topped with Signature Whiskey-Glaze. Served with mashed potatoes and lemon-butter broccoli."
+  },
+  {
+    menu_id: 17,
+    item_name: "Half Rack of Fridays Big Ribs Whiskey-Glazed",
+    item_price: "22.41",
+    description: "Half-Rack of double-basted pork ribs basted in our Signature Whiskey-Glaze served with seasoned fries & coleslaw."
+  },
+  {
+    menu_id: 17,
+    item_name: "Fried Shrimp",
+    item_price: "21.84",
+    description: "12 Crispy shrimp served with coleslaw, seasoned fries and cocktail sauce."
+  },
+])
 
-puts("Seeding ...")
-# menu18_items = MenuItem.create([
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-# ])
+puts("Seeding Chipotle Mexican Grill...")
+# Chipotle
+# https://www.ubereats.com/store/chipotle-mexican-grill-6-main-st/R6wvkB6MRzWh4RbPK3iF0g?diningMode=DELIVERY
+menu18_items = MenuItem.create([
+  {
+    menu_id: 18,
+    item_name: "High Protein Bowl",
+    item_price: "15.80",
+    description: "White Rice, Chicken, Steak, Black Beans, Tomatillo-Red Chili Salsa, Cheese and Shredded Romaine Lettuce"
+  },
+  {
+    menu_id: 18,
+    item_name: "Keto Salad Bowl",
+    item_price: "13.50",
+    description: "Supergreens Lettuce Blend, Chicken, Fresh Tomato Salsa, Cheese and Guacamole"
+  },
+  {
+    menu_id: 18,
+    item_name: "Vegan Bowl",
+    item_price: "10.40",
+    description: "Sofritas, Brown Rice, Black Beans, Fresh Tomato Salsa, Roasted Chili-Corn Salsa, and Shredded Romaine Lettuce"
+  },
+  {
+    menu_id: 18,
+    item_name: "Burrito",
+    item_price: "10.40",
+    description: "
+    Your choice of freshly grilled meat or sofritas wrapped in a warm flour tortilla with rice, beans, or fajita veggies, and topped with guac, salsa, queso blanco, sour cream or cheese."
+  },
+  {
+    menu_id: 18,
+    item_name: "Three Tacos",
+    item_price: "10.40",
+    description: "3 Tacos"
+  },
+  {
+    menu_id: 18,
+    item_name: "Salad",
+    item_price: "10.40",
+    description: "Your choice of meat or sofritas served with our fresh supergreens lettuce blend made of Romaine, Baby Kale, and Baby Spinach. Add beans, queso blanco, salsa, guacamole, sour cream or cheese and top it off with our signature Chipotle-Honey Vinaigrette."
+  },
+  {
+    menu_id: 18,
+    item_name: "Chips & Guacamole",
+    item_price: "5.20",
+    description: ""
+  },
+  {
+    menu_id: 18,
+    item_name: "Chips & Queso Blanco",
+    item_price: "5.20",
+    description: ""
+  },
+  {
+    menu_id: 18,
+    item_name: "Chips & Roasted Chili-Corn Salsa",
+    item_price: "2.70",
+    description: ""
+  },
+  {
+    menu_id: 18,
+    item_name: "Chips & Fresh Tomato Salsa",
+    item_price: "2.70",
+    description: ""
+  },
+])
 
-puts("Seeding ...")
-# menu19_items = MenuItem.create([
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-# ])
+puts("Seeding Olive Garden...")
+# Olive Garden
+# https://www.olivegarden.com/menu/classic-entrees/?setRestaurant=1199&cmpid=br:og_ag:ie_ch:loc_ca:OGGMB_sn:gmb_gt:springfield-nj-1199_pl:menu_rd:1148
+menu19_items = MenuItem.create([
+  {
+    menu_id: 19,
+    item_name: "Chicken Alfredo",
+    item_price: "18.49",
+    description: "Not everyone knows our signature alfredo sauce is made from scratch daily. This homemade sauce combines simple, fresh ingredients like butter, cream and parmesan cheese to make a rich topping to our fettuccine pasta. Then it is topped with tender, sliced grilled chicken. Sprinkle some parsley flakes on top and buon appetito! Olive Garden's classic Chicken Alfredo is an easy and delicious choice for dinner."
+  },
+  {
+    menu_id: 19,
+    item_name: "Chicken and Shrimp Carbonara",
+    item_price: "20.29",
+    description: "Sautéed seasoned chicken, shrimp and spaghetti tossed in a creamy sauce with bacon and roasted red peppers."
+  },
+  {
+    menu_id: 19,
+    item_name: "Chicken Parmigiana",
+    item_price: "17.99",
+    description: "Two lightly fried parmesan-breaded chicken breasts are smothered with Olive Garden’s homemade marinara sauce and melted Italian cheeses. We serve our Chicken Parmigiana with a side of spaghetti for dinner. Try this classic pairing of Italian comfort foods that will leave you saying 'yum!'"
+  },
+  {
+    menu_id: 19,
+    item_name: "Fettucine Alfredo (V)",
+    item_price: "15.49",
+    description: "The key to Olive Garden's rich and creamy alfredo sauce is its freshness. Our chefs make it in house throughout the day with parmesan cheese, heavy cream, and garlic. Served with fettuccine pasta, and even the pickiest eaters can agree this simple Fettuccine Alfredo meal is delightful! (V) Vegetarian option"
+  },
+  {
+    menu_id: 19,
+    item_name: "Giant Cheese Stuffed Shells",
+    item_price: "16.79",
+    description: "Five shells filled with four-cheeses and topped with marinara, alfredo and toasted breadcrumbs."
+  },
+  {
+    menu_id: 19,
+    item_name: "Herb-Grilled Salmon",
+    item_price: "20.79",
+    description: "Filet grilled to perfection and topped with garlic herb butter. Served with parmesan garlic broccoli."
+  },
+  {
+    menu_id: 19,
+    item_name: "Cheese Ravioli",
+    item_price: "9.99",
+    description: "Filled with a blend of indulgent Italian cheeses, topped with your choice of homemade marinara or meat sauce** and melted mozzarella. **Our meat sauce is made with pan-seared beef and Italian sausage."
+  },
+  {
+    menu_id: 19,
+    item_name: "Sicilian Cheesecake with Strawberry Topping (V)",
+    item_price: "8.29",
+    description: "Ricotta cheesecake with a shortbread cookie crust, topped with strawberry sauce."
+  },
+  {
+    menu_id: 19,
+    item_name: "Tiramisu (V)",
+    item_price: "8.29",
+    description: "The classic Italian dessert. A layer of creamy custard set atop espresso-soaked ladyfingers."
+  },
+  {
+    menu_id: 19,
+    item_name: "Breadsticks",
+    item_price: "4.29",
+    description: "Enjoy a freshly-baked, Olive Garden favorite."
+  },
+])
 
 puts("Done seeding!")
