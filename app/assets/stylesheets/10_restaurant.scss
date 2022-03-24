@@ -21,15 +21,15 @@
 }
 
 .menu-items-wrapper {
-  width: 70vh;
   position: absolute;
-  padding-right: 20px;
+  width: 70%;
   right: 0;
+  padding-right: 40px;
 }
 
 .menu-items-list {
   display: grid;
-  grid-template-columns: repeat(1);
+  grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
 
@@ -43,7 +43,7 @@
 .menu-item-photo {
   justify-self: end;
   height: 150px;
-  width: 30vw;
+  width: 250px;
   background-color: black;
   grid-area: 1 / 2 / 4 / 3;
 }
