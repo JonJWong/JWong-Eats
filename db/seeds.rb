@@ -967,258 +967,271 @@ menu10_items = MenuItem.create([
   },
 ])
 
-# menu11_items = MenuItem.create([
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-# ])
+puts("Seeding White Castle...")
+# White Castle
+# https://www.ubereats.com/store/white-castle-2458-rt-22/ps_ruJhmRIilTnRVNM1dcA?diningMode=DELIVERY
+menu11_items = MenuItem.create([
+  {
+    menu_id: 11,
+    item_name: "THE ORIGINAL SLIDER",
+    item_price: "1.00",
+    description: "Our Original Slider, made with 100% beef, steam grilled on a bed of onions and served on a signature bun. NJ/NY topped with Ketchup."
+  },
+  {
+    menu_id: 11,
+    item_name: "CHEESE SLIDER CAL 170-180",
+    item_price: "1.15",
+    description: "Our Original Sliders, made with 100% beef, steamed grilled on a bed of onions and topped with a slice of American, Jalapeno, or Cheddar cheese."
+  },
+  {
+    menu_id: 11,
+    item_name: "DOUBLE CHEESE SLIDER CAL 300-330",
+    item_price: "2.29",
+    description: "Our Double Cheese Slider includes two 100% beef patties steam-grilled on a bed of onions plus two slices of melted cheese: American, Jalapeno, or Cheddar."
+  },
+  {
+    menu_id: 11,
+    item_name: "PANKO FISH SLIDER CAL 340-350",
+    item_price: "2.29",
+    description: "Tender, flaky Alaska Pollock with seasoned and crispy panko breading topped with American cheese."
+  },
+  {
+    menu_id: 11,
+    item_name: "CRAVE CASE WITH CHEESE CAL 5100-5400",
+    item_price: "34.50",
+    description: "30 Original Sliders, made with 100% beef, topped with cheese."
+  },
+  {
+    menu_id: 11,
+    item_name: "FRENCH FRIES CAL 330-350",
+    item_price: "2.29",
+    description: "Classic crinkle cut fries, crispy on the outside and tender on the inside."
+  },
+  {
+    menu_id: 11,
+    item_name: "MOZZARELLA CHEESE STICKS CAL 440",
+    item_price: "2.99",
+    description: "A classic – made with real mozzarella cheese and served with zesty marinara dipping sauce."
+  },
+  {
+    menu_id: 11,
+    item_name: "SHAKES CAL 460",
+    item_price: "2.99",
+    description: "SMALL VANILLA OR CHOCOLATE"
+  },
+  {
+    menu_id: 11,
+    item_name: "COCA-COLA Freestyle® Drinks",
+    item_price: "2.39",
+    description: "SMALL COCA-COLA DRINK"
+  },
+  {
+    menu_id: 11,
+    item_name: "MONSTER ENERGY CAL 210",
+    item_price: "2.99",
+    description: "Tear into a 16 ounce can of the meanest energy drink on the planet. Monster packs a powerful punch but has a smooth easy drinking flavor."
+  },
+])
 
-# menu12_items = MenuItem.create([
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-# ])
+puts("Seeding Red Lobster...")
+# Red Lobster
+# https://www.redlobster.com/menu
+menu12_items = MenuItem.create([
+  {
+    menu_id: 12,
+    item_name: "Lobster Lover's Dream®",
+    item_price: "43.99",
+    description: "A roasted rock lobster tail, butter-poached Maine lobster tail and lobster-and-shrimp linguini in a creamy lobster sauce. Served with melted butter, lemon and choice of two sides."
+  },
+  {
+    menu_id: 12,
+    item_name: "New! Date Night Feast For Two",
+    item_price: "71.99",
+    description: "Two butter-poached Maine lobster tails, two 7 oz. sirloins**, two jumbo grilled shrimp skewers, a shareable bacon mac & cheese in a creamy lobster cheese sauce and choice of sides."
+  },
+  {
+    menu_id: 12,
+    item_name: "Ultimate Surf & Turf**",
+    item_price: "43.49",
+    description: "A 6 oz. filet mignon**, butter-poached Maine lobster tail and bacon-wrapped sea scallops. Served with lemon and choice of two sides."
+  },
+  {
+    menu_id: 12,
+    item_name: "Shrimp Linguini Alfredo",
+    item_price: "16.99",
+    description: "Tender shrimp in a creamy garlic Alfredo sauce on a bed of linguini."
+  },
+  {
+    menu_id: 12,
+    item_name: "New England Clam Chowder",
+    item_price: "5.49",
+    description: ""
+  },
+  {
+    menu_id: 12,
+    item_name: "One Dozen Cheddar Bay Biscuits®",
+    item_price: "5.29",
+    description: "All entrées come with two warm, house-made Cheddar Bay Biscuits. Not enough? Order extra here."
+  },
+  {
+    menu_id: 12,
+    item_name: "Maine Lobster Tail - Classic",
+    item_price: "13.99",
+    description: "Served with lemon and melted butter."
+  },
+  {
+    menu_id: 12,
+    item_name: "Whole Desserts",
+    item_price: "24.99",
+    description: "Choose from Chocolate Wave, Vanilla Bean Cheesecake, Key Lime Pie or Triple-Chocolate Brownie."
+  },
+  {
+    menu_id: 12,
+    item_name: "Mtn Dew® 12 oz. Can",
+    item_price: "1.85",
+    description: ""
+  },
+  {
+    menu_id: 12,
+    item_name: "Pepsi® Family Pack (four 12 oz. cans)",
+    item_price: "5.00",
+    description: ""
+  },
+])
 
-# menu13_items = MenuItem.create([
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-# ])
+puts("Seeding Popeyes...")
+# Popeyes
+# https://www.ubereats.com/store/popeyes-union/Qj0PV4PbTduvftuVobYAng?diningMode=DELIVERY
+menu13_items = MenuItem.create([
+  {
+    menu_id: 13,
+    item_name: "Spicy Chicken Sandwich",
+    item_price: "6.09",
+    description: "Sandwich only"
+  },
+  {
+    menu_id: 13,
+    item_name: "Mixed Chicken (8 Pcs)",
+    item_price: "31.70",
+    description: "Includes one large signature side and four hot buttermilk biscuits."
+  },
+  {
+    menu_id: 13,
+    item_name: "8PC Nuggets A La Carte",
+    item_price: "4.86",
+    description: ""
+  },
+  {
+    menu_id: 13,
+    item_name: "Mixed Chicken (16 Pcs)",
+    item_price: "54.88",
+    description: "Includes three large signature sides and eight hot buttermilk biscuits."
+  },
+  {
+    menu_id: 13,
+    item_name: "Classic Flounder Fish Sandwich",
+    item_price: "5.39",
+    description: "Sandwich only"
+  },
+  {
+    menu_id: 13,
+    item_name: "Handcrafted Tenders (8 Pcs)",
+    item_price: "20.72",
+    description: "Include three sauces"
+  },
+  {
+    menu_id: 13,
+    item_name: "Spicy Flounder Fish Sandwich",
+    item_price: "5.39",
+    description: "Sandwich only"
+  },
+  {
+    menu_id: 13,
+    item_name: "Handcrafted Tenders (16 Pcs)",
+    item_price: "36.58",
+    description: "Include five sauces"
+  },
+  {
+    menu_id: 13,
+    item_name: "Mashed Potatoes with Cajun Gravy",
+    item_price: "4.62",
+    description: ""
+  },
+  {
+    menu_id: 13,
+    item_name: "Cajun Fries",
+    item_price: "4.62",
+    description: ""
+  },
+])
 
-# menu14_items = MenuItem.create([
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-#   {
-#     menu_id: ,
-#     item_name: "",
-#     item_price: "",
-#     description: ""
-#   },
-# ])
+puts("Seeding IHOP...")
+# IHOP
+# https://www.ubereats.com/store/ihop-2500-route-22-e/uFrP7aYmRuGfcnFYlcNy-g?diningMode=DELIVERY
+menu14_items = MenuItem.create([
+  {
+    menu_id: 14,
+    item_name: "Belgian Waffle",
+    item_price: "9.27",
+    description: "Our house-made golden-brown Belgian waffle topped with whipped real butter."
+  },
+  {
+    menu_id: 14,
+    item_name: "Hash Browns",
+    item_price: "4.51",
+    description: ""
+  },
+  {
+    menu_id: 14,
+    item_name: "Pork Sausage Links",
+    item_price: "4.51",
+    description: ""
+  },
+  {
+    menu_id: 14,
+    item_name: "Hickory-Smoked Bacon Strips",
+    item_price: "4.51",
+    description: ""
+  },
+  {
+    menu_id: 14,
+    item_name: "Original Gluten-Friendly Pancakes - (Full Stack)",
+    item_price: "10.89",
+    description: "As tasty as the original, just gluten-friendlier. Four fluffy gluten-friendly pancakes topped with whipped real butter."
+  },
+  {
+    menu_id: 14,
+    item_name: "Strawberry Banana Pancakes",
+    item_price: "11.24",
+    description: "Little known fact: Strawberries and Bananas are best friends. Four fluffy buttermilk pancakes filled with fresh banana slices. Topped with glazed strawberries & more banana slices."
+  },
+  {
+    menu_id: 14,
+    item_name: "New York Cheesecake Pancakes",
+    item_price: "11.47",
+    description: "We’ve combined a New York classic with our classic pancakes. Four fluffy buttermilk pancakes filled with cheesecake bites & topped with glazed strawberries."
+  },
+  {
+    menu_id: 14,
+    item_name: "Swedish Crepes",
+    item_price: "10.20",
+    description: "Four delicate crepes topped with sweet-tart lingonberries & lingonberry butter."
+  },
+  {
+    menu_id: 14,
+    item_name: "Big Steak Omelette",
+    item_price: "14.95",
+    description: "Your hunger won’t be at steak with this one. Our omelette stuffed with steak, hash browns, green peppers, onions, mushrooms, tomatoes & Cheddar cheese. Served with our salsa."
+  },
+  {
+    menu_id: 14,
+    item_name: "Chicken Fajita Omelette",
+    item_price: "13.91",
+    description: "The perfect fiesta in one package. Our omelette stuffed with grilled chicken breast with Poblano & red bell peppers, roasted onions & Jack & Cheddar cheese blend. Served with salsa, sour cream & grilled Serrano pepper."
+  },
+])
 
+puts("Seeding ...")
 # menu15_items = MenuItem.create([
 #   {
 #     menu_id: ,
@@ -1282,6 +1295,7 @@ menu10_items = MenuItem.create([
 #   },
 # ])
 
+puts("Seeding ...")
 # menu16_items = MenuItem.create([
 #   {
 #     menu_id: ,
@@ -1345,6 +1359,7 @@ menu10_items = MenuItem.create([
 #   },
 # ])
 
+puts("Seeding ...")
 # menu17_items = MenuItem.create([
 #   {
 #     menu_id: ,
@@ -1408,6 +1423,7 @@ menu10_items = MenuItem.create([
 #   },
 # ])
 
+puts("Seeding ...")
 # menu18_items = MenuItem.create([
 #   {
 #     menu_id: ,
@@ -1471,6 +1487,7 @@ menu10_items = MenuItem.create([
 #   },
 # ])
 
+puts("Seeding ...")
 # menu19_items = MenuItem.create([
 #   {
 #     menu_id: ,
