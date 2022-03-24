@@ -5,19 +5,7 @@ export const addZero = (num) => {
   return num
 }
 
-const parseHours = (time) => {
-  // split store hours into opening, closing
-  let timeSplit = time.split(" - ");
-  let openingHour = timeSplit[0];
-  let closingHour = timeSplit[1];
-
-  // check for AM/PM and adjust time accordingly for 24h
-  openingHour = checkPM(openingHour);
-  closingHour = checkPM(closingHour);
-
-  return [openingHour, closingHour]
-}
-
+// adjust time for 24hrs
 function checkPM(hour) {
   // if the time includes PM, add 12 hours
   if (hour.includes("PM")) {
@@ -36,11 +24,82 @@ function checkPM(hour) {
   return hour
 }
 
+
+// get the hours array from store open/close, adjust for 24hrs
+const parseHours = (time) => {
+  // split store hours into opening, closing
+  let timeSplit = time.split(" - ");
+  let openingHour = timeSplit[0];
+  let closingHour = timeSplit[1];
+
+  // check for AM/PM and adjust time accordingly for 24h
+  openingHour = checkPM(openingHour);
+  closingHour = checkPM(closingHour);
+
+  return [openingHour, closingHour]
+}
+
+// set the current time into an array comparable to the time from store hours
 function currentTimeArray() {
   const time = new Date();
   const [hours, minutes] = [time.getHours(), time.getMinutes()];
   return [hours, minutes]
 }
 
-const HOURS = parseHours("12:01AM - 11:59PM");
-const CURRENT_TIME = currentTimeArray();
+function getProperTime(time) {
+  let [hours, mins] = [time[0], time[1]];
+  let deno = "AM"
+
+  if (hours > 12) {
+    deno = "PM"
+    hours = hours - 12
+  }
+
+  if (hours === 12) {
+    deno = "PM"
+  }
+
+  if (hours === 0) {
+    hours = 12
+  }
+
+  if (mins === 0) {
+    mins = "00"
+  }
+  return `${hours}:${mins}${deno}`
+}
+
+export const timeDifferencePrompt = (storeHours) => {
+  // get current time
+  const currTime = currentTimeArray();
+  
+  // deconstruct store hours into workable two pieces
+  const [opening, closing] = parseHours(storeHours);
+
+  // TIME TO OPENING CONDITIONS
+  // if the current hour is earlier than opening hour
+  if (currTime[0] < opening[0]) {
+    return `Opens at: ${getProperTime(opening)}`
+  // OR if the current hour is greater than closing
+  } else if (currTime[0] > closing[0]) {
+    return `Opens at: ${getProperTime(opening)}`
+  // OR if the current hour is equal to opening, but the minutes are smaller
+  } else if ((currTime[0] === opening[0]) && (currTime[1] < opening[1])) {
+    return `Opens at: ${getProperTime(opening)}`
+  // OR if the current hour is equal to closing, but the minutes are greater
+  } else if ((currTime[0] === closing[0] && (currTime[1] > closing[1]))) {
+    return `Opens at ${getProperTime(opening)}`
+  }
+
+  // TIME TO CLOSING CONDITIONS
+  // if the current hour is greater than the opening hour, less than closing
+  if ((currTime[0] > opening[0]) && (currTime[0] < closing[0])) {
+    return `Closes at: ${getProperTime(closing)}`
+  // OR if the current hour is the same as opening, but minutes are greater
+  } else if ((currTime[0] === opening[0]) && (currTime[1] > opening[1])) {
+    return `Closes at: ${getProperTime(closing)}`
+  // OR if the current hour is the same as closing, but minutes are less
+  } else if ((currTime[0] === closing[0]) && (currTime[1] < closing[1])) {
+    return `Closes soon: ${getProperTime(closing)}`
+  }
+}
