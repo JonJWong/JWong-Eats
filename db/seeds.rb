@@ -43,11 +43,12 @@ puts("Reset!")
 puts ("Existing records destroyed!")
 
 puts("Seeding demo user...")
+
 demo_user = User.create({email: 'demo_user@email.com', password: 'password', first_name: 'John', last_name: 'Doe', address: '1 Wall Street'})
 
 puts("Seeding restaurants...")
-restaurants = Restaurant.create([
-  {
+
+restaurant1 = Restaurant.create({
     name: "Sofia's Italian Restaurant",
     address: "272 Morris Ave, Springfield NJ 07081",
     description: "",
@@ -55,8 +56,11 @@ restaurants = Restaurant.create([
     review_count: 407,
     price_rating: "$$",
     hours: "11:30AM - 9:00PM"
-  },
-  {
+  })
+restaurant1img = open("https://jwong-eats-seeds.s3.amazonaws.com/sofiabanner.jpeg")
+restaurant1.photo.attach(io: restaurant1img, filename: 'sofiabanner.jpeg')
+
+restaurant2 = Restaurant.create({
     name: "SIGNATURZ SPORTS BAR",
     address: "2586 Morris Ave, Union NJ 07083",
     description: "",
@@ -64,8 +68,9 @@ restaurants = Restaurant.create([
     review_count: 258,
     price_rating: "$",
     hours: "11:00AM - 2:00AM"
-  },
-  {
+  })
+
+restaurant3 = Restaurant.create({
     name: "Cafe Z",
     address: "2333 Morris Ave, Union, NJ 07083",
     description: "",
@@ -73,8 +78,11 @@ restaurants = Restaurant.create([
     review_count: 290,
     price_rating: "$$",
     hours: "11:30AM - 10:00PM"
-  },
-  {
+  })
+restaurant3img = open("https://jwong-eats-seeds.s3.amazonaws.com/zbanner.webp")
+restaurant3.photo.attach(io: restaurant3img, filename: 'zbanner.webp')
+
+restaurant4 = Restaurant.create({
     name: "The Red Cadillac",
     address: "2258 Morris Ave, Union, NJ 07083",
     description: "",
@@ -82,8 +90,9 @@ restaurants = Restaurant.create([
     review_count: 967,
     price_rating: "$$",
     hours: "2:00PM - 10:00PM"
-  },
-  {
+  })
+
+restaurant5 = Restaurant.create({
     name: "Cozy Corner Deli and Caterers",
     address: "558 Rahway Ave, Union, NJ 07083",
     description: "",
@@ -91,8 +100,11 @@ restaurants = Restaurant.create([
     review_count: 238,
     price_rating: "$",
     hours: "6:00AM - 4:00PM"
-  },
-  {
+  })
+restaurant5img = open("https://jwong-eats-seeds.s3.amazonaws.com/cozybanner.jpg")
+restaurant5.photo.attach(io: restaurant5img, filename: 'cozybanner.jpg')
+
+restaurant6 = Restaurant.create({
     name: "Chick Fil-A",
     address: "2319 US-22 W, Union, NJ 07083",
     description: "",
@@ -100,8 +112,11 @@ restaurants = Restaurant.create([
     review_count: 4577,
     price_rating: "$",
     hours: "6:30AM - 10:00PM"
-  },
-  {
+  })
+restaurant6img = open("https://jwong-eats-seeds.s3.amazonaws.com/cfabanner.jpeg")
+restaurant6.photo.attach(io: restaurant6img, filename: 'cfabanner.jpeg')
+
+restaurant7 = Restaurant.create({
     name: "McDonald's",
     address: "2404 US-22, Union, NJ 07083",
     description: "",
@@ -109,8 +124,11 @@ restaurants = Restaurant.create([
     review_count: 1447,
     price_rating: "$",
     hours: "12:01AM - 12-00AM"
-  },
-  {
+  })
+restaurant7img = open("https://jwong-eats-seeds.s3.amazonaws.com/mcdbanner.jpeg")
+restaurant7.photo.attach(io: restaurant7img, filename: 'mcdbanner.jpeg')
+
+restaurant8 = Restaurant.create({
     name: "The Halal Guys",
     address: "2317 US-22 Union, NJ 07083",
     description: "",
@@ -118,8 +136,11 @@ restaurants = Restaurant.create([
     review_count: 1486,
     price_rating: "%",
     hours: "11:00AM - 11:00PM"
-  },
-  {
+  })
+restaurant8img = open("https://jwong-eats-seeds.s3.amazonaws.com/halalbanner.jpeg")
+restaurant8.photo.attach(io: restaurant8img, filename: 'halalbanner.jpeg')
+
+restaurant9 = Restaurant.create({
     name: "Subway",
     address: "2497 US-22 W, Union, NJ 07083",
     description: "",
@@ -127,8 +148,11 @@ restaurants = Restaurant.create([
     review_count: 200,
     price_rating: "$",
     hours: "8:00AM - 9:00PM" 
-  },
-  {
+  })
+restaurant9img = open("https://jwong-eats-seeds.s3.amazonaws.com/subwaybanner.jpeg")
+restaurant9.photo.attach(io: restaurant9img, filename: 'subwaybanner.jpeg')
+
+restaurant10 = Restaurant.create({
     name: "Union Plaza Diner",
     address: "2466 US-22, Union, NJ 07083",
     description: "",
@@ -136,8 +160,11 @@ restaurants = Restaurant.create([
     review_count: 1650,
     price_rating: "$$",
     hours: "8:00AM - 10:00PM"
-  },
-  {
+  })
+restaurant10img = open("https://jwong-eats-seeds.s3.amazonaws.com/unionbanner.jpeg")
+restaurant10.photo.attach(io: restaurant10img, filename: 'unionbanner.jpeg')
+
+restaurant11 = Restaurant.create({
     name: "White Castle",
     address: "2458 US-22, Union, NJ 07083",
     description: "",
@@ -145,8 +172,11 @@ restaurants = Restaurant.create([
     review_count: 1072,
     price_rating: "$",
     hours: "9:00AM - 3:00AM"
-  },
-  {
+  })
+restaurant11img = open("https://jwong-eats-seeds.s3.amazonaws.com/wcbanner.jpeg")
+restaurant11.photo.attach(io: restaurant11img, filename: 'wcbanner.jpeg')
+
+restaurant12 = Restaurant.create({
     name: "Red Lobster",
     address: "2520 US-22, Union, NJ 07083",
     description: "",
@@ -154,8 +184,11 @@ restaurants = Restaurant.create([
     review_count: 2873,
     price_rating: "$$",
     hours: "11:00AM - 10:00PM"
-  },
-  {
+  })
+restaurant12img = open("https://jwong-eats-seeds.s3.amazonaws.com/redbanner.jpg")
+restaurant12.photo.attach(io: restaurant12img, filename: 'redbanner.jpg')
+
+restaurant13 = Restaurant.create({
     name: "Popeyes Louisiana Kitchen",
     address: "2568 US-22 East, Union, NJ 07081",
     description: "",
@@ -163,8 +196,11 @@ restaurants = Restaurant.create([
     review_count: 1074,
     price_rating: "$",
     hours: "10:30AM - 11:00PM"
-  },
-  {
+  })
+restaurant13img = open("https://jwong-eats-seeds.s3.amazonaws.com/popbanner.jpeg")
+restaurant13.photo.attach(io: restaurant13img, filename: 'popbanner.jpeg')
+
+restaurant14 = Restaurant.create({
     name: "IHOP",
     address: "2500 US-22 E, Union, NJ 07083",
     description: "",
@@ -172,8 +208,11 @@ restaurants = Restaurant.create([
     review_count: 1684,
     price_rating: "$",
     hours: "7:00AM - 10:00PM"
-  },
-  {
+  })
+restaurant14img = open("https://jwong-eats-seeds.s3.amazonaws.com/ihopbanner.jpeg")
+restaurant14.photo.attach(io: restaurant14img, filename: 'ihopbanner.jpeg')
+
+restaurant15 = Restaurant.create({
     name: "Starbucks",
     address: "2235 Springfield Ave, Union, NJ 07088",
     description: "",
@@ -181,8 +220,11 @@ restaurants = Restaurant.create([
     review_count: 825,
     price_rating: "$$",
     hours: "8:00AM - 9:00PM"
-  },
-  {
+  })
+restaurant15img = open("https://jwong-eats-seeds.s3.amazonaws.com/sbuxbanner.jpeg")
+restaurant15.photo.attach(io: restaurant15img, filename: 'sbuxbanner.jpeg')
+
+restaurant16 = Restaurant.create({
     name: "Panda Express",
     address: "2704 US-22, Union, NJ 07083",
     description: "",
@@ -190,8 +232,11 @@ restaurants = Restaurant.create([
     review_count: 779,
     price_rating: "$",
     hours: "11:00AM - 7:00PM"
-  },
-  {
+  })
+restaurant16img = open("https://jwong-eats-seeds.s3.amazonaws.com/pandabanner.jpeg")
+restaurant16.photo.attach(io: restaurant16img, filename: 'pandabanner.jpeg')
+
+restaurant17 = Restaurant.create({
     name: "TGI Fridays",
     address: "40 US-22, Springfield, NJ 07081",
     description: "",
@@ -199,8 +244,11 @@ restaurants = Restaurant.create([
     review_count: 1657,
     price_rating: "$$",
     hours: "11:00AM - 1:00AM"
-  },
-  {
+  })
+restaurant17img = open("https://jwong-eats-seeds.s3.amazonaws.com/tgifbanner.jpeg")
+restaurant17.photo.attach(io: restaurant17img, filename: 'tgifbanner.jpeg')
+
+restaurant18 = Restaurant.create({
     name: "Chipotle Mexican Grill",
     address: "101 US-22, Springfield, NJ 07081",
     description: "",
@@ -208,8 +256,11 @@ restaurants = Restaurant.create([
     review_count: 1394,
     price_rating: "$",
     hours: "10:45AM - 10:00PM"
-  },
-  {
+  })
+restaurant18img = open("https://jwong-eats-seeds.s3.amazonaws.com/chipotlebanner.jpeg")
+restaurant18.photo.attach(io: restaurant18img, filename: 'chipotlebanner.jpeg')
+
+restaurant19 = Restaurant.create({
     name: "Olive Garden",
     address: "265 US-22, Springfield, NJ 07081",
     description: "",
@@ -217,89 +268,105 @@ restaurants = Restaurant.create([
     review_count: 2334,
     price_rating: "$$",
     hours: "11:00AM - 10:00PM"
-  }
-])
-
+  })
+  
 puts("Seeding Menus...")
-menus = Menu.create([
-  {
+
+menu1 = Menu.create({
     restaurant_name: "Sofia's Italian Restaurant",
     restaurant_id: 1
-  },
-  {
+  })
+
+menu2 = Menu.create({
     restaurant_name: "SIGNATURZ SPORTS BAR",
     restaurant_id: 2
-  },
-  {
+  })
+
+menu3 = Menu.create({
     restaurant_name: "Cafe Z",
     restaurant_id: 3
-  },
-  {
+  })
+
+menu4 = Menu.create({
     restaurant_name: "The Red Cadillac",
     restaurant_id: 4
-  },
-  {
+  })
+
+menu5 = Menu.create({
     restaurant_name: "Cozy Corner Deli and Caterers",
     restaurant_id: 5
-  },
-  {
+  })
+
+menu6 = Menu.create({
     restaurant_name: "Chick Fil-A",
     restaurant_id: 6
-  },
-  {
+  })
+
+menu7 = Menu.create({
     restaurant_name: "McDonald's",
     restaurant_id: 7
-  },
-  {
+  })
+
+menu8 = Menu.create({
     restaurant_name: "The Halal Guys",
     restaurant_id: 8
-  },
-  {
+  })
+
+menu9 = Menu.create({
     restaurant_name: "Subway",
     restaurant_id: 9
-  },
-  {
+  })
+
+menu10 = Menu.create({
     restaurant_name: "Union Plaza Diner",
     restaurant_id: 10
-  },
-  {
+  })
+
+menu11 = Menu.create({
     restaurant_name: "White Castle",
     restaurant_id: 11
-  },
-  {
+  })
+
+menu12 = Menu.create({
     restaurant_name: "Red Lobster",
     restaurant_id: 12
-  },
-  {
+  })
+
+menu13 = Menu.create({
     restaurant_name: "Popeyes Louisiana Kitchen",
     restaurant_id: 13
-  },
-  {
+  })
+
+menu14 = Menu.create({
     restaurant_name: "IHOP",
     restaurant_id: 14
-  },
-  {
+  })
+
+menu15 = Menu.create({
     restaurant_name: "Starbucks",
     restaurant_id: 15
-  },
-  {
+  })
+
+menu16 = Menu.create({
     restaurant_name: "Panda Express",
     restaurant_id: 16
-  },
-  {
+  })
+
+menu17 = Menu.create({
     restaurant_name: "TGI Fridays",
     restaurant_id: 17
-  },
-  {
+  })
+
+menu18 = Menu.create({
     restaurant_name: "Chipotle Mexican Grill",
     restaurant_id: 18
-  },
-  {
+  })
+
+menu19 = Menu.create({
     restaurant_name: "Olive Garden",
     restaurant_id: 19
-  }
-])
-
+  })
+  
 puts("Seeding MenuItems...")
 # Sofia's
 # https://sofiasitalianrestaurant.com/dinner-menu
@@ -310,6 +377,8 @@ menu1_item1 = MenuItem.create({
     item_price: "17.95",
     description: "Fresh tomatoes and a touch of cream"
   })
+menu1_item1img = open("https://jwong-eats-seeds.s3.amazonaws.com/sofiavodka.jpeg")
+menu1_item1.photo.attach(io: menu1_item1img, filename: 'sofiavodka.jpeg')
 
 menu1_item2 = MenuItem.create({
     menu_id: 1,
@@ -352,6 +421,8 @@ menu1_item7 = MenuItem.create({
     item_price: "24.95",
     description: "Sauteed with tomatoes, capers, gaeta olives, and anchovies & garlic"
   })
+menu1_item7img = open("https://jwong-eats-seeds.s3.amazonaws.com/sofiasalmon.jpeg")
+menu1_item7.photo.attach(io: menu1_item7img, filename: 'sofiasalmon.jpeg')
 
 menu1_item8 = MenuItem.create({
     menu_id: 1,
@@ -373,12 +444,6 @@ menu1_item10 = MenuItem.create({
     item_price: "3.00",
     description: "Coke, Diet Coke, Sprite, Seltzer"
   })
-
-puts("Sofia's seeded!")
-
-# puts("Attaching images...")
-
-# puts("Images attached!")
 
 puts("Seeding SIGNATURZ...")
 # SIGNATURZ
@@ -925,8 +990,8 @@ menu8_item5 = MenuItem.create({
     item_price: "9.99",
     description: "Served with pita, lettuce, tomatoes and choice of toppings. Served with one white sauce and one red sauce."
   })
-menu8_item8img = open("https://jwong-eats-seeds.s3.amazonaws.com/halalfalafelsand.jpeg")
-menu8_item8.photo.attach(io: menu8_item8img, filename: 'halalfalafelsand.jpeg')
+menu8_item5img = open("https://jwong-eats-seeds.s3.amazonaws.com/halalfalafelsand.jpeg")
+menu8_item5.photo.attach(io: menu8_item5img, filename: 'halalfalafelsand.jpeg')
 
 menu8_item6 = MenuItem.create({
     menu_id: 8,
@@ -1288,8 +1353,8 @@ menu12_item6 = MenuItem.create({
     item_price: "5.29",
     description: "All entrées come with two warm, house-made Cheddar Bay Biscuits. Not enough? Order extra here."
   })
-menu12_item6img = open("https://jwong-eats-seeds.s3.amazonaws.com/redbiscuit.jpeg")
-menu12_item6.photo.attach(io: menu12_item6img, filename: 'redbiscuit.jpeg')
+menu12_item6img = open("https://jwong-eats-seeds.s3.amazonaws.com/redbiscuit.jpg")
+menu12_item6.photo.attach(io: menu12_item6img, filename: 'redbiscuit.jpg')
 
 menu12_item7 = MenuItem.create({
     menu_id: 12,
@@ -1306,8 +1371,8 @@ menu12_item8 = MenuItem.create({
     item_price: "24.99",
     description: "Choose from Chocolate Wave, Vanilla Bean Cheesecake, Key Lime Pie or Triple-Chocolate Brownie."
   })
-menu12_item8img = open("https://jwong-eats-seeds.s3.amazonaws.com/reddessert.jpeg")
-menu12_item8.photo.attach(io: menu12_item8img, filename: 'reddessert.jpeg')
+menu12_item8img = open("https://jwong-eats-seeds.s3.amazonaws.com/reddessert.jpg")
+menu12_item8.photo.attach(io: menu12_item8img, filename: 'reddessert.jpg')
 
 menu12_item9 = MenuItem.create({
     menu_id: 12,
@@ -1400,8 +1465,8 @@ menu13_item8 = MenuItem.create({
     item_price: "36.58",
     description: "Include five sauces"
   })
-menu13_item1img = open("https://jwong-eats-seeds.s3.amazonaws.com/popspicychick.jpeg")
-menu13_item1.photo.attach(io: menu13_item1img, filename: 'popspicychick.jpeg')
+menu13_item8img = open("https://jwong-eats-seeds.s3.amazonaws.com/pop16tender.jpeg")
+menu13_item8.photo.attach(io: menu13_item8img, filename: 'pop16tender.jpeg')
 
 menu13_item9 = MenuItem.create({
     menu_id: 13,
@@ -1997,7 +2062,7 @@ menu19_item10 = MenuItem.create({
     item_price: "4.29",
     description: "Enjoy a freshly-baked, Olive Garden favorite."
   })
-menu19_item10img = open("https://jwong-eats-seeds.s3.amazonaws.com/olivebread.webp")
-menu19_item10.photo.attach(io: menu19_item10img, filename: 'olivebread.webp')
+menu19_item10img = open("https://jwong-eats-seeds.s3.amazonaws.com/olivebread.jpeg")
+menu19_item10.photo.attach(io: menu19_item10img, filename: 'olivebread.jpeg')
 
 puts("Done seeding!")

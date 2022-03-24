@@ -36,7 +36,7 @@ class Delivery extends React.Component {
                   key={id}
                   to={`/restaurants/${id}`}>
                 <div className="delivery-restaurant-container">
-                    <div className="delivery-restaurant-image"></div>
+                    <img src={restaurants[id].photoUrl} className="delivery-restaurant-image"></img>
                     <div className="delivery-restaurant-bottom">
                       <h5 className="delivery-restaurant-name">
                         {restaurants[id].name}

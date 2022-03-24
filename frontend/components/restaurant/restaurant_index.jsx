@@ -33,6 +33,9 @@ class RestaurantIndex extends React.Component {
         </div>
       )
     }
+
+    console.log(this.props);
+
     const { restaurant } = this.props;
     const menu = restaurant.menu;
     const timePrompt = Util.timeDifferencePrompt(restaurant.hours)
@@ -54,7 +57,7 @@ class RestaurantIndex extends React.Component {
               return (
                 <div className="menu-item-container" key={id}>
                   <div className="menu-item-info">
-                    <div className="menu-item-photo"></div>
+                    <img src={item.photoUrl} className="menu-item-photo"></img>
                     <div className="menu-item-name">{item.item_name}</div>
                     <div className="menu-item-price">${item.item_price}</div>
                     <div className="menu-item-description">{item.description}</div>

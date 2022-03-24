@@ -22,5 +22,7 @@ class Restaurant < ApplicationRecord
   has_many :menu_items,
     through: :menu,
     source: :menu_items
+
+  has_one_attached :photo
     
 end
