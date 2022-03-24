@@ -3,6 +3,7 @@
 }
 
 .restaurant-banner {
+  min-height: 120px;
   height: 13vh;
   background-color: brown;
 }
@@ -62,6 +63,7 @@
 }
 
 .menu-item-price {
+  font-family: "Uber Regular";
   font-size: 14px;
   grid-area: 2 / 1 / 3 / 2;
 }
