@@ -94,12 +94,12 @@ export const timeDifferencePrompt = (storeHours) => {
   // TIME TO CLOSING CONDITIONS
   // if the current hour is greater than the opening hour, less than closing
   if ((currTime[0] > opening[0]) && (currTime[0] < closing[0])) {
-    return `Closes at: ${getProperTime(closing)}`
+    return `Open until: ${getProperTime(closing)}`
   // OR if the current hour is the same as opening, but minutes are greater
   } else if ((currTime[0] === opening[0]) && (currTime[1] > opening[1])) {
-    return `Closes at: ${getProperTime(closing)}`
+    return `Open until: ${getProperTime(closing)}`
   // OR if the current hour is the same as closing, but minutes are less
   } else if ((currTime[0] === closing[0]) && (currTime[1] < closing[1])) {
-    return `Closes soon: ${getProperTime(closing)}`
+    return `Closing soon: ${getProperTime(closing)}`
   }
 }

@@ -77,3 +77,27 @@ input {
 input:focus {
 	outline: none;
 }
+
+@font-face {
+  font-family: "Uber Medium";
+  src: asset-url("UberMoveTextMedium.otf");
+}
+
+@font-face {
+  font-family: "Uber Bold";
+  src: asset-url("UberMoveTextBold.otf");
+}
+
+@font-face {
+  font-family: "Uber Light";
+  src: asset-url("UberMoveTextLight.otf");
+}
+
+@font-face {
+  font-family: "Uber Regular";
+  src: asset-url("UberMoveTextRegular.otf");
+}
+
+* {
+  font-family: "Uber Medium";
+}
