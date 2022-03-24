@@ -8,45 +8,39 @@
 
 puts("Destroying all existing records...")
 
-sleep(0.1);
 puts ("Destroying Users...")
 User.destroy_all
 puts("Users destroyed")
 
-sleep(0.2)
 puts("Destroying Restaurants...")
 Restaurant.destroy_all
 puts("Restaurants destroyed")
 
-sleep(0.2)
 puts("Destroying Menus...")
 Menu.destroy_all
 puts("Menus Destroyed")
 
-sleep(0.2)
 puts("Destroying MenuItems...")
 MenuItem.destroy_all
 puts("MenuItems Destroyed")
 
-sleep(0.1)
 puts("Resetting primary key sequence for: Users...")
 ApplicationRecord.connection.reset_pk_sequence!('users')
 puts("Reset!")
 
-sleep(0.1)
 puts("Resetting primary key sequence for: Restaurants...")
 ApplicationRecord.connection.reset_pk_sequence!('restaurants')
 puts("Reset!")
 
-sleep(0.1)
 puts("Resetting primary key sequence for: Menus...")
 ApplicationRecord.connection.reset_pk_sequence!('menus')
 puts("Reset!")
 
-sleep(0.1)
 puts("Resetting primary key sequence for: MenuItems...")
 ApplicationRecord.connection.reset_pk_sequence!('menu_items')
 puts("Reset!")
+
+puts ("Existing records destroyed!")
 
 puts("Seeding demo user...")
 demo_user = User.create({email: 'demo_user@email.com', password: 'password', first_name: 'John', last_name: 'Doe', address: '1 Wall Street'})
