@@ -36,7 +36,6 @@ class RestaurantIndex extends React.Component {
 
     
     const { restaurant } = this.props;
-    console.log(restaurant)
     const menu = restaurant.menu;
     const timePrompt = Util.timeDifferencePrompt(restaurant.hours)
 

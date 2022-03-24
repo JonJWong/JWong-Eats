@@ -45,7 +45,7 @@ class Delivery extends React.Component {
                         Price: {restaurants[id].price_rating}
                       </div>
                       <div className="delivery-restaurant-hours">
-                        Hours: {restaurants[id].hours}
+                        {Util.timeDifferencePrompt(restaurants[id].hours)}
                       </div>
                       <div className="delivery-restaurant-rating">
                         {Util.addZero(restaurants[id].rating)}

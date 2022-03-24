@@ -123,7 +123,7 @@ restaurant7 = Restaurant.create({
     rating: 3.7,
     review_count: 1447,
     price_rating: "$",
-    hours: "12:01AM - 12-00AM"
+    hours: "12:00AM - 11:59PM"
   })
 restaurant7img = open("https://jwong-eats-seeds.s3.amazonaws.com/mcdbanner.jpeg")
 restaurant7.photo.attach(io: restaurant7img, filename: 'mcdbanner.jpeg')
