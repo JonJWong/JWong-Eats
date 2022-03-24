@@ -4,7 +4,7 @@ import { fetchRestaurant, fetchRestaurants } from '../../actions/restaurant_acti
 
 const mapStateToProps = (state) => {
   return {
-    restaurants: Object.values(state.entities.restaurants)
+    restaurants: state.entities.restaurants
   }
 }
 

@@ -1,12 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
-
-function addZero(num) {
-  if (num % 1 === 0) {
-    return `${num}` + `.0`
-  }
-  return num
-}
+import * as Util from "../../util/util";
 
 class Delivery extends React.Component {
   constructor(props) {
@@ -54,7 +48,7 @@ class Delivery extends React.Component {
                         Hours: {restaurants[id].hours}
                       </div>
                       <div className="delivery-restaurant-rating">
-                        {addZero(restaurants[id].rating)}
+                        {Util.addZero(restaurants[id].rating)}
                       </div>
                     </div>
                 </div>
