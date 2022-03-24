@@ -59,7 +59,11 @@
 }
 
 .delivery-restaurant-image {
+  min-width: 200px;
+  min-height: 100px;
   width: 100%;
+  object-fit: cover;
+  overflow: hidden;
   height: 70%;
   background-color: aqua;
 }
@@ -67,8 +71,8 @@
 .delivery-restaurant-bottom {
   display: grid;
   height: 30%;
-  grid-template-columns: repeat(3);
-  grid-template-rows: repeat(2);
+  grid-template-columns: repeat(3 auto);
+  grid-template-rows: repeat(2 auto);
   grid-column-gap: 10px;
 }
 
@@ -93,6 +97,7 @@
 }
 
 .delivery-restaurant-price {
+  justify-self: start;
   font-family: "Uber Light";
   font-size: 14px;
   grid-area: 2 / 1 / 3 / 2;

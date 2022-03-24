@@ -72,8 +72,8 @@
 
 .restaurant-bottom {
   display: grid;
-  grid-template-columns: 4fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(4 auto);
+  grid-template-rows: repeat(2 auto);
   grid-column-gap: 10px;
 }
 
@@ -81,10 +81,10 @@
 .restaurant-rating, .restaurant-reviewcount {
   justify-self: center;
   align-self: center;
-  margin-top: -5px;
 }
 
 .restaurant-image {
+  object-fit: cover;
   min-width: 220px;
   height: 200px;
   width: 20vw;
