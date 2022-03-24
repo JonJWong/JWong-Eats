@@ -53,7 +53,8 @@
 }
 
 .delivery-restaurant-container {
-  min-width: 230px;
+  // max-width: 350px;
+  // min-width: 230px;
   height: 200px;
 }
 
@@ -86,11 +87,13 @@
 }
 
 .delivery-restaurant-hours {
+  font-family: "Uber Light";
   font-size: 14px;
   grid-area: 2 / 2 / 3 / 3;
 }
 
 .delivery-restaurant-price {
+  font-family: "Uber Light";
   font-size: 14px;
   grid-area: 2 / 1 / 3 / 2;
 }
