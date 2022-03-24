@@ -33,6 +33,14 @@
   gap: 30px;
 }
 
+.menu-item-container {
+  padding: 5px;
+}
+
+.menu-item-container:hover {
+  box-shadow: 0px 0px 10px 10px rgba(117, 117, 117, 0.1)
+}
+
 .menu-item-info {
   width: 100%;
   display: grid;
