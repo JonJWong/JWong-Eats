@@ -461,6 +461,8 @@ menu3_item1 = MenuItem.create({
     item_price: "9.95",
     description: "BBQ, Hot, Mild or Garlic"
   })
+menu3_item1img = open("https://jwong-eats-seeds.s3.amazonaws.com/zwings.jpeg")
+menu3_item1.photo.attach(io: menu3_item1img, filename: 'zwings.jpeg')
 
 menu3_item2 = MenuItem.create({
     menu_id: 3,
@@ -468,6 +470,8 @@ menu3_item2 = MenuItem.create({
     item_price: "10.95",
     description: "Calamari rings sauteed with olive oil, garlic, sherry wine, basil, and tomato marinara"
   })
+menu3_item2img = open("https://jwong-eats-seeds.s3.amazonaws.com/zcalamari.jpeg")
+menu3_item2.photo.attach(io: menu3_item2img, filename: 'zcalamari.jpeg')
 
 menu3_item3 = MenuItem.create({
     menu_id: 3,
@@ -475,6 +479,8 @@ menu3_item3 = MenuItem.create({
     item_price: "10.95",
     description: "Large meatball filled with seasoned ricotta cheese and topped with a spicy marinara sauce"
   })
+menu3_item3img = open("https://jwong-eats-seeds.s3.amazonaws.com/zmeatball.jpeg")
+menu3_item3.photo.attach(io: menu3_item3img, filename: 'zmeatball.jpeg')
 
 menu3_item4 = MenuItem.create({
     menu_id: 3,
@@ -482,6 +488,8 @@ menu3_item4 = MenuItem.create({
     item_price: "9.95",
     description: "Rock shrimp in olive oil and butter"
   })
+menu3_item4img = open("https://jwong-eats-seeds.s3.amazonaws.com/zshrimp.jpeg")
+menu3_item4.photo.attach(io: menu3_item4img, filename: 'zshrimp.jpeg')
 
 menu3_item5 = MenuItem.create({
     menu_id: 3,
@@ -489,6 +497,8 @@ menu3_item5 = MenuItem.create({
     item_price: "7.95",
     description: "Thinly sliced eggplant, egg-battered, sauteed and topped with mozzarerlla and marinara"
   })
+menu3_item5img = open("https://jwong-eats-seeds.s3.amazonaws.com/zeggparm.jpeg")
+menu3_item5.photo.attach(io: menu3_item5img, filename: 'zeggparm.jpeg')
 
 menu3_item6 = MenuItem.create({
     menu_id: 3,
@@ -621,6 +631,8 @@ menu5_item3= MenuItem.create({
     item_price: "7.20",
     description: "With sweet peppers, mushrooms & onions on Italian bread"
   })
+menu5_item3img = open("https://jwong-eats-seeds.s3.amazonaws.com/cozycheesesteak.jpeg")
+menu5_item3.photo.attach(io: menu5_item3img, filename: 'cozycheesesteak.jpeg')
 
 menu5_item4 = MenuItem.create({
     menu_id: 5,
@@ -628,6 +640,8 @@ menu5_item4 = MenuItem.create({
     item_price: "5.70",
     description: "Bacon lettuce & tomato"
   })
+menu5_item4img = open("https://jwong-eats-seeds.s3.amazonaws.com/cozyblt.jpeg")
+menu5_item4.photo.attach(io: menu5_item4img, filename: 'cozyblt.jpeg')
 
 menu5_item5 = MenuItem.create({
     menu_id: 5,
@@ -635,6 +649,8 @@ menu5_item5 = MenuItem.create({
     item_price: "5.20",
     description: "6 oz. jumbo burger with cheese"
   })
+menu5_item5img = open("https://jwong-eats-seeds.s3.amazonaws.com/cozyburger.jpeg")
+menu5_item5.photo.attach(io: menu5_item5img, filename: 'cozyburger.jpeg')
 
 menu5_item6 = MenuItem.create({
     menu_id: 5,
@@ -642,6 +658,8 @@ menu5_item6 = MenuItem.create({
     item_price: "6.20",
     description: "With avocado, grilled onions, tomato & sriracha"
   })
+menu5_item6img = open("https://jwong-eats-seeds.s3.amazonaws.com/cozyvegburger.jpeg")
+menu5_item6.photo.attach(io: menu5_item6img, filename: 'cozyvegburger.jpeg')
 
 menu5_item7 = MenuItem.create({
     menu_id: 5,
@@ -663,6 +681,8 @@ menu5_item9 = MenuItem.create({
     item_price: "8.20",
     description: "A tasty triple layered sandwich on thinly sliced rye with coleslaw & Russian dressing"
   })
+menu5_item9img = open("https://jwong-eats-seeds.s3.amazonaws.com/cozysandwich.jpeg")
+menu5_item9.photo.attach(io: menu5_item9img, filename: 'cozysandwich.jpeg')
 
 menu5_item10 = MenuItem.create({
     menu_id: 5,
@@ -680,6 +700,8 @@ menu6_item1 = MenuItem.create({
     item_price: "5.56",
     description: "A boneless breast of chicken seasoned to perfection, freshly breaded, pressure cooked in 100% refined peanut oil and served on a toasted, buttered bun with dill pickle chips. Also available on a multigrain bun"
   })
+menu6_item1img = open("https://jwong-eats-seeds.s3.amazonaws.com/cfasand.jpeg")
+menu6_item1.photo.attach(io: menu6_item1img, filename: 'cfasand.jpeg')
 
 menu6_item2 = MenuItem.create({
     menu_id: 6,
@@ -687,6 +709,8 @@ menu6_item2 = MenuItem.create({
     item_price: "6.75",
     description: "A boneless breast of chicken seasoned to perfection, freshly breaded, pressure cooked in 100% refined peanut oil and served on a toasted, buttered bun with dill pickle chips, Green Leaf lettuce, tomato and American cheese. Also available on a multigrain bun."
   })
+menu6_item2img = open("https://jwong-eats-seeds.s3.amazonaws.com/cfadeluxe.jpeg")
+menu6_item2.photo.attach(io: menu6_item2img, filename: 'cfadeluxe.jpeg')
 
 menu6_item3 = MenuItem.create({
     menu_id: 6,
@@ -694,6 +718,8 @@ menu6_item3 = MenuItem.create({
     item_price: "2.99",
     description: "Waffle-cut potatoes cooked in canola oil until crispy outside and tender inside. Sprinkled with Sea Salt."
   })
+menu6_item3img = open("https://jwong-eats-seeds.s3.amazonaws.com/cfafries.jpeg")
+menu6_item3.photo.attach(io: menu6_item3img, filename: 'cfafries.jpeg')
 
 menu6_item4 = MenuItem.create({
     menu_id: 6,
@@ -701,6 +727,8 @@ menu6_item4 = MenuItem.create({
     item_price: "5.95",
     description: "Bite-sized pieces of boneless chicken breast, seasoned to perfection, freshly breaded and pressure cooked in 100% refined peanut oil. Available with choice of dipping sauce."
   })
+menu6_item4img = open("https://jwong-eats-seeds.s3.amazonaws.com/cfanuggs.jpeg")
+menu6_item4.photo.attach(io: menu6_item4img, filename: 'cfanuggs.jpeg')
 
 menu6_item5 = MenuItem.create({
     menu_id: 6,
@@ -708,6 +736,8 @@ menu6_item5 = MenuItem.create({
     item_price: "11.99",
     description: "Chick-fil-A® Nuggets, freshly breaded and pressure-cooked, sliced and served on a fresh bed of mixed greens, topped with roasted corn kernels, a blend of shredded Monterey Jack and Cheddar cheeses, crumbled bacon, sliced hard-boiled egg and grape tomatoes. Prepared fresh daily. Served with Charred Tomato and Crispy Red Bell Peppers. Pairs well with Avocado Lime Ranch dressing."
   })
+menu6_item5img = open("https://jwong-eats-seeds.s3.amazonaws.com/cfacobb.jpeg")
+menu6_item5.photo.attach(io: menu6_item5img, filename: 'cfacobb.jpeg')
 
 menu6_item6 = MenuItem.create({
     menu_id: 6,
@@ -715,6 +745,8 @@ menu6_item6 = MenuItem.create({
     item_price: "12.29",
     description: "Sliced grilled chicken breast served on a fresh bed of mixed greens, topped with crumbled blue cheese and a mix of red and green apples, strawberries and blueberries. Prepared fresh daily. Served with Harvest Nut Granola and Roasted Almonds. Pairs well with Zesty Apple Cider Vinaigrette."
   })
+menu6_item6img = open("https://jwong-eats-seeds.s3.amazonaws.com/cfamarket.jpeg")
+menu6_item6.photo.attach(io: menu6_item6img, filename: 'cfamarket.jpeg')
 
 menu6_item7 = MenuItem.create({
     menu_id: 6,
@@ -722,6 +754,8 @@ menu6_item7 = MenuItem.create({
     item_price: "10.09",
     description: "A boneless breast of chicken, marinated with a special blend of seasonings and grilled for a tender and juicy backyard-grilled taste, served on a toasted, buttered sweet yeast bun with Colby-Jack cheese, bacon hand-tossed in a brown sugar and pepper blend, and Green Leaf lettuce. Topped with zesty Smokehouse BBQ sauce."
   })
+menu6_item7img = open("https://jwong-eats-seeds.s3.amazonaws.com/cfabacon.jpeg")
+menu6_item7.photo.attach(io: menu6_item7img, filename: 'cfabacon.jpeg')
 
 menu6_item8 = MenuItem.create({
     menu_id: 6,
@@ -729,6 +763,8 @@ menu6_item8 = MenuItem.create({
     item_price: "10.09",
     description: "A lemon-herb marinated boneless breast of chicken, grilled for a tender and juicy backyard-smokey taste, served on a toasted Multigrain Brioche bun with Colby Jack cheese, applewood smoked bacon, Green Leaf lettuce and tomato. Pairs well with Honey Roasted BBQ Sauce."
   })
+menu6_item8img = open("https://jwong-eats-seeds.s3.amazonaws.com/cfaclub.jpeg")
+menu6_item8.photo.attach(io: menu6_item8img, filename: 'cfaclub.jpeg')
 
 menu6_item9 = MenuItem.create({
     menu_id: 6,
@@ -736,6 +772,8 @@ menu6_item9 = MenuItem.create({
     item_price: "2.69",
     description: "Fountain beverage. A product of The Coca-Cola Company."
   })
+menu6_item9img = open("https://jwong-eats-seeds.s3.amazonaws.com/cfacoke.jpeg")
+menu6_item9.photo.attach(io: menu6_item9img, filename: 'cfacoke.jpeg')
 
 menu6_item10 = MenuItem.create({
     menu_id: 6,
@@ -743,6 +781,8 @@ menu6_item10 = MenuItem.create({
     item_price: "1.95",
     description: "Cookies have both semi-sweet dark and milk chocolate chunks, along with wholesome oats."
   })
+menu6_item10img = open("https://jwong-eats-seeds.s3.amazonaws.com/cfacookie.jpeg")
+menu6_item10.photo.attach(io: menu6_item10img, filename: 'cfacookie.jpeg')
 
 puts("Seeding McDonald's...")
 # McDonald's
@@ -753,6 +793,8 @@ menu7_item1 = MenuItem.create({
     item_price: "10.99",
     description: "A Big Mac with a side of fries and a drink"
   })
+menu7_item1img = open("https://jwong-eats-seeds.s3.amazonaws.com/mcdmacmeal.jpeg")
+menu7_item1.photo.attach(io: menu7_item1img, filename: 'mcdmacmeal.jpeg')
 
 menu7_item2 = MenuItem.create({
     menu_id: 7,
@@ -760,6 +802,8 @@ menu7_item2 = MenuItem.create({
     item_price: "4.69",
     description: "Chicken sandwich with pickles"
   })
+menu7_item2img = open("https://jwong-eats-seeds.s3.amazonaws.com/mcdchick.jpeg")
+menu7_item2.photo.attach(io: menu7_item2img, filename: 'mcdchick.jpeg')
 
 menu7_item3 = MenuItem.create({
     menu_id: 7,
@@ -767,6 +811,8 @@ menu7_item3 = MenuItem.create({
     item_price: "7.09",
     description: "20 Pieces of chicken McNuggets with sauce"
   })
+menu7_item3img = open("https://jwong-eats-seeds.s3.amazonaws.com/mcdnugg.jpeg")
+menu7_item3.photo.attach(io: menu7_item3img, filename: 'mcdnugg.jpeg')
 
 menu7_item4 = MenuItem.create({
     menu_id: 7,
@@ -774,6 +820,8 @@ menu7_item4 = MenuItem.create({
     item_price: "3.89",
     description: "Golden-fried french fries"
   })
+menu7_item4img = open("https://jwong-eats-seeds.s3.amazonaws.com/mcdfry.jpeg")
+menu7_item4.photo.attach(io: menu7_item4img, filename: 'mcdfry.jpeg')
 
 menu7_item5 = MenuItem.create({
     menu_id: 7,
@@ -781,6 +829,8 @@ menu7_item5 = MenuItem.create({
     item_price: "4.49",
     description: "Triple cheeseburger with pickles, ketchup"
   })
+menu7_item5img = open("https://jwong-eats-seeds.s3.amazonaws.com/mcdtriple.jpeg")
+menu7_item5.photo.attach(io: menu7_item5img, filename: 'mcdtriple.jpeg')
 
 menu7_item6 = MenuItem.create({
     menu_id: 7,
@@ -788,6 +838,8 @@ menu7_item6 = MenuItem.create({
     item_price: "10.19",
     description: "Filet O Fish with a side of fries and a drink"
   })
+menu7_item6img = open("https://jwong-eats-seeds.s3.amazonaws.com/mcdfiletmeal.jpeg")
+menu7_item6.photo.attach(io: menu7_item6img, filename: 'mcdfiletmeal.jpeg')
 
 menu7_item7 = MenuItem.create({
     menu_id: 7,
@@ -795,6 +847,8 @@ menu7_item7 = MenuItem.create({
     item_price: "4.49",
     description: "Our famous Happy Meal with a hamburger, apple slices, fries, and milk"
   })
+menu7_item7img = open("https://jwong-eats-seeds.s3.amazonaws.com/mcdhappy.jpeg")
+menu7_item7.photo.attach(io: menu7_item7img, filename: 'mcdhappy.jpeg')
 
 menu7_item8 = MenuItem.create({
     menu_id: 7,
@@ -802,6 +856,8 @@ menu7_item8 = MenuItem.create({
     item_price: "1.69",
     description: "Baked small apple pie"
   })
+menu7_item8img = open("https://jwong-eats-seeds.s3.amazonaws.com/mcdpie.jpeg")
+menu7_item8.photo.attach(io: menu7_item8img, filename: 'mcdpie.jpeg')
 
 menu7_item9 = MenuItem.create({
     menu_id: 7,
@@ -809,6 +865,9 @@ menu7_item9 = MenuItem.create({
     item_price: "4.89",
     description: "Oreos and Vanilla Ice Cream blended together"
   })
+menu7_item9img = open("https://jwong-eats-seeds.s3.amazonaws.com/mcdflurry.jpeg")
+menu7_item9.photo.attach(io: menu7_item9img, filename: 'mcdflurry.jpeg')
+
 
 menu7_item10 = MenuItem.create({
     menu_id: 7,
@@ -816,6 +875,9 @@ menu7_item10 = MenuItem.create({
     item_price: "2.09",
     description: "Medium sized Coke"
   })
+menu7_item10img = open("https://jwong-eats-seeds.s3.amazonaws.com/mcdcoke.jpeg")
+menu7_item10.photo.attach(io: menu7_item10img, filename: 'mcdcoke.jpeg')
+
 
 puts("Seeding The Halal Guys...")
 # The Halal Guys
@@ -826,6 +888,9 @@ menu8_item1 = MenuItem.create({
     item_price: "11.09",
     description: "Platters served with combo of chicken and beef gyro. Small platters are served with one white sauce and one red sauce. Regular platters are served with two white sauces and one red sauce."
   })
+menu8_item1img = open("https://jwong-eats-seeds.s3.amazonaws.com/halalcombo.jpeg")
+menu8_item1.photo.attach(io: menu8_item1img, filename: 'halalcombo.jpeg')
+  
 
 menu8_item2 = MenuItem.create({
     menu_id: 8,
@@ -833,6 +898,8 @@ menu8_item2 = MenuItem.create({
     item_price: "11.09",
     description: "Platters are served with one white sauce and one red sauce. Regular platters are served with two white sauces and one red sauce."
   })
+menu8_item2img = open("https://jwong-eats-seeds.s3.amazonaws.com/halalchick.jpeg")
+menu8_item2.photo.attach(io: menu8_item2img, filename: 'halalchick.jpeg')
 
 menu8_item3 = MenuItem.create({
     menu_id: 8,
@@ -840,6 +907,8 @@ menu8_item3 = MenuItem.create({
     item_price: "11.09",
     description: "Platters are served with one white sauce and one red sauce. Regular platters are served with two white sauces and one red sauce."
   })
+menu8_item3img = open("https://jwong-eats-seeds.s3.amazonaws.com/halalbeef.jpeg")
+menu8_item3.photo.attach(io: menu8_item3img, filename: 'halalbeef.jpeg')
 
 menu8_item4 = MenuItem.create({
     menu_id: 8,
@@ -847,6 +916,8 @@ menu8_item4 = MenuItem.create({
     item_price: "11.09",
     description: "Platters are served with one white sauce and one red sauce. Regular platters are served with two white sauces and one red sauce."
   })
+menu8_item4img = open("https://jwong-eats-seeds.s3.amazonaws.com/halalfalafel.jpeg")
+menu8_item4.photo.attach(io: menu8_item4img, filename: 'halalfalafel.jpeg')
 
 menu8_item5 = MenuItem.create({
     menu_id: 8,
@@ -854,6 +925,8 @@ menu8_item5 = MenuItem.create({
     item_price: "9.99",
     description: "Served with pita, lettuce, tomatoes and choice of toppings. Served with one white sauce and one red sauce."
   })
+menu8_item8img = open("https://jwong-eats-seeds.s3.amazonaws.com/halalfalafelsand.jpeg")
+menu8_item8.photo.attach(io: menu8_item8img, filename: 'halalfalafelsand.jpeg')
 
 menu8_item6 = MenuItem.create({
     menu_id: 8,
@@ -861,6 +934,8 @@ menu8_item6 = MenuItem.create({
     item_price: "3.49",
     description: "Classic crinkle-cut fried potatoes."
   })
+menu8_item6img = open("https://jwong-eats-seeds.s3.amazonaws.com/halalfries.jpeg")
+menu8_item6.photo.attach(io: menu8_item6img, filename: 'halalfries.jpeg')
 
 menu8_item7 = MenuItem.create({
     menu_id: 8,
@@ -868,6 +943,8 @@ menu8_item7 = MenuItem.create({
     item_price: "3.59",
     description: "Rich, sweet dessert pastry made of layers of filo filled with chopped nuts and sweetened and held together with syrup or honey. Allergen: Contains Gluten, Casein, Walnut, Cashew, and Pistachios"
   })
+menu8_item7img = open("https://jwong-eats-seeds.s3.amazonaws.com/halalbaklava.jpeg")
+menu8_item7.photo.attach(io: menu8_item7img, filename: 'halalbaklava.jpeg')
 
 menu8_item8 = MenuItem.create({
     menu_id: 8,
@@ -875,6 +952,8 @@ menu8_item8 = MenuItem.create({
     item_price: "3.59",
     description: "The Mediterranean spread made from cooked, mashed chickpeas or other beans, blended with tahini, olive oil, lemon juice, salt, and garlic. Allergen: Contains Sesame"
   })
+menu8_item8img = open("https://jwong-eats-seeds.s3.amazonaws.com/halalhummus.jpeg")
+menu8_item8.photo.attach(io: menu8_item8img, filename: 'halalhummus.jpeg')
 
 menu8_item9 = MenuItem.create({
     menu_id: 8,
@@ -882,6 +961,8 @@ menu8_item9 = MenuItem.create({
     item_price: "2.79",
     description: "16oz bottle of Coca-Cola"
   })
+menu8_item9img = open("https://jwong-eats-seeds.s3.amazonaws.com/halalcoke.jpeg")
+menu8_item9.photo.attach(io: menu8_item9img, filename: 'halalcoke.jpeg')
 
 menu8_item10 = MenuItem.create({
     menu_id: 8,
@@ -889,6 +970,8 @@ menu8_item10 = MenuItem.create({
     item_price: "2.79",
     description: "16oz bottle of Snapple Lemon Tea"
   })
+menu8_item10img = open("https://jwong-eats-seeds.s3.amazonaws.com/halaltea.jpeg")
+menu8_item10.photo.attach(io: menu8_item10img, filename: 'halaltea.jpeg')
 
 puts("Seeding Subway...")
 # Subway
@@ -899,6 +982,8 @@ menu9_item1 = MenuItem.create({
     item_price: "8.99",
     description: "Our Spicy Italian sandwich is a combo of pepperoni and Genoa salami. Pile on cheese, crunchy veggies, and finish it with your favorite sauce. Or don't. Your call."
   })
+menu9_item1img = open("")
+menu9_item1.photo.attach(io: menu9_item1img, filename: 'applepie.jpeg')
 
 menu9_item2 = MenuItem.create({
     menu_id: 9,
