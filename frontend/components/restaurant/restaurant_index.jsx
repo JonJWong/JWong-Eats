@@ -34,13 +34,15 @@ class RestaurantIndex extends React.Component {
       )
     }
 
+    
     const { restaurant } = this.props;
+    console.log(restaurant)
     const menu = restaurant.menu;
     const timePrompt = Util.timeDifferencePrompt(restaurant.hours)
 
     return (
       <div className="restaurant-page-container">
-        <div className="restaurant-banner"></div>
+        <img src={restaurant.photoUrl} className="restaurant-banner"></img>
         <div className="restaurant-info">
           <div className="restaurant-page-name">{restaurant.name}</div>
           <div className="restaurant-small">

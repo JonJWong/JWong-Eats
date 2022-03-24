@@ -5,6 +5,8 @@
 .restaurant-banner {
   min-height: 120px;
   height: 13vh;
+  width: 100%;
+  object-fit: cover;
   background-color: brown;
 }
 
