@@ -15,10 +15,10 @@ class Pickup extends React.Component {
   render() {
     const { restaurants, fetchRestaurant } = this.props;
     return (
-      <div className="pickup-container">
-        <div className="pickup-restaurants">
-          <div className="pickup-title">Pickup Nearby</div>
-            <div className="pickup-restaurant-list">
+      <div id="pickup-container">
+        <div id="pickup-restaurants">
+          <div id="pickup-title">Pickup Nearby</div>
+            <div id="pickup-restaurant-list">
               {Object.keys(restaurants).map(id => {
                 return (
                   <Link

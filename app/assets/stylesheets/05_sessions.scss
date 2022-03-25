@@ -1,4 +1,4 @@
-.login-form-contents {
+#login-form-contents {
   width: 432px;
   position: absolute;
   margin-top: auto;
@@ -13,7 +13,7 @@
   font-size: 24px;
 }
 
-.login-top-bar {
+#login-top-bar {
   background: black;
 }
 
@@ -45,14 +45,14 @@
   margin-bottom: 15px;
 }
 
-.login-legal {
+#login-legal {
   text-align: left;
   font-size: 14px;
   color: #757575;
   margin-bottom: 15px;
 }
 
-.login-login-button, #login-signup-button, .login-demo-button {
+#login-login-button, #login-signup-button, #login-demo-button {
   font-size: 20px;
   background: black;
   color: white;
@@ -64,11 +64,11 @@
   margin-bottom: 15px;
 }
 
-.login-demo-button {
+#login-demo-button {
   margin-right: 15px;
 }
 
-.signup-form-contents {
+#signup-form-contents {
   width: 432px;
   position: absolute;
   margin-top: auto;
@@ -83,7 +83,7 @@
   font-size: 24px;
 }
 
-.signup-top-bar {
+#signup-top-bar {
   background: black;
 }
 
@@ -115,14 +115,7 @@
   margin-bottom: 15px;
 }
 
-.signup-legal {
-  text-align: left;
-  font-size: 14px;
-  color: #757575;
-  margin-bottom: 15px;
-}
-
-.signup-signup-button, #signup-signup-button, .signup-demo-button, #signup-login-button {
+#signup-signup-button, #signup-demo-button, #signup-login-button {
   font-size: 20px;
   background: black;
   color: white;
@@ -134,7 +127,7 @@
   margin-bottom: 15px;
 }
 
-.signup-demo-button {
+#signup-demo-button {
   margin-right: 15px;
 }
 

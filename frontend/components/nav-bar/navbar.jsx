@@ -54,12 +54,12 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <nav className="nav-bar">
-        <div className="nav-contents">
-          <div className="left">
+      <nav id="nav-bar">
+        <div id="nav-contents">
+          <div id="nav-left">
             <button onClick={() => this.toggleModal()} className="hamburger"><i className="fas fa-bars fa-xl"></i></button>
             <Link to={`/${this.state.currentButton}`} className="eats-logo" />
-            <div className="method-slider">
+            <div id="method-slider">
               <Link
                 to="/delivery"
                 className={ this.state.currentButton === "delivery"
@@ -73,16 +73,16 @@ class NavBar extends React.Component {
                   : "pickup-button" }
                 >Pickup</Link>
             </div>
-            <div className="nav-address-info">
+            <div id="nav-address-info">
               <i className="fas fa-map-marker-alt"></i>{ this.state.currentButton === "delivery" ? "Union, NJ  •  now" : "Union, NJ  •  Pick up now"}
             </div>
-          <div className="search-bar">
+          <div id="nav-search-bar">
             <i className="fas fa-search"></i>
-            <input type='text' className="search-area" placeholder="Food, groceries, drinks, etc" />
+            <input type='text' id="nav-search-area" placeholder="Food, groceries, drinks, etc" />
           </div>
           </div>
           <div className="right">
-            <button onClick={() => this.toggleCart()} className="cart-button"><i className="fas fa-shopping-cart"></i>Cart</button>
+            <button onClick={() => this.toggleCart()} id="cart-button"><i className="fas fa-shopping-cart"></i>Cart</button>
           </div>
         </div>
         {this.renderModal()}

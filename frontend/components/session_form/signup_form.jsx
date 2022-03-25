@@ -55,9 +55,9 @@ class SignUpForm extends React.Component {
     const { login } = this.props;
 
     return(
-      <div className="signup-form-container">
-        <div className="signup-top-bar"><div className="eats-logo-white" /></div>
-        <div className="signup-form-contents">
+      <div id="signup-form-container">
+        <div id="signup-top-bar"><div className="eats-logo-white" /></div>
+        <div id="signup-form-contents">
         {this.renderErrors()}
         
           <form onSubmit={this.handleSubmit}>
@@ -101,17 +101,17 @@ class SignUpForm extends React.Component {
                 className="signup-input-field"
                 placeholder="Your address"
               />
-            <p className="login-legal">By proceeding, you DO NOT consent to get calls or SMS messages, 
+            <p id="login-legal">By proceeding, you DO NOT consent to get calls or SMS messages, 
               including by automated dialer, from JWongEats and its affiliates to this number. 
               Text “STOP” to 89203 to opt out.</p>
-            <button className="signup-signup-button" type="submit"><i className="fas fa-sign-in"></i>Sign Up</button>
+            <button id="signup-signup-button" type="submit"><i className="fas fa-sign-in"></i>Sign Up</button>
           </form>
           <p className="signup-text">Don't want to sign up?</p>
           <button onClick={()=>login({
             email: 'demo_user@email.com',
             password: 'password'
             })}
-            className="signup-demo-button"><i className="fas fa-save fa-lg"></i>
+            id="signup-demo-button"><i className="fas fa-save fa-lg"></i>
             Demo Login
           </button>
           <Link to="/login" id="signup-login-button">

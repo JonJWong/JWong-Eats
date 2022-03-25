@@ -53,9 +53,9 @@ class LoginForm extends React.Component{
     const signup = (formType === 'signup');
 
     return(
-      <div className="login-form-container">
-        <div className="login-top-bar"><div className="eats-logo-white" /></div>
-        <div className="login-form-contents">
+      <div id="login-form-container">
+        <div id="login-top-bar"><div className="eats-logo-white" /></div>
+        <div id="login-form-contents">
           {this.renderErrors()}
 
           <form onSubmit={this.handleSubmit}>
@@ -75,7 +75,7 @@ class LoginForm extends React.Component{
               className="login-input-field"
               placeholder="Enter password"
             />
-            <button type="submit" className="login-login-button">
+            <button type="submit" id="login-login-button">
               Login <i className="fas fa-arrow-right fa-lg"></i>
             </button>
             <p className="login-text">Don't have an account with us?</p>
@@ -83,7 +83,7 @@ class LoginForm extends React.Component{
               email: 'demo_user@email.com',
               password: 'password'
             })}
-            className="login-demo-button"><i className="fas fa-save fa-lg"></i> Demo Login</button>
+            id="login-demo-button"><i className="fas fa-save fa-lg"></i> Demo Login</button>
             <Link to={signup ? "/login" : "/signup"}
               id="login-signup-button"
               ><i className="fas fa-sign-in"></i>{signup ? "Log in" : "Sign up"}</Link>

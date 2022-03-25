@@ -43,7 +43,7 @@ class UpdateUserForm extends React.Component {
       return <div className="auth-errors">You cannot modify the demo user.</div>
     } else {
       return(
-        <div className="update-form-container">
+        <div id="update-form-container">
           {this.renderErrors()}
           <form onSubmit={this.handleSubmit}>
             <div className="edit-form-text">Email</div>
@@ -84,7 +84,7 @@ class UpdateUserForm extends React.Component {
             <input
               type="submit"
               value="Update Account"
-              className="edit-form-submit" />
+              id="edit-form-submit" />
           </form>
         </div>
       )

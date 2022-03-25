@@ -22,7 +22,7 @@ class Splash extends React.Component {
   // pseudo-error when Find Food is clicked
   signinPrompt() {
     if (this.state.prompt) {
-      return <div className="splash-signin-error">Please sign in first.</div>
+      return <div className="auth-errors">Please sign in first.</div>
     }
   }
 
@@ -35,23 +35,23 @@ class Splash extends React.Component {
     const background_url = randomBG();
 
     return (
-      <div className="splash">
+      <div id="splash">
         <SplashNavContainer />
-        <div className="splash-body">
-          <h1 className="splash-title">Order food to your door</h1>
-          <div className="splash-fake-bar">
-            <div className="splash-prefill-search">
+        <div id="splash-body">
+          <h1 id="splash-title">Order food to your door</h1>
+          <div id="splash-fake-bar">
+            <div id="splash-prefill-search">
               <i className="fas fa-map-marker-alt"></i> Union, NJ
             </div>
-            <div className="splash-deliver">
+            <div id="splash-deliver">
               <i className="fas fa-clock"></i>
-              <div className="splash-deliver-text">Deliver now </div>
+              <div id="splash-deliver-text">Deliver now </div>
               <i className="fas fa-angle-down"></i>
             </div>
-            <button onClick={() => this.promptSignin()} className="splash-find-food">Find Food</button>
+            <button onClick={() => this.promptSignin()} id="splash-find-food">Find Food</button>
           </div>
           {this.signinPrompt()}
-          <div className="splash-signin-prompt">
+          <div id="splash-signin-prompt">
             <Link to="/login" id="splash-bottom-signin">
               Sign in</Link> to see restauraunts in the area.
           </div>

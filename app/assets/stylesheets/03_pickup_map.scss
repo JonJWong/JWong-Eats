@@ -9,7 +9,7 @@
   background-color: black;
 }
 
-.pickup-container {
+#pickup-container {
   padding-left: 30px;
 }
 
@@ -31,7 +31,7 @@
   font-size: 12px;
 }
 
-.pickup-restaurants {
+#pickup-restaurants {
   background-color: white;
   position: fixed;
   margin-top: 96px;
@@ -43,13 +43,13 @@
   z-index: 1;
 }
 
-.pickup-title {
+#pickup-title {
   font-size: 30px;
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
-.pickup-restaurant-list {
+#pickup-restaurant-list {
   min-width: 480px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);

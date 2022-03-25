@@ -1,11 +1,11 @@
-.splash {
+#splash {
   position: relative;
   width: 100vw;
   height: 100vh;
   background: image_url('BG1.png');
 }
 
-.hamburger {
+#splash-hamburger {
   border-style: none;
   background-color: rgba(0, 0, 0, 0);
   height: auto;
@@ -13,14 +13,14 @@
   cursor: pointer
 }
 
-.eats-logo {
+#splash-eats-logo {
   content: image_url('JWongEats.png');
   height: 48px;
   margin-right: 2vw;
   width: auto;
 }
 
-.splash-nav-bar {
+#splash-nav-bar {
   height: 48px;
   display: block;
   padding-top: 24px;
@@ -29,7 +29,7 @@
   padding-left: 40px;
 }
 
-.splash-nav-contents {
+#splash-nav-contents {
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -37,11 +37,11 @@
   align-items: center;
 }
 
-.left {
+#splash-left {
   display: flex;
 }
 
-.splash-nav-login {
+#splash-nav-login {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,28 +54,28 @@
   border-style: none;
   font-size: 16px;
   color: white;
-  background-color: #eeeeee;
+  background-color: #000000;
 }
 
-.splash-nav-login:hover {
+#splash-nav-login:hover {
   background-color: rgb(62, 62, 62);
 }
 
-.splash-body {
+#splash-body {
   margin-top: 35vh;
   margin-left: 40px;
 }
 
-.splash-title {
+#splash-title {
   font-size: 55px;
   margin-bottom: 30px;
 }
 
-.splash-fake-bar {
+#splash-fake-bar {
   display: flex;
 }
 
-.splash-prefill-search {
+#splash-prefill-search {
   width: 30%;
   background-color: white;
   padding-top: 15px;
@@ -84,7 +84,7 @@
   margin-bottom: 25px;
 }
 
-.splash-deliver {
+#splash-deliver {
   display: flex;
   margin-left: 10px;
   background-color: white;
@@ -95,7 +95,7 @@
   padding-bottom: 15px;
 }
 
-.splash-deliver-text {
+#splash-deliver-text {
   font-size: 16px;
   padding-top: 3px;
 }
@@ -115,7 +115,7 @@
   padding-top: 3px;
 }
 
-.splash-find-food {
+#splash-find-food {
   background-color: black;
   color: white;
   height: 20px;
@@ -125,10 +125,6 @@
   padding-left: 15px;
   padding-right: 15px;
   margin-left: 15px;
-}
-
-.splash-signin-error {
-  color: red;
 }
 
 #splash-bottom-signin {

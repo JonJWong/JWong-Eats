@@ -37,47 +37,47 @@ class UserModal extends React.Component {
     const { currentUser, logout, login } = this.props;
     if (currentUser && !open) {
       return (
-        <div className="user-modal">
-          <div className="modal-contents">
-            <div className="user-info">
+        <div id="user-modal">
+          <div id="modal-contents">
+            <div id="user-info">
               <span className="profile-photo"></span>
               <span className="profile-name">{currentUser.first_name}</span>
               <button 
                 onClick={() => this.toggleTab()}
-                className={open ? "close-account-button" :"view-account-button"}
+                id={open ? "close-account-button" :"view-account-button"}
               >{open ? "Close" : "View Account"}</button>
             </div>
             {/* <Link className="orders-link">Orders</Link> */}
-            <button onClick={() => logout()} className="modal-signout">Sign Out</button>
+            <button onClick={() => logout()} id="modal-signout">Sign Out</button>
           </div>
-          <div className="user-modal-block" onClick={() => this.props.toggleModal()} />
+          <div id="user-modal-block" onClick={() => this.props.toggleModal()} />
         </div>
       )
     } else if (currentUser && open) {
       return (
-        <div className="user-modal">
-          <div className="modal-contents">
+        <div id="user-modal">
+          <div id="modal-contents">
             {this.renderTab()}
             <button
               onClick={() => this.toggleTab()}
-              className={open ? "close-account-button" :"view-account-button"}
+              id={open ? "close-account-button" :"view-account-button"}
               >{open ? "Close" : "View Account"}</button>
-            <button onClick={() => logout()} className="modal-signout">Sign Out</button>
+            <button onClick={() => logout()} id="modal-signout">Sign Out</button>
           </div>
-          <div className="user-modal-block" onClick={() => this.props.toggleModal()} />
+          <div id="user-modal-block" onClick={() => this.props.toggleModal()} />
         </div>
       )
     } else {
       return (
-        <div className="splash-user-modal">
-          <div className="splash-modal-contents">
-            <Link to="/login"><div className="splash-modal-login">Sign In</div></Link>
+        <div id="splash-user-modal">
+          <div id="splash-modal-contents">
+            <Link to="/login"><div id="splash-modal-login">Sign In</div></Link>
             <button onClick={()=>login({
               email: 'demo_user@email.com',
               password: 'password'
-            })} className="splash-modal-demo">Demo Login</button>
+            })} id="splash-modal-demo">Demo Login</button>
           </div>
-          <div className="splash-user-modal-block" onClick={() => this.props.toggleModal()} />
+          <div id="splash-user-modal-block" onClick={() => this.props.toggleModal()} />
         </div>
       )
     }

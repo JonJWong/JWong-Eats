@@ -25,14 +25,14 @@ class SplashNav extends React.Component {
 
   render() {
     return (
-      <nav className="splash-nav-bar">
-        <div className="splash-nav-contents">
-          <div className="left">
-            <button onClick={() => this.toggleModal()} className="hamburger"><i className="fas fa-bars fa-xl"></i></button>
-            <div className="eats-logo" />
+      <nav id="splash-nav-bar">
+        <div id="splash-nav-contents">
+          <div id="splash-left">
+            <button onClick={() => this.toggleModal()} id="splash-hamburger"><i className="fas fa-bars fa-xl"></i></button>
+            <div id="splash-eats-logo" />
           </div>
-          <div className="right">
-            <Link to="/login" className="splash-nav-login">Sign In</Link>
+          <div id="splash-right">
+            <Link to="/login" id="splash-nav-login">Sign In</Link>
           </div>
         </div>
         {this.renderModal()}

@@ -1,4 +1,4 @@
-.splash-user-modal-block {
+#splash-user-modal-block {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -10,7 +10,7 @@
   background: rgb(0, 0, 0);
 }
 
-.splash-modal-contents {
+#splash-modal-contents {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -25,7 +25,7 @@
   padding-bottom: 2%;
 }
 
-.splash-modal-login, .splash-modal-demo {
+#splash-modal-login, #splash-modal-demo {
   font-size: 16px;
   width: 200px;
   height: 50px;
@@ -33,7 +33,7 @@
   color: white;
 }
 
-.splash-modal-login {
+#splash-modal-login {
   display: flex;
   align-items: center;
   justify-content: center;

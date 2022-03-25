@@ -1,4 +1,4 @@
-.user-modal-block {
+#user-modal-block {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -10,7 +10,7 @@
   background: rgb(0, 0, 0);
 }
 
-.modal-contents {
+#modal-contents {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -44,7 +44,7 @@
   justify-self: center;
 }
 
-.view-account-button, .profile-edit-button {
+#view-account-button, #profile-edit-button {
   font-size: 16px;
   color: #048848;
   grid-column: col2-start;
@@ -52,13 +52,13 @@
   justify-self: center;
 }
 
-.close-account-button {
+#close-account-button {
   font-size: 16px;
   color: #000000;
   margin-top: 0px;
 }
 
-.modal-signout {
+#modal-signout {
   margin-top: 80%;
   font-size: 18px;
   color: rgb(107, 107, 107);
