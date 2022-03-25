@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import UserModalContainer from '../user_modal/user_modal_container';
 import CartContainer from "../cart/cart_container";
+import MenuItemContainer from "../restaurant/menu_item_container";
 import { withRouter } from "react-router-dom";
 
 class NavBar extends React.Component {
@@ -10,20 +11,20 @@ class NavBar extends React.Component {
     this.state = {
       modalOpen: false,
       cartOpen: false,
+      itemOpen: false,
       currentButton: "delivery"
     }
-    this.toggleModal = this.toggleModal.bind(this);
-    this.renderModal = this.renderModal.bind(this);
+
+    this.toggle = this.toggle.bind(this);
     this.setButton = this.setButton.bind(this);
   }
 
-
-  // modal state helper-methods
-  toggleModal() {
-    let setValue = !this.state.modalOpen;
-    this.setState({ modalOpen: setValue })
+  toggle(attr) {
+    let setValue = !this.state[attr];
+    this.setState({ [attr]: setValue })
   }
 
+  // modal state helper-methods
   renderModal() {
     if (this.state.modalOpen) {
       return <UserModalContainer toggleModal={this.toggleModal} />
@@ -31,14 +32,16 @@ class NavBar extends React.Component {
   }
 
   // cart state helper-methods
-  toggleCart() {
-    let setValue = !this.state.cartOpen;
-    this.setState({ cartOpen: setValue })
-  }
-
   renderCart() {
     if (this.state.cartOpen) {
       return <CartContainer />
+    }
+  }
+
+  // item state helper-methods
+  renderItem() {
+    if (this.state.itemOpen) {
+      return <MenuItemContainer />
     }
   }
 
@@ -55,13 +58,15 @@ class NavBar extends React.Component {
   }
 
   render() {
+    const { modalOpen, cartOpen, itemOpen } = this.state;
+
     return (
       <nav id="nav-bar">
 
         <div id="nav-contents">
 
           <div id="nav-left">
-            <button onClick={() => this.toggleModal()}
+            <button onClick={() => this.toggle('modalOpen')}
               className="hamburger">
                 <i className="fas fa-bars fa-xl"></i>
             </button>
@@ -105,7 +110,7 @@ class NavBar extends React.Component {
           </div>
 
           <div className="right">
-            <button onClick={() => this.toggleCart()}
+            <button onClick={() => this.toggle('cartOpen')}
               id="cart-button">
                 <i className="fas fa-shopping-cart"></i>Cart
             </button>

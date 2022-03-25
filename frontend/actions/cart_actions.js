@@ -1,15 +1,15 @@
 import * as CartAPIUtil from "../util/cart_api_util";
 
 // Action constants
-export const RECEIVE_CART_ITEM = "RECEIVE_CART_ITEM";
+export const ADD_CART_ITEM = "ADD_CART_ITEM";
 export const UPDATE_CART_ITEM = "UPDATE_CART_ITEM";
 export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
 export const CHECKOUT = "CHECKOUT";
 
 // Action creators
-export const receiveCartItem = (quantity, item) => {
+export const addCartItem = (quantity, item) => {
   return {
-    type: RECEIVE_CART_ITEM,
+    type: ADD_CART_ITEM,
     item,
     quantity
   }

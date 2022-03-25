@@ -63,7 +63,11 @@ class RestaurantIndex extends React.Component {
             <div className="menu-item-description">{item.description}</div>
           </div>
 
-            <button className="menu-add-to-cart">+</button>
+            <button 
+              className="menu-open-item"
+              onClick={() => this.toggleItemModal(item)}>
+                +
+            </button>
         </div>
       )
     } else {
@@ -72,7 +76,11 @@ class RestaurantIndex extends React.Component {
         key={id}
         onClick={() => this.toggleItemModal(item)}>
 
-          <button className="menu-add-to-cart-nophoto">+</button>
+          <button 
+            className="menu-open-item"
+            onClick={() => this.toggleItemModal(item)}>
+              +
+          </button>
 
         <div className="menu-item-info">
           <div className="menu-item-name">{item.item_name}</div>

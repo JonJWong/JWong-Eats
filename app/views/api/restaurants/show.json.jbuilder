@@ -9,7 +9,7 @@ end
 json.set! "menu" do
   @restaurant.menu_items.each do |item|
     json.set! item.id do
-      json.extract! item, :item_name, :item_price, :description
+      json.extract! item, :item_name, :item_price, :description, :id
 
       if item.photo.attached?
         json.photoUrl url_for(item.photo)

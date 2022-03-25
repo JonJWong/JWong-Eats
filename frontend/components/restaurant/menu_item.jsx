@@ -23,6 +23,8 @@ class MenuItem extends React.Component {
   }
 
   renderItem(item) {
+    const { addCartItem } = this.props;
+    const { quantity } = this.state;
     if (item.photoUrl) {
       return (
         <div id="food-modal-content">
@@ -50,19 +52,21 @@ class MenuItem extends React.Component {
                 className="food-modal-control-button">
                   -
               </button>
-              <div id="food-modal-quantity">{this.state.quantity}</div>
+              <div id="food-modal-quantity">{quantity}</div>
               <button onClick={() => this.increment()}
                 className="food-modal-control-button">
                   +
               </button>
             </div>
 
-            <button id="food-modal-add-order">
+            <button
+              id="food-modal-add-order"
+              onClick={() => addCartItem(quantity, item)}>
               <div id="food-modal-add-left">
-                Add {this.state.quantity} to order
+                Add {quantity} to order
               </div>
               <div id="food-modal-add-right">
-                ${Util.priceMultiple(this.state.quantity, item.item_price)}
+                ${Util.priceMultiple(quantity, item.item_price)}
               </div>
             </button>
 
@@ -92,19 +96,21 @@ class MenuItem extends React.Component {
               className="food-modal-control-button">
                 -
             </button>
-            <div id="food-modal-quantity">{this.state.quantity}</div>
+            <div id="food-modal-quantity">{quantity}</div>
             <button onClick={() => this.increment()}
               className="food-modal-control-button">
                 +
             </button>
           </div>
 
-          <button id="food-modal-add-order">
+          <button
+            id="food-modal-add-order"
+            onClick={() => this.props.addCartItem(quantity, item)}>
             <div id="food-modal-add-left">
-              Add {this.state.quantity} to order
+              Add {quantity} to order
             </div>
             <div id="food-modal-add-right">
-              ${Util.priceMultiple(this.state.quantity, item.item_price)}
+              ${Util.priceMultiple(quantity, item.item_price)}
             </div>
           </button>
 

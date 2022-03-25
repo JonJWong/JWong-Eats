@@ -1,43 +1,46 @@
-import { RECEIVE_CART_ITEM, UPDATE_CART_ITEM, REMOVE_CART_ITEM, CHECKOUT } from "../actions/cart_actions";
+import { ADD_CART_ITEM, UPDATE_CART_ITEM, REMOVE_CART_ITEM, CHECKOUT } from "../actions/cart_actions";
 
 const cartReducer = (state = {}, action) => {
   Object.freeze(state);
   const newState = Object.assign({}, state);
 
-  // deconstruct action for syntax
-  let { quantity, item } = action;
-  // save item id to a const
-  const itemId = item.id;
-  // add quantity key to item
-  item = Object.assign( item, { quantity } )
+  // define placeholder vars;
+  let item;
+  let itemId;
+
+  // if action.item exists, set item, itemId, item.quantity
+  if (action.item) {
+    item = action.item;
+    itemId = item.id;
+    item.quantity ||= 0;
+  }
 
   switch (action.type) {
-    case RECEIVE_CART_ITEM:
+    case ADD_CART_ITEM:
       // check if itemId key exists in cart (if this item is already in cart)
-      if (!state.entities.cart.itemId) {
+      if (!state[itemId]) {
         // if not, add it to cart and return
+        item.quantity = action.quantity;
         return Object.assign({}, state, { [itemId]: item })
       } else {
         // otherwise increment the quantity and return
-        item.quantity += quantity;
-        return Object.assign({}, state, { [itemId] : item })
+        newState[itemId].quantity += action.quantity;
+        return Object.assign({}, state, newState)
       }
     case UPDATE_CART_ITEM:
       // update item quantity
-      item.quantity += quantity;
+      newState[itemId].quantity += action.quantity;
       // check if item quantity is valid, if below 0, delete key
-      // otherwise return updated quantity
-      if (item.quantity <= 0) {
+      // otherwise return state with updated quantity
+      if (newState[itemId].quantity <= 0) {
         delete newState.itemId;
-        return newState;
-      } else {
-        return Object.assign({}, state, { [itemId]: item })
       }
+      return newState;
     case REMOVE_CART_ITEM:
-      delete newState.itemId;
+      delete newState[itemId];
       return newState;
     case CHECKOUT:
-      newState.cart = {};
+      newState = {};
       return newState;
     default:
       return state;

@@ -4,7 +4,7 @@ import { receiveCartItem, updateCartItem, removeCartItem, checkout } from "../..
 
 const mapStateToProps = (state) => {
   return {
-    cart: state.cart
+    cart: state.entities.cart
   }
 }
 
