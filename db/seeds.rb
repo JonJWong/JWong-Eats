@@ -134,7 +134,7 @@ restaurant8 = Restaurant.create({
     description: "",
     rating: 4.3,
     review_count: 1486,
-    price_rating: "%",
+    price_rating: "$",
     hours: "11:00AM - 11:00PM"
   })
 restaurant8img = open("https://jwong-eats-seeds.s3.amazonaws.com/halalbanner.jpeg")
