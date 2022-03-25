@@ -51,7 +51,7 @@
 }
 
 .delivery-button, .pickup-button {
-  font-size: 16px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,4 +130,8 @@
   padding-right: 20px;
   margin-left: 20px;
   border-radius: 25px;
+}
+
+#nav-address-info:hover {
+  background-color: lightgrey;
 }

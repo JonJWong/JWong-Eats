@@ -12,8 +12,9 @@ class Pickup extends React.Component {
     this.props.fetchRestaurants()
   }
 
+
   render() {
-    const { restaurants, fetchRestaurant } = this.props;
+    const { restaurants } = this.props;
     return (
       <div id="pickup-container">
         <div id="pickup-restaurants">
@@ -36,7 +37,7 @@ class Pickup extends React.Component {
                             Price: {restaurants[id].price_rating}
                           </div>
                           <div className="restaurant-hours">
-                            Hours: {restaurants[id].hours}
+                            {Util.timeDifferencePrompt(restaurants[id].hours)}
                           </div>
                           <div className="restaurant-rating">
                             {Util.addZero(restaurants[id].rating)}
