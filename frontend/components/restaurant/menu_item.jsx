@@ -23,13 +23,17 @@ class MenuItem extends React.Component {
   }
 
   renderItem(item) {
-    const { addCartItem } = this.props;
+    const { addCartItem, toggleItemModal } = this.props;
     const { quantity } = this.state;
     if (item.photoUrl) {
       return (
         <div id="food-modal-content">
 
-          <button id="food-modal-close">x</button>
+          <button
+            id="food-modal-close"
+            onClick={() => toggleItemModal()}>
+              <i className="fa-solid fa-x"></i>
+          </button>
 
           <div id="food-modal-item">
             <img src={item.photoUrl}
@@ -50,12 +54,12 @@ class MenuItem extends React.Component {
             <div id="food-modal-quant-control">
               <button onClick={() => this.decrement()}
                 className="food-modal-control-button">
-                  -
+                  <i className="fas fa-minus"></i>
               </button>
               <div id="food-modal-quantity">{quantity}</div>
               <button onClick={() => this.increment()}
                 className="food-modal-control-button">
-                  +
+                  <i className="fas fa-plus"></i>
               </button>
             </div>
 
@@ -77,7 +81,9 @@ class MenuItem extends React.Component {
       return (
         <div id="food-modal-content">
 
-          <button id="food-modal-close">x</button>
+          <button id="food-modal-close">
+            <i className="fa-solid fa-x"></i>
+          </button>
 
           <div id="food-modal-item">
             <div id="food-modal-name-nophoto">{item.item_name}</div>
@@ -94,12 +100,12 @@ class MenuItem extends React.Component {
           <div id="food-modal-quant-control">
             <button onClick={() => this.decrement()}
               className="food-modal-control-button">
-                -
+                <i className="fas fa-minus"></i>
             </button>
             <div id="food-modal-quantity">{quantity}</div>
             <button onClick={() => this.increment()}
               className="food-modal-control-button">
-                +
+                <i className="fas fa-plus"></i>
             </button>
           </div>
 

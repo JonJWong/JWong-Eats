@@ -34,7 +34,7 @@ class NavBar extends React.Component {
   // cart state helper-methods
   renderCart() {
     if (this.state.cartOpen) {
-      return <CartContainer />
+      return <CartContainer toggleCart={this.toggle} />
     }
   }
 

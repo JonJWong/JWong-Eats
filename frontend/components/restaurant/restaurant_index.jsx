@@ -57,7 +57,7 @@ class RestaurantIndex extends React.Component {
           onClick={() => this.toggleItemModal(item)}>
 
           <div className="menu-item-info">
-            <img src={item.photoUrl} className="menu-item-photo"></img>
+            {/* <img src={item.photoUrl} className="menu-item-photo"></img> */}
             <div className="menu-item-name">{item.item_name}</div>
             <div className="menu-item-price">${item.item_price}</div>
             <div className="menu-item-description">{item.description}</div>
@@ -66,7 +66,7 @@ class RestaurantIndex extends React.Component {
             <button 
               className="menu-open-item"
               onClick={() => this.toggleItemModal(item)}>
-                +
+                <i className="fa-solid fa-plus"></i>
             </button>
         </div>
       )
@@ -79,7 +79,7 @@ class RestaurantIndex extends React.Component {
           <button 
             className="menu-open-item"
             onClick={() => this.toggleItemModal(item)}>
-              +
+              <i className="fa-solid fa-plus"></i>
           </button>
 
         <div className="menu-item-info">
