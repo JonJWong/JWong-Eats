@@ -57,7 +57,7 @@
 #cart-top-buttons {
   height: 40px;
   padding-top: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 #cart-add-items, #cart-group-order {
@@ -84,11 +84,12 @@
 
 #menu-checkout-wrapper {
   position: fixed;
-  top: 0;
+  top: 90%;
+  bottom: 0;
   right: 0;
-  height: 100%;
   width: 28vw;
   display: flex;
+  z-index: 0;
 }
 
 #menu-checkout-container {
@@ -117,4 +118,9 @@
 
 #menu-checkout:hover {
   background-color: rgb(80, 80, 80);
+}
+
+.cart-error {
+  font-family: "Uber Light";
+  font-size: 14px;
 }

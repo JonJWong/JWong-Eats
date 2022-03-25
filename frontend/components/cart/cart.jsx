@@ -35,7 +35,7 @@ class Cart extends React.Component {
   renderSoon() {
     if (this.state.soon) {
       return (
-        <div className="auth-errors">
+        <div className="auth-errors cart-error">
           Group ordering is not available yet! Sorry for the inconvenience.
         </div>
       )
@@ -47,13 +47,15 @@ class Cart extends React.Component {
 
     return (
       <div id="cart-modal">
-        <div id="cart-modal-block"></div>
+        <div
+          id="cart-modal-block"
+          onClick={() => toggleCart('cartOpen')} />
 
         <div id="cart-modal-content">
           <button
             id="cart-close"
-            onClick={() => toggleCart()}>
-              <i class="fa-solid fa-x fa-lg"></i>
+            onClick={() => toggleCart('cartOpen')}>
+              <i className="fa-solid fa-x fa-lg"></i>
           </button>
 
           <div id="cart-header">
@@ -68,7 +70,7 @@ class Cart extends React.Component {
             <div id="cart-top-buttons">
               <button 
                 id="cart-add-items"
-                onClick={() => toggleCart()}>
+                onClick={() => toggleCart('cartOpen')}>
                   <i className="fas fa-plus"></i> Add Items
               </button>
 
@@ -83,7 +85,7 @@ class Cart extends React.Component {
           {this.renderSoon()}
 
           <div id="cart-items">
-            {Object.values(this.state).map((item, i) => {
+            {Object.values(this.props.cart).map((item, i) => {
               return (
                 <CartItemContainer item={item} key={i} />
               )

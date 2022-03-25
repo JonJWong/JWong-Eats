@@ -7,29 +7,39 @@ class CartItem extends React.Component {
     this.state = this.props.item;
   }
 
-  drawOption(i, quantity) {
-    if (i === quantity) {
-      return (<option value={i} key={i} selected />)
-    } else {
-      return (<option value={i} key={i} />)
-    }
-  }
-
   drawMenu() {
-    const quantity = this.state.quantity;
-    for (let i = 1; i < 100; i++) {
-      this.drawOption(i, quantity)
+    const options = [];
+    for (let i = 0; i < 100; i++) {
+      options.push(i)
     }
+    return (
+      <select className="item-quant-dropdown">
+        {options.map(option => {
+          return (
+            <option key={option} value={option}>
+              {option === 0 ? "Remove" : option}
+            </option>
+          )
+        })}
+      </select>
+    )
   }
 
   render() {
     const { updateCartItem, removeCartItem } = this.props;
-
+    const item = this.state;
     return (
       <div className="cart-item-container">
-        <select className="item-quant-dropdown">
-          {this.drawMenu()}
-        </select>
+        {this.drawMenu()}
+        <div className="cart-item-name">
+
+        </div>
+        <div className="cart-item-price">
+
+        </div>
+        <div className="cart-item-photo">
+
+        </div>
       </div>
     )
   }
