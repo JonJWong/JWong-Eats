@@ -14,7 +14,7 @@ class SignUpForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  //CONTROLLED INPUT FORM METHODS
+  // form handler methods
   handleSubmit(e) {
     e.preventDefault()
     const user = Object.assign({}, this.state);
@@ -25,7 +25,7 @@ class SignUpForm extends React.Component {
     return e => this.setState({[field]: e.currentTarget.value})
   }
 
-  //DISPLAY ERROR MESSAGES
+  // error display helper
   renderErrors() {
     const {errors} = this.props
     if(!errors) return null;
@@ -40,13 +40,14 @@ class SignUpForm extends React.Component {
     )
   }
 
-  // LIFECYCLE METHODS
+  // add a listener (on mount) that clears errors when component unmounts
   componentDidMount() {
     this.unlisten = this.props.history.listen(() => {
       this.props.clearSessionErrors();
     });
   }
 
+  // clear errors when component unmounts
   componentWillUnmount() {
     this.unlisten();
   }  
@@ -56,66 +57,88 @@ class SignUpForm extends React.Component {
 
     return(
       <div id="signup-form-container">
-        <div id="signup-top-bar"><div className="eats-logo-white" /></div>
+        <div id="signup-top-bar">
+          <div className="eats-logo-white" />
+        </div>
+
         <div id="signup-form-contents">
         {this.renderErrors()}
         
           <form onSubmit={this.handleSubmit}>
             <p className="signup-prompt">Email</p>
-              <input 
-                type="text" 
-                onChange={this.update("email")}
-                value={this.state.email}
-                className="signup-input-field"
-                placeholder="Enter email"
-              />
+            <input 
+              type="text" 
+              onChange={this.update("email")}
+              value={this.state.email}
+              className="signup-input-field"
+              placeholder="Enter email"
+            />
+
             <p className="signup-prompt">Password</p>
-              <input 
-                type="password" 
-                onChange={this.update("password")}
-                value={this.state.password}
-                className="signup-input-field"
-                placeholder="Enter password"
-              />
+            <input 
+              type="password" 
+              onChange={this.update("password")}
+              value={this.state.password}
+              className="signup-input-field"
+              placeholder="Enter password"
+            />
+
             <p className="signup-prompt">First Name</p>
-              <input 
-                type="text" 
-                onChange={this.update("first_name")}
-                value={this.state.first_name}
-                className="signup-input-field"
-                placeholder="Your first name"
-              />
+            <input 
+              type="text" 
+              onChange={this.update("first_name")}
+              value={this.state.first_name}
+              className="signup-input-field"
+              placeholder="Your first name"
+            />
+
             <p className="signup-prompt">Last Name</p>
-              <input 
-                type="text" 
-                onChange={this.update("last_name")}
-                value={this.state.last_name}
-                className="signup-input-field"
-                placeholder="Your last name"
-              />
+            <input 
+              type="text" 
+              onChange={this.update("last_name")}
+              value={this.state.last_name}
+              className="signup-input-field"
+              placeholder="Your last name"
+            />
+
             <p className="signup-prompt">Address</p>
-              <input 
-                type="text" 
-                onChange={this.update("address")}
-                value={this.state.address}
-                className="signup-input-field"
-                placeholder="Your address"
-              />
-            <p id="login-legal">By proceeding, you DO NOT consent to get calls or SMS messages, 
-              including by automated dialer, from JWongEats and its affiliates to this number. 
-              Text “STOP” to 89203 to opt out.</p>
-            <button id="signup-signup-button" type="submit"><i className="fas fa-sign-in"></i>Sign Up</button>
+            <input 
+              type="text" 
+              onChange={this.update("address")}
+              value={this.state.address}
+              className="signup-input-field"
+              placeholder="Your address"
+            />
+
+            <p id="login-legal">
+              By proceeding, you DO NOT consent to get calls or SMS messages, 
+              including by automated dialer, from JWongEats and its affiliates
+              to this number. 
+              Text “STOP” to 89203 to opt out.
+            </p>
+
+            <button
+              id="signup-signup-button"
+              type="submit">
+                <i className="fas fa-sign-in"></i>Sign Up
+            </button>
           </form>
+
           <p className="signup-text">Don't want to sign up?</p>
-          <button onClick={()=>login({
-            email: 'demo_user@email.com',
-            password: 'password'
+
+          <button
+            onClick={()=>login({
+              email: 'demo_user@email.com',
+              password: 'password'
             })}
-            id="signup-demo-button"><i className="fas fa-save fa-lg"></i>
-            Demo Login
+            id="signup-demo-button">
+              <i className="fas fa-save fa-lg"></i> Demo Login
           </button>
-          <Link to="/login" id="signup-login-button">
-            Login <i className="fas fa-arrow-right fa-lg"></i>
+
+          <Link
+            to="/login"
+            id="signup-login-button">
+              Login <i className="fas fa-arrow-right fa-lg"></i>
           </Link>
         </div>
       </div>

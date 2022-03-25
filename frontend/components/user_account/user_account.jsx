@@ -11,6 +11,7 @@ class UserAccount extends React.Component {
     this.unToggle = this.unToggle.bind(this)
   }
   
+  // helper method to toggle modal open/close
   unToggle() {
     this.setState({ toggled: false })
   }
@@ -21,12 +22,12 @@ class UserAccount extends React.Component {
       return(
         <div>
           <div className="user-info">
-            <span className="profile-photo"></span>
-            {/* <span className="profile-name">{currentUser.first_name} {currentUser.last_name}</span> */}
+            <span className="profile-photo" />
             <button 
               onClick={() => this.setState({ toggled: false })}
-              id="profile-cancel"
-            >Cancel</button>
+              id="profile-cancel">
+                Cancel
+            </button>
           </div>
             <UpdateUserFormContainer unToggle={this.unToggle} />
         </div>
@@ -36,10 +37,14 @@ class UserAccount extends React.Component {
         <div>
           <div className="user-info">
             <span className="profile-photo"></span>
-            <span className="profile-name">{currentUser.first_name} {currentUser.last_name}</span>
-            <button id="profile-edit-button"
-              onClick={() => this.setState({ toggled: true })}
-            >Edit Account</button>
+            <span className="profile-name">
+              {currentUser.first_name} {currentUser.last_name}
+            </span>
+            <button
+              id="profile-edit-button"
+              onClick={() => this.setState({ toggled: true })}>
+                Edit Account
+            </button>
           </div>
         </div>
       )

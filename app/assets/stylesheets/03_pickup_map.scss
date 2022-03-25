@@ -1,11 +1,12 @@
 #map-container {
-  display: inline-block;
   position: fixed;
+  min-width: 300px;
   top: 98px;
-  right: 0;
-  bottom: 0;
+  left: 44%;
+  right: 0px;
+  bottom: 0px;
   width: 55vw;
-  height: auto;
+  height: 91vh;
   background-color: black;
 }
 
@@ -24,7 +25,8 @@
 
 .infowindow-rating, .infowindow-price {
   font-size: 12px;
-  font-weight: bold;
+  padding-left: 5px;
+  padding-right: 5px
 }
 
 .infowindow-reviewcount {

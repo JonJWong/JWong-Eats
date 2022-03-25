@@ -107,10 +107,17 @@ class BenchMap extends React.Component{
     // sets marker content
     const markerContent = 
     `<div class="marker-content">` +
-      `<img src="${place.photos[0].getUrl()}" alt="restaurant-photo" class="infowindow-photo"></img>` +
+
+      `<img src="${place.photos[0].getUrl()}"
+        alt="restaurant-photo" class="infowindow-photo"></img>` +
+
       `<h3 class="infowindow-title">${place.name}</h3>` +
+
       `<span class="infowindow-rating">Rating: ${place.rating}</span>` +
-      `<span class="infowindow-reviewcount">Reviews: ${place.user_ratings_total}</span>` +
+      `<span class="infowindow-reviewcount">
+
+        Reviews: ${place.user_ratings_total}</span>` +
+        
       `<span class="infowindow-price">Price: ${'$'.repeat(place.price_level)}`+
     `</div>`;
 
@@ -194,9 +201,9 @@ class BenchMap extends React.Component{
 
   render() {
     return (
-      // <div ref={ map => this.mapNode = map } id='map-container'>
-      // </div>
-      <div id='map-container'>Map goes here</div>
+      <div ref={ map => this.mapNode = map } id='map-container'>
+      </div>
+      // <div id='map-container'>Map goes here</div>
     )
   }
 }

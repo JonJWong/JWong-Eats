@@ -12,11 +12,13 @@ class SplashNav extends React.Component {
     this.renderModal = this.renderModal.bind(this);
   }
 
+  // helper to open/close side modal
   toggleModal() {
     let setValue = !this.state.modalOpen;
     this.setState({ modalOpen: setValue })
   }
 
+  // render modal if state is open
   renderModal() {
     if (this.state.modalOpen) {
       return <UserModalContainer toggleModal={this.toggleModal} />
@@ -26,15 +28,27 @@ class SplashNav extends React.Component {
   render() {
     return (
       <nav id="splash-nav-bar">
+
         <div id="splash-nav-contents">
           <div id="splash-left">
-            <button onClick={() => this.toggleModal()} id="splash-hamburger"><i className="fas fa-bars fa-xl"></i></button>
+            <button
+              onClick={() => this.toggleModal()}
+              id="splash-hamburger">
+                <i className="fas fa-bars fa-xl"></i>
+            </button>
+
             <div id="splash-eats-logo" />
           </div>
+
           <div id="splash-right">
-            <Link to="/login" id="splash-nav-login">Sign In</Link>
+            <Link
+              to="/login"
+              id="splash-nav-login">
+                Sign In
+            </Link>
           </div>
         </div>
+        
         {this.renderModal()}
       </nav>
     )

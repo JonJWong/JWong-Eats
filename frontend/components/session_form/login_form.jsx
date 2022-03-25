@@ -11,7 +11,7 @@ class LoginForm extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  //CONTROLLED INPUT FORM METHODS
+  // form handler methods
   handleSubmit(e) {
     e.preventDefault()
     const user = Object.assign({}, this.state);
@@ -22,7 +22,7 @@ class LoginForm extends React.Component{
     return e => this.setState({ [field]: e.currentTarget.value })
   }
 
-  //DISPLAY ERROR MESSAGES
+  // error display helper
   renderErrors() {
     const {errors} = this.props
     if(!errors) return null;
@@ -37,13 +37,14 @@ class LoginForm extends React.Component{
     )
   }
 
-  // LIFECYCLE METHODS
+  // add a listener (on mount) that clears errors when component unmounts
   componentDidMount() {
     this.unlisten = this.props.history.listen(() => {
       this.props.clearSessionErrors();
     });
   }
 
+  // clear errors when component unmounts
   componentWillUnmount() {
     this.unlisten();
   }
@@ -54,19 +55,23 @@ class LoginForm extends React.Component{
 
     return(
       <div id="login-form-container">
-        <div id="login-top-bar"><div className="eats-logo-white" /></div>
+        <div id="login-top-bar">
+          <div className="eats-logo-white" />
+        </div>
+
         <div id="login-form-contents">
           {this.renderErrors()}
 
           <form onSubmit={this.handleSubmit}>
             <h1 className="login-prompt">Email</h1>
-              <input 
-                type="text" 
-                onChange={this.update("email")}
-                value={this.state.email}
-                className="login-input-field"
-                placeholder="Enter email"
-              />
+            <input 
+              type="text" 
+              onChange={this.update("email")}
+              value={this.state.email}
+              className="login-input-field"
+              placeholder="Enter email"
+            />
+
             <h1 className="login-prompt">Password</h1>
             <input 
               type="password" 
@@ -75,19 +80,29 @@ class LoginForm extends React.Component{
               className="login-input-field"
               placeholder="Enter password"
             />
+
             <button type="submit" id="login-login-button">
               Login <i className="fas fa-arrow-right fa-lg"></i>
             </button>
-            <p className="login-text">Don't have an account with us?</p>
-            <button onClick={()=>login({
+          </form>
+
+          <p className="login-text">Don't have an account with us?</p>
+
+          <button
+            onClick={()=>login({
               email: 'demo_user@email.com',
               password: 'password'
             })}
-            id="login-demo-button"><i className="fas fa-save fa-lg"></i> Demo Login</button>
-            <Link to={signup ? "/login" : "/signup"}
-              id="login-signup-button"
-              ><i className="fas fa-sign-in"></i>{signup ? "Log in" : "Sign up"}</Link>
-          </form>
+            id="login-demo-button">
+              <i className="fas fa-save fa-lg"></i> Demo Login
+          </button>
+
+          <Link
+            to={signup ? "/login" : "/signup"}
+            id="login-signup-button">
+              <i className="fas fa-sign-in"></i>
+              {signup ? "Log in" : "Sign up"}
+          </Link>
         </div>
       </div>
     )
