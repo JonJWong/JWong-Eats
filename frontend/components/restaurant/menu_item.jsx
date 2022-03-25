@@ -25,6 +25,7 @@ class MenuItem extends React.Component {
     if (item.photoUrl) {
       return (
         <div id="food-modal-content">
+          <button id="food-modal-close">x</button>
           <div id="food-modal-item">
             <img src={item.photoUrl} alt={`${item.item_name} image`} id="food-modal-image" />
             <div id="food-modal-name">{item.item_name}</div>
@@ -48,6 +49,7 @@ class MenuItem extends React.Component {
     } else {
       return (
         <div id="food-modal-content">
+          <button id="food-modal-close">x</button>
           <div id="food-modal-item">
             <div id="food-modal-name">{item.item_name}</div>
             <div id="food-modal-description">{item.description}</div>

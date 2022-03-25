@@ -130,3 +130,21 @@
   align-self: center;
   font-size: 18px;
 }
+
+#food-modal-close {
+  font-size: 32px;
+  background-color: white;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  vertical-align: middle;
+  position: relative;
+  left: 10px;
+  bottom: auto;
+  right: auto;
+  top: 10px;
+}
