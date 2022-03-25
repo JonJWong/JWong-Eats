@@ -4,6 +4,8 @@
 
 #delivery-left {
   position: sticky;
+  height: 40px;
+  top: 13vw;
   background-color: orange;
   width: 25vw;
   padding-left: 30px;
@@ -14,7 +16,7 @@
   margin: 0 auto;
   height: 10vh;
   background-color: #00ffff;
-  padding-top: 10vh;
+  padding-top: 14vh;
   margin-bottom: 20px;
   border-bottom: #eeeeee 2px solid;
 }
@@ -71,9 +73,8 @@
   max-height: 150px;
   width: 100%;
   object-fit: cover;
-  overflow: hidden;
   height: 70%;
-  background-color: aqua;
+  background-color: aqua; 
 }
 
 #delivery-restaurant-bottom {

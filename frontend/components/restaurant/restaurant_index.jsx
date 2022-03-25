@@ -7,6 +7,8 @@ class RestaurantIndex extends React.Component {
     this.state = {
       loading: true
     }
+
+    this.renderMenuItem = this.renderMenuItem.bind(this);
   }
 
   componentDidMount() {
@@ -21,6 +23,33 @@ class RestaurantIndex extends React.Component {
 
     if (this.props.location.pathname !== prevProps.location.pathname) {
       fetchRestaurant(id)
+    }
+  }
+
+  renderMenuItem(item, id) {
+    if (item.photoUrl) {
+      return (
+        <div className="menu-item-container" key={id}>
+          <div className="menu-item-info">
+            <img src={item.photoUrl} className="menu-item-photo"></img>
+            <div className="menu-item-name">{item.item_name}</div>
+            <div className="menu-item-price">${item.item_price}</div>
+            <div className="menu-item-description">{item.description}</div>
+          </div>
+            <button className="menu-add-to-cart">+</button>
+        </div>
+      )
+    } else {
+      return (
+      <div className="menu-item-container" key={id}>
+          <button className="menu-add-to-cart-nophoto">+</button>
+        <div className="menu-item-info">
+          <div className="menu-item-name">{item.item_name}</div>
+          <div className="menu-item-price">${item.item_price}</div>
+          <div className="menu-item-description">{item.description}</div>
+        </div>
+      </div>
+      )
     }
   }
 
@@ -53,14 +82,7 @@ class RestaurantIndex extends React.Component {
             {Object.keys(menu).map(id => {
               const item = menu[id];
               return (
-                <div className="menu-item-container" key={id}>
-                  <div className="menu-item-info">
-                    <img src={item.photoUrl} className="menu-item-photo"></img>
-                    <div className="menu-item-name">{item.item_name}</div>
-                    <div className="menu-item-price">${item.item_price}</div>
-                    <div className="menu-item-description">{item.description}</div>
-                  </div>
-                </div>
+                this.renderMenuItem(item, id)
               )})}
           </div>
         </div>

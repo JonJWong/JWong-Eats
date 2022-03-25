@@ -81,3 +81,43 @@
   grid-area: 3 / 1 / 4 / 2;
   word-wrap: normal;
 }
+
+.menu-add-to-cart {
+  position: relative;
+  bottom: 75%;
+  left: 91%;
+  color: white;
+  display: block;
+  font-size: 30px;
+  text-align: center;
+  background-color: black;
+  outline: white 1px solid;
+  border-radius: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 35px;
+}
+
+.menu-add-to-cart:hover {
+  background-color: grey;
+}
+
+.menu-add-to-cart-nophoto {
+  position: relative;
+  top: 5%;
+  left: 91%;
+  color: white;
+  display: block;
+  font-size: 30px;
+  text-align: center;
+  background-color: black;
+  outline: white 1px solid;
+  border-radius: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 35px;
+}
+
+.menu-add-to-cart-nophoto:hover {
+  background-color: grey;
+}
