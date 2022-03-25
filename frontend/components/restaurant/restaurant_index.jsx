@@ -12,6 +12,7 @@ class RestaurantIndex extends React.Component {
 
     this.renderMenuItem = this.renderMenuItem.bind(this);
     this.renderItemModal = this.renderItemModal.bind(this);
+    this.toggleItemModal = this.toggleItemModal.bind(this);
   }
 
   componentDidMount() {
@@ -29,21 +30,23 @@ class RestaurantIndex extends React.Component {
     }
   }
 
-  toggleItemModal() {
+  toggleItemModal(item) {
     const newValue = !this.state.itemOpen;
-    this.setState({ itemOpen: newValue })
+    this.setState({ itemOpen: newValue, clickedItem: item })
   }
 
-  renderItemModal(item) {
+  renderItemModal() {
     if (this.state.itemOpen) {
-      return <MenuItemContainer item={item} toggleItemModal={this.toggleItemModal} />
+      return <MenuItemContainer
+        item={this.state.clickedItem}
+        toggleItemModal={this.toggleItemModal} />
     }
   }
 
   renderMenuItem(item, id) {
     if (item.photoUrl) {
       return (
-        <div className="menu-item-container" key={id} onClick={() => this.toggleItemModal()}>
+        <div className="menu-item-container" key={id} onClick={() => this.toggleItemModal(item)}>
           <div className="menu-item-info">
             <img src={item.photoUrl} className="menu-item-photo"></img>
             <div className="menu-item-name">{item.item_name}</div>
@@ -55,7 +58,7 @@ class RestaurantIndex extends React.Component {
       )
     } else {
       return (
-      <div className="menu-item-container" key={id}>
+      <div className="menu-item-container" key={id} onClick={() => this.toggleItemModal(item)}>
           <button className="menu-add-to-cart-nophoto">+</button>
         <div className="menu-item-info">
           <div className="menu-item-name">{item.item_name}</div>

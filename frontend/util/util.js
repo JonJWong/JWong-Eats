@@ -103,3 +103,7 @@ export const timeDifferencePrompt = (storeHours) => {
     return `Closing soon: ${getProperTime(closing)}`
   }
 }
+
+export const priceMultiple = (quantity, priceString) => {
+  return (quantity * parseFloat(priceString)).toFixed(2)
+}

@@ -1,10 +1,132 @@
 #food-modal-container {
   overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 6;
+}
+
+#food-modal-block {
   background-color: rgba(80, 80, 80, .8);
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 5;
+  z-index: 7;
+}
+
+#food-modal-content {
+  position: fixed;
+  top: 10%;
+  bottom: auto;
+  right: 30%;
+  left: 30%;
+  background-color: white;
+  z-index: 8;
+}
+
+#food-modal-image {
+  width: 100%;
+  max-height: 450px;
+  height: 70%;
+  object-fit: cover;
+}
+
+#food-modal-name {
+  font-size: 30px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+}
+
+#food-modal-description {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+  font-family: "Uber Light";
+  font-size: 16px;
+}
+
+#food-modal-addon {
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+#food-modal-calorie-warning {
+  font-family: "Uber Light";
+  font-size: 14px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  border-bottom: #eeeeee 2px solid;
+}
+
+#food-modal-quant-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#food-modal-controls {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 40px;
+}
+
+.food-modal-control-button {
+  background-color: #eeeeee;
+  width: 36px;
+  font-size: 26px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 30px;
+  height: 35px;
+}
+
+.food-modal-control-button:hover {
+  background-color: lightgray;
+}
+
+.food-modal-control-button:active {
+  background-color: gray;
+}
+
+#food-modal-quantity {
+  width: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#food-modal-add-order {
+  justify-self: end;
+  background-color: black;
+  color: white;
+  max-width: 85%;
+  min-width: 40%;
+  height: 100%;
+  width: 75%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+#food-modal-add-left {
+  font-size: 18px;
+  justify-self: right;
+  align-self: center;
+}
+
+#food-modal-add-right {
+  justify-self: right;
+  align-self: center;
+  font-size: 18px;
 }
