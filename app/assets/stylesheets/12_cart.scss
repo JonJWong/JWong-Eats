@@ -124,3 +124,12 @@
   font-family: "Uber Light";
   font-size: 14px;
 }
+
+.cart-item-container {
+  width: 100%;
+  min-height: 100px;
+  max-height: 200px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
+}

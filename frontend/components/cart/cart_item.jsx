@@ -15,11 +15,19 @@ class CartItem extends React.Component {
     return (
       <select className="item-quant-dropdown">
         {options.map(option => {
-          return (
-            <option key={option} value={option}>
-              {option === 0 ? "Remove" : option}
-            </option>
-          )
+          if (option === this.props.item.quantity) {
+            return (
+              <option key={option} value={option} selected>
+                {option === 0 ? "Remove" : option}
+              </option>
+            )
+          } else {
+            return (
+              <option key={option} value={option}>
+                {option === 0 ? "Remove" : option}
+              </option>
+            )
+          }
         })}
       </select>
     )
@@ -32,13 +40,13 @@ class CartItem extends React.Component {
       <div className="cart-item-container">
         {this.drawMenu()}
         <div className="cart-item-name">
-
+          {item.item_name}
         </div>
         <div className="cart-item-price">
-
+          {item.price}
         </div>
         <div className="cart-item-photo">
-
+          
         </div>
       </div>
     )

@@ -40,8 +40,7 @@ const cartReducer = (state = {}, action) => {
       delete newState[itemId];
       return newState;
     case CHECKOUT:
-      newState = {};
-      return newState;
+      return {};
     default:
       return state;
   }

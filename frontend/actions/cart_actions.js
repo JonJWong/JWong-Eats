@@ -41,5 +41,5 @@ export const checkout = (cart) => {
 // Thunk action creators
 export const postTransaction = (cart) => (dispatch) => {
   return CartAPIUtil.postTransaction(cart)
-    .then(() => dispatch(checkout()))
+    .then(cart => dispatch(checkout(cart)))
 }
