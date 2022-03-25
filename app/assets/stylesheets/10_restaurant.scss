@@ -5,7 +5,8 @@
 .restaurant-banner {
   min-height: 120px;
   height: 13vh;
-  width: 100%;
+  max-width: 100vw;
+  width: 100vw;
   object-fit: cover;
   background-color: brown;
 }
@@ -27,7 +28,7 @@
   position: absolute;
   width: 70%;
   right: 0;
-  padding-right: 40px;
+  padding-right: 20px;
 }
 
 .menu-items-list {

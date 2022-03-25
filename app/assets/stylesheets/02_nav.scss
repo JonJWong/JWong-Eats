@@ -2,14 +2,14 @@
   border-style: none;
   background-color: rgba(0, 0, 0, 0);
   height: auto;
-  margin-right: 20px;
+  padding-right: 20px;
   cursor: pointer
 }
 
 .eats-logo {
   content: image_url('JWongEats.png');
   height: 48px;
-  margin-right: 2vw;
+  padding-right: 2vw;
   width: auto;
 }
 
@@ -114,6 +114,8 @@
   justify-content: center;
   width: 30vw;
   margin-left: 2vw;
+  background-color: #eeeeee;
+  border-radius: 25px;
 }
 
 #nav-search-area {
@@ -129,7 +131,7 @@
   background-color: #eeeeee;
   padding-right: 20px;
   margin-left: 20px;
-  border-radius: 25px;
+  border-radius: 60px;
 }
 
 #nav-address-info:hover {

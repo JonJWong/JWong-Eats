@@ -1,14 +1,17 @@
 import React from "react";
 import * as Util from "../../util/util";
+import MenuItemContainer from "./menu_item_container";
 
 class RestaurantIndex extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      loading: true
+      loading: true,
+      itemOpen: false
     }
 
     this.renderMenuItem = this.renderMenuItem.bind(this);
+    this.renderItemModal = this.renderItemModal.bind(this);
   }
 
   componentDidMount() {
@@ -26,10 +29,21 @@ class RestaurantIndex extends React.Component {
     }
   }
 
+  toggleItemModal() {
+    const newValue = !this.state.itemOpen;
+    this.setState({ itemOpen: newValue })
+  }
+
+  renderItemModal(item) {
+    if (this.state.itemOpen) {
+      return <MenuItemContainer item={item} toggleItemModal={this.toggleItemModal} />
+    }
+  }
+
   renderMenuItem(item, id) {
     if (item.photoUrl) {
       return (
-        <div className="menu-item-container" key={id}>
+        <div className="menu-item-container" key={id} onClick={() => this.toggleItemModal()}>
           <div className="menu-item-info">
             <img src={item.photoUrl} className="menu-item-photo"></img>
             <div className="menu-item-name">{item.item_name}</div>
@@ -86,6 +100,7 @@ class RestaurantIndex extends React.Component {
               )})}
           </div>
         </div>
+        {this.renderItemModal()}
       </div>
     )
   }
