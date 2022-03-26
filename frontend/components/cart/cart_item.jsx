@@ -40,7 +40,7 @@ class CartItem extends React.Component {
         </div>
 
         <div className="cart-item-price">
-          {item.item_price}
+          ${item.item_price.toFixed(2)}
         </div>
 
         <div className="cart-item-photo">

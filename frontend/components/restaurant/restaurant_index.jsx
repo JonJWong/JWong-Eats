@@ -59,7 +59,7 @@ class RestaurantIndex extends React.Component {
           <div className="menu-item-info">
             {/* <img src={item.photoUrl} className="menu-item-photo"></img> */}
             <div className="menu-item-name">{item.item_name}</div>
-            <div className="menu-item-price">${item.item_price}</div>
+            <div className="menu-item-price">${item.item_price.toFixed(2)}</div>
             <div className="menu-item-description">{item.description}</div>
           </div>
 
@@ -84,7 +84,7 @@ class RestaurantIndex extends React.Component {
 
         <div className="menu-item-info">
           <div className="menu-item-name">{item.item_name}</div>
-          <div className="menu-item-price">${item.item_price}</div>
+          <div className="menu-item-price">${item.item_price.toFixed(2)}</div>
           <div className="menu-item-description">{item.description}</div>
         </div>
       </div>

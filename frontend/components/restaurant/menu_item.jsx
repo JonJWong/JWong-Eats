@@ -70,7 +70,7 @@ class MenuItem extends React.Component {
                 Add {quantity} to order
               </div>
               <div id="food-modal-add-right">
-                ${Util.priceMultiple(quantity, item.item_price)}
+                ${Util.priceMultiple(quantity, item.item_price).toFixed(2)}
               </div>
             </button>
 
@@ -116,7 +116,7 @@ class MenuItem extends React.Component {
               Add {quantity} to order
             </div>
             <div id="food-modal-add-right">
-              ${Util.priceMultiple(quantity, item.item_price)}
+              ${Util.priceMultiple(quantity, item.item_price).toFixed(2)}
             </div>
           </button>
 

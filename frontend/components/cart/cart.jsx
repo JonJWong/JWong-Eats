@@ -102,7 +102,7 @@ class Cart extends React.Component {
           <div id="menu-checkout-wrapper">
             <div id="menu-checkout-container">
               <button id="menu-checkout"
-                onClick={() => checkout(this.state)}>
+                onClick={() => checkout(this.state.cart)}>
                   Go to checkout • ${this.priceSum()}
               </button>
             </div>
