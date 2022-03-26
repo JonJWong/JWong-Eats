@@ -27,12 +27,10 @@ class CartItem extends React.Component {
     )
   }
 
-  render() {
-    const { updateCartItem, removeCartItem } = this.props;
-    const item = this.state;
-    
-    return (
-      <div className="cart-item-container">
+  drawContainer(item) {
+    if (item.photoUrl) {
+      return (
+        <div className="cart-item-container">
         {this.drawMenu()}
 
         <div className="cart-item-name">
@@ -43,9 +41,36 @@ class CartItem extends React.Component {
           ${item.item_price}
         </div>
 
-        <div className="cart-item-photo">
-          
+        <img src={item.photoUrl}
+              alt={`${item.item_name} image`}
+              className="cart-item-photo"
+            />
+      </div>
+      )
+    } else {
+      return (
+        <div className="cart-item-container">
+        {this.drawMenu()}
+
+        <div className="cart-item-name">
+          {item.item_name}
         </div>
+
+        <div className="cart-item-price">
+          ${item.item_price}
+        </div>
+      </div>
+      )
+    }
+  }
+
+  render() {
+    const { updateCartItem, removeCartItem } = this.props;
+    const item = this.state;
+    
+    return (
+      <div className="cart-item-container-wrapper">
+        {this.drawContainer(item)}
       </div>
     )
   }

@@ -56,18 +56,18 @@ class RestaurantIndex extends React.Component {
           key={id}
           onClick={() => this.toggleItemModal(item)}>
 
+          <button 
+            className="menu-open-item"
+            onClick={() => this.toggleItemModal(item)}>
+              <i className="fa-solid fa-plus"></i>
+          </button>
+
           <div className="menu-item-info">
-            {/* <img src={item.photoUrl} className="menu-item-photo"></img> */}
+            <img src={item.photoUrl} className="menu-item-photo"></img>
             <div className="menu-item-name">{item.item_name}</div>
             <div className="menu-item-price">${item.item_price}</div>
             <div className="menu-item-description">{item.description}</div>
           </div>
-
-            <button 
-              className="menu-open-item"
-              onClick={() => this.toggleItemModal(item)}>
-                <i className="fa-solid fa-plus"></i>
-            </button>
         </div>
       )
     } else {

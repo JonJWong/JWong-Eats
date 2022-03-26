@@ -39,6 +39,7 @@
 
 .menu-item-container {
   padding: 5px;
+  position: relative;
   cursor: pointer;
 }
 
@@ -53,7 +54,14 @@
   grid-template-rows: auto auto auto;
 }
 
+.menu-item-info:hover > .menu-item-photo {
+  transform: scale(1.1)
+}
+
 .menu-item-photo {
+  position: relative;
+  transition: transform .4s ease-in-out;
+  transform: scale(1);
   object-fit: cover;
   justify-self: end;
   height: 150px;
@@ -85,10 +93,10 @@
 }
 
 .menu-open-item {
-  position: relative;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   height: 35px;
-  bottom: 75%;
-  left: 91%;
   color: white;
   display: block;
   text-align: center;
