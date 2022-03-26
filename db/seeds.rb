@@ -269,6 +269,16 @@ restaurant19 = Restaurant.create({
     price_rating: "$$",
     hours: "11:00AM - 10:00PM"
   })
+
+restaurant20 = Restaurant.create({
+  name: "Bunny Cafe",
+  address: "Somewhere in Union, NJ",
+  description: "",
+  rating: 5.0,
+  review_count: 9999,
+  price_rating: "$$$$$",
+  hours: "6:00AM - 10:00PM"
+})
   
 puts("Seeding Menus...")
 
@@ -366,6 +376,11 @@ menu19 = Menu.create({
     restaurant_name: "Olive Garden",
     restaurant_id: 19
   })
+
+menu20 = Menu.create({
+  restaurant_name: "Bunny Cafe",
+  restaurant_id: 20
+})
   
 puts("Seeding MenuItems...")
 # Sofia's
