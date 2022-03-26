@@ -106,5 +106,5 @@ export const timeDifferencePrompt = (storeHours) => {
 
 // helper to get price from a string "15.95", and a multiplier (quantity)
 export const priceMultiple = (quantity, priceString) => {
-  return (quantity * parseFloat(priceString)).toFixed(2)
+  return parseFloat((quantity * parseFloat(priceString)).toFixed(2))
 }

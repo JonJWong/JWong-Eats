@@ -57,7 +57,7 @@
 #cart-top-buttons {
   height: 40px;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
 
 #cart-add-items, #cart-group-order {
@@ -75,7 +75,7 @@
 }
 
 #cart-items {
-  width: 80%;
+  width: 95%;
   height: auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -130,6 +130,49 @@
   min-height: 100px;
   max-height: 200px;
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(2, auto);
+  grid-template-columns: 1fr 4fr 2fr;
+  grid-template-rows: .5fr 1fr;
+  padding-bottom: 15px;
+}
+
+.item-quant-dropdown {
+  background-color: #eeeeee;
+  border-radius: 20px;
+  height: 40px;
+  width: 45px;
+  text-align: center;
+  border-style: none;
+  grid-area: 1 / 1 / 3 / 2;
+}
+
+.cart-item-name {
+  grid-area: 1 / 2 / 2 / 3;
+  height: 40px;
+  justify-self: start;
+  align-self: start;
+}
+
+.cart-item-price {
+  font-family: "Uber Light";
+  height: auto;
+  justify-self: start;
+  align-self: start;
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.cart-item-photo {
+  min-height: 100px;
+  max-height: 200px;
+  min-width: 100px;
+  justify-self: right;
+  background-color: aqua;
+  grid-area: 1 / 3 / 3 / 4;
+}
+
+#cart-clear {
+  width: 100%;
+  color: red;
+  text-align: center;
+  font-size: 16px;
+  height: 25px;
 }

@@ -15,13 +15,14 @@ class Cart extends React.Component {
 
   priceSum() {
     let sum = 0;
-
+    
     let items;
-    if (!this.state.cart === {}) {
+    if (this.state.cart) {
       items = this.state.cart;
-      for (let item of items) {
-        sum += Util.priceMultiple(item.quantity, item.price)
-      }
+        Object.values(items).forEach(item => {
+          sum += Util.priceMultiple(item.quantity, item.item_price)
+        }
+      )
     }
     if (sum === 0) sum = "0.00"
     return sum;
@@ -91,6 +92,12 @@ class Cart extends React.Component {
               )
             })}
           </div>
+
+          <button
+            id="cart-clear"
+            onClick={() => clearCart()}>
+              Clear Cart
+          </button>
 
           <div id="menu-checkout-wrapper">
             <div id="menu-checkout-container">
