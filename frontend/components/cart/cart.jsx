@@ -44,7 +44,7 @@ class Cart extends React.Component {
   }
 
   render() {
-    const { checkout, toggleCart } = this.props;
+    const { checkout, toggleCart, clearCart } = this.props;
 
     return (
       <div id="cart-modal">

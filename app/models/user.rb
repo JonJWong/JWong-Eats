@@ -23,6 +23,10 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :transactions,
+    foreign_key: :user_id,
+    class_name: :Transaction
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     return nil if user.nil?

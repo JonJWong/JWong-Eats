@@ -4,7 +4,7 @@ import * as CartAPIUtil from "../util/cart_api_util";
 export const ADD_CART_ITEM = "ADD_CART_ITEM";
 export const UPDATE_CART_ITEM = "UPDATE_CART_ITEM";
 export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
-export const CHECKOUT = "CHECKOUT";
+export const CLEAR_CART = "CLEAR_CART";
 
 // Action creators
 export const addCartItem = (quantity, item) => {
@@ -31,15 +31,14 @@ export const removeCartItem = (quantity, item) => {
   }
 }
 
-export const checkout = (cart) => {
+export const clearCart = () => {
   return {
-    type: CHECKOUT,
-    cart
+    type: CLEAR_CART
   }
 }
 
 // Thunk action creators
 export const postTransaction = (cart) => (dispatch) => {
   return CartAPIUtil.postTransaction(cart)
-    .then(cart => dispatch(checkout(cart)))
+    .then(() => dispatch(clearCart()))
 }

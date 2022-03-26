@@ -10,6 +10,8 @@
 #
 class Menu < ApplicationRecord
 
+  validates :restaurant_name, :restaurant_id, presence: true
+
   belongs_to :restaurant,
     foreign_key: :restaurant_id,
     class_name: :Restaurant

@@ -119,8 +119,7 @@ class RestaurantIndex extends React.Component {
         <div className="restaurant-info">
           <div className="restaurant-page-name">{restaurant.name}</div>
           <div className="restaurant-small">
-            <i className="fas fa-star"></i>
-            {Util.addZero(restaurant.rating)} ({restaurant.review_count} Ratings) • {restaurant.price_rating} • {timePrompt}
+            <i className="fas fa-star"></i> {Util.addZero(restaurant.rating)} ({restaurant.review_count} Ratings) • {restaurant.price_rating} • {timePrompt}
           </div>
         </div>
 

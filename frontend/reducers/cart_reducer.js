@@ -1,4 +1,4 @@
-import { ADD_CART_ITEM, UPDATE_CART_ITEM, REMOVE_CART_ITEM, CHECKOUT } from "../actions/cart_actions";
+import { ADD_CART_ITEM, UPDATE_CART_ITEM, REMOVE_CART_ITEM, CLEAR_CART } from "../actions/cart_actions";
 
 const cartReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -39,7 +39,7 @@ const cartReducer = (state = {}, action) => {
     case REMOVE_CART_ITEM:
       delete newState[itemId];
       return newState;
-    case CHECKOUT:
+    case CLEAR_CART:
       return {};
     default:
       return state;

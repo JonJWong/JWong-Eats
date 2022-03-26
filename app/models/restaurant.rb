@@ -15,6 +15,8 @@
 #
 class Restaurant < ApplicationRecord
 
+  validates :name, :address, :hours, presence: true  
+
   has_one :menu,
     foreign_key: :restaurant_id,
     class_name: :Menu
