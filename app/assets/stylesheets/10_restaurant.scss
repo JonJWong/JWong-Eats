@@ -54,20 +54,31 @@
   grid-template-rows: auto auto auto;
 }
 
-.menu-item-info:hover > .menu-item-photo {
+.menu-item-photo-wrapper {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  height: 150px;
+  width: 250px;
+  justify-self: end;
+  background-color: black;
+  grid-area: 1 / 2 / 4 / 3;
+}
+
+.menu-item-photo-wrapper .menu-item-photo {
+  display: block;
+  transition: transform .4s ease-in-out;
+}
+
+.menu-item-info:hover > .menu-item-photo-wrapper > .menu-item-photo {
   transform: scale(1.1)
 }
 
 .menu-item-photo {
-  position: relative;
-  transition: transform .4s ease-in-out;
   transform: scale(1);
   object-fit: cover;
-  justify-self: end;
   height: 150px;
   width: 250px;
-  background-color: black;
-  grid-area: 1 / 2 / 4 / 3;
 }
 
 .menu-item-name {

@@ -5,7 +5,8 @@ import { addCartItem } from "../../actions/cart_actions";
 
 const mapStateToProps = ({ entities }, ownProps) => {
   return {
-    restaurant: entities.restaurants[ownProps.match.params.restaurantId]
+    restaurant: entities.restaurants[ownProps.match.params.restaurantId],
+    cart: entities.cart
   }
 }
 
