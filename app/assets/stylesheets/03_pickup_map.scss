@@ -2,16 +2,16 @@
   position: fixed;
   min-width: 300px;
   top: 98px;
-  left: 44%;
+  left: 830px;
   right: 0px;
   bottom: 0px;
-  width: 55vw;
+  width: 100%;
   height: 91vh;
   background-color: black;
 }
 
 #pickup-container {
-  padding-left: 30px;
+  height: 100%;
 }
 
 .infowindow-photo {
@@ -37,30 +37,33 @@
   background-color: white;
   position: fixed;
   margin-top: 96px;
+  max-width: 830px;
+  width: 100%;
   top: 0;
   bottom: 0;
-  width: 44%;
   height: auto;
   overflow-y: scroll;
   z-index: 1;
 }
 
 #pickup-title {
+  padding-left: 30px;
   font-size: 30px;
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
 #pickup-restaurant-list {
-  min-width: 480px;
+  margin-left: 30px;
+  width: 750px;
   display: grid;
+  gap: 20px;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
   margin-bottom: 20px;
 }
 
 .restaurant-container {
-  width: 20vw;
+  width: 100%;
   height: auto;
   padding-left: 10px;
   padding-right: 10px;
@@ -90,7 +93,7 @@
   object-fit: cover;
   min-width: 220px;
   height: 200px;
-  width: 20vw;
+  width: 100%;
   background-color: lightblue;
 }
 

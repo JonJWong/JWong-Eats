@@ -90,7 +90,7 @@ class UserModal extends React.Component {
           </div>
 
           <div id="user-modal-block"
-            onClick={() => this.props.toggleModal()} />
+            onClick={() => this.props.toggleModal('modalOpen')} />
         </div>
       )
     } else {
@@ -114,7 +114,7 @@ class UserModal extends React.Component {
           </div>
 
           <div id="splash-user-modal-block"
-            onClick={() => this.props.toggleModal()} />
+            onClick={() => this.props.toggleModal('modalOpen')} />
         </div>
       )
     }
