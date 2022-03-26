@@ -6,26 +6,37 @@ class Cart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cart: this.props.cart,
-      soon: false
+      soon: false,
     }
     
     this.priceSum = this.priceSum.bind(this);
+  }
+
+  sendCheckout() {
+    const { checkout } = this.props;
+    let transaction = {
+      order: this.props.cart,
+      userId: this.props.userId
+    }
+    checkout(transaction)
   }
 
   priceSum() {
     let sum = 0;
     
     let items;
-    if (this.state.cart) {
-      items = this.state.cart;
+    if (this.props.cart) {
+      items = this.props.cart;
         Object.values(items).forEach(item => {
           sum += Util.priceMultiple(item.quantity, item.item_price)
         }
       )
     }
-    if (sum === 0) sum = "0.00"
-    return sum;
+    if (sum === 0) {
+      return "0.00"
+    } else {
+      return sum.toFixed(2)
+    }
   }
 
   comingSoon() {
@@ -44,7 +55,7 @@ class Cart extends React.Component {
   }
 
   render() {
-    const { checkout, toggleCart, clearCart } = this.props;
+    const { toggleCart, clearCart } = this.props;
 
     return (
       <div id="cart-modal">
@@ -102,7 +113,7 @@ class Cart extends React.Component {
           <div id="menu-checkout-wrapper">
             <div id="menu-checkout-container">
               <button id="menu-checkout"
-                onClick={() => checkout(this.state.cart)}>
+                onClick={() => this.sendCheckout()}>
                   Go to checkout • ${this.priceSum()}
               </button>
             </div>

@@ -12,7 +12,7 @@
 #
 class TransactionItem < ApplicationRecord
 
-  validates :item_name, :item_quantity, :item_price, :order_number, presene: true
+  validates :item_name, :item_quantity, :item_price, :order_number, presence: true
 
   belongs_to :order,
     foreign_key: :order_number,

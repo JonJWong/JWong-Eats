@@ -44,7 +44,7 @@ class UserModal extends React.Component {
         <div id="user-modal">
           <div id="modal-contents">
 
-            <div id="user-info">
+            <div className="user-info">
               <span className="profile-photo" />
               <span className="profile-name">
                 {currentUser.first_name}
@@ -66,7 +66,7 @@ class UserModal extends React.Component {
             </button>
           </div>
 
-          <div id="user-modal-block" onClick={() => this.props.toggleModal()} />
+          <div id="user-modal-block" onClick={() => this.props.toggleModal('modalOpen')} />
         </div>
       )
     } else if (currentUser && open) {

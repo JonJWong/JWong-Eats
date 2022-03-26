@@ -27,7 +27,7 @@ class NavBar extends React.Component {
   // modal state helper-methods
   renderModal() {
     if (this.state.modalOpen) {
-      return <UserModalContainer toggleModal={this.toggleModal} />
+      return <UserModalContainer toggleModal={this.toggle} />
     }
   }
 

@@ -30,6 +30,10 @@
   margin-bottom: 15px;
 }
 
+.login-text, .signup-text {
+  font-family: "Uber Regular"
+}
+
 .login-prompt {
   font-family: "Uber Light";
   text-align: left;
@@ -56,6 +60,7 @@
 }
 
 #login-login-button, #login-signup-button, #login-demo-button {
+  font-family: "Uber Regular";
   font-size: 20px;
   background: black;
   color: white;
@@ -121,6 +126,7 @@
 }
 
 #signup-signup-button, #signup-demo-button, #signup-login-button {
+  font-family: "Uber Regular";
   font-size: 20px;
   background: black;
   color: white;

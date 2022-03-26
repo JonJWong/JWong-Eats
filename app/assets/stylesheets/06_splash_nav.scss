@@ -42,6 +42,7 @@
 }
 
 #splash-nav-login {
+  font-family: "Uber Regular";
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,6 +68,7 @@
 }
 
 #splash-title {
+  font-family: "Uber Regular";
   font-size: 55px;
   margin-bottom: 30px;
 }
@@ -76,6 +78,7 @@
 }
 
 #splash-prefill-search {
+  font-family: "Uber Regular";
   width: 30%;
   background-color: white;
   padding-top: 15px;
@@ -85,6 +88,7 @@
 }
 
 #splash-deliver {
+  font-family: "Uber Regular";
   display: flex;
   margin-left: 10px;
   background-color: white;
@@ -115,7 +119,12 @@
   padding-top: 3px;
 }
 
+#splash-signin-prompt {
+  font-family: "Uber Regular";
+}
+
 #splash-find-food {
+  font-family: "Uber Regular";
   background-color: black;
   color: white;
   height: 20px;

@@ -59,9 +59,7 @@ class Splash extends React.Component {
             <Link
               to="/login"
               id="splash-bottom-signin">
-              Sign in
-            </Link>
-              to see restauraunts in the area.
+              Sign in </Link> to see restauraunts in the area.
           </div>
         </div>
       </div>
