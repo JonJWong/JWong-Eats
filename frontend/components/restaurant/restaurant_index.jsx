@@ -48,9 +48,15 @@ class RestaurantIndex extends React.Component {
     }
   }
 
-  openButtonContents() {
+  openButtonContents(id) {
     const { cart } = this.props;
-    console.log(cart);
+    if (cart) {
+      if (Object.keys(cart).includes(id)) {
+        return `${cart[id].quantity}`
+      } else {
+      return (<i className="fa-solid fa-plus"></i>)
+      }
+    }
   }
 
   // if the item has an image, render the container with the image
@@ -65,7 +71,7 @@ class RestaurantIndex extends React.Component {
           <button 
             className="menu-open-item"
             onClick={() => this.toggleItemModal(item)}>
-              <i className="fa-solid fa-plus"></i>
+              {this.openButtonContents(id)}
           </button>
 
           <div className="menu-item-info">
@@ -87,7 +93,7 @@ class RestaurantIndex extends React.Component {
           <button 
             className="menu-open-item"
             onClick={() => this.toggleItemModal(item)}>
-              <i className="fa-solid fa-plus"></i>
+              {this.openButtonContents(id)}
           </button>
 
         <div className="menu-item-info">
