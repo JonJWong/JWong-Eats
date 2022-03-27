@@ -6,11 +6,14 @@ class Cart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      cart: this.props.cart,
       soon: false,
       processing: false,
       error: false
     }
     
+    this.conditionalDelayCartClear = this.conditionalDelayCartClear.bind(this);
+    this.conditionalSendCheckout = this.conditionalSendCheckout.bind(this);
     this.emptyCartError = this.emptyCartError.bind(this);
     this.conditionalToggle = this.conditionalToggle.bind(this);
     this.delayCartClear = this.delayCartClear.bind(this);
@@ -58,7 +61,7 @@ class Cart extends React.Component {
     const { checkout, cart } = this.props;
     // set up transaction object to send to backend
     let transaction = {
-      order: this.props.cart,
+      order: this.state.cart,
       userId: this.props.userId
     }
 
@@ -119,8 +122,8 @@ class Cart extends React.Component {
     let sum = 0;
     
     let items;
-    if (this.props.cart) {
-      items = this.props.cart;
+    if (this.state.cart) {
+      items = this.state.cart;
         Object.values(items).forEach(item => {
           sum += Util.priceMultiple(item.quantity, item.item_price)
         }
@@ -182,7 +185,6 @@ class Cart extends React.Component {
   }
 
   render() {
-
     return (
       <div id="cart-modal">
         <div
@@ -222,16 +224,20 @@ class Cart extends React.Component {
 
           {this.renderSoon()}
           <div id="cart-items">
-            {Object.values(this.props.cart).map((item, i) => {
+            {Object.values(this.state.cart).map((item, i) => {
               return (
-                <CartItemContainer item={item} key={i} />
+                <CartItemContainer
+                  item={item}
+                  key={i}
+                  closeAndRemove={this.closeAndRemove}
+                />
               )
             })}
           </div>
 
           <button
             id="cart-clear"
-            onClick={() => this.delayCartClear()}>
+            onClick={() => this.conditionalDelayCartClear()}>
               Clear Cart
           </button>
 
