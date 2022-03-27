@@ -81,16 +81,16 @@ class Cart extends React.Component {
   delayCartClear() {
     const { clearCart } = this.props;
     const button = document.querySelector("#cart-clear");
-    button.textContent = "Clearing..."
-    this.setState({ processing: true })
+    button.textContent = "Clearing...";
+    this.setState({ processing: true });
+
     setTimeout(() => {
       clearCart();
-      button.textContent = "Cleared!"
+      button.textContent = "Cleared!";
+
       setTimeout(() => {
         this.closeAndRemove();
-      }, 200),then(() => {
-        this.setState({ processing: false })
-      })
+      }, 200)
     }, 500)
   }
 
