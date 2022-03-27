@@ -63,7 +63,7 @@ class CartItem extends React.Component {
         </div>
 
         <div className="cart-item-price">
-          ${item.item_price}
+          ${parseFloat(item.item_price).toFixed(2)}
         </div>
 
         <img src={item.photoUrl}
@@ -82,7 +82,7 @@ class CartItem extends React.Component {
         </div>
 
         <div className="cart-item-price">
-          ${item.item_price}
+          ${parseFloat(item.item_price).toFixed(2)}
         </div>
       </div>
       )
