@@ -48,6 +48,7 @@ class RestaurantIndex extends React.Component {
     }
   }
 
+  // set button to either + or item quantity
   openButtonContents(id) {
     const { cart } = this.props;
     if (cart) {

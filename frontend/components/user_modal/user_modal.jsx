@@ -43,11 +43,13 @@ class UserModal extends React.Component {
     }, 10)
   }
 
+  // helper method to add/remove transition effect class
   toggleOpen() {
     const modal = document.querySelector('.modal-contents');
     modal.classList.toggle('modal-open')
   }
 
+  // helper method to trigger transition and "unmount" modal
   closeAndRemove() {
     const { toggleModal } = this.props;
     this.toggleOpen();

@@ -26,6 +26,8 @@ class MenuItem extends React.Component {
     }
   }
 
+  // delay and change button when adding items to cart, and after
+  // a short delay, report success and "unmount cart"
   addToCart(quantity, item) {
     const { addCartItem, toggleItemModal } = this.props;
 
@@ -46,6 +48,7 @@ class MenuItem extends React.Component {
     }, 800)
   }
 
+  // only allow onClick to close modal if things are not happening
   conditionalModalClose() {
     const { toggleItemModal } = this.props;
     if (!this.state.addingItem) {
@@ -53,6 +56,8 @@ class MenuItem extends React.Component {
     }
   }
 
+  // render a different container for menu-item depending on whether or not
+  // the item has a photo attached
   renderItem(item) {
     const { quantity } = this.state;
     if (item.photoUrl) {

@@ -40,6 +40,7 @@ class UpdateUserForm extends React.Component {
     )
   }
 
+  // if demo user, do not render a form, otherwise render form
   render() {
     if (this.state.id === 1) {
       return (

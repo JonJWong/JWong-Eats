@@ -16,6 +16,7 @@ class UserAccount extends React.Component {
     this.setState({ toggled: false })
   }
 
+  // either render order history or edit form
   render() {
     const { currentUser } = this.props;
     if (this.state.toggled === true) {

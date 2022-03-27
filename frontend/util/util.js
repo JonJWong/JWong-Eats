@@ -46,6 +46,7 @@ function currentTimeArray() {
   return [hours, minutes]
 }
 
+// convert 24hrs to 12hrs time
 function getProperTime(time) {
   let [hours, mins] = [time[0], time[1]];
   let deno = "AM"

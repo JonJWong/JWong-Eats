@@ -7,6 +7,8 @@ class CartItem extends React.Component {
     this.state = this.props.item;
   }
 
+  // helper method to create dropdown menu from 0-100, where 0 is "Remove"
+  // also sets default value to current quantity of the item
   drawMenu() {
     const options = [];
     for (let i = 0; i < 100; i++) {
@@ -27,6 +29,8 @@ class CartItem extends React.Component {
     )
   }
 
+  // conditional render of cart item based on whether or not the item has an
+  // image attached to it
   drawContainer(item) {
     if (item.photoUrl) {
       return (
@@ -65,7 +69,6 @@ class CartItem extends React.Component {
   }
 
   render() {
-    const { updateCartItem, removeCartItem } = this.props;
     const item = this.state;
     
     return (

@@ -19,26 +19,27 @@ class NavBar extends React.Component {
     this.setButton = this.setButton.bind(this);
   }
 
+  // helper to toggle state attributes to display modals
   toggle(attr) {
     let setValue = !this.state[attr];
     this.setState({ [attr]: setValue })
   }
 
-  // modal state helper-methods
+  // modal state helper-method
   renderModal() {
     if (this.state.modalOpen) {
       return <UserModalContainer toggleModal={this.toggle} className="modal-open" />
     }
   }
 
-  // cart state helper-methods
+  // cart state helper-method
   renderCart() {
     if (this.state.cartOpen) {
       return <CartContainer toggleCart={this.toggle} />
     }
   }
 
-  // item state helper-methods
+  // item state helper-method
   renderItem() {
     if (this.state.itemOpen) {
       return <MenuItemContainer />
