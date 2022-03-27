@@ -7,8 +7,11 @@ class Cart extends React.Component {
     super(props);
     this.state = {
       soon: false,
+      processing: false
     }
     
+    this.conditionalToggle = this.conditionalToggle.bind(this);
+    this.delayCartClear = this.delayCartClear.bind(this);
     this.toggleOpen = this.toggleOpen.bind(this);
     this.closeAndRemove = this.closeAndRemove.bind(this);
     this.priceSum = this.priceSum.bind(this);
@@ -23,6 +26,16 @@ class Cart extends React.Component {
   toggleOpen() {
     const cart = document.querySelector(".cart-modal-content");
     cart.classList.toggle("cart-modal-open");
+    this.setState({ processing: true })
+    setTimeout(() => {
+      this.setState({ processing: false })
+    }, 500)
+  }
+
+  conditionalToggle() {
+    if (!this.state.processing) {
+      this.closeAndRemove()
+    }
   }
 
   closeAndRemove() {
@@ -65,6 +78,22 @@ class Cart extends React.Component {
     this.setState({ soon: nextValue })
   }
 
+  delayCartClear() {
+    const { clearCart } = this.props;
+    const button = document.querySelector("#cart-clear");
+    button.textContent = "Clearing..."
+    this.setState({ processing: true })
+    setTimeout(() => {
+      clearCart();
+      button.textContent = "Cleared!"
+      setTimeout(() => {
+        this.closeAndRemove();
+      }, 200),then(() => {
+        this.setState({ processing: false })
+      })
+    }, 500)
+  }
+
   renderSoon() {
     if (this.state.soon) {
       return (
@@ -76,18 +105,17 @@ class Cart extends React.Component {
   }
 
   render() {
-    const { clearCart } = this.props;
 
     return (
       <div id="cart-modal">
         <div
           id="cart-modal-block"
-          onClick={() => this.closeAndRemove()} />
+          onClick={() => this.conditionalToggle()} />
 
         <div className="cart-modal-content">
           <button
             id="cart-close"
-            onClick={() => this.closeAndRemove()}>
+            onClick={() => this.conditionalToggle()}>
               <i className="fa-solid fa-x fa-lg"></i>
           </button>
 
@@ -103,7 +131,7 @@ class Cart extends React.Component {
             <div id="cart-top-buttons">
               <button 
                 id="cart-add-items"
-                onClick={() => this.closeAndRemove()}>
+                onClick={() => this.conditionalToggle()}>
                   <i className="fas fa-plus"></i> Add Items
               </button>
 
@@ -127,7 +155,7 @@ class Cart extends React.Component {
 
           <button
             id="cart-clear"
-            onClick={() => clearCart()}>
+            onClick={() => this.delayCartClear()}>
               Clear Cart
           </button>
 
