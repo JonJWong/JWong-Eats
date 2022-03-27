@@ -89,6 +89,13 @@ class Cart extends React.Component {
     }, 800)
   }
 
+  // helper to disallow spam on checkout button
+  conditionalSendCheckout() {
+    if (!this.state.processing) {
+      this.sendCheckout()
+    }
+  }
+
   // method to display a cart error, and after a short delay, remove the error
   // and reset error flag in state
   emptyCartError() {
@@ -150,6 +157,13 @@ class Cart extends React.Component {
         this.closeAndRemove();
       }, 200)
     }, 500)
+  }
+
+  // helper to disallow spamming of cart clear button
+  conditionalDelayCartClear() {
+    if (!this.state.processing) {
+      this.delayCartClear();
+    }
   }
 
   // render error and self-destruct after a small delay
@@ -225,7 +239,7 @@ class Cart extends React.Component {
           <div id="menu-checkout-wrapper">
             <div id="menu-checkout-container">
               <button id="menu-checkout"
-                onClick={() => this.sendCheckout()}>
+                onClick={() => this.conditionalSendCheckout()}>
                   Go to checkout • ${this.priceSum()}
               </button>
             </div>

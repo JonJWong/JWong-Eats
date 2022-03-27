@@ -9,6 +9,7 @@ class MenuItem extends React.Component {
       addingItem: false
     }
 
+    this.conditionalAddToCart = this.conditionalAddToCart.bind(this);
     this.conditionalModalClose = this.conditionalModalClose.bind(this);
     this.addToCart = this.addToCart.bind(this);
   }
@@ -46,6 +47,13 @@ class MenuItem extends React.Component {
         toggleItemModal();
       }, 500)
     }, 800)
+  }
+
+  // helper to disallow spamming add button
+  conditionalAddToCart(quantity, item) {
+    if (!this.state.addingItem) {
+      this.addToCart(quantity, item);
+    }
   }
 
   // only allow onClick to close modal if things are not happening
@@ -100,7 +108,7 @@ class MenuItem extends React.Component {
 
             <button
               id="food-modal-add-order"
-              onClick={() => this.addToCart(quantity, item)}>
+              onClick={() => this.conditionalAddToCart(quantity, item)}>
               <div id="food-modal-add-left">
                 Add {quantity} to order
               </div>
@@ -148,7 +156,7 @@ class MenuItem extends React.Component {
 
           <button
             id="food-modal-add-order"
-            onClick={() => this.addToCart(quantity, item)}>
+            onClick={() => this.conditionalAddToCart(quantity, item)}>
             <div id="food-modal-add-left">
               Add {quantity} to order
             </div>
