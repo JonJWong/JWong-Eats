@@ -10,6 +10,7 @@ class RestaurantIndex extends React.Component {
       itemOpen: false
     }
 
+    this.openButtonContents = this.openButtonContents.bind(this);
     this.renderMenuItem = this.renderMenuItem.bind(this);
     this.renderItemModal = this.renderItemModal.bind(this);
     this.toggleItemModal = this.toggleItemModal.bind(this);
@@ -45,6 +46,11 @@ class RestaurantIndex extends React.Component {
         item={this.state.clickedItem}
         toggleItemModal={this.toggleItemModal} />
     }
+  }
+
+  openButtonContents() {
+    const { cart } = this.props;
+    console.log(cart);
   }
 
   // if the item has an image, render the container with the image

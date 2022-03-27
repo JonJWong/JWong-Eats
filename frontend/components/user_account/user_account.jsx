@@ -17,7 +17,7 @@ class UserAccount extends React.Component {
   }
 
   render() {
-    const { currentUser, logout } = this.props;
+    const { currentUser } = this.props;
     if (this.state.toggled === true) {
       return(
         <div>

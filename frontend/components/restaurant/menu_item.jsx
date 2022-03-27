@@ -5,8 +5,12 @@ class MenuItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      quantity: 1
+      quantity: 1,
+      addingItem: false
     }
+
+    this.conditionalModalClose = this.conditionalModalClose.bind(this);
+    this.addToCart = this.addToCart.bind(this);
   }
 
   // quantity button helpers
@@ -22,8 +26,34 @@ class MenuItem extends React.Component {
     }
   }
 
-  renderItem(item) {
+  addToCart(quantity, item) {
     const { addCartItem, toggleItemModal } = this.props;
+
+    const left = document.querySelector("#food-modal-add-left");
+    const button = document.querySelector("#food-modal-add-order");
+
+    left.textContent = "Adding...";
+    button.style.backgroundColor = "darkgrey";
+    this.setState({ addingItem: true })
+
+    setTimeout(() => {
+      addCartItem(quantity, item);
+      left.textContent = "Added!"
+      
+      setTimeout(() => {
+        toggleItemModal();
+      }, 500)
+    }, 800)
+  }
+
+  conditionalModalClose() {
+    const { toggleItemModal } = this.props;
+    if (!this.state.addingItem) {
+      toggleItemModal();
+    }
+  }
+
+  renderItem(item) {
     const { quantity } = this.state;
     if (item.photoUrl) {
       return (
@@ -31,7 +61,7 @@ class MenuItem extends React.Component {
 
           <button
             id="food-modal-close"
-            onClick={() => toggleItemModal()}>
+            onClick={() => this.conditionalModalClose()}>
               <i className="fa-solid fa-x"></i>
           </button>
 
@@ -65,7 +95,7 @@ class MenuItem extends React.Component {
 
             <button
               id="food-modal-add-order"
-              onClick={() => addCartItem(quantity, item)}>
+              onClick={() => this.addToCart(quantity, item)}>
               <div id="food-modal-add-left">
                 Add {quantity} to order
               </div>
@@ -81,7 +111,9 @@ class MenuItem extends React.Component {
       return (
         <div id="food-modal-content">
 
-          <button id="food-modal-close">
+          <button
+            id="food-modal-close"
+            onClick={() => this.conditionalModalClose()}>
             <i className="fa-solid fa-x"></i>
           </button>
 
@@ -111,7 +143,7 @@ class MenuItem extends React.Component {
 
           <button
             id="food-modal-add-order"
-            onClick={() => this.props.addCartItem(quantity, item)}>
+            onClick={() => this.addToCart(quantity, item)}>
             <div id="food-modal-add-left">
               Add {quantity} to order
             </div>
@@ -127,11 +159,13 @@ class MenuItem extends React.Component {
   }
 
   render() {
-    const { item, toggleItemModal } = this.props;
+    const { item } = this.props;
 
     return (
       <div id="food-modal-container">
-        <div id="food-modal-block" onClick={() => toggleItemModal()}></div>
+        <div id="food-modal-block"
+          onClick={() => this.conditionalModalClose()}>
+        </div>
         {this.renderItem(item)}
       </div>
     )

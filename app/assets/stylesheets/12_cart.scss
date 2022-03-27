@@ -155,6 +155,7 @@
 .cart-item-name {
   grid-area: 1 / 2 / 2 / 3;
   height: 40px;
+  width: 100%;
   justify-self: start;
   align-self: start;
 }
@@ -171,7 +172,7 @@
   min-height: 100px;
   max-height: 110px;
   min-width: 100px;
-  width: auto;
+  width: 100%;
   height: auto;
   object-fit: cover;
   justify-self: right;
