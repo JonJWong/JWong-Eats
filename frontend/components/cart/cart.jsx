@@ -7,9 +7,11 @@ class Cart extends React.Component {
     super(props);
     this.state = {
       soon: false,
-      processing: false
+      processing: false,
+      error: false
     }
     
+    this.emptyCartError = this.emptyCartError.bind(this);
     this.conditionalToggle = this.conditionalToggle.bind(this);
     this.delayCartClear = this.delayCartClear.bind(this);
     this.toggleOpen = this.toggleOpen.bind(this);
@@ -48,11 +50,44 @@ class Cart extends React.Component {
 
   sendCheckout() {
     const { checkout } = this.props;
+    const { cart } = this.props;
     let transaction = {
       order: this.props.cart,
       userId: this.props.userId
     }
-    checkout(transaction)
+    const button = document.querySelector("#menu-checkout");
+    button.textContent = ("Processing...");
+    this.setState({ processing: true })
+    setTimeout(() => {
+        if (Object.keys(cart).length > 0) {
+          button.textContent = ("Checked out!")
+          checkout(transaction)
+
+          setTimeout(() => {
+            this.closeAndRemove();
+          }, 200)
+        } else {
+          button.textContent = `Go to checkout • ${this.priceSum()}`
+          this.setState({ 
+            error: true,
+            processing: false
+          })
+        }
+    }, 800)
+  }
+
+  emptyCartError() {
+    if (this.state.error) {
+      setTimeout(() => {
+        const error = document.querySelector(".cart-error-2");
+        error.parentElement.removeChild(error);
+      }, 3000);
+      return (
+        <div className="auth-errors cart-error cart-error-2">
+          Your cart was empty. Please add some items before checking out.
+        </div>
+      )
+    }
   }
 
   priceSum() {
@@ -96,8 +131,12 @@ class Cart extends React.Component {
 
   renderSoon() {
     if (this.state.soon) {
+      setTimeout(() => {
+        const error = document.querySelector(".cart-error-1");
+        error.parentElement.removeChild(error);
+      }, 3000);
       return (
-        <div className="auth-errors cart-error">
+        <div className="auth-errors cart-error cart-error-1">
           Group ordering is not available yet! Sorry for the inconvenience.
         </div>
       )
@@ -144,7 +183,6 @@ class Cart extends React.Component {
           </div>
 
           {this.renderSoon()}
-
           <div id="cart-items">
             {Object.values(this.props.cart).map((item, i) => {
               return (
@@ -159,6 +197,7 @@ class Cart extends React.Component {
               Clear Cart
           </button>
 
+            {this.emptyCartError()}
           <div id="menu-checkout-wrapper">
             <div id="menu-checkout-container">
               <button id="menu-checkout"
