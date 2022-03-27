@@ -6,11 +6,10 @@
   right: 0;
   z-index: 2;
   opacity: .8;
-  transition-property: opacity;
   background: rgb(0, 0, 0);
 }
 
-#modal-contents {
+.modal-contents {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -23,6 +22,12 @@
   padding-right: 2%;
   padding-top: 2%;
   padding-bottom: 2%;
+  transition: transform .4s ease .1s;
+  transform: translate(-100%, 0%);
+}
+
+.modal-open {
+  transform: translate(0%, 0%);
 }
 
 .user-info {

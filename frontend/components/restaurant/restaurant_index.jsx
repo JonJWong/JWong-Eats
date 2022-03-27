@@ -64,7 +64,7 @@ class RestaurantIndex extends React.Component {
 
           <div className="menu-item-info">
             <div className="menu-item-photo-wrapper">
-              <img src={item.photoUrl} className="menu-item-photo"></img>
+              {/* <img src={item.photoUrl} className="menu-item-photo"></img> */}
             </div>
             <div className="menu-item-name">{item.item_name}</div>
             <div className="menu-item-price">${item.item_price}</div>
@@ -115,18 +115,20 @@ class RestaurantIndex extends React.Component {
     const timePrompt = Util.timeDifferencePrompt(restaurant.hours)
 
     return (
-      <div className="restaurant-page-container">
-        <img src={restaurant.photoUrl} className="restaurant-banner" />
+      <div id="restaurant-page-container">
+        <div id="restaurant-banner-wrapper">
+          <img src={restaurant.photoUrl} id="restaurant-banner" />
+        </div>
 
-        <div className="restaurant-info">
-          <div className="restaurant-page-name">{restaurant.name}</div>
-          <div className="restaurant-small">
+        <div id="restaurant-info">
+          <div id="restaurant-page-name">{restaurant.name}</div>
+          <div id="restaurant-small">
             <i className="fas fa-star"></i> {Util.addZero(restaurant.rating)} ({restaurant.review_count} Ratings) • {restaurant.price_rating} • {timePrompt}
           </div>
         </div>
 
-        <div className="menu-items-wrapper">
-          <div className="menu-items-list">
+        <div id="menu-items-wrapper">
+          <div id="menu-items-list">
             {Object.keys(menu).map(id => {
               const item = menu[id];
               return (

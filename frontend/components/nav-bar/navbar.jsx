@@ -27,7 +27,7 @@ class NavBar extends React.Component {
   // modal state helper-methods
   renderModal() {
     if (this.state.modalOpen) {
-      return <UserModalContainer toggleModal={this.toggle} />
+      return <UserModalContainer toggleModal={this.toggle} className="modal-open" />
     }
   }
 
@@ -58,8 +58,6 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const { modalOpen, cartOpen, itemOpen } = this.state;
-
     return (
       <nav id="nav-bar">
 

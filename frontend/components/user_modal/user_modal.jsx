@@ -11,6 +11,8 @@ class UserModal extends React.Component {
       tabOpen: false
     }
 
+    this.closeAndRemove = this.closeAndRemove.bind(this);
+    this.toggleOpen = this.toggleOpen.bind(this);
     this.toggleTab = this.toggleTab.bind(this);
     this.rendertab = this.renderTab.bind(this);
   }
@@ -35,6 +37,25 @@ class UserModal extends React.Component {
     }
   }
 
+  componentDidMount() {
+    setTimeout(() => {
+      this.toggleOpen();
+    }, 10)
+  }
+
+  toggleOpen() {
+    const modal = document.querySelector('.modal-contents');
+    modal.classList.toggle('modal-open')
+  }
+
+  closeAndRemove() {
+    const { toggleModal } = this.props;
+    this.toggleOpen();
+    setTimeout(() => {
+      toggleModal("modalOpen");
+    }, 510)
+  }
+
   render() {
     const open = this.state.tabOpen;
     const { currentUser, logout, login } = this.props;
@@ -42,7 +63,7 @@ class UserModal extends React.Component {
     if (currentUser && !open) {
       return (
         <div id="user-modal">
-          <div id="modal-contents">
+          <div className="modal-contents">
 
             <div className="user-info">
               <span className="profile-photo" />
@@ -66,13 +87,14 @@ class UserModal extends React.Component {
             </button>
           </div>
 
-          <div id="user-modal-block" onClick={() => this.props.toggleModal('modalOpen')} />
+          <div id="user-modal-block" 
+            onClick={() => this.closeAndRemove()} />
         </div>
       )
     } else if (currentUser && open) {
       return (
         <div id="user-modal">
-          <div id="modal-contents">
+          <div className="modal-contents">
 
             {this.renderTab()}
 
@@ -90,13 +112,13 @@ class UserModal extends React.Component {
           </div>
 
           <div id="user-modal-block"
-            onClick={() => this.props.toggleModal('modalOpen')} />
+            onClick={() => this.closeAndRemove()} />
         </div>
       )
     } else {
       return (
         <div id="splash-user-modal">
-          <div id="splash-modal-contents">
+          <div className="modal-contents">
             <Link to="/login">
               <div id="splash-modal-login">
                 Sign In
@@ -113,8 +135,8 @@ class UserModal extends React.Component {
             </button>
           </div>
 
-          <div id="splash-user-modal-block"
-            onClick={() => this.props.toggleModal('modalOpen')} />
+          <div id="user-modal-block"
+            onClick={() => this.closeAndRemove()} />
         </div>
       )
     }

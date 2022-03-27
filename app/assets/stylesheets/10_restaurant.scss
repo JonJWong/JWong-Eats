@@ -1,8 +1,8 @@
-.restaurant-page-container {
+#restaurant-page-container {
   padding-top: 96px;
 }
 
-.restaurant-banner {
+#restaurant-banner {
   min-height: 120px;
   height: 13vh;
   max-width: 100vw;
@@ -11,7 +11,7 @@
   background-color: brown;
 }
 
-.restaurant-page-name {
+#restaurant-page-name {
   width: auto;
   font-size: 40px;
   padding-top: 30px;
@@ -19,19 +19,19 @@
   padding-left: 30px;
 }
 
-.restaurant-small {
+#restaurant-small {
   width: auto;
   padding-left: 30px;
 }
 
-.menu-items-wrapper {
+#menu-items-wrapper {
   position: absolute;
   width: 70%;
   right: 0;
   padding-right: 20px;
 }
 
-.menu-items-list {
+#menu-items-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
@@ -116,6 +116,7 @@
   outline: white 1px solid;
   border-radius: 30px;
   width: 35px;
+  z-index: 1;
 }
 
 .menu-add-to-cart:hover {

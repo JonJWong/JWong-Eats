@@ -182,13 +182,13 @@ class BenchMap extends React.Component{
   componentDidMount() {
     
     // wrap this.mapNode in a Google Map
-    this.map = new google.maps.Map(this.mapNode, MAP_OPTIONS);
-    this.map.setOptions({ styles: STYLES["hide"] })
+    // this.map = new google.maps.Map(this.mapNode, MAP_OPTIONS);
+    // this.map.setOptions({ styles: STYLES["hide"] })
     // initialize places service
-    this.service = new google.maps.places.PlacesService(this.map);
+    // this.service = new google.maps.places.PlacesService(this.map);
 
     // populate map with markers
-    this.service.nearbySearch(REQUEST, this.mapCallback);
+    // this.service.nearbySearch(REQUEST, this.mapCallback);
   }
 
   // remove map, service, attributes when component unmounts

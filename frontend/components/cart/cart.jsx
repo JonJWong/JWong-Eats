@@ -9,7 +9,28 @@ class Cart extends React.Component {
       soon: false,
     }
     
+    this.toggleOpen = this.toggleOpen.bind(this);
+    this.closeAndRemove = this.closeAndRemove.bind(this);
     this.priceSum = this.priceSum.bind(this);
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.toggleOpen();
+    }, 10)
+  }
+
+  toggleOpen() {
+    const cart = document.querySelector(".cart-modal-content");
+    cart.classList.toggle("cart-modal-open");
+  }
+
+  closeAndRemove() {
+    const { toggleCart } = this.props;
+    this.toggleOpen();
+    setTimeout(() => {
+      toggleCart("cartOpen");
+    }, 510)
   }
 
   sendCheckout() {
@@ -55,18 +76,18 @@ class Cart extends React.Component {
   }
 
   render() {
-    const { toggleCart, clearCart } = this.props;
+    const { clearCart } = this.props;
 
     return (
       <div id="cart-modal">
         <div
           id="cart-modal-block"
-          onClick={() => toggleCart('cartOpen')} />
+          onClick={() => this.closeAndRemove()} />
 
-        <div id="cart-modal-content">
+        <div className="cart-modal-content">
           <button
             id="cart-close"
-            onClick={() => toggleCart('cartOpen')}>
+            onClick={() => this.closeAndRemove()}>
               <i className="fa-solid fa-x fa-lg"></i>
           </button>
 
@@ -82,7 +103,7 @@ class Cart extends React.Component {
             <div id="cart-top-buttons">
               <button 
                 id="cart-add-items"
-                onClick={() => toggleCart('cartOpen')}>
+                onClick={() => this.closeAndRemove()}>
                   <i className="fas fa-plus"></i> Add Items
               </button>
 
