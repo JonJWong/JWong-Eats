@@ -29,16 +29,9 @@
   z-index: 5;
 }
 
-#nav-contents {
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
-}
-
 #nav-left {
   display: flex;
+  width: auto;
 }
 
 #method-slider, #search-bar {
@@ -63,7 +56,7 @@
 }
 
 .delivery-button {
-  width: 140%;
+  width: 80px;
   margin-left: 5px;
   margin-right: 5px;
   padding-left: 11px;
@@ -71,7 +64,7 @@
 }
 
 .pickup-button {
-  width: 140%;
+  width: 80px;
   margin-left: -5px;
   margin-right: 5px;
   padding-left: 11px;
@@ -92,7 +85,6 @@
   border-style: none;
   font-size: 16px;
   color: white;
-  margin-top: -20px;
   background-color: black;
 }
 

@@ -9,6 +9,13 @@
   background: rgb(0, 0, 0);
 }
 
+.profile-photo {
+  content: image_url('silhouette.png');
+  width: 50px;
+  border-radius: 50%;
+  height: auto;
+}
+
 .modal-contents {
   position: fixed;
   top: 0;
@@ -65,4 +72,16 @@
   margin-top: 80%;
   font-size: 18px;
   color: rgb(107, 107, 107);
+}
+
+#orders-link {
+  font-size: 18px;
+  font-family: "Uber Regular";
+  margin-top: 0;
+  position: absolute;
+  top: 110px;
+}
+
+.fa-receipt {
+  padding-right: 15px;
 }

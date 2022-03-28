@@ -18,6 +18,7 @@
 }
 
 .cart-modal-content {
+  overflow-y: scroll;
   position: fixed;
   right: 0;
   top: 0;
@@ -26,9 +27,13 @@
   padding-top: 20px;
   padding-left: 20px;
   background-color: white;
-  z-index: 7;
+  z-index: 9;
   transition: transform .4s ease .1s;
   transform: translate(100%, 0%);
+}
+
+.cart-modal-content::-webkit-scrollbar {
+  display: none;
 }
 
 .cart-modal-open {
@@ -90,17 +95,18 @@
 }
 
 #menu-checkout-wrapper {
-  position: fixed;
+  position: absolute;
   top: 90%;
   bottom: 0;
   right: 0;
-  width: 28vw;
+  width: 100%;
   display: flex;
   z-index: 0;
 }
 
 #menu-checkout-container {
   box-shadow: 0px 0px 10px 10px rgba(117, 117, 117, 0.1);
+  background-color: white;
   display: flex;
   justify-content: center;
   align-self: flex-end;

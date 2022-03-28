@@ -102,10 +102,16 @@ class OrderHistory extends React.Component {
           
           <div className="history-item-list">
             {items.map(item => {
+              const currRest = restaurants[item.restaurant_id].name
               return (
                 <div className="history-item-wrapper" key={Math.random() * total}>
                   <div className="history-item-quantity">{item.item_quantity}</div>
-                  <div className="history-item-title">{item.item_name}</div>
+                  <div className="history-item-title">
+                    {item.item_name}
+                      <div className="history-rest-name">
+                        - {currRest}
+                      </div>
+                  </div>
                 </div>
               )
             })}

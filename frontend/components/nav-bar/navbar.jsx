@@ -110,14 +110,12 @@ class NavBar extends React.Component {
               />
             </div>
 
-          </div>
-
-          <div className="right">
             <button onClick={() => this.toggle('cartOpen')}
               id="cart-button">
                 <i className="fas fa-shopping-cart"></i>Cart
             </button>
           </div>
+
 
         </div>
         {this.renderModal()}

@@ -38,6 +38,7 @@
 }
 
 .history-order-container {
+  min-height: 150px;
   padding-top: 15px;
   width: calc(100% - 40px);
   padding-left: 40px;
@@ -116,4 +117,9 @@
 .history-store-button-text {
   text-align: center;
   width: auto;
+}
+
+.history-rest-name {
+  font-family: "Uber Light";
+  padding-left: 5px;
 }
