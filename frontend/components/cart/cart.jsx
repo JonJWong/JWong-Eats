@@ -41,7 +41,10 @@ class Cart extends React.Component {
   // add class to open and close modal, and disable onClick to close while moving
   toggleOpen() {
     const cart = document.querySelector(".cart-modal-content");
+    const button = document.querySelector(".menu-checkout-wrapper")
+    
     cart.classList.toggle("cart-modal-open");
+    button.classList.toggle("cart-modal-open");
     this.setState({ processing: true })
     setTimeout(() => {
       this.setState({ processing: false })
@@ -133,7 +136,7 @@ class Cart extends React.Component {
     if (!errors) return null;
 
     return (
-      <ul className="auth-errors">
+      <ul className="cart-errors">
         {errors.map((error, idx) => (
           <li key={idx}>
             {error}
@@ -271,8 +274,9 @@ class Cart extends React.Component {
 
             {this.renderErrors()}
             {this.emptyCartError()}
+        </div>
 
-          <div id="menu-checkout-wrapper">
+          <div className="menu-checkout-wrapper">
             <div id="menu-checkout-container">
               <button id="menu-checkout"
                 onClick={() => this.conditionalSendCheckout()}>
@@ -280,7 +284,6 @@ class Cart extends React.Component {
               </button>
             </div>
           </div>
-        </div>
       </div>
     )
   }
