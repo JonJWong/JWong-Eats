@@ -2229,7 +2229,7 @@ menu20_item3 = MenuItem.create({
     description: "1 bottle of Bordeaux blend (Chateau La Rose de Vitrac 2018), 5 assorted cheese, 5 cracker varieties, and a shrimp with with cocktail sauce."
   })
 menu20_item3img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnyshrimp.jpg")
-menu20_item3.photo.attach(io: menu20_item2img, filename: 'bunnyshrimp.jpg')
+menu20_item3.photo.attach(io: menu20_item3img, filename: 'bunnyshrimp.jpg')
 
 menu20_item4 = MenuItem.create({
     menu_id: 20,
