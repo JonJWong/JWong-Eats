@@ -274,16 +274,17 @@ class Cart extends React.Component {
 
             {this.renderErrors()}
             {this.emptyCartError()}
+
         </div>
 
-          <div className="menu-checkout-wrapper">
-            <div id="menu-checkout-container">
-              <button id="menu-checkout"
-                onClick={() => this.conditionalSendCheckout()}>
-                  Go to checkout • ${this.priceSum()}
-              </button>
-            </div>
+        <div className="menu-checkout-wrapper">
+          <div id="menu-checkout-container">
+            <button id="menu-checkout"
+              onClick={() => this.conditionalSendCheckout()}>
+                Go to checkout • ${this.priceSum()}
+            </button>
           </div>
+        </div>
       </div>
     )
   }

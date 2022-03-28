@@ -83,11 +83,13 @@ class UserModal extends React.Component {
                 </div>
             </Link>
 
-            <button
-              onClick={() => logout()}
-              id="modal-signout">
-                Sign Out
-            </button>
+            <div id="modal-signout-container">
+              <button
+                onClick={() => logout()}
+                id="modal-signout">
+                  Sign Out
+              </button>
+            </div>
           </div>
 
           <div id="user-modal-block" 
@@ -107,11 +109,13 @@ class UserModal extends React.Component {
                 {open ? "Close" : "View Account"}
             </button>
 
-            <button
-              onClick={() => logout()}
-              id="modal-signout">
-                Sign Out
-            </button>
+            <div id="modal-signout-container">
+              <button
+                onClick={() => logout()}
+                id="modal-signout">
+                  Sign Out
+              </button>
+            </div>
           </div>
 
           <div id="user-modal-block"

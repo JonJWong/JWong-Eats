@@ -1,5 +1,5 @@
 .history-body {
-  position: fixed;
+  position: absolute;
   top: 98px;
   left: 0;
   right: 0;
@@ -17,11 +17,14 @@
 
 .history-header {
   font-family: "Uber Medium";
+  background-color: white;
   font-size: 35px;
   padding-left: 40px;
   padding-top: 15px;
   padding-bottom: 25px;
-  width: auto;
+  width: 300px;
+  position: sticky;
+  top: 98px;
 }
 
 .history-order-photo-wrapper {
