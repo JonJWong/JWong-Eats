@@ -2,9 +2,9 @@ import { connect } from "react-redux";
 import MenuItem from "./menu_item";
 import { addCartItem } from "../../actions/cart_actions";
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
-
+    cart: state.entities.cart
   }
 }
 

@@ -4,7 +4,8 @@ import NavBar from './navbar';
 
 const mapStateToProps = (state) => {
   return {
-    errors: state.errors.session
+    errors: state.errors.session,
+    cart: state.entities.cart
   }
 }
 

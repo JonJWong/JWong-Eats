@@ -73,6 +73,7 @@
 }
 
 #cart-add-items, #cart-group-order {
+  position: relative;
   height: 100%;
   margin-left: 5px;
   margin-right: 5px;
@@ -95,13 +96,12 @@
 }
 
 #menu-checkout-wrapper {
-  position: absolute;
-  top: 90%;
+  position: fixed;
   bottom: 0;
   right: 0;
+  left: 0;
   width: 100%;
-  display: flex;
-  z-index: 0;
+  z-index: 9;
 }
 
 #menu-checkout-container {

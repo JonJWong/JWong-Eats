@@ -15,13 +15,10 @@ class NavBar extends React.Component {
       currentButton: "delivery"
     }
 
+    this.cartNum = this.cartNum.bind(this);
     this.toggle = this.toggle.bind(this);
     this.setButton = this.setButton.bind(this);
   }
-
-  // componentDidUpdate() {
-    // fetch cart from localstorage
-  // }
 
   // helper to toggle state attributes to display modals
   toggle(attr) {
@@ -59,6 +56,12 @@ class NavBar extends React.Component {
     if (this.props.location.pathname === "/pickup"
       && this.state.currentButton === "delivery") {
         this.setState({ currentButton: "pickup" })
+    }
+  }
+
+  cartNum() {
+    if (Object.keys(this.props.cart).length > 0) {
+      return `(${Object.keys(this.props.cart).length})`
     }
   }
 
@@ -106,13 +109,13 @@ class NavBar extends React.Component {
               <i className="fas fa-search"></i>
               <input type='text'
                 id="nav-search-area"
-                placeholder="Food, groceries, drinks, etc"
+                placeholder="Search restaurants by name"
               />
             </div>
 
             <button onClick={() => this.toggle('cartOpen')}
               id="cart-button">
-                <i className="fas fa-shopping-cart"></i>Cart
+                <i className="fas fa-shopping-cart"></i>Cart {this.cartNum()}
             </button>
           </div>
 

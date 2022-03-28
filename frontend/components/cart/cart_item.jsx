@@ -38,7 +38,7 @@ class CartItem extends React.Component {
   // helper method to change global cart state based on selection
   // it will either update or remove the item based on quantity selected
   handleChange(e) {
-    const { removeCartItem, updateCartItem, closeAndRemove } = this.props;
+    const { removeCartItem, updateCartItem } = this.props;
     const { item } = this.state;
     const quantity = parseInt(e.target.value);
 
@@ -47,9 +47,10 @@ class CartItem extends React.Component {
     } else {
       updateCartItem(quantity, item)
     }
-
-    // add save to local storage
-    closeAndRemove();
+    Util.saveState({ entities: {
+      cart: this.props.cart
+      }
+    });
   }
 
   // conditional render of cart item based on whether or not the item has an

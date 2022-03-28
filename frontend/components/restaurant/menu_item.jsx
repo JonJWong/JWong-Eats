@@ -39,12 +39,16 @@ class MenuItem extends React.Component {
     button.style.backgroundColor = "darkgrey";
     this.setState({ addingItem: true })
 
+    const that = this;
+
     setTimeout(() => {
       addCartItem(quantity, item);
       left.textContent = "Added!"
 
-      // add save to local storage
-      
+      Util.saveState({ entities: {
+        cart: that.props.cart
+        }
+      });
       setTimeout(() => {
         toggleItemModal();
       }, 500)
