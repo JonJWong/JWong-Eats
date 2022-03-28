@@ -101,6 +101,8 @@ GEM
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     debug_inspector (1.1.0)
+    down (5.3.1)
+      addressable (~> 2.8)
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.5)
@@ -135,8 +137,6 @@ GEM
     msgpack (1.4.5)
     nio4r (2.5.8)
     nokogiri (1.12.5-x86_64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     pg (1.3.4)
     pry (0.14.1)
@@ -226,7 +226,6 @@ GEM
 
 PLATFORMS
   x86_64-darwin-21
-  x86_64-linux
 
 DEPENDENCIES
   annotate
@@ -239,6 +238,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  down
   figaro
   jbuilder (~> 2.5)
   jquery-rails

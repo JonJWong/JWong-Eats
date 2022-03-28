@@ -27,6 +27,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 gem 'jquery-rails'
 
+gem "down"
+
 gem "aws-sdk-s3"
 
 # Use ActiveStorage variant
