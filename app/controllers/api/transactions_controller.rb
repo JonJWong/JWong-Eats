@@ -1,7 +1,10 @@
 class Api::TransactionsController < ApplicationController
 
   def create
-    @transaction = Transaction.create({user_id: params[:cart][:userId]})
+    @transaction = Transaction.create({
+      user_id: params[:cart][:userId],
+      total: params[:cart][:total]
+      })
     items = params[:cart][:order]
 
     items.each do |id, item|

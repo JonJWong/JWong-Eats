@@ -9,6 +9,7 @@
 #  order_number  :integer          not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  item_id       :integer          not null
 #
 
 # This model initially had no columns defined. If you add columns to the

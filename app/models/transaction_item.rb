@@ -9,6 +9,7 @@
 #  order_number  :integer          not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  item_id       :integer          not null
 #
 class TransactionItem < ApplicationRecord
 

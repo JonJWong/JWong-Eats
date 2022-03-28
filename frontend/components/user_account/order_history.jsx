@@ -1,42 +1,134 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+function monthString(month) {
+  switch (month) {
+    case 0:
+      return "Jan";
+    case 1:
+      return "Feb";
+    case 2:
+      return "Mar";
+    case 3:
+      return "Apr";
+    case 4:
+      return "May";
+    case 5:
+      return "Jun";
+    case 6:
+      return "Jul";
+    case 7:
+      return "Aug";
+    case 8:
+      return "Sep";
+    case 9:
+      return "Oct";
+    case 10:
+      return "Nov";
+    case 11:
+      return "Dec";
+  }
+}
 
 class OrderHistory extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true
+      loading: true,
     }
+
+    this.ifPhoto = this.ifPhoto.bind(this);
+    this.renderOrders = this.renderOrders.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.id)
+      .then(() => this.props.fetchRestaurants())
       .then(() => this.setState({ loading: false }))
   }
 
-  ifPhoto(item) {
-    if (item.photoUrl) {
+  ifPhoto(restaurant) {
+    if (restaurant.photoUrl) {
       return (
-        <img
-          src={item.photoUrl}
-          alt={item.item_name}
-          className="history-photo"
-        />
+        <Link to={`/restaurants/${restaurant.id}`}>
+          <div className="history-order-photo-wrapper">
+            <img
+              src={restaurant.photoUrl}
+              alt={`${restaurant.name}-photo`}
+              className="history-order-photo"/>
+          </div>
+        </Link>
       )
     }
   }
 
-  renderOrder(order) {
-    return (
-      <div className="history-item-container">
-        {order.map(item => {
-          const { item_name, item_price, item_quantity, item_id, date } = item;
-          return (
-            <div>test</div>
-          )
-        })}
-      </div>
-    
-    )
+  renderOrders() {
+    const { restaurants } = this.props;
+    const { user } = this.props;
+    const transactions = Object.keys(user.transactions);
+
+    return transactions.map(transId => {
+      const currentTransaction = user.transactions[transId];
+      const { items, total } = currentTransaction;
+
+      const first = items[0].restaurant_id;
+
+      let restName;
+
+      const restaurant = restaurants[first];
+
+      if (items.every(item => item.restaurant_id === first)) {
+        restName = 
+          `${restaurant.name} - ${restaurant.address}`;
+      } else {
+        restName = 
+          `${restaurant.name} and others...`;
+      }
+      
+      return (
+        // randomly assigned keys, refactor
+        <div className="history-order-container" key={Math.random() * total}>
+          {this.ifPhoto(restaurant)}
+          <div className="history-order-title-container">
+            <div className="history-order-title">{restName}</div>
+            <div className="history-order-subtitle">
+              {items.length} Items for ${total} • {this.formattedDate(currentTransaction)} • 
+              <div
+                className="history-view-receipt">
+                  View Receipt
+              </div>
+            </div>
+          </div>
+          
+          <div className="history-item-list">
+            {items.map(item => {
+              return (
+                <div className="history-item-wrapper" key={Math.random() * total}>
+                  <div className="history-item-quantity">{item.item_quantity}</div>
+                  <div className="history-item-title">{item.item_name}</div>
+                </div>
+              )
+            })}
+          </div>
+
+          <div className="history-store-button">
+            <Link
+              to={`/restaurants/${first}`}
+              className="history-store-button-text">
+              View Store
+            </Link>
+          </div>
+        </div>
+      )
+    })
+  }
+
+  formattedDate(transaction) {
+    const date = new Date(transaction.items[0].date)
+    const month = monthString(date.getMonth());
+    const day = date.getDate();
+    const time = date.toLocaleTimeString('en-US');
+    return `${month} ${day} at ${time}`
   }
 
   render() {
@@ -49,19 +141,12 @@ class OrderHistory extends React.Component {
       )
     }
 
-    const { user } = this.props;
-    const transactions = user.transactions;
-
-    Object.keys(transactions).map(orderNumber => {
-      const order = transactions[orderNumber].items;
-      order.map(item => {
-        console.log(item)
-      })
-    })
-
     return (
-      <div className="history-container">
+      <div className="history-body">
         <h2 className="history-header">Past Orders</h2>
+        <div className="history-container">
+          {this.renderOrders()}
+        </div>
       </div>
     )
   }

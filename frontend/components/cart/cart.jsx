@@ -72,7 +72,8 @@ class Cart extends React.Component {
     // set up transaction object to send to backend
     let transaction = {
       order: this.state.cart,
-      userId: this.props.userId
+      userId: this.props.userId,
+      total: this.priceSum()
     }
 
     // set button content, and state to disallow modal close onClick

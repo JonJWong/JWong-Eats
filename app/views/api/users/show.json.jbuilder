@@ -3,6 +3,7 @@ json.extract! @user, :id, :email, :first_name, :last_name, :address
 json.set! "transactions" do
   @user.transactions.each do |transaction|
     json.set! transaction.id do
+      json.total transaction.total
 
       items = transaction.transaction_items
       

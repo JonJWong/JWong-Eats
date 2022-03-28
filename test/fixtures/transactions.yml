@@ -6,6 +6,7 @@
 #  user_id    :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  total      :decimal(, )      not null
 #
 
 # This model initially had no columns defined. If you add columns to the

@@ -85,6 +85,8 @@ restaurant2 = Restaurant.create({
     price_rating: "$",
     hours: "11:00AM - 2:00AM"
   })
+genericImg = open("https://jwong-eats-seeds.s3.amazonaws.com/JWongEats.jpeg")
+restaurant2.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 restaurant3 = Restaurant.create({
     name: "Cafe Z",
@@ -107,6 +109,7 @@ restaurant4 = Restaurant.create({
     price_rating: "$$",
     hours: "2:00PM - 10:00PM"
   })
+restaurant4.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 restaurant5 = Restaurant.create({
     name: "Cozy Corner Deli and Caterers",
@@ -285,6 +288,8 @@ restaurant19 = Restaurant.create({
     price_rating: "$$",
     hours: "11:00AM - 10:00PM"
   })
+restaurant19img = open("https://jwong-eats-seeds.s3.amazonaws.com/olivebanner.jpeg")
+restaurant19.photo.attach(io: restaurant19img, filename: 'olivebanner.jpeg')
 
 restaurant20 = Restaurant.create({
   name: "Bunny Cafe",
@@ -295,6 +300,8 @@ restaurant20 = Restaurant.create({
   price_rating: "$$$$$",
   hours: "6:00AM - 10:00PM"
 })
+restaurant20img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnybanner.jpg")
+restaurant20.photo.attach(io: restaurant20img, filename: 'bunnybanner.jpg')
   
 puts("Seeding Menus...")
 
@@ -417,6 +424,7 @@ menu1_item2 = MenuItem.create({
     item_price: 20.95,
     description: "Sauteed salmon, fresh tomatoes and a touch of cream"
   })
+menu1_item2.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu1_item3 = MenuItem.create({
     menu_id: 1,
@@ -424,6 +432,7 @@ menu1_item3 = MenuItem.create({
     item_price: 16.95,
     description: "Tomato basil sauce"
   })
+menu1_item3.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu1_item4 = MenuItem.create({
     menu_id: 1,
@@ -431,6 +440,7 @@ menu1_item4 = MenuItem.create({
     item_price: 18.95,
     description: "In a light pink sauce"
   })
+menu1_item4.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu1_item5 = MenuItem.create({
     menu_id: 1,
@@ -438,6 +448,7 @@ menu1_item5 = MenuItem.create({
     item_price: 19.95,
     description: "Breaded chicken brease, marinara sauce toppped with mozzarella cheese"
   })
+menu1_item5.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu1_item6 = MenuItem.create({
     menu_id: 1,
@@ -445,6 +456,7 @@ menu1_item6 = MenuItem.create({
     item_price: 21.95,
     description: "Sauteed with garlic, olive oil & white wine"
   })
+menu1_item6.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu1_item7 = MenuItem.create({
     menu_id: 1,
@@ -461,6 +473,7 @@ menu1_item8 = MenuItem.create({
     item_price: 21.95,
     description: "Spicy marinara sauce"
   })
+menu1_item8.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu1_item9 = MenuItem.create({
     menu_id: 1,
@@ -468,6 +481,7 @@ menu1_item9 = MenuItem.create({
     item_price: 14.95,
     description: ""
   })
+menu1_item9.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu1_item10 = MenuItem.create({
     menu_id: 1,
@@ -475,6 +489,7 @@ menu1_item10 = MenuItem.create({
     item_price: 3.00,
     description: "Coke, Diet Coke, Sprite, Seltzer"
   })
+menu1_item10.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 puts("Seeding SIGNATURZ...")
 # SIGNATURZ
@@ -485,12 +500,15 @@ menu2_item1 = MenuItem.create({
     item_price: 9.00,
     description: "Belgian waffle w/ crispy fried chicken strips"
   })
+menu2_item1.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
+
 menu2_item2 = MenuItem.create({
     menu_id: 2,
     item_name: "Angus Beef Burger",
     item_price: 8.00,
     description: "Eight ounces of Angus beef, lettuce, tomato & onion on a toasted garlic bun"
   })
+menu2_item2.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu2_item3 = MenuItem.create({
     menu_id: 2,
@@ -498,6 +516,7 @@ menu2_item3 = MenuItem.create({
     item_price: 9.00,
     description: "Steak w/ cooked onions, peppers and American cheese"
   })
+menu2_item3.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu2_item4 = MenuItem.create({
     menu_id: 2,
@@ -505,6 +524,7 @@ menu2_item4 = MenuItem.create({
     item_price: 9.00,
     description: "Freshly fried tortillas covered in cheese sauce, beef, pico de gallo and jalapenos with a side of sour cream"
   })
+menu2_item4.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu2_item5 = MenuItem.create({
     menu_id: 2,
@@ -512,6 +532,7 @@ menu2_item5 = MenuItem.create({
     item_price: 8.00,
     description: "Thin crust cheese pizza"
   })
+menu2_item5.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu2_item6 = MenuItem.create({
     menu_id: 2,
@@ -519,6 +540,8 @@ menu2_item6 = MenuItem.create({
     item_price: 7.00,
     description: "3 Mini crispy fried pieces of flounder served w/ a spicy aioli sauce"
   })
+menu2_item6.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
+
 
 menu2_item7 = MenuItem.create({
     menu_id: 2,
@@ -526,6 +549,7 @@ menu2_item7 = MenuItem.create({
     item_price: 6.00,
     description: "Crispy coated fries tossed in a fresh garlic & butter sauce"
   })
+menu2_item7.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu2_item8 = MenuItem.create({
     menu_id: 2,
@@ -533,6 +557,8 @@ menu2_item8 = MenuItem.create({
     item_price: 13.00,
     description: "6 Fried or grilled jumbo shrimp w/ fries"
   })
+menu2_item8.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
+
 
 menu2_item9 = MenuItem.create({
     menu_id: 2,
@@ -540,6 +566,7 @@ menu2_item9 = MenuItem.create({
     item_price: 13.00,
     description: "SoCo, Captain Morgan, Peach Schnapps, Triple Sec, Vodka, and Cola"
   })
+menu2_item9.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu2_item10 = MenuItem.create({
     menu_id: 2,
@@ -547,6 +574,7 @@ menu2_item10 = MenuItem.create({
     item_price: 9.00,
     description: "Vokda, Kahlua, Club soda"
   })
+menu2_item10.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 puts("Seeding Cafe Z...")
 # Cafe Z
@@ -602,6 +630,7 @@ menu3_item6 = MenuItem.create({
     item_price: 9.95,
     description: "Prosciutto, fresh mozzarella, sun-dried tomatoes, garlic, and olive oil"
   })
+menu3_item6.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu3_item7 = MenuItem.create({
     menu_id: 3,
@@ -609,6 +638,7 @@ menu3_item7 = MenuItem.create({
     item_price: 8.95,
     description: "Fresh mozzarella, roasted peppers, prosciutto, and extra virgin olive oil"
   })
+menu3_item7.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu3_item8 = MenuItem.create({
     menu_id: 3,
@@ -616,6 +646,7 @@ menu3_item8 = MenuItem.create({
     item_price: 8.50,
     description: "8 inch pizza with ricotta, mozzarella, garlic, and spinach"
   })
+menu3_item8.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu3_item9 = MenuItem.create({
     menu_id: 3,
@@ -623,6 +654,7 @@ menu3_item9 = MenuItem.create({
     item_price: 16.95,
     description: "Homemade fettucine in a pink cream sauce with garlic and real crab meat"
   })
+menu3_item9.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu3_item10 = MenuItem.create({
     menu_id: 3,
@@ -630,6 +662,7 @@ menu3_item10 = MenuItem.create({
     item_price: 14.95,
     description: "Rigatoni, peas and diced prosciutto in a tomato basil sauce with vodka and a touch of cream"
   })
+menu3_item10.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 puts("Seeding The Red Cadillac...")
 # The Red Cadillac
@@ -640,6 +673,7 @@ menu4_item1 = MenuItem.create({
     item_price: 12.00,
     description: "Homemade pork empanadas"
   })
+menu4_item1.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu4_item2 = MenuItem.create({
     menu_id: 4,
@@ -647,6 +681,7 @@ menu4_item2 = MenuItem.create({
     item_price: 13.00,
     description: "Fresh hass avocado, lime, cilantro & chiles"
   })
+menu4_item2.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu4_item3 = MenuItem.create({
     menu_id: 4,
@@ -654,6 +689,7 @@ menu4_item3 = MenuItem.create({
     item_price: 15.00,
     description: "Mexican shrimp sauteed in garlic, paprika & a little heat"
   })
+menu4_item3.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu4_item4 = MenuItem.create({
     menu_id: 4,
@@ -661,6 +697,7 @@ menu4_item4 = MenuItem.create({
     item_price: 21.00,
     description: "Beer battered Atlantic Cod topped with slaw, cheese, pico & chipotle tartar"
   })
+menu4_item4.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu4_item5 = MenuItem.create({
     menu_id: 4,
@@ -668,6 +705,7 @@ menu4_item5 = MenuItem.create({
     item_price: 19.00,
     description: "Jerk chicken tossed in our homemade strawberry glaze with picked white onions & Queso Fresco"
   })
+menu4_item5.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu4_item6 = MenuItem.create({
     menu_id: 4,
@@ -675,6 +713,7 @@ menu4_item6 = MenuItem.create({
     item_price: 21.00,
     description: "Battered Cadillac shrimp topped with avocado crema, cheese & pico"
   })
+menu4_item6.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu4_item7 = MenuItem.create({
     menu_id: 4,
@@ -682,6 +721,7 @@ menu4_item7 = MenuItem.create({
     item_price: 12.00,
     description: "Red, White, or Rose"
   })
+menu4_item7.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu4_item8 = MenuItem.create({
     menu_id: 4,
@@ -689,6 +729,7 @@ menu4_item8 = MenuItem.create({
     item_price: 14.00,
     description: "Strawberry, Mango, or Sangrita"
   })
+menu4_item8.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu4_item9 = MenuItem.create({
     menu_id: 4,
@@ -696,6 +737,7 @@ menu4_item9 = MenuItem.create({
     item_price: 12.00,
     description: "Budweiser, Corona, Heineken, Guinness"
   })
+menu4_item9.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu4_item10 = MenuItem.create({
     menu_id: 4,
@@ -703,6 +745,7 @@ menu4_item10 = MenuItem.create({
     item_price: 12.00,
     description: "Merlot, Chardonnay, Cabernet, Sauvignon Blanc"
   })
+menu4_item10.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 puts("Seeding Cozy Corner...")
 # Cozy Corner
@@ -713,6 +756,8 @@ menu5_item1 = MenuItem.create({
     item_price: 7.20,
     description: "With lettuce, tomatoes & blue cheese dressing"
   })
+menu5_item1.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
+
 
 menu5_item2 = MenuItem.create({
     menu_id: 5,
@@ -720,6 +765,7 @@ menu5_item2 = MenuItem.create({
     item_price: 7.20,
     description: "With lettuce, tomato & mayo"
   })
+menu5_item2.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu5_item3= MenuItem.create({
     menu_id: 5,
@@ -763,6 +809,7 @@ menu5_item7 = MenuItem.create({
     item_price: 8.05,
     description: "With tartar sauce"
   })
+menu5_item7.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu5_item8 = MenuItem.create({
     menu_id: 5,
@@ -770,6 +817,7 @@ menu5_item8 = MenuItem.create({
     item_price: 8.50,
     description: "W. french fries & your choice of mild, hot, honey BBQ, teriyaki or suicidal"
   })
+menu5_item8.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu5_item9 = MenuItem.create({
     menu_id: 5,
@@ -786,6 +834,7 @@ menu5_item10 = MenuItem.create({
     item_price: 5.35,
     description: "Lettuce, tomatoes, roasted peppers, onions & cucumbers"
   })
+menu5_item10.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 puts("Seeding Chick Fil-A...")
 # Chick Fil-A
@@ -1171,6 +1220,7 @@ menu10_item1 = MenuItem.create({
     item_price: 11.95,
     description: "Cooked wing of a chicken coated in sauce or seasoning"
   })
+menu10_item1.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu10_item2 = MenuItem.create({
     menu_id: 10,
@@ -1178,6 +1228,7 @@ menu10_item2 = MenuItem.create({
     item_price: 11.95,
     description: "Breaded or battered crispy chicken"
   })
+menu10_item2.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu10_item3 = MenuItem.create({
     menu_id: 10,
@@ -1185,6 +1236,7 @@ menu10_item3 = MenuItem.create({
     item_price: 10.95,
     description: "Served with Salsa, Sour Crea, and Guacaomole"
   })
+menu10_item3.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu10_item4 = MenuItem.create({
     menu_id: 10,
@@ -1192,6 +1244,7 @@ menu10_item4 = MenuItem.create({
     item_price: 11.95,
     description: "Served with Salsa, Sour Cream, and Guacamole"
   })
+menu10_item4.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu10_item5 = MenuItem.create({
     menu_id: 10,
@@ -1199,6 +1252,7 @@ menu10_item5 = MenuItem.create({
     item_price: 3.75,
     description: "Cold dish made from seasoned potatoes"
   })
+menu10_item5.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu10_item6 = MenuItem.create({
     menu_id: 10,
@@ -1206,6 +1260,7 @@ menu10_item6 = MenuItem.create({
     item_price: 3.49,
     description: "Cabbage salad"
   })
+menu10_item6.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu10_item7 = MenuItem.create({
     menu_id: 10,
@@ -1213,6 +1268,7 @@ menu10_item7 = MenuItem.create({
     item_price: 12.95,
     description: "Bacon, lettuce, & tomato"
   })
+menu10_item7.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu10_item8 = MenuItem.create({
     menu_id: 10,
@@ -1220,6 +1276,7 @@ menu10_item8 = MenuItem.create({
     item_price: 12.95,
     description: "Bacon, lettuce & tomato"
   })
+menu10_item8.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu10_item9 = MenuItem.create({
     menu_id: 10,
@@ -1227,6 +1284,7 @@ menu10_item9 = MenuItem.create({
     item_price: 12.45,
     description: "American cheese, lettuce, & tomato"
   })
+menu10_item9.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 menu10_item10 = MenuItem.create({
     menu_id: 10,
@@ -1234,6 +1292,7 @@ menu10_item10 = MenuItem.create({
     item_price: 12.95,
     description: "Served on a hard roll with french fries"
   })
+menu10_item10.photo.attach(io: genericImg, filename: 'JWongEats.jpeg')
 
 
 puts("Seeding White Castle...")
@@ -2102,6 +2161,8 @@ menu20_item1 = MenuItem.create({
     item_price: 7.99,
     description: "In the house, not on the house!"
   })
+menu20_item1img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnycoffee.jpg")
+menu20_item1.photo.attach(io: menu20_item1img, filename: 'bunnycoffee.jpg')
 
 menu20_item2 = MenuItem.create({
     menu_id: 20,
@@ -2109,6 +2170,8 @@ menu20_item2 = MenuItem.create({
     item_price: 14.99,
     description: "1 pot of tea, your choice of tea flavor. Cookies or candy on the side."
   })
+menu20_item2img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnytea.jpg")
+menu20_item2.photo.attach(io: menu20_item2img, filename: 'bunnytea.jpg')
 
 menu20_item3 = MenuItem.create({
     menu_id: 20,
@@ -2116,6 +2179,8 @@ menu20_item3 = MenuItem.create({
     item_price: 79.99,
     description: "1 bottle of Bordeaux blend (Chateau La Rose de Vitrac 2018), 5 assorted cheese, 5 cracker varieties, and a shrimp with with cocktail sauce."
   })
+menu20_item2img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnyshrimp.jpg")
+menu20_item2.photo.attach(io: menu20_item2img, filename: 'bunnyshrimp.jpg')
 
 menu20_item4 = MenuItem.create({
     menu_id: 20,
@@ -2123,6 +2188,8 @@ menu20_item4 = MenuItem.create({
     item_price: 11.99,
     description: "A fresh and bright salad with spinach, arugula, red onion, cherry tomatoes. Avocado on top $3.99 extra. Poppy Seed dressing or EVOO/Balsamic Vinegar."
   })
+menu20_item4img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnysalad.jpg")
+menu20_item4.photo.attach(io: menu20_item4img, filename: 'bunnysalad.jpg')
 
 menu20_item5 = MenuItem.create({
     menu_id: 20,
@@ -2130,6 +2197,8 @@ menu20_item5 = MenuItem.create({
     item_price: 45.99,
     description: "Creamy pasta made with eggs, Parmesan cheese, black pepper, topped with pan-seared salmon."
   })
+menu20_item5img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnycarbo.jpg")
+menu20_item5.photo.attach(io: menu20_item5img, filename: 'bunnycarbo.jpg')
 
 menu20_item6 = MenuItem.create({
     menu_id: 20,
@@ -2137,6 +2206,8 @@ menu20_item6 = MenuItem.create({
     item_price: 24.99,
     description: "2 eggs, any style, your choice of protein: (meat: bacon, sausage) (veg: sausage), and 2 pieces of pan toast or pancakes."
   })
+menu20_item6img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnybreakfast.jpg")
+menu20_item6.photo.attach(io: menu20_item6img, filename: 'bunnybreakfast.jpg')
 
 menu20_item7 = MenuItem.create({
     menu_id: 20,
@@ -2144,13 +2215,17 @@ menu20_item7 = MenuItem.create({
     item_price: 129.99,
     description: "Makizushi (4 varieties of your choice), 8pc each roll. 8pcs sashimi (salmon, tuna, tamagoyaki)."
   })
+menu20_item7img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnysushi.jpg")
+menu20_item7.photo.attach(io: menu20_item7img, filename: 'bunnysushi.jpg')
 
 menu20_item8 = MenuItem.create({
     menu_id: 20,
-    item_name: "Unagi-don",
+    item_name: "Garden Veggie Burger",
     item_price: 29.99,
-    description: "Sweet BBQ eel over rice"
+    description: "A protein packed plant-based burger topped with red onion, greens, tomato, and your choice of mayo (spicy or plain). Fries $7 extra, chips $5 extra."
   })
+menu20_item8img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnyburger.jpg")
+menu20_item8.photo.attach(io: menu20_item8img, filename: 'bunnyburger.jpg')
 
 menu20_item9 = MenuItem.create({
     menu_id: 20,
@@ -2158,6 +2233,8 @@ menu20_item9 = MenuItem.create({
     item_price: 19.99,
     description: "Buldak Bokkeumyeon (regular or carbonara), Indomie Mi Goreng or Hwa Ramyun. Egg on top $5 extra."
   })
+menu20_item9img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnyramen.jpg")
+menu20_item9.photo.attach(io: menu20_item9img, filename: 'bunnyramen.jpg')
 
 menu20_item10 = MenuItem.create({
     menu_id: 20,
@@ -2165,5 +2242,7 @@ menu20_item10 = MenuItem.create({
     item_price: 34.99,
     description: "Wok tossed egg fried rice with scallions and soy sauce. Authentic Wok Hei"
   })
+menu20_item10img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnyrice.jpg")
+menu20_item10.photo.attach(io: menu20_item10img, filename: 'bunnyrice.jpg')
 
 puts("Done seeding!")
