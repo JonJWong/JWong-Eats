@@ -83,7 +83,7 @@ class UserModal extends React.Component {
             <Link
               to={`/orderhistory/${currentUser.id}`}
               id="orders-link">
-                <i class="fas fa-receipt"></i> Orders
+                <i className="fas fa-receipt"></i> Orders
             </Link>
 
             <button

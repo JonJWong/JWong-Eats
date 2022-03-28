@@ -62,6 +62,11 @@ class Splash extends React.Component {
               Sign in </Link> to see restauraunts in the area.
           </div>
         </div>
+        <p id="credits">
+          Note: Images on this site are property of their respective companies (Uber/UberEats, Red Lobster, Olive Garden).
+          This site is for personal use only, and is in no way to be used for profit or gain.
+          Copyright Disclaimer under Section 107 of the copyright act 1976, allowance is made for fair use for purposes such as criticism, comment, news reporting, scholarship, and research. Fair use is a use permitted by copyright statute that might otherwise be infringing. Non-profit, educational or personal use tips the balance in favour of fair use.
+        </p>
       </div>
     )
   }
