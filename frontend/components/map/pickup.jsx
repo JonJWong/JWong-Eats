@@ -32,8 +32,8 @@ class Pickup extends React.Component {
                     <div 
                       className="restaurant-container"
                       key={id}>
-                      {/* <img src={restaurants[id].photoUrl}
-                        className="restaurant-image" /> */}
+                      <img src={restaurants[id].photoUrl}
+                        className="restaurant-image" />
 
                       <div className="restaurant-bottom">
                         <h5 className="restaurant-name">

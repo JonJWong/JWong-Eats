@@ -30,13 +30,6 @@ class UserModal extends React.Component {
     }
   }
 
-  // render login if state is open
-  renderLogin() {
-    if (this.state.loginOpen) {
-      return <LoginFormContainer />
-    }
-  }
-
   componentDidMount() {
     setTimeout(() => {
       this.toggleOpen();
@@ -83,7 +76,11 @@ class UserModal extends React.Component {
             <Link
               to={`/orderhistory/${currentUser.id}`}
               id="orders-link">
-                <i className="fas fa-receipt"></i> Orders
+                <div
+                  className="orders-link-container"
+                  onClick={() => this.closeAndRemove()}>
+                  <i className="fas fa-receipt"></i> Orders
+                </div>
             </Link>
 
             <button
