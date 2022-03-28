@@ -47,6 +47,8 @@ class CartItem extends React.Component {
     } else {
       updateCartItem(quantity, item)
     }
+
+    // add save to local storage
     closeAndRemove();
   }
 
@@ -91,7 +93,7 @@ class CartItem extends React.Component {
 
   render() {
     const item = this.state.item;
-    
+
     return (
         this.drawContainer(item)
     )

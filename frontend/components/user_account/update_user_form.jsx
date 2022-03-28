@@ -12,6 +12,18 @@ class UpdateUserForm extends React.Component {
     this.update = this.update.bind(this);
   }
 
+  // add a listener (on mount) that clears errors when component unmounts
+  componentDidMount() {
+    this.unlisten = this.props.history.listen(() => {
+      this.props.clearSessionErrors();
+    });
+  }
+
+  // clear errors when component unmounts
+  componentWillUnmount() {
+    this.unlisten();
+  }
+
   // form helper methods
   handleSubmit(e) {
     e.preventDefault();

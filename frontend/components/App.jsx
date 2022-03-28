@@ -8,6 +8,7 @@ import SignupFormContainer from "./session_form/signup_form_container";
 import DeliveryContainer from "./map/delivery_container";
 import PickupContainer from "./map/pickup_container";
 import RestaurantIndexContainer from "./restaurant/restaurant_index_container";
+import OrderHistoryContainer from "./user_account/order_history_container";
 
 import { Route } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
@@ -25,6 +26,7 @@ const App = () => {
       <Switch>
         <ProtectedRoute exact path="/delivery" component={DeliveryContainer} />
         <ProtectedRoute exact path="/pickup" component={PickupContainer} />
+        <ProtectedRoute path="/orderhistory/:id" component={OrderHistoryContainer} />
         <ProtectedRoute path="/restaurants/:restaurantId" component={RestaurantIndexContainer} />
       </Switch>
     </div>

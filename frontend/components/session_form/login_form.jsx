@@ -24,9 +24,9 @@ class LoginForm extends React.Component{
 
   // error display helper
   renderErrors() {
-    const {errors} = this.props
-    if(!errors) return null;
-    return(
+    const { errors } = this.props;
+    if (!errors) return null;
+    return (
       <ul className="auth-errors">
         {errors.map((error,idx) => (
           <li key={idx}>

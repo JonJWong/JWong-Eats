@@ -19,6 +19,10 @@ class NavBar extends React.Component {
     this.setButton = this.setButton.bind(this);
   }
 
+  // componentDidUpdate() {
+    // fetch cart from localstorage
+  // }
+
   // helper to toggle state attributes to display modals
   toggle(attr) {
     let setValue = !this.state[attr];

@@ -42,9 +42,9 @@ class Delivery extends React.Component {
                   to={`/restaurants/${id}`}>
                     
                   <div id="delivery-restaurant-container">
-                    <img src={restaurants[id].photoUrl}
+                    {/* <img src={restaurants[id].photoUrl}
                       id="delivery-restaurant-image"
-                      alt={`${restaurants[id].name} image`}/>
+                      alt={`${restaurants[id].name} image`}/> */}
 
                     <div id="delivery-restaurant-bottom">
 

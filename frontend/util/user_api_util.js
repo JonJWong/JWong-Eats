@@ -13,9 +13,9 @@ export const deleteUser = (userId) => {
   })
 };
 
-export const getTransactions = (userId) => {
+export const fetchUser = (userId) => {
   return $.ajax({
     method: "GET",
-    url: `api/transactions`
+    url: `api/users/${userId}`
   })
 }

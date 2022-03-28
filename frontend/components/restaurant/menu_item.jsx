@@ -42,6 +42,8 @@ class MenuItem extends React.Component {
     setTimeout(() => {
       addCartItem(quantity, item);
       left.textContent = "Added!"
+
+      // add save to local storage
       
       setTimeout(() => {
         toggleItemModal();
@@ -79,10 +81,10 @@ class MenuItem extends React.Component {
           </button>
 
           <div id="food-modal-item">
-            <img src={item.photoUrl}
+            {/* <img src={item.photoUrl}
               alt={`${item.item_name} image`}
               id="food-modal-image"
-            />
+            /> */}
             <div id="food-modal-name">{item.item_name}</div>
             <div id="food-modal-description">{item.description}</div>
             <div id="food-modal-addon">Add-On support coming soon!</div>

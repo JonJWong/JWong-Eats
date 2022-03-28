@@ -24,6 +24,14 @@ puts("Destroying MenuItems...")
 MenuItem.destroy_all
 puts("MenuItems Destroyed")
 
+puts("Destroying Transactions...")
+Transaction.destroy_all
+puts("Transactions Destroyed")
+
+puts("Destroying Transaction Items...")
+TransactionItem.destroy_all
+puts("Transaction Items Destroyed")
+
 puts("Resetting primary key sequence for: Users...")
 ApplicationRecord.connection.reset_pk_sequence!('users')
 puts("Reset!")
@@ -40,7 +48,15 @@ puts("Resetting primary key sequence for: MenuItems...")
 ApplicationRecord.connection.reset_pk_sequence!('menu_items')
 puts("Reset!")
 
-puts ("Existing records destroyed!")
+puts("Resetting primary key sequence for: Transactions...")
+ApplicationRecord.connection.reset_pk_sequence!('transactions')
+puts("Reset!")
+
+puts("Resetting primary key sequence for: Transaction Items...")
+ApplicationRecord.connection.reset_pk_sequence!('transaction_items')
+puts("Reset!")
+
+puts ("All existing records destroyed!")
 
 puts("Seeding demo user...")
 

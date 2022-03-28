@@ -12,6 +12,7 @@ class Cart extends React.Component {
       error: false
     }
     
+    this.renderErrors = this.renderErrors.bind(this);
     this.conditionalDelayCartClear = this.conditionalDelayCartClear.bind(this);
     this.conditionalSendCheckout = this.conditionalSendCheckout.bind(this);
     this.emptyCartError = this.emptyCartError.bind(this);
@@ -23,10 +24,19 @@ class Cart extends React.Component {
   }
 
   // make opening async so the slide transition works
+  // add a listener (on mount) that clears errors when component unmounts
   componentDidMount() {
+    this.unlisten = this.props.history.listen(() => {
+      this.props.clearCartErrors();
+    })
     setTimeout(() => {
       this.toggleOpen();
     }, 10)
+  }
+
+  // clear errors when component unmounts
+  componentWillUnmount() {
+    this.unlisten();
   }
 
   // add class to open and close modal, and disable onClick to close while moving
@@ -69,6 +79,7 @@ class Cart extends React.Component {
     const button = document.querySelector("#menu-checkout");
     button.textContent = ("Processing...");
     this.setState({ processing: true })
+    const status = {};
 
     // delay reporting to user so they can read what is going on
     setTimeout(() => {
@@ -104,16 +115,29 @@ class Cart extends React.Component {
   emptyCartError() {
     if (this.state.error) {
       setTimeout(() => {
-        const error = document.querySelector(".cart-error-2");
-        error.parentElement.removeChild(error);
         this.setState({ error: false })
-      }, 3000);
+      }, 2000)
       return (
-        <div className="auth-errors cart-error cart-error-2">
+        <div className="auth-errors cart-error">
           Your cart was empty. Please add some items before checking out.
         </div>
       )
     }
+  }
+
+  renderErrors() {
+    const { errors } = this.props;
+    if (!errors) return null;
+
+    return (
+      <ul className="auth-errors">
+        {errors.map((error, idx) => (
+          <li key={idx}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    )
   }
 
   // method to adjust the price on checkout button to be an accurate
@@ -138,8 +162,9 @@ class Cart extends React.Component {
 
   // helper method to toggle error state
   comingSoon() {
-    const nextValue = !this.state.soon;
-    this.setState({ soon: nextValue })
+    if (!this.state.soon) {
+      this.setState({ soon: true })
+    }
   }
 
   // method to clear the cart after displaying a message that it is clearing
@@ -173,11 +198,10 @@ class Cart extends React.Component {
   renderSoon() {
     if (this.state.soon) {
       setTimeout(() => {
-        const error = document.querySelector(".cart-error-1");
-        error.parentElement.removeChild(error);
-      }, 3000);
+        this.setState({ soon: false })
+      }, 2000);
       return (
-        <div className="auth-errors cart-error cart-error-1">
+        <div className="auth-errors cart-error">
           Group ordering is not available yet! Sorry for the inconvenience.
         </div>
       )
@@ -230,6 +254,7 @@ class Cart extends React.Component {
                   item={item}
                   key={i}
                   closeAndRemove={this.closeAndRemove}
+                  reRender={this.reRender}
                 />
               )
             })}
@@ -241,6 +266,7 @@ class Cart extends React.Component {
               Clear Cart
           </button>
 
+            {this.renderErrors()}
             {this.emptyCartError()}
           <div id="menu-checkout-wrapper">
             <div id="menu-checkout-container">
