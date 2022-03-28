@@ -1,10 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# # This file should contain all the record creation needed to seed the database with its default values.
+# # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+# #
+# # Examples:
+# #
+# #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+# #   Character.create(name: 'Luke', movie: movies.first)
 
 # puts("Destroying all existing records...")
 
@@ -44,9 +44,9 @@
 # ApplicationRecord.connection.reset_pk_sequence!('menus')
 # puts("Reset!")
 
-puts("Resetting primary key sequence for: MenuItems...")
-ApplicationRecord.connection.reset_pk_sequence!('menu_items')
-puts("Reset!")
+# puts("Resetting primary key sequence for: MenuItems...")
+# ApplicationRecord.connection.reset_pk_sequence!('menu_items')
+# puts("Reset!")
 
 # puts("Resetting primary key sequence for: Transactions...")
 # ApplicationRecord.connection.reset_pk_sequence!('transactions')
@@ -56,7 +56,7 @@ puts("Reset!")
 # ApplicationRecord.connection.reset_pk_sequence!('transaction_items')
 # puts("Reset!")
 
-puts ("All existing records destroyed!")
+# puts ("All existing records destroyed!")
 
 # puts("Seeding demo user...")
 
@@ -2204,94 +2204,94 @@ puts ("All existing records destroyed!")
 # menu19_item10img = open("https://jwong-eats-seeds.s3.amazonaws.com/olivebread.jpeg")
 # menu19_item10.photo.attach(io: menu19_item10img, filename: 'olivebread.jpeg')
 
-menu20_item1 = MenuItem.create({
-    menu_id: 20,
-    item_name: "Coffee",
-    item_price: 7.99,
-    description: "In the house, not on the house!"
-  })
-menu20_item1img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnycoffee.jpg")
-menu20_item1.photo.attach(io: menu20_item1img, filename: 'bunnycoffee.jpg')
+# menu20_item1 = MenuItem.create({
+#     menu_id: 20,
+#     item_name: "Coffee",
+#     item_price: 7.99,
+#     description: "In the house, not on the house!"
+#   })
+# menu20_item1img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnycoffee.jpg")
+# menu20_item1.photo.attach(io: menu20_item1img, filename: 'bunnycoffee.jpg')
 
-menu20_item2 = MenuItem.create({
-    menu_id: 20,
-    item_name: "Tea and Sweets Set",
-    item_price: 14.99,
-    description: "1 pot of tea, your choice of tea flavor. Cookies or candy on the side."
-  })
-menu20_item2img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnytea.jpg")
-menu20_item2.photo.attach(io: menu20_item2img, filename: 'bunnytea.jpg')
+# menu20_item2 = MenuItem.create({
+#     menu_id: 20,
+#     item_name: "Tea and Sweets Set",
+#     item_price: 14.99,
+#     description: "1 pot of tea, your choice of tea flavor. Cookies or candy on the side."
+#   })
+# menu20_item2img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnytea.jpg")
+# menu20_item2.photo.attach(io: menu20_item2img, filename: 'bunnytea.jpg')
 
-menu20_item3 = MenuItem.create({
-    menu_id: 20,
-    item_name: "Wine, Cheese, Cracker Board & Shrimp Cocktail for 2",
-    item_price: 79.99,
-    description: "1 bottle of Bordeaux blend (Chateau La Rose de Vitrac 2018), 5 assorted cheese, 5 cracker varieties, and a shrimp with with cocktail sauce."
-  })
-menu20_item3img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnyshrimp.jpg")
-menu20_item3.photo.attach(io: menu20_item3img, filename: 'bunnyshrimp.jpg')
+# menu20_item3 = MenuItem.create({
+#     menu_id: 20,
+#     item_name: "Wine, Cheese, Cracker Board & Shrimp Cocktail for 2",
+#     item_price: 79.99,
+#     description: "1 bottle of Bordeaux blend (Chateau La Rose de Vitrac 2018), 5 assorted cheese, 5 cracker varieties, and a shrimp with with cocktail sauce."
+#   })
+# menu20_item3img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnyshrimp.jpg")
+# menu20_item3.photo.attach(io: menu20_item3img, filename: 'bunnyshrimp.jpg')
 
-menu20_item4 = MenuItem.create({
-    menu_id: 20,
-    item_name: "Garden Salad",
-    item_price: 11.99,
-    description: "A fresh and bright salad with spinach, arugula, red onion, cherry tomatoes. Avocado on top $3.99 extra. Poppy Seed dressing or EVOO/Balsamic Vinegar."
-  })
-menu20_item4img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnysalad.jpg")
-menu20_item4.photo.attach(io: menu20_item4img, filename: 'bunnysalad.jpg')
+# menu20_item4 = MenuItem.create({
+#     menu_id: 20,
+#     item_name: "Garden Salad",
+#     item_price: 11.99,
+#     description: "A fresh and bright salad with spinach, arugula, red onion, cherry tomatoes. Avocado on top $3.99 extra. Poppy Seed dressing or EVOO/Balsamic Vinegar."
+#   })
+# menu20_item4img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnysalad.jpg")
+# menu20_item4.photo.attach(io: menu20_item4img, filename: 'bunnysalad.jpg')
 
-menu20_item5 = MenuItem.create({
-    menu_id: 20,
-    item_name: "Salmon Carbonara",
-    item_price: 45.99,
-    description: "Creamy pasta made with eggs, Parmesan cheese, black pepper, topped with pan-seared salmon."
-  })
-menu20_item5img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnycarbo.jpg")
-menu20_item5.photo.attach(io: menu20_item5img, filename: 'bunnycarbo.jpg')
+# menu20_item5 = MenuItem.create({
+#     menu_id: 20,
+#     item_name: "Salmon Carbonara",
+#     item_price: 45.99,
+#     description: "Creamy pasta made with eggs, Parmesan cheese, black pepper, topped with pan-seared salmon."
+#   })
+# menu20_item5img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnycarbo.jpg")
+# menu20_item5.photo.attach(io: menu20_item5img, filename: 'bunnycarbo.jpg')
 
-menu20_item6 = MenuItem.create({
-    menu_id: 20,
-    item_name: "Weekend Brunch Platter",
-    item_price: 24.99,
-    description: "2 eggs, any style, your choice of protein: (meat: bacon, sausage) (veg: sausage), and 2 pieces of pan toast or pancakes."
-  })
-menu20_item6img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnybreakfast.jpg")
-menu20_item6.photo.attach(io: menu20_item6img, filename: 'bunnybreakfast.jpg')
+# menu20_item6 = MenuItem.create({
+#     menu_id: 20,
+#     item_name: "Weekend Brunch Platter",
+#     item_price: 24.99,
+#     description: "2 eggs, any style, your choice of protein: (meat: bacon, sausage) (veg: sausage), and 2 pieces of pan toast or pancakes."
+#   })
+# menu20_item6img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnybreakfast.jpg")
+# menu20_item6.photo.attach(io: menu20_item6img, filename: 'bunnybreakfast.jpg')
 
-menu20_item7 = MenuItem.create({
-    menu_id: 20,
-    item_name: "Sushi Platter",
-    item_price: 129.99,
-    description: "Makizushi (4 varieties of your choice), 8pc each roll. 8pcs sashimi (salmon, tuna, tamagoyaki)."
-  })
-menu20_item7img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnysushi.jpg")
-menu20_item7.photo.attach(io: menu20_item7img, filename: 'bunnysushi.jpg')
+# menu20_item7 = MenuItem.create({
+#     menu_id: 20,
+#     item_name: "Sushi Platter",
+#     item_price: 129.99,
+#     description: "Makizushi (4 varieties of your choice), 8pc each roll. 8pcs sashimi (salmon, tuna, tamagoyaki)."
+#   })
+# menu20_item7img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnysushi.jpg")
+# menu20_item7.photo.attach(io: menu20_item7img, filename: 'bunnysushi.jpg')
 
-menu20_item8 = MenuItem.create({
-    menu_id: 20,
-    item_name: "Garden Veggie Burger",
-    item_price: 29.99,
-    description: "A protein packed plant-based burger topped with red onion, greens, tomato, and your choice of mayo (spicy or plain). Fries $7 extra, chips $5 extra."
-  })
-menu20_item8img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnyburger.jpg")
-menu20_item8.photo.attach(io: menu20_item8img, filename: 'bunnyburger.jpg')
+# menu20_item8 = MenuItem.create({
+#     menu_id: 20,
+#     item_name: "Garden Veggie Burger",
+#     item_price: 29.99,
+#     description: "A protein packed plant-based burger topped with red onion, greens, tomato, and your choice of mayo (spicy or plain). Fries $7 extra, chips $5 extra."
+#   })
+# menu20_item8img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnyburger.jpg")
+# menu20_item8.photo.attach(io: menu20_item8img, filename: 'bunnyburger.jpg')
 
-menu20_item9 = MenuItem.create({
-    menu_id: 20,
-    item_name: "Bowl of Ramen",
-    item_price: 19.99,
-    description: "Buldak Bokkeumyeon (regular or carbonara), Indomie Mi Goreng or Hwa Ramyun. Egg on top $5 extra."
-  })
-menu20_item9img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnyramen.jpg")
-menu20_item9.photo.attach(io: menu20_item9img, filename: 'bunnyramen.jpg')
+# menu20_item9 = MenuItem.create({
+#     menu_id: 20,
+#     item_name: "Bowl of Ramen",
+#     item_price: 19.99,
+#     description: "Buldak Bokkeumyeon (regular or carbonara), Indomie Mi Goreng or Hwa Ramyun. Egg on top $5 extra."
+#   })
+# menu20_item9img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnyramen.jpg")
+# menu20_item9.photo.attach(io: menu20_item9img, filename: 'bunnyramen.jpg')
 
-menu20_item10 = MenuItem.create({
-    menu_id: 20,
-    item_name: "Cantonese Style Egg Fried Rice",
-    item_price: 34.99,
-    description: "Wok tossed egg fried rice with scallions and soy sauce. Authentic Wok Hei"
-  })
-menu20_item10img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnyrice.jpg")
-menu20_item10.photo.attach(io: menu20_item10img, filename: 'bunnyrice.jpg')
+# menu20_item10 = MenuItem.create({
+#     menu_id: 20,
+#     item_name: "Cantonese Style Egg Fried Rice",
+#     item_price: 34.99,
+#     description: "Wok tossed egg fried rice with scallions and soy sauce. Authentic Wok Hei"
+#   })
+# menu20_item10img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnyrice.jpg")
+# menu20_item10.photo.attach(io: menu20_item10img, filename: 'bunnyrice.jpg')
 
-puts("Done seeding!")
+# puts("Done seeding!")

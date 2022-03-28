@@ -65,68 +65,74 @@ class OrderHistory extends React.Component {
   renderOrders() {
     const { restaurants } = this.props;
     const { user } = this.props;
-    const transactions = Object.keys(user.transactions);
-
-    return transactions.map(transId => {
-      const currentTransaction = user.transactions[transId];
-      const { items, total } = currentTransaction;
-
-      const first = items[0].restaurant_id;
-
-      let restName;
-
-      const restaurant = restaurants[first];
-
-      if (items.every(item => item.restaurant_id === first)) {
-        restName = 
-          `${restaurant.name} - ${restaurant.address}`;
-      } else {
-        restName = 
-          `${restaurant.name} and others...`;
-      }
-      
-      return (
-        // randomly assigned keys, refactor
-        <div className="history-order-container" key={Math.random() * total}>
-          {this.ifPhoto(restaurant)}
-          <div className="history-order-title-container">
-            <div className="history-order-title">{restName}</div>
-            <div className="history-order-subtitle">
-              {items.length} Items for ${total} • {this.formattedDate(currentTransaction)} • 
-              <div
-                className="history-view-receipt">
-                  View Receipt
+    
+    if (user.transactions) {
+      const transactions = Object.keys(user.transactions);
+      return transactions.map(transId => {
+        const currentTransaction = user.transactions[transId];
+        const { items, total } = currentTransaction;
+  
+        const first = items[0].restaurant_id;
+  
+        let restName;
+  
+        const restaurant = restaurants[first];
+  
+        if (items.every(item => item.restaurant_id === first)) {
+          restName = 
+            `${restaurant.name} - ${restaurant.address}`;
+        } else {
+          restName = 
+            `${restaurant.name} and others...`;
+        }
+        
+        return (
+          // randomly assigned keys, refactor
+          <div className="history-order-container" key={Math.random() * total}>
+            {this.ifPhoto(restaurant)}
+            <div className="history-order-title-container">
+              <div className="history-order-title">{restName}</div>
+              <div className="history-order-subtitle">
+                {items.length} Items for ${total} • {this.formattedDate(currentTransaction)} • 
+                <div
+                  className="history-view-receipt">
+                    View Receipt
+                </div>
               </div>
             </div>
-          </div>
-          
-          <div className="history-item-list">
-            {items.map(item => {
-              const currRest = restaurants[item.restaurant_id].name
-              return (
-                <div className="history-item-wrapper" key={Math.random() * total}>
-                  <div className="history-item-quantity">{item.item_quantity}</div>
-                  <div className="history-item-title">
-                    {item.item_name}
-                      <div className="history-rest-name">
-                        - {currRest}
-                      </div>
+            
+            <div className="history-item-list">
+              {items.map(item => {
+                const currRest = restaurants[item.restaurant_id].name
+                return (
+                  <div className="history-item-wrapper" key={Math.random() * total}>
+                    <div className="history-item-quantity">{item.item_quantity}</div>
+                    <div className="history-item-title">
+                      {item.item_name}
+                        <div className="history-rest-name">
+                          - {currRest}
+                        </div>
+                    </div>
                   </div>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
+  
+            <div className="history-store-button">
+              <Link
+                to={`/restaurants/${first}`}
+                className="history-store-button-text">
+                View Store
+              </Link>
+            </div>
           </div>
-
-          <div className="history-store-button">
-            <Link
-              to={`/restaurants/${first}`}
-              className="history-store-button-text">
-              View Store
-            </Link>
-          </div>
-        </div>
+        )
+      })
+    } else {
+      return (
+        <h3 id="no-orders">You do not have any past orders.</h3>
       )
-    })
+    }
   }
 
   formattedDate(transaction) {

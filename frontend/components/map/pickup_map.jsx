@@ -73,7 +73,7 @@ const STYLES = {
   ],
 };
 
-class BenchMap extends React.Component{
+class PickupMap extends React.Component{
 
   constructor(props){
     super(props);
@@ -105,7 +105,7 @@ class BenchMap extends React.Component{
     this.markers.push(marker);
 
     // sets marker content
-    const markerContent = 
+    const infoWindowContent = 
     `<div class="marker-content">` +
 
       `<img src="${place.photos[0].getUrl()}"
@@ -123,7 +123,7 @@ class BenchMap extends React.Component{
 
     // sets info window
     const infoWindow = new google.maps.InfoWindow({
-      content: markerContent,
+      content: infoWindowContent,
       maxWidth: 250
     })
 
@@ -180,7 +180,7 @@ class BenchMap extends React.Component{
 
   // set up map when component mounts;
   componentDidMount() {
-    
+    this.props.fetchRestaurants();
     // wrap this.mapNode in a Google Map
     this.map = new google.maps.Map(this.mapNode, MAP_OPTIONS);
     this.map.setOptions({ styles: STYLES["hide"] });
@@ -208,4 +208,20 @@ class BenchMap extends React.Component{
   }
 }
 
-export default withRouter(BenchMap);
+import { connect } from 'react-redux';
+import { fetchRestaurant, fetchRestaurants } from '../../actions/restaurant_actions';
+
+const mapStateToProps = (state) => {
+  return {
+    restaurants: state.entities.restaurants
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchRestaurants: () => dispatch(fetchRestaurants()),
+    fetchRestaurant: restaurantId => dispatch(fetchRestaurant(restaurantId))
+  }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PickupMap));

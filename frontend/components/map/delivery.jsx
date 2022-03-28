@@ -5,11 +5,27 @@ import * as Util from "../../util/util";
 class Delivery extends React.Component {
   constructor(props) {
     super(props)
+
+    this.ifImage = this.ifImage.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchRestaurants();
     document.title = "Order Food Online | JWongEats"
+  }
+
+  ifImage(restaurant) {
+    if (restaurant.photoUrl) {
+      return (
+        <img src={restaurant.photoUrl}
+          id="delivery-restaurant-image"
+          alt={`${restaurant.name} image`}/>
+      )
+    } else {
+      return (
+        <div className="image-filler"></div>
+      )
+    }
   }
 
   render() {
@@ -42,9 +58,7 @@ class Delivery extends React.Component {
                   to={`/restaurants/${id}`}>
                     
                   <div id="delivery-restaurant-container">
-                    <img src={restaurants[id].photoUrl}
-                      id="delivery-restaurant-image"
-                      alt={`${restaurants[id].name} image`}/>
+                    {this.ifImage(restaurants[id])}
 
                     <div id="delivery-restaurant-bottom">
 
