@@ -1,27 +1,5 @@
 import React from "react";
-
-const RESTAURANT_NAMES = [
-  "Sofia's Italian Restaurant",
-   'SIGNATURZ SPORTS BAR',
-   'Cafe Z',
-   'The Red Cadillac',
-   'Cozy Corner Deli and Caterers',
-   'Chick Fil-A',
-   "McDonald's",
-   'The Halal Guys',
-   'Subway',
-   'Union Plaza Diner',
-   'White Castle',
-   'Red Lobster',
-   'Popeyes Louisiana Kitchen',
-   'IHOP',
-   'Starbucks',
-   'Panda Express',
-   'TGI Fridays',
-   'Chipotle Mexican Grill',
-   'Olive Garden',
-   'Bunny Cafe'
-  ]
+import { Link } from "react-router-dom";
 
 class SearchModal extends React.Component {
   constructor(props) {
@@ -42,7 +20,9 @@ class SearchModal extends React.Component {
 
   conditionalClose() {
     if (this.props.searchOpen) {
-      this.props.closeSearchModal();
+      setTimeout(() => {
+        this.props.closeSearchModal();
+      })
     }
   }
 
@@ -62,29 +42,34 @@ class SearchModal extends React.Component {
 
   renderResults(value) {
     const results = this.filterResults(value);
+    setTimeout(() => {
+      document.querySelector(".search-contents-wrapper").classList.add("drop")  
 
+    }, 300)
     if (value !== "") {
       return (
         <div className="search-contents-wrapper">
           {results.map(restaurant => {
             return (
-              <div
-                className="search-result-container"
-                key={restaurant.name+value}>
-                <div className="search-result-photo-container">
-                  <img
-                    src={restaurant.photoUrl} 
-                    className="search-result-photo"
-                    alt={`${restaurant.name}-search-photo`} />
+              <Link to={`/restaurants/${restaurant.id}`}>
+                <div
+                  className="search-result-container"
+                  key={restaurant.name+value}>
+                  <div className="search-result-photo-container">
+                    <img
+                      src={restaurant.photoUrl} 
+                      className="search-result-photo"
+                      alt={`${restaurant.name}-search-photo`} />
+                  </div>
+                  <div className="search-result-title">
+                    {restaurant.name} - <span>{restaurant.address}</span>
+                  </div>
+                  <div className="search-result-subtitle">
+                    {restaurant.price_rating} • {restaurant.rating} <i className="fas fa-star fa-sm">
+                    </i> • {restaurant.review_count} Reviews
+                  </div>
                 </div>
-                <div className="search-result-title">
-                  {restaurant.name} - <span>{restaurant.address}</span>
-                </div>
-                <div className="search-result-subtitle">
-                  {restaurant.price_rating} • {restaurant.rating}<i className="fas fa-star">
-                  </i> • {restaurant.review_count} Reviews
-                </div>
-              </div>
+              </Link>
             )
           })}
         </div>

@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { clearSessionErrors } from "../../actions/session_actions";
+import { fetchRestaurants } from "../../actions/restaurant_actions";
 import NavBar from './navbar';
 
 const mapStateToProps = (state) => {
@@ -12,7 +13,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    clearSessionErrors: () => dispatch(clearSessionErrors())
+    clearSessionErrors: () => dispatch(clearSessionErrors()),
+    fetchRestaurants: () => dispatch(fetchRestaurants())
   }
 }
 

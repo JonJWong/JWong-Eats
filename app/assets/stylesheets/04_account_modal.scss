@@ -7,6 +7,7 @@
   z-index: 2;
   opacity: .8;
   background: rgb(0, 0, 0);
+  z-index: 9;
 }
 
 .profile-photo {
@@ -31,6 +32,7 @@
   padding-bottom: 2%;
   transition: transform .4s ease .1s;
   transform: translate(-100%, 0%);
+  z-index: 10;
 }
 
 .modal-open {

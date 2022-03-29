@@ -20,7 +20,10 @@ class RestaurantIndex extends React.Component {
   componentDidMount() {
     const id = this.props.match.params.restaurantId
     this.props.fetchRestaurant(id)
-      .then(() => this.setState({ loading: false }))
+      .then(action => this.setState({
+          loading: false,
+          restaurant: action.restaurant
+        }))
   }
 
   // fetch restaurant if url changes on refresh
@@ -121,9 +124,8 @@ class RestaurantIndex extends React.Component {
         </div>
       )
     }
-
     // deconstruct props and take restaurant object
-    const { restaurant } = this.props;
+    const restaurant = this.state.restaurant;
     // set document title to restaurant info
     document.title = `Order ${restaurant.name} (${restaurant.address})`
 

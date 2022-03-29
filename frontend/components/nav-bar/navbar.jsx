@@ -45,6 +45,7 @@ class NavBar extends React.Component {
     }
   }
 
+  // search modal open and close helpers
   openSearchModal() {
     const searchBar = document.querySelector(".nav-search-bar");
     searchBar.classList.add("search-expanded");
