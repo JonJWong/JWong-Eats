@@ -1,0 +1,25 @@
+.search-result-wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 98px;
+  bottom: 0;
+  background-color: rgba(80, 80, 80, .8)
+}
+
+.search-result-photo {
+  width: 30px;
+  height: 30px;
+  object-fit: fill;
+}
+
+.search-contents-wrapper {
+  position: fixed;
+  top: 98px;
+  left: 20%;
+  right: 20%;
+  height: 100%;
+  min-width: 400px;
+  max-width: 900px;
+  background-color: white;
+}

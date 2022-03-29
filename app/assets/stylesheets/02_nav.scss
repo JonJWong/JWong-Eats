@@ -102,17 +102,18 @@
   background-color: rgb(62, 62, 62);
 }
 
-#nav-search-bar {
+.nav-search-bar {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30vw;
+  transition: margin-left .6s ease, width .6s ease;
+  width: 30%;
   margin-left: 2vw;
   background-color: #eeeeee;
   border-radius: 25px;
 }
 
-#nav-search-area {
+.nav-search-area {
   font-family: "Uber Regular";
   width: 90%;
   font-size: 16px;
@@ -132,4 +133,10 @@
 
 #nav-address-info:hover {
   background-color: lightgrey;
+}
+
+.search-expanded {
+  z-index: 6;
+  margin-left: -20vw;
+  width: 50%;
 }

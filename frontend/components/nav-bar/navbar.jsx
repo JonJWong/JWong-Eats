@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import UserModalContainer from '../user_modal/user_modal_container';
 import CartContainer from "../cart/cart_container";
 import MenuItemContainer from "../restaurant/menu_item_container";
+import SearchModalContainer from "./search_modal_container";
 import { withRouter } from "react-router-dom";
 
 class NavBar extends React.Component {
@@ -12,9 +13,14 @@ class NavBar extends React.Component {
       modalOpen: false,
       cartOpen: false,
       itemOpen: false,
-      currentButton: "delivery"
+      searchOpen: false,
+      currentButton: "delivery",
+      searchValue: ""
     }
 
+    this.update = this.update.bind(this);
+    this.openSearchModal = this.openSearchModal.bind(this);
+    this.closeSearchModal = this.closeSearchModal.bind(this);
     this.cartNum = this.cartNum.bind(this);
     this.toggle = this.toggle.bind(this);
     this.setButton = this.setButton.bind(this);
@@ -26,10 +32,40 @@ class NavBar extends React.Component {
     this.setState({ [attr]: setValue })
   }
 
+  update(value) {
+    return e => this.setState({ [value]: e.currentTarget.value.toLowerCase() })
+  }
+
   // modal state helper-method
   renderModal() {
     if (this.state.modalOpen) {
-      return <UserModalContainer toggleModal={this.toggle} className="modal-open" />
+      return <UserModalContainer
+        toggleModal={this.toggle}
+        className="modal-open" />
+    }
+  }
+
+  openSearchModal() {
+    const searchBar = document.querySelector(".nav-search-bar");
+    searchBar.classList.add("search-expanded");
+    this.setState({ searchOpen: true })
+  }
+
+  closeSearchModal() {
+    const searchBar = document.querySelector(".nav-search-bar");
+    searchBar.classList.remove("search-expanded");
+    this.setState({ searchOpen: false })
+  }
+
+  renderSearch() {
+    const { restaurants } = this.props;
+
+    if (this.state.searchOpen) {
+      return <SearchModalContainer
+        searchOpen={this.state.searchOpen}
+        closeSearchModal={this.closeSearchModal}
+        restaurants={restaurants}
+        value={this.state.searchValue} />
     }
   }
 
@@ -43,7 +79,7 @@ class NavBar extends React.Component {
   // item state helper-method
   renderItem() {
     if (this.state.itemOpen) {
-      return <MenuItemContainer />
+      return <MenuItemContainer value={this.state.searchValue} />
     }
   }
 
@@ -105,11 +141,13 @@ class NavBar extends React.Component {
                 }
             </div>
 
-            <div id="nav-search-bar">
+            <div className="nav-search-bar">
               <i className="fas fa-search"></i>
               <input type='text'
-                id="nav-search-area"
+                className="nav-search-area"
                 placeholder="Search restaurants by name"
+                onChange={this.update('searchValue')}
+                onClick={() => this.openSearchModal()}
               />
             </div>
 
@@ -121,6 +159,7 @@ class NavBar extends React.Component {
 
 
         </div>
+        {this.renderSearch()}
         {this.renderModal()}
         {this.renderCart()}
         {this.setButton()}
