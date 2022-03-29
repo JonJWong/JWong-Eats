@@ -20,8 +20,8 @@ const receiveRestaurant = (restaurant) => {
 }
 
 // thunk action creators
-export const fetchRestaurants = () => (dispatch) => {
-  return RestaurantAPIUtil.fetchRestaurants()
+export const fetchRestaurants = (category) => (dispatch) => {
+  return RestaurantAPIUtil.fetchRestaurants(category)
     .then(restaurants => dispatch(receiveRestaurants(restaurants)))
 }
 

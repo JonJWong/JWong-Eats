@@ -35,15 +35,6 @@ class NavBar extends React.Component {
       })
   }
 
-  componentDidUpdate() {
-    this.props.fetchRestaurants()
-    .then(action => {
-      this.setState({
-        restaurants: action.restaurants
-      })
-    })
-  }
-
   // helper to toggle state attributes to display modals
   toggle(attr) {
     let setValue = !this.state[attr];

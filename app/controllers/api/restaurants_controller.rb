@@ -1,8 +1,13 @@
 class Api::RestaurantsController < ApplicationController
 
   def index
-    @restaurants = Restaurant.all
-    render :index
+    if (params[:category])
+      @restaurants = Restaurant.where("description like ?", "%#{params[:category]}%")
+      render :index
+    else
+      @restaurants = Restaurant.all
+      render :index
+    end
   end
 
   def show

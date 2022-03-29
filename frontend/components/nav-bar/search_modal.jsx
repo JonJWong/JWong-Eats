@@ -10,16 +10,6 @@ class SearchModal extends React.Component {
     this.filterResults = this.filterResults.bind(this);
   }
 
-  // setting local state to restaurants on mount, so it does not interfere with
-  // other components
-  // componentDidMount() {
-  //   this.props.fetchRestaurants()
-  //     .then(action => this.setState({
-  //       loading: false,
-  //       restaurants: action.restaurants
-  //     }))
-  // }
-
   // only allow closing of the search bar if it exists, to avoid null errors
   conditionalClose() {
     const wrapper = document.querySelector(".search-contents-wrapper");
@@ -58,7 +48,7 @@ class SearchModal extends React.Component {
       if (wrapper) {
         document.querySelector(".search-contents-wrapper").classList.add("drop");
       }
-    }, 300)
+    }, 10)
 
     // check if searchbar is empty, if it is not empty, render list
     if (value !== "") {
