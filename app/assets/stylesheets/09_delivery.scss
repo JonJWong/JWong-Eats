@@ -155,11 +155,16 @@
 }
 
 #delivery-left {
-  position: sticky;
-  height: 40px;
+  float: left;
+  height: 800px;
   top: 150px;
   width: 25vw;
   padding-left: 30px;
+}
+
+#delivery-sort-wrapper {
+  position: sticky;
+  top: 150px;
 }
 
 .delivery-left-header {

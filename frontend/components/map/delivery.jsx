@@ -175,35 +175,37 @@ class Delivery extends React.Component {
   renderSortButtons() {
     return (
       <div id="delivery-left">
-        <div className="delivery-left-header">
-          Price Range
-        </div>
-        <div className="sort-button-wrapper">
-          {SORT_OPTIONS.map(option => {
-            if (option === "None") {
-              return (
-                <button
+        <div id="delivery-sort-wrapper">
+          <div className="delivery-left-header">
+            Price Range
+          </div>
+          <div className="sort-button-wrapper">
+            {SORT_OPTIONS.map(option => {
+              if (option === "None") {
+                return (
+                  <button
+                    key={option}
+                    className="delivery-sort-button"
+                    onClick={(e) => this.togglePriceRange(option, e)}>
+                      <div className="sort-option-text">
+                        None
+                      </div>
+                  </button>
+                )
+              } else {
+                return (
+                  <button
                   key={option}
                   className="delivery-sort-button"
                   onClick={(e) => this.togglePriceRange(option, e)}>
                     <div className="sort-option-text">
-                      None
+                      {option}
                     </div>
-                </button>
-              )
-            } else {
-              return (
-                <button
-                key={option}
-                className="delivery-sort-button"
-                onClick={(e) => this.togglePriceRange(option, e)}>
-                  <div className="sort-option-text">
-                    {option}
-                  </div>
-                </button>
-              )
-            }
-          })}
+                  </button>
+                )
+              }
+            })}
+          </div>
         </div>
       </div>
     )
