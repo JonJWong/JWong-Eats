@@ -26,6 +26,24 @@ class NavBar extends React.Component {
     this.setButton = this.setButton.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchRestaurants()
+      .then(action => {
+        this.setState({
+          restaurants: action.restaurants
+        })
+      })
+  }
+
+  componentDidUpdate() {
+    this.props.fetchRestaurants()
+    .then(action => {
+      this.setState({
+        restaurants: action.restaurants
+      })
+    })
+  }
+
   // helper to toggle state attributes to display modals
   toggle(attr) {
     let setValue = !this.state[attr];
@@ -63,6 +81,7 @@ class NavBar extends React.Component {
   renderSearch() {
     if (this.state.searchOpen) {
       return <SearchModalContainer
+        restaurants={this.state.restaurants}
         searchOpen={this.state.searchOpen}
         closeSearchModal={this.closeSearchModal}
         value={this.state.searchValue} />

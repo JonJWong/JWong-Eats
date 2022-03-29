@@ -30,6 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore(localStorageState);
   };
 
+  // state shape-getter
+  // store.subscribe(throttle(() => {
+  //   console.log(JSON.stringify(store.getState()))
+  // }, 1000));
+
   ReactDOM.render(
     <Root store={store} />, root
   )

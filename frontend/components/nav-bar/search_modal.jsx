@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 class SearchModal extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      loading: true
-    }
 
     this.conditionalClose = this.conditionalClose.bind(this);
     this.renderResults = this.renderResults.bind(this);
@@ -15,13 +12,13 @@ class SearchModal extends React.Component {
 
   // setting local state to restaurants on mount, so it does not interfere with
   // other components
-  componentDidMount() {
-    this.props.fetchRestaurants()
-      .then(action => this.setState({
-        loading: false,
-        restaurants: action.restaurants
-      }))
-  }
+  // componentDidMount() {
+  //   this.props.fetchRestaurants()
+  //     .then(action => this.setState({
+  //       loading: false,
+  //       restaurants: action.restaurants
+  //     }))
+  // }
 
   // only allow closing of the search bar if it exists, to avoid null errors
   conditionalClose() {
@@ -38,7 +35,7 @@ class SearchModal extends React.Component {
 
   // compare searchbar contents to restaurant names
   filterResults(value) {
-    const { restaurants } = this.state;
+    const { restaurants } = this.props;
     const filtered = [];
 
     Object.keys(restaurants).forEach(id => {
@@ -97,15 +94,6 @@ class SearchModal extends React.Component {
   }
 
   render() {
-    
-    if (this.state.loading) {
-      return (
-        <div className="loading-screen-bg">
-          <div className="loading-element"></div>
-        </div>
-      )
-    }
-
     return (
       <div
         className="search-result-wrapper"
