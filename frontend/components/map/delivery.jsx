@@ -2,20 +2,24 @@ import React from "react";
 import { Link } from "react-router-dom";
 import * as Util from "../../util/util";
 
+const CAROUSEL_ADS = {
+  
+}
+
 const ALL_CATEGORIES = {
+  "default": "https://jwong-eats-seeds.s3.amazonaws.com/top_eats.png",
   "Dine In": "https://jwong-eats-seeds.s3.amazonaws.com/caribbean.png",
+  "Popular": "https://jwong-eats-seeds.s3.amazonaws.com/dessert.png",
   "Take Out": "https://jwong-eats-seeds.s3.amazonaws.com/grocery.png",
   "Fast Food": "https://jwong-eats-seeds.s3.amazonaws.com/fastfood.png",
-  "Popular": "https://jwong-eats-seeds.s3.amazonaws.com/dessert.png",
   "Healthy": "https://jwong-eats-seeds.s3.amazonaws.com/deli.png",
+  "American": "https://jwong-eats-seeds.s3.amazonaws.com/american.png",
+  "Chinese": "https://jwong-eats-seeds.s3.amazonaws.com/asian.png",
   "Italian": "https://jwong-eats-seeds.s3.amazonaws.com/seafood.png",
   "Mexican": "https://jwong-eats-seeds.s3.amazonaws.com/caribbean.png",
   "Alcohol": "https://jwong-eats-seeds.s3.amazonaws.com/alcohol.png",
-  "American": "https://jwong-eats-seeds.s3.amazonaws.com/american.png",
   "Burger": "https://jwong-eats-seeds.s3.amazonaws.com/burger.png",
   "Fried Chicken": "https://jwong-eats-seeds.s3.amazonaws.com/korean.png",
-  "Chinese": "https://jwong-eats-seeds.s3.amazonaws.com/asian.png",
-  "default": "https://jwong-eats-seeds.s3.amazonaws.com/top_eats.png"
 }
 
 const SORT_OPTIONS = [
@@ -130,6 +134,8 @@ class Delivery extends React.Component {
     )
   }
 
+
+  // helper to filter through restaurants based on current sorting 
   sort(restaurants) {
     let options;
     if (this.state.priceRange.length > 0) {
@@ -148,6 +154,8 @@ class Delivery extends React.Component {
     return newRestaurants;
   }
 
+
+  // helper to adjust class and set state for current sorting
   togglePriceRange(option, e) {
     e.currentTarget.classList.toggle('delivery-sort-button-selected');
     const newState = this.state;
@@ -163,6 +171,7 @@ class Delivery extends React.Component {
     this.setState(newState);
   }
 
+  // helper to render the price buttons
   renderSortButtons() {
     return (
       <div id="delivery-left">
@@ -200,6 +209,8 @@ class Delivery extends React.Component {
     )
   }
 
+
+  // render (sorted) restaurant list
   renderList() {
     let { restaurants } = this.state;
 
@@ -244,6 +255,14 @@ class Delivery extends React.Component {
     )
   }
 
+  renderBannerCarousel() {
+    return (
+      <div id="delivery-banner-ads">
+        ads here
+      </div>
+    )
+  }
+
   render() {
     const { loading } = this.state;
 
@@ -260,9 +279,7 @@ class Delivery extends React.Component {
 
         {this.renderFilterMenu()}
 
-        <div id="delivery-banner-ads">
-          ads here
-        </div>
+        {this.renderBannerCarousel()}
 
         <div id="delivery-topbar">
           <div id="delivery-stores">All stores</div>

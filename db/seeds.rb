@@ -301,8 +301,9 @@
 #   price_rating: "$$$$$",
 #   hours: "6:00AM - 10:00PM"
 # })
-# restaurant20img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnybanner.jpg")
-# restaurant20.photo.attach(io: restaurant20img, filename: 'bunnybanner.jpg')
+restaurant20 = Restaurant.find_by(id: 20)
+restaurant20img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnybanner.jpg")
+restaurant20.photo.attach(io: restaurant20img, filename: 'bunnybanner.jpg')
   
 # puts("Seeding Menus...")
 
@@ -2279,7 +2280,7 @@
 # olive.save
 
 # bunny = Restaurant.find_by(id: 20)
-# bunny.description = "Take-Out"
+# bunny.description = "Dine-In Popular Take-Out Fast-Food Healthy American Chinese Italian Mexican Alcohol Burger Fried-Chicken"
 # bunny.save
 
 # puts("Done adding categories!")

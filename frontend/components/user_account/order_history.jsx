@@ -62,6 +62,10 @@ class OrderHistory extends React.Component {
     }
   }
 
+  renderReceipt() {
+    
+  }
+
   renderOrders() {
     const { restaurants } = this.props;
     const { user } = this.props;

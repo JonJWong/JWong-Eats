@@ -116,6 +116,19 @@ class RestaurantIndex extends React.Component {
     }
   }
 
+  renderDescription(description) {
+    let words = description.split(" ");
+    words = words.map(word => {
+      let split = word.split("-");
+      if (split.length > 1) {
+        return split.join(" ")
+      } else {
+        return word
+      }
+    })
+    return words.join(", ");
+  }
+
   render() {
     // render loading screen if component has not loaded yet
     const { loading } = this.state;
@@ -144,6 +157,9 @@ class RestaurantIndex extends React.Component {
         <div id="restaurant-info">
           <div id="restaurant-page-name">{restaurant.name}</div>
           <div id="restaurant-small">
+            <div id="restaurant-small-info">
+              {this.renderDescription(restaurant.description)}
+            </div>
             <i className="fas fa-star"></i> {Util.addZero(restaurant.rating)} ({restaurant.review_count} Ratings) • {restaurant.price_rating} • {timePrompt}
           </div>
         </div>
