@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     clearSessionErrors: () => dispatch(clearSessionErrors()),
-    fetchRestaurants: () => dispatch(fetchRestaurants())
+    fetchRestaurants: category => dispatch(fetchRestaurants(category))
   }
 }
 

@@ -2198,87 +2198,90 @@
 # menu20_item10img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnyrice.jpg")
 # menu20_item10.photo.attach(io: menu20_item10img, filename: 'bunnyrice.jpg')
 
-puts("Adding Categories")
+# puts("Done adding MenuItems!")
 
-sofia = Restaurant.find_by(id: 1)
-sofia.description = "Dine-In Italian"
-sofia.save
+# puts("Adding Categories")
 
-signaturz = Restaurant.find_by(id: 2)
-signaturz.description = "Dine-In Alcohol Fast-Food"
-signaturz.save
+# sofia = Restaurant.find_by(id: 1)
+# sofia.description = "Dine-In Italian"
+# sofia.save
 
-cafez = Restaurant.find_by(id: 3)
-cafez.description = "Dine-In Italian"
-cafez.save
+# signaturz = Restaurant.find_by(id: 2)
+# signaturz.description = "Dine-In Alcohol Fast-Food"
+# signaturz.save
 
-cadillac = Restaurant.find_by(id: 4)
-cadillac.description = "Dine-In Alcohol Mexican"
-cadillac.save
+# cafez = Restaurant.find_by(id: 3)
+# cafez.description = "Dine-In Italian"
+# cafez.save
 
-cozy = Restaurant.find_by(id: 5)
-cozy.description = "Dine-In Take-Out"
-cozy.save
+# cadillac = Restaurant.find_by(id: 4)
+# cadillac.description = "Dine-In Alcohol Mexican"
+# cadillac.save
 
-cfa = Restaurant.find_by(id: 6)
-cfa.description = "Dine-In Take-Out Popular Fast-Food Fried-Chicken American"
-cfa.save
+# cozy = Restaurant.find_by(id: 5)
+# cozy.description = "Dine-In Take-Out"
+# cozy.save
 
-mcd = Restaurant.find_by(id: 7)
-mcd.description = "Dine-In Take-Out Popular Fast-Food Burger American"
-mcd.save
+# cfa = Restaurant.find_by(id: 6)
+# cfa.description = "Dine-In Take-Out Popular Fast-Food Fried-Chicken American"
+# cfa.save
 
-halal = Restaurant.find_by(id: 8)
-halal.description = "Dine-In Take-Out Popular Fast-Food"
-halal.save
+# mcd = Restaurant.find_by(id: 7)
+# mcd.description = "Dine-In Take-Out Popular Fast-Food Burger American"
+# mcd.save
 
-subway = Restaurant.find_by(id: 9)
-subway.description = "Dine-In Take-Out Popular Fast-Food Healthy"
-subway.save
+# halal = Restaurant.find_by(id: 8)
+# halal.description = "Dine-In Take-Out Popular Fast-Food"
+# halal.save
 
-diner = Restaurant.find_by(id: 10)
-diner.description = "Dine-In"
-diner.save
+# subway = Restaurant.find_by(id: 9)
+# subway.description = "Dine-In Take-Out Popular Fast-Food Healthy"
+# subway.save
 
-wc = Restaurant.find_by(id: 11)
-wc.description = "Dine-In Take-Out Fast-Food Burger American"
-wc.save
+# diner = Restaurant.find_by(id: 10)
+# diner.description = "Dine-In"
+# diner.save
 
-red = Restaurant.find_by(id: 12)
-red.description = "Dine-In Take-Out"
-red.save
+# wc = Restaurant.find_by(id: 11)
+# wc.description = "Dine-In Take-Out Fast-Food Burger American"
+# wc.save
 
-popeyes = Restaurant.find_by(id: 13)
-popeyes.description = "Dine-In Take-Out Fast-Food Fried-Chicken"
-popeyes.save
+# red = Restaurant.find_by(id: 12)
+# red.description = "Dine-In Take-Out"
+# red.save
 
-ihop = Restaurant.find_by(id: 14)
-ihop.description = "Dine-In Take-Out American"
-ihop.save
+# popeyes = Restaurant.find_by(id: 13)
+# popeyes.description = "Dine-In Take-Out Fast-Food Fried-Chicken"
+# popeyes.save
 
-sbux = Restaurant.find_by(id: 15)
-sbux.description = "Dine-In Take-Out"
-sbux.save
+# ihop = Restaurant.find_by(id: 14)
+# ihop.description = "Dine-In Take-Out American"
+# ihop.save
 
-panda = Restaurant.find_by(id: 16)
-panda.description = "Dine-In Take-Out Fast-Food Popular Chinese"
-panda.save
+# sbux = Restaurant.find_by(id: 15)
+# sbux.description = "Dine-In Take-Out"
+# sbux.save
 
-tgif = Restaurant.find_by(id: 17)
-tgif.description = "Dine-In Take-Out Fast-Food American"
-tgif.save
+# panda = Restaurant.find_by(id: 16)
+# panda.description = "Dine-In Take-Out Fast-Food Popular Chinese"
+# panda.save
 
-chipotle = Restaurant.find_by(id: 18)
-chipotle.description = "Dine-In Take-Out Mexican Healthy"
-chipotle.save
+# tgif = Restaurant.find_by(id: 17)
+# tgif.description = "Dine-In Take-Out Fast-Food American"
+# tgif.save
 
-olive = Restaurant.find_by(id: 19)
-olive.description = "Dine-In Take-Out Italian"
-olive.save
+# chipotle = Restaurant.find_by(id: 18)
+# chipotle.description = "Dine-In Take-Out Mexican Healthy"
+# chipotle.save
 
-bunny = Restaurant.find_by(id: 20)
-bunny.description = "Take-Out"
-bunny.save
+# olive = Restaurant.find_by(id: 19)
+# olive.description = "Dine-In Take-Out Italian"
+# olive.save
 
+# bunny = Restaurant.find_by(id: 20)
+# bunny.description = "Take-Out"
+# bunny.save
+
+# puts("Done adding categories!")
 
 puts("Done seeding!")

@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchRestaurants: () => dispatch(fetchRestaurants()),
+    fetchRestaurants: category => dispatch(fetchRestaurants(category)),
     fetchRestaurant: restaurantId => dispatch(fetchRestaurant(restaurantId))
   }
 }
