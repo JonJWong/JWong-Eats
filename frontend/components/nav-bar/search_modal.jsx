@@ -15,13 +15,16 @@ class SearchModal extends React.Component {
 
   componentDidMount() {
     this.props.fetchRestaurants()
-      .then(() => this.setState({ loading: false }))
+      .then(action => this.setState({
+        loading: false,
+        restaurants: action.restaurants
+      }))
   }
 
   conditionalClose() {
-    const wrapper = document.querySelector(".search-contents-wrapper")
+    const wrapper = document.querySelector(".search-contents-wrapper");
     if (wrapper) {
-      wrapper.classList.remove("drop")
+      wrapper.classList.remove("drop");
       setTimeout(() => {
         this.props.closeSearchModal();
       }, 500)
@@ -31,7 +34,7 @@ class SearchModal extends React.Component {
   }
 
   filterResults(value) {
-    const { restaurants } = this.props;
+    const { restaurants } = this.state;
     const filtered = [];
 
     Object.keys(restaurants).forEach(id => {
@@ -47,18 +50,21 @@ class SearchModal extends React.Component {
   renderResults(value) {
     const results = this.filterResults(value);
     setTimeout(() => {
-      document.querySelector(".search-contents-wrapper").classList.add("drop")  
-
-    }, 300)
+      const wrapper = document.querySelector(".search-contents-wrapper");
+      if (wrapper) {
+        document.querySelector(".search-contents-wrapper").classList.add("drop");
+      }
+      }, 300)
     if (value !== "") {
       return (
         <div className="search-contents-wrapper">
           {results.map(restaurant => {
             return (
-              <Link to={`/restaurants/${restaurant.id}`}>
+              <Link
+                to={`/restaurants/${restaurant.id}`}
+                key={restaurant.name+value}>
                 <div
-                  className="search-result-container"
-                  key={restaurant.name+value}>
+                  className="search-result-container">
                   <div className="search-result-photo-container">
                     <img
                       src={restaurant.photoUrl} 

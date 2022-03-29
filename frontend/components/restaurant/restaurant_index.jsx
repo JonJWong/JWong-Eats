@@ -32,7 +32,9 @@ class RestaurantIndex extends React.Component {
     const id = restaurant.id;
 
     if (this.props.location.pathname !== prevProps.location.pathname) {
-      fetchRestaurant(id)
+      fetchRestaurant(id).then(action => {
+        this.setState({ restaurant: action.restaurant })
+      })
     }
   }
 
