@@ -52,20 +52,19 @@ class NavBar extends React.Component {
     this.setState({ searchOpen: true })
   }
 
+  // this technically ends the search that is ongoing (state)
   closeSearchModal() {
     const searchBar = document.querySelector(".nav-search-bar");
     searchBar.classList.remove("search-expanded");
     this.setState({ searchOpen: false })
   }
 
+  // helper to render search components if there is an ongoing search
   renderSearch() {
-    const { restaurants } = this.props;
-
     if (this.state.searchOpen) {
       return <SearchModalContainer
         searchOpen={this.state.searchOpen}
         closeSearchModal={this.closeSearchModal}
-        restaurants={restaurants}
         value={this.state.searchValue} />
     }
   }
@@ -96,6 +95,7 @@ class NavBar extends React.Component {
     }
   }
 
+  // add quantity to cart button
   cartNum() {
     if (Object.keys(this.props.cart).length > 0) {
       return `(${Object.keys(this.props.cart).length})`

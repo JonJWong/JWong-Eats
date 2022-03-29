@@ -13,6 +13,8 @@ class SearchModal extends React.Component {
     this.filterResults = this.filterResults.bind(this);
   }
 
+  // setting local state to restaurants on mount, so it does not interfere with
+  // other components
   componentDidMount() {
     this.props.fetchRestaurants()
       .then(action => this.setState({
@@ -21,6 +23,7 @@ class SearchModal extends React.Component {
       }))
   }
 
+  // only allow closing of the search bar if it exists, to avoid null errors
   conditionalClose() {
     const wrapper = document.querySelector(".search-contents-wrapper");
     if (wrapper) {
@@ -33,6 +36,7 @@ class SearchModal extends React.Component {
     }
   }
 
+  // compare searchbar contents to restaurant names
   filterResults(value) {
     const { restaurants } = this.state;
     const filtered = [];
@@ -47,14 +51,19 @@ class SearchModal extends React.Component {
     return filtered;
   }
 
+  // display the results that return from the search filter
   renderResults(value) {
     const results = this.filterResults(value);
+
+    // add transition for height
     setTimeout(() => {
       const wrapper = document.querySelector(".search-contents-wrapper");
       if (wrapper) {
         document.querySelector(".search-contents-wrapper").classList.add("drop");
       }
-      }, 300)
+    }, 300)
+
+    // check if searchbar is empty, if it is not empty, render list
     if (value !== "") {
       return (
         <div className="search-contents-wrapper">
@@ -88,8 +97,8 @@ class SearchModal extends React.Component {
   }
 
   render() {
-    const { loading } = this.state;
-    if (loading) {
+    
+    if (this.state.loading) {
       return (
         <div className="loading-screen-bg">
           <div className="loading-element"></div>
