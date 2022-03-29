@@ -301,9 +301,8 @@
 #   price_rating: "$$$$$",
 #   hours: "6:00AM - 10:00PM"
 # })
-restaurant20 = Restaurant.find_by(id: 20)
-restaurant20img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnybanner.jpg")
-restaurant20.photo.attach(io: restaurant20img, filename: 'bunnybanner.jpg')
+# restaurant20img = open("https://jwong-eats-seeds.s3.amazonaws.com/bunnybanner.jpg")
+# restaurant20.photo.attach(io: restaurant20img, filename: 'bunnybanner.jpg')
   
 # puts("Seeding Menus...")
 

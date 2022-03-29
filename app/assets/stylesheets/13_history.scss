@@ -132,3 +132,117 @@
   font-size: 26px;
   padding-left: 50px;
 }
+
+#receipt-modal-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+#receipt-modal-block {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(80, 80, 80, .8);
+}
+
+#receipt-modal-contents {
+  padding: 20px;
+  position: fixed;
+  overflow-y: scroll;
+  max-height: 750px;
+  left: 32%;
+  right: 32%;
+  top: 10%;
+  bottom: auto;
+  background-color: white;
+  z-index: 11;
+}
+
+#receipt-modal-close {
+  height: 30px;
+  width: 30px;
+}
+
+#receipt-modal-title {
+  font-size: 24px;
+  padding-top: 20px;
+}
+
+#receipt-modal-restname {
+  font-size: 16px;
+  font-family: "Uber Light";
+  padding-top: 10px;
+  padding-bottom: 20px;
+  border-bottom: lightgray 2px solid;
+}
+
+#receipt-modal-price-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  padding: 20px;
+  border-bottom: lightgray 2px solid;
+}
+
+#receipt-item-wrapper {
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-bottom: 20px;
+  border-bottom: lightgray 2px solid;
+}
+
+.receipt-item-container {
+  display: grid;
+  grid-template-columns: 50px auto 100px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-family: "Uber Regular";
+}
+
+.receipt-item-quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  border: 1px #eeeeee solid;
+}
+
+.receipt-item-name {
+  align-self: center;
+}
+
+#receipt-payment-container {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: lightgray 2px solid;
+}
+
+#receipt-bottom-total {
+  font-size: 24px;
+}
+
+#receipt-payment-price {
+  font-size: 24px;
+  padding-bottom: 15px;
+}
+
+#receipt-footer {
+  font-size: 30px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+#receipt-payment-subtitle {
+  font-size: 12px;
+  font-family: "Uber Light";
+  text-align: center;
+}

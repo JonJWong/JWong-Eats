@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import * as Util from "../../util/util";
 
 function monthString(month) {
   switch (month) {
@@ -35,8 +36,13 @@ class OrderHistory extends React.Component {
     super(props);
     this.state = {
       loading: true,
+      receiptOpen: false,
+      currentTransaction: null,
+      restName: null
     }
 
+    this.toggleReceipt = this.toggleReceipt.bind(this);
+    this.renderReceipt = this.renderReceipt.bind(this);
     this.ifPhoto = this.ifPhoto.bind(this);
     this.renderOrders = this.renderOrders.bind(this);
   }
@@ -62,8 +68,87 @@ class OrderHistory extends React.Component {
     }
   }
 
+  toggleReceipt(currentTransaction = null, restName = null) {
+    const nextState = !this.state.receiptOpen;
+
+    this.setState({
+      receiptOpen: nextState,
+      currentTransaction: currentTransaction,
+      restName: restName
+    })
+  }
+
+
+  // random key, refactor eventually
   renderReceipt() {
-    
+    if (this.state.receiptOpen) {
+    const { total, items } = this.state.currentTransaction;
+    const { restName } = this.state;
+
+      return (
+        <div id="receipt-modal-container">
+          <div id="receipt-modal-contents">
+  
+            <div id="receipt-modal-header">
+              <button
+                id="receipt-modal-close"
+                onClick={() => this.toggleReceipt()}>
+                  <i className="fa-solid fa-x fa-lg"></i>
+              </button>
+              <div id="receipt-modal-title">
+                Receipt from:
+              </div>
+              <div id="receipt-modal-restname">{restName}</div>
+            </div>
+  
+            <div id="receipt-modal-price-row">
+              <div>Total</div>
+              <div>{total}</div>
+            </div>
+  
+            <div id="receipt-item-wrapper">
+              {Object.values(items).map(item => {
+                return (
+                  <div
+                    className="receipt-item-container"
+                    key={Math.random()}>
+                    <div className="receipt-item-quantity">
+                      {item.item_quantity}
+                    </div>
+                    <div className="receipt-item-name">
+                      {item.item_name}
+                    </div>
+                    <div className="receipt-item-price">
+                      ${parseFloat(item.item_price).toFixed(2)}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+  
+            <div id="receipt-payment-container">
+              <div id="receipt-bottom-total">
+                Subtotal:
+              </div>
+              <div id="receipt-payment-price">
+                ${total}
+              </div>
+            </div>
+  
+            <div id="receipt-footer">
+              Thank you for shopping JWongEats!
+            </div>
+            
+            <div id="receipt-payment-subtitle">
+              No temporary holds were placed on any payment methods. This site does not take any forms of payment.
+            </div>
+          </div>
+          <div
+            id="receipt-modal-block"
+            onClick={() => this.toggleReceipt()}></div>
+        </div>
+      )
+    }
   }
 
   renderOrders() {
@@ -91,17 +176,18 @@ class OrderHistory extends React.Component {
         }
         
         return (
-          // randomly assigned keys, refactor
+          // randomly assigned keys, refactor evenutally
           <div className="history-order-container" key={Math.random() * total}>
             {this.ifPhoto(restaurant)}
             <div className="history-order-title-container">
               <div className="history-order-title">{restName}</div>
               <div className="history-order-subtitle">
                 {items.length} Items for ${total} • {this.formattedDate(currentTransaction)} • 
-                <div
+                <button
+                  onClick={() => this.toggleReceipt(currentTransaction, restName)}
                   className="history-view-receipt">
                     View Receipt
-                </div>
+                </button>
               </div>
             </div>
             
@@ -163,6 +249,7 @@ class OrderHistory extends React.Component {
         <div className="history-container">
           {this.renderOrders()}
         </div>
+        {this.renderReceipt()}
       </div>
     )
   }
