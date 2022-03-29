@@ -20,9 +20,12 @@ class SearchModal extends React.Component {
 
   conditionalClose() {
     if (this.props.searchOpen) {
+
+      document.querySelector(".search-contents-wrapper").classList.remove("drop")
+      
       setTimeout(() => {
         this.props.closeSearchModal();
-      })
+      }, 500)
     }
   }
 
