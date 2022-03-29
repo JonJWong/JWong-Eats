@@ -2,15 +2,6 @@
   max-width: 100%;
 }
 
-#delivery-left {
-  position: sticky;
-  height: 40px;
-  top: 13vw;
-  background-color: orange;
-  width: 25vw;
-  padding-left: 30px;
-}
-
 #delivery-banner-ads {
   margin: 0 auto;
   width: 90%;
@@ -127,10 +118,10 @@
 }
 
 #delivery-categories {
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
   height: 10vh;
-  padding-top: 7vh;
+  padding-top: 98px;
   margin-bottom: 20px;
   border-bottom: #eeeeee 2px solid;
   display: flex;
@@ -139,16 +130,63 @@
 }
 
 .delivery-filter-button {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.delivery-filter-icon {
+  height: 50px;
+  width: auto;
+}
+
+.delivery-filter-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+}
+
+.delivery-filter-icon-wrapper:hover {
   background-color: #eeeeee;
-  padding: 15px;
-  font-size: 20px;
+  border-radius: 50%;
+}
+
+#delivery-left {
+  position: sticky;
+  height: 40px;
+  top: 100px;
+  width: 25vw;
+  padding-left: 30px;
+}
+
+.delivery-left-header {
+  font-size: 24px;
+  padding-bottom: 15px;
+  border-bottom: 2px #eeeeee solid;
+}
+
+.sort-button-wrapper {
+  width: 200px;
+  padding-top: 15px;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.delivery-sort-button {
+  width: auto;
+  font-size: 16px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-radius: 30px;
+  background-color: #eeeeee;
 }
 
-.delivery-filter-button:hover {
-  background-color: lightgray;
-}
-
-.delivery-filter-button:focus {
+.delivery-sort-button-selected {
   background-color: lightgray;
 }
