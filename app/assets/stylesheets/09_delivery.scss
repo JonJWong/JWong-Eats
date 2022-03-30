@@ -43,8 +43,6 @@
 }
 
 #delivery-restaurant-container {
-  // max-width: 350px;
-  // min-width: 230px;
   min-height: 200px;
 }
 
@@ -200,6 +198,7 @@
 #carousel-container-outer {
   display: flex;
   width: 90%;
+  height: 200px;
   padding-left: 5%;
   padding-right: 5%;
   align-items: center;
@@ -211,7 +210,7 @@
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  height: auto;
+  height: 100%;
   width: 100%;
 }
 
@@ -219,20 +218,33 @@
   transition: transform 0.7s ease-in-out;
 }
 
-.carousel-item {
+.carousel-item, .carousel-inner {
   height: 130px;
   width: calc(33.33% - 39px);
-  margin: 0px 12px;
-  background-color: #eeeeee;
+  background-color: darkgray;
   border-radius: 30px;
   justify-content: center;
   align-items: center;
   vertical-align: center;
   text-align: center;
-  padding-top: 50px;
+  flex-shrink: 0;
+  color: white;
+  cursor: pointer;
+}
+
+.carousel-item {
+  margin: 0px 12px;
   margin-left: 20px;
   margin-right: 20px;
-  flex-shrink: 0;
+}
+
+.carousel-inner {
+  background-size: cover;
+  background-position: (0%, 0%);
+  padding-top: 5px;
+  padding-bottom: 65px;
+  width: 100%;
+  height: 100%;
 }
 
 .carousel-slide-title {
@@ -246,6 +258,7 @@
 }
 
 #carousel-right, #carousel-left {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -258,7 +271,7 @@
 }
 
 #carousel-left-blocker, #carousel-right-blocker {
-  position: fixed;
+  position: absolute;
   z-index: 1;
   height: 200px;
   background-color: white;

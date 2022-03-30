@@ -1,19 +1,48 @@
 import React from "react";
 
+const RESTAURANT_IMAGES = {
+  1: 'https://jwong-eats-seeds.s3.amazonaws.com/sofiabanner.jpeg',
+  2: 'https://jwong-eats-seeds.s3.amazonaws.com/JWongEatsRestaurant.png',
+  3: 'https://jwong-eats-seeds.s3.amazonaws.com/zbanner.webp',
+  4: 'https://jwong-eats-seeds.s3.amazonaws.com/JWongEatsRestaurant.png',
+  5: 'https://jwong-eats-seeds.s3.amazonaws.com/cozybanner.jpg',
+  6: 'https://jwong-eats-seeds.s3.amazonaws.com/cfabanner.jepg',
+  7: 'https://jwong-eats-seeds.s3.amazonaws.com/mcdbanner.jpeg',
+  8: 'https://jwong-eats-seeds.s3.amazonaws.com/halalbanner.jpeg',
+  9: 'https://jwong-eats-seeds.s3.amazonaws.com/subwaybanner.jepg',
+  10: 'https://jwong-eats-seeds.s3.amazonaws.com/unionbanner.jpeg',
+  11: 'https://jwong-eats-seeds.s3.amazonaws.com/wcbanner.jpeg',
+  12: 'https://jwong-eats-seeds.s3.amazonaws.com/redbanner.jpg',
+  13: 'https://jwong-eats-seeds.s3.amazonaws.com/popbanner.jpeg',
+  14: 'https://jwong-eats-seeds.s3.amazonaws.com/ihopbanner.jpeg',
+  15: 'https://jwong-eats-seeds.s3.amazonaws.com/sbuxbanner.jpeg',
+  16: 'https://jwong-eats-seeds.s3.amazonaws.com/pandabanner.jpeg',
+  17: 'https://jwong-eats-seeds.s3.amazonaws.com/tgifbanner.jpeg',
+  18: 'https://jwong-eats-seeds.s3.amazonaws.com/chipotlebanner.jpeg',
+  19: 'https://jwong-eats-seeds.s3.amazonaws.com/olivebanner.jpeg',
+  20: 'https://jwong-eats-seeds.s3.amazonaws.com/bunnyad.jpg'
+}
+
+const RANDOM_NUM = Math.floor(Math.random() * 20);
+
 const CAROUSEL_CONTENTS = [
   {
     title: 'Eat from this restaurant!',
-    description: 'Some of the best eats in town!'
+    description: 'Some of the best eats in town!',
+    link: `#/restaurants/${RANDOM_NUM}`,
+    imgUrl: `${RESTAURANT_IMAGES[RANDOM_NUM]}`
   },
   {
     title: 'Visit my GitHub!',
-    description: 'Creator: Jonathan Wong',
+    description: 'Creator: Jonathan Wong github.com/JonJWong',
     link: 'https://github.com/JonJWong',
     imgUrl: 'https://jwong-eats-seeds.s3.amazonaws.com/github.png'
   },
   {
     title: 'Bunny Cafe',
     description: 'Bunny cafe is an example of a user-created restaurant, featuring our bunny, Kuro',
+    link: "#/restaurants/20",
+    imgUrl: 'https://jwong-eats-seeds.s3.amazonaws.com/bunnyad.jpg'
   },
   {
     title: 'Not sure what to do?',
@@ -28,30 +57,6 @@ const CAROUSEL_CONTENTS = [
     description: 'These are all restaurants local to my current residence, which is Union, New Jersey',
   }
 ]
-
-const SELECT_COLORS = [
-  "#eeeeee",
-  "lightgray",
-  "lightcyan",
-  "lightcoral"
-]
-
-function getRange(idx) {
-  switch (idx) {
-    case 0:
-      return [5, 0, 1]
-    case 1:
-      return [0, 1, 2]
-    case 2:
-      return [1, 2, 3]
-    case 3:
-      return [2, 3, 4]
-    case 4:
-      return [3, 4, 5]
-    case 5:
-      return [4, 5, 0]
-  }
-}
 
 class AdCarousel extends React.Component {
   constructor(props) {
@@ -83,7 +88,7 @@ class AdCarousel extends React.Component {
 
     document.querySelector("#carousel-container")
       .addEventListener('transitionend', () => {
-        this.changeOrder();
+        that.changeOrder();
     })
   }
 
@@ -93,7 +98,7 @@ class AdCarousel extends React.Component {
     if (this.current === length ) {
       this.current = 1;
     } else {
-      this.current++
+      this.current = (this.current + 3) % length
     }
 
     let order = 1;
@@ -118,20 +123,22 @@ class AdCarousel extends React.Component {
   renderSlide(slide, index) {
     if (slide.link) {
       return (
-        <a href={slide.link} key={index + 1}
-        className="carousel-item"
-        data-position={index + 1}
-        >
-          <div>
-          <div className="carousel-slide-title">
-            {slide.title}
-          </div>
+        <a href={slide.link} 
+            className="carousel-item"
+            data-position={index + 1}
+            key={index + 1}>
 
-          <div className="carousel-slide-desc">
-            {slide.description}
+          <div className="carousel-inner"
+            style={{backgroundImage: `url('${slide.imgUrl}')`}}>
+            <div className="carousel-slide-title">
+              {slide.title}
+            </div>
+
+            <div className="carousel-slide-desc">
+              {slide.description}
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
       )
     } else {
       return (
@@ -171,7 +178,7 @@ class AdCarousel extends React.Component {
         </div>
 
         <div id="carousel-left-blocker">
-          
+
         </div>
 
         <div id="carousel-container" className="carousel-container-transition">
