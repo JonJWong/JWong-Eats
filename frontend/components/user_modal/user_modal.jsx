@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import UserAccountContainer from "../user_account/user_account_container";
-import LoginFormContainer from "../session_form/login_form_container";
-import OrderHistoryContainer from "../user_account/order_history_container";
 
 class UserModal extends React.Component {
   constructor(props) {

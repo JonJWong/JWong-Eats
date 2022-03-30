@@ -1,3 +1,4 @@
+import { slice } from "lodash";
 import React from "react";
 
 const RESTAURANT_IMAGES = {
@@ -47,14 +48,17 @@ const CAROUSEL_CONTENTS = [
   {
     title: 'Not sure what to do?',
     description: "It's always a good time to order some delicious food!",
+    imgUrl: 'https://jwong-eats-seeds.s3.amazonaws.com/rilakkumaeat.png'
   },
   {
     title: 'AppAcademy',
     description: 'This site was created by Jonathan Wong as a Full-Stack final project for AppAcademy.',
+    imgUrl: 'https://jwong-eats-seeds.s3.amazonaws.com/appacademylogo.png'
   },
   {
     title: 'Restaurants',
     description: 'These are all restaurants local to my current residence, which is Union, New Jersey',
+    imgUrl: 'https://jwong-eats-seeds.s3.amazonaws.com/restaurantad.jpeg'
   }
 ]
 
@@ -141,6 +145,27 @@ class AdCarousel extends React.Component {
             </div>
           </div>
         </a>
+      )
+    } else if (!slide.link && slide.imgUrl) {
+      return (
+        <div
+          className="carousel-item"
+          data-position={index + 1}
+          key={index + 1}>
+            
+          <div className="carousel-inner"
+            style={{backgroundImage: `url('${slide.imgUrl}')`}}>
+            <div className="carousel-inner-contents">
+              <div className="carousel-slide-title">
+                {slide.title}
+              </div>
+
+              <div className="carousel-slide-desc">
+                {slide.description}
+              </div>
+            </div>
+          </div>
+        </div>
       )
     } else {
       return (

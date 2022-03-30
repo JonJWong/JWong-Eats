@@ -150,3 +150,22 @@
   font-size: 12px;
   font-family: "Uber Light";
 }
+
+#splash-github-logo {
+  height: 100%;
+  width: 100%;
+}
+
+#splash-github-fill {
+  position: absolute;
+  right: 20px;
+  bottom: 60px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  transition: background-color .4s ease-in-out;
+}
+
+#splash-github-fill:hover {
+  background-color: white;
+}

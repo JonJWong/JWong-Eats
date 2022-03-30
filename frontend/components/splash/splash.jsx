@@ -62,6 +62,19 @@ class Splash extends React.Component {
               Sign in </Link> to see restauraunts in the area.
           </div>
         </div>
+
+        <div id="splash-github-fill">
+          <a href="https://github.com/JonJWong"
+            id="github"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img
+              src='https://jwong-eats-seeds.s3.amazonaws.com/github.png'
+              id="splash-github-logo"
+              alt="github-logo" />
+          </a>
+        </div>
+        
         <p id="credits">
           Note: Images on this site are property of their respective companies (Uber/UberEats, Red Lobster, Olive Garden).
           This site is for personal use only, and is in no way to be used for profit or gain.
