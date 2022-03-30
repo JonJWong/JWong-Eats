@@ -288,12 +288,12 @@
 }
 
 #carousel-right-blocker {
-  left: 92%;
+  left: 93%;
   right: 0;
 }
 
 #carousel-left-blocker {
-  right: 92%;
+  right: 93%;
   left: 0;
 }
 
@@ -303,8 +303,27 @@
 
 .carousel-inner {
   background-color: black;
+  background-repeat: no-repeat;
 }
 
 #carousel-container:nth-child(2) {
   background-color: white;
 }
+
+.carousel-github-ad, .carousel-rilakkuma {
+  background-size: 30%;
+  background-position: center;
+}
+
+.carousel-github-ad {
+  background-color: #eeeeee;
+}
+
+.carousel-rilakkuma {
+  background-color: yellow;
+}
+
+.carousel-restaurants-ad {
+  background-size: 80%;
+}
+

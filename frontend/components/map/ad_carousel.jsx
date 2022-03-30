@@ -31,34 +31,40 @@ const CAROUSEL_CONTENTS = [
     title: 'Eat from this restaurant!',
     description: 'Some of the best eats in town!',
     link: `#/restaurants/${RANDOM_NUM}`,
-    imgUrl: `${RESTAURANT_IMAGES[RANDOM_NUM]}`
+    imgUrl: `${RESTAURANT_IMAGES[RANDOM_NUM]}`,
+    className: 'carousel-eat-ad'
   },
   {
     title: 'Visit my GitHub!',
     description: 'Creator: Jonathan Wong github.com/JonJWong',
     link: 'https://github.com/JonJWong',
-    imgUrl: 'https://jwong-eats-seeds.s3.amazonaws.com/github.png'
+    imgUrl: 'https://jwong-eats-seeds.s3.amazonaws.com/github.png',
+    className: 'carousel-github-ad'
   },
   {
     title: 'Bunny Cafe',
     description: 'Bunny cafe is an example of a user-created restaurant, featuring our bunny, Kuro',
     link: "#/restaurants/20",
-    imgUrl: 'https://jwong-eats-seeds.s3.amazonaws.com/bunnyad.jpg'
+    imgUrl: 'https://jwong-eats-seeds.s3.amazonaws.com/bunnyad.jpg',
+    className: 'carousel-bunny-cafe'
   },
   {
     title: 'Not sure what to do?',
     description: "It's always a good time to order some delicious food!",
-    imgUrl: 'https://jwong-eats-seeds.s3.amazonaws.com/rilakkumaeat.png'
+    imgUrl: 'https://jwong-eats-seeds.s3.amazonaws.com/rilakkumaeat.png',
+    className: 'carousel-rilakkuma'
   },
   {
     title: 'AppAcademy',
     description: 'This site was created by Jonathan Wong as a Full-Stack final project for AppAcademy.',
-    imgUrl: 'https://jwong-eats-seeds.s3.amazonaws.com/appacademylogo.png'
+    imgUrl: 'https://jwong-eats-seeds.s3.amazonaws.com/appacademylogo.png',
+    className: 'carousel-aa-logo'
   },
   {
     title: 'Restaurants',
     description: 'These are all restaurants local to my current residence, which is Union, New Jersey',
-    imgUrl: 'https://jwong-eats-seeds.s3.amazonaws.com/restaurantad.jpeg'
+    imgUrl: 'https://jwong-eats-seeds.s3.amazonaws.com/restaurantad.jpeg',
+    className: 'carousel-restaurants-ad'
   }
 ]
 
@@ -79,12 +85,20 @@ class AdCarousel extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       this.addEvents();
-    }, 100)
+    }, 10)
   }
 
-  nextSlide() {
-    document.querySelector("#carousel-container").classList.add('carousel-container-transition');
-    document.querySelector("#carousel-container").style.transform = 'translateX(-100%)';
+  nextSlide(direction) {
+    if (direction === "Right") {
+      this.direction = "Right"
+      document.querySelector("#carousel-container").classList.add('carousel-container-transition');
+      document.querySelector("#carousel-container").style.transform = 'translateX(-100%)';
+    }
+    if (direction === "Left") {
+      this.direction = "Left"
+      document.querySelector("#carousel-container").classList.add('carousel-container-transition');
+      document.querySelector("#carousel-container").style.transform = 'translateX(100%)';
+    }
   }
 
   addEvents() {
@@ -99,28 +113,55 @@ class AdCarousel extends React.Component {
   changeOrder() {
     const { length } = this.state;
 
-    if (this.current === length ) {
-      this.current = 1;
-    } else {
-      this.current = (this.current + 3) % length
+    if (this.direction === "Left") {
+      if (this.current === length ) {
+        this.current = 1;
+      } else {
+        this.current = (this.current + 3) % length
+      }
+  
+      let order = 1;
+  
+      for (let i = this.current; i <= length; i++) {
+        const slide = document.querySelector(`.carousel-item[data-position="${i}"]`)
+        slide.style.order = order
+        order = (order + 3) % length;
+      }
+  
+      for (let i = 1; i < this.current; i++) {
+        const slide = document.querySelector(`.carousel-item[data-position="${i}"]`)
+        slide.style.order = order
+        order = (order + 3) % length;
+      }
+  
+      document.querySelector("#carousel-container").classList.remove('carousel-container-transition');
+      document.querySelector("#carousel-container").style.transform = 'translateX(0)';
     }
 
-    let order = 1;
-
-    for (let i = this.current; i <= length; i++) {
-      const slide = document.querySelector(`.carousel-item[data-position="${i}"]`)
-      slide.style.order = order
-      order = (order + 3) % length;
+    if (this.direction === "Right") {
+      if (this.current === length ) {
+        this.current = 1;
+      } else {
+        this.current = (this.current + 3) % length
+      }
+  
+      let order = 2;
+  
+      for (let i = this.current; i <= length; i++) {
+        const slide = document.querySelector(`.carousel-item[data-position="${i}"]`)
+        slide.style.order = order
+        order = (order + 3) % length;
+      }
+  
+      for (let i = 1; i < this.current; i++) {
+        const slide = document.querySelector(`.carousel-item[data-position="${i}"]`)
+        slide.style.order = order
+        order = (order + 3) % length;
+      }
+  
+      document.querySelector("#carousel-container").classList.remove('carousel-container-transition');
+      document.querySelector("#carousel-container").style.transform = 'translateX(0)';
     }
-
-    for (let i = 1; i < this.current; i++) {
-      const slide = document.querySelector(`.carousel-item[data-position="${i}"]`)
-      slide.style.order = order
-      order = (order + 3) % length;
-    }
-
-    document.querySelector("#carousel-container").classList.remove('carousel-container-transition');
-    document.querySelector("#carousel-container").style.transform = 'translateX(0)';
 
   }
 
@@ -132,7 +173,7 @@ class AdCarousel extends React.Component {
             data-position={index + 1}
             key={index + 1}>
 
-          <div className="carousel-inner"
+          <div className={`carousel-inner ${slide.className}`}
             style={{backgroundImage: `url('${slide.imgUrl}')`}}>
             <div className="carousel-inner-contents">
               <div className="carousel-slide-title">
@@ -153,7 +194,7 @@ class AdCarousel extends React.Component {
           data-position={index + 1}
           key={index + 1}>
             
-          <div className="carousel-inner"
+          <div className={`carousel-inner ${slide.className}`}
             style={{backgroundImage: `url('${slide.imgUrl}')`}}>
             <div className="carousel-inner-contents">
               <div className="carousel-slide-title">
@@ -174,7 +215,7 @@ class AdCarousel extends React.Component {
           data-position={index + 1}
           key={index + 1}>
 
-        <div className="carousel-inner">
+        <div className={`carousel-inner ${slide.className}`}>
           <div className="carousel-inner-contents">
 
             <div className="carousel-slide-title">
@@ -207,7 +248,7 @@ class AdCarousel extends React.Component {
       <div id="carousel-container-outer">
         <div
           id="carousel-left"
-          onClick={() => console.log('hello')}>
+          onClick={() => this.nextSlide("Left")}>
           <i className="fa-solid fa-arrow-left"></i>
         </div>
 
@@ -229,7 +270,7 @@ class AdCarousel extends React.Component {
 
         <div
           id="carousel-right"
-          onClick={() => this.nextSlide()}>
+          onClick={() => this.nextSlide("Right")}>
           <i className="fa-solid fa-arrow-right"></i>
         </div>
       </div>
