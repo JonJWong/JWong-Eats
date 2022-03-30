@@ -99,6 +99,7 @@ class AdCarousel extends React.Component {
   // this method decides which direction the carousel will turn
   nextSlide(direction) {
     const carousel = document.querySelector("#carousel-container");
+    console.log("next slide")
     if (direction === "Right") {
       this.direction = "Right"
       carousel.classList.add('carousel-container-transition');
@@ -118,6 +119,7 @@ class AdCarousel extends React.Component {
 
     document.querySelector("#carousel-container")
       .addEventListener('transitionend', () => {
+        console.log("transition end")
         that.changeOrder();
     })
   }
@@ -128,72 +130,40 @@ class AdCarousel extends React.Component {
     const carousel = document.querySelector("#carousel-container");
     const children = carousel.childNodes;
 
+    console.log(this.direction)
+
     if (this.direction === "Left") {
-      if (this.current === length ) {
-        this.current = 1;
-      } else {
-        this.current = (this.current + 3) % length
-      }
-      
-      let order = 1;
-  
-      for (let i = this.current; i <= length; i++) {
-        const slide = document.querySelector(`.carousel-item[data-position="${i}"]`)
-        slide.style.order = order
-        order++;
-      }
-  
-      for (let i = 1; i < this.current; i++) {
-        const slide = document.querySelector(`.carousel-item[data-position="${i}"]`)
-        slide.style.order = order
-        order++;
-      }
+      console.log("Left trigger")
+      this.current = this.current === 4 ? 1 : 4
+      let newOrder;
+
+      children[0].style.order === '4'
+        ? newOrder = [1, 2, 3, 4, 5, 6]
+        : newOrder = [4, 5, 6, 1, 2, 3];
+
+      newOrder.forEach((order, i) => {
+        children[i].style.order = order
+      })
 
       carousel.classList.remove('carousel-container-transition');
       carousel.style.transform = 'translateX(-100%)';
     }
 
     if (this.direction === "Right") {
-      if (children[0].style.order === '') {
-        if (this.current === length ) {
-          this.current = 1;
-        } else {
-          this.current = (this.current + 3) % length
-        }
-  
-        let order = 1
-    
-        for (let i = this.current; i <= length; i++) {
-          const slide = document.querySelector(`.carousel-item[data-position="${i}"]`)
-          slide.style.order = order
-          order++;
-        }
-    
-        for (let i = 1; i < this.current; i++) {
-          const slide = document.querySelector(`.carousel-item[data-position="${i}"]`)
-          slide.style.order = order
-          order++;
-        }
-    
-        carousel.classList.remove('carousel-container-transition');
-        carousel.style.transform = 'translateX(0)';
+      console.log("Right trigger")
+      this.current = this.current === 4 ? 1 : 4
+      let newOrder;
 
-      } else {
-        
-        this.current = this.current === 4 ? 1 : 4
-        let newOrder;
+      children[0].style.order === '4'
+        ? newOrder = [1, 2, 3, 4, 5, 6]
+        : newOrder = [4, 5, 6, 1, 2, 3];
 
-        children[0].style.order === '4'
-          ? newOrder = [1, 2, 3, 4, 5, 6]
-          : newOrder = [4, 5, 6, 1, 2, 3];
+      newOrder.forEach((order, i) => {
+        children[i].style.order = order
+      })
 
-        newOrder.forEach((order, i) => {
-          children[i].style.order = order
-        })
-
-        carousel.classList.remove('carousel-container-transition');
-        carousel.style.transform = 'translateX(0)';
-      }
+      carousel.classList.remove('carousel-container-transition');
+      carousel.style.transform = 'translateX(0)';
     }
   }
 
