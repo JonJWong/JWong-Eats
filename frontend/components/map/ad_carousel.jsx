@@ -104,7 +104,6 @@ class AdCarousel extends React.Component {
       order = (order + 3) % length;
     }
 
-
     for (let i = 1; i < this.current; i++) {
       const slide = document.querySelector(`.carousel-item[data-position="${i}"]`)
       slide.style.order = order
@@ -171,12 +170,20 @@ class AdCarousel extends React.Component {
           <i className="fa-solid fa-arrow-left"></i>
         </div>
 
+        <div id="carousel-left-blocker">
+          
+        </div>
+
         <div id="carousel-container" className="carousel-container-transition">
           {this.state.data.map((slide, index) => {
             return (
               this.renderSlide(slide, index)
             )
           })}  
+        </div>
+
+        <div id="carousel-right-blocker">
+
         </div>
 
         <div

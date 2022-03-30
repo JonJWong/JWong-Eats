@@ -257,6 +257,47 @@
   border-radius: 20px;
 }
 
+#carousel-left-blocker, #carousel-right-blocker {
+  position: fixed;
+  z-index: 1;
+  height: 200px;
+  background-color: white;
+}
+
+#carousel-right-blocker {
+  left: 92%;
+  right: 0;
+}
+
+#carousel-left-blocker {
+  right: 92%;
+  left: 0;
+}
+
 #carousel-right:hover, #carousel-left:hover {
   background-color: lightgray;
+}
+
+#carousel-container:nth-child(1) {
+
+}
+
+#carousel-container:nth-child(2) {
+
+}
+
+#carousel-container:nth-child(3) {
+
+}
+
+#carousel-container:nth-child(4) {
+
+}
+
+#carousel-container:nth-child(5) {
+
+}
+
+#carousel-container:nth-child(6) {
+
 }
