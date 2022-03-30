@@ -103,12 +103,16 @@ class AdCarousel extends React.Component {
     if (direction === "Right") {
       this.direction = "Right"
       carousel.classList.add('carousel-container-transition');
-      carousel.style.transform = 'translateX(-100%)';
+      carousel.style.transform = carousel.style.tranform === 'translateX(-100%)'
+        ? 'translateX(0%)'
+        : 'translateX(-100%)';
     }
     if (direction === "Left") {
       this.direction = "Left"
       carousel.classList.add('carousel-container-transition');
-      carousel.style.transform = 'translateX(0%)';
+      carousel.style.transform = carousel.style.tranform === 'translateX(-100%)'
+        ? 'translateX(0%)'
+        : 'translateX(-100%)'
     }
   }
 
@@ -146,7 +150,9 @@ class AdCarousel extends React.Component {
       })
 
       carousel.classList.remove('carousel-container-transition');
-      carousel.style.transform = 'translateX(-100%)';
+      carousel.style.transform = carousel.style.tranform === 'translateX(-100%)'
+        ? 'translateX(-100%)'
+        : 'translateX(0%)'
     }
 
     if (this.direction === "Right") {
@@ -163,7 +169,9 @@ class AdCarousel extends React.Component {
       })
 
       carousel.classList.remove('carousel-container-transition');
-      carousel.style.transform = 'translateX(0)';
+      carousel.style.transform = carousel.style.tranform === 'translateX(-100%)'
+        ? 'translateX(-100%)'
+        : 'translateX(0%)'
     }
   }
 
