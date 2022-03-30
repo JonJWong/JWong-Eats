@@ -2,9 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import * as Util from "../../util/util";
 
-const CAROUSEL_ADS = {
-  
-}
+import AdCarousel from "./ad_carousel";
 
 const ALL_CATEGORIES = {
   "default": "https://jwong-eats-seeds.s3.amazonaws.com/top_eats.png",
@@ -257,14 +255,6 @@ class Delivery extends React.Component {
     )
   }
 
-  renderBannerCarousel() {
-    return (
-      <div id="delivery-banner-ads">
-        ads here
-      </div>
-    )
-  }
-
   render() {
     const { loading } = this.state;
 
@@ -281,7 +271,7 @@ class Delivery extends React.Component {
 
         {this.renderFilterMenu()}
 
-        {this.renderBannerCarousel()}
+        <AdCarousel restaurants={this.state.restaurants} />
 
         <div id="delivery-topbar">
           <div id="delivery-stores">All stores</div>
