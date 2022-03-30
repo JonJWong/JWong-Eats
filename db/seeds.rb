@@ -85,8 +85,8 @@ restaurant2 = Restaurant.create({
     price_rating: "$",
     hours: "11:00AM - 2:00AM"
   })
-genericImg = open("https://jwong-eats-seeds.s3.amazonaws.com/JWongEatsRestaurant.png")
-restaurant2.photo.attach(io: genericImg, filename: 'JWongEatsRestaurant.png')
+genericImg = open("https://jwong-eats-seeds.s3.amazonaws.com/signaturzbanner.jpeg")
+restaurant2.photo.attach(io: genericImg, filename: 'signaturzbanner.jpeg')
 
 restaurant3 = Restaurant.create({
     name: "Cafe Z",
@@ -109,13 +109,13 @@ restaurant4 = Restaurant.create({
     price_rating: "$$",
     hours: "2:00PM - 10:00PM"
   })
-genericImg = open("https://jwong-eats-seeds.s3.amazonaws.com/JWongEatsRestaurant.png")
-restaurant4.photo.attach(io: genericImg, filename: 'JWongEatsRestaurant.png')
+genericImg = open("https://jwong-eats-seeds.s3.amazonaws.com/cadillacbanner.jpeg")
+restaurant4.photo.attach(io: genericImg, filename: 'cadillacbanner.jpeg')
 
 restaurant5 = Restaurant.create({
     name: "Cozy Corner Deli and Caterers",
     address: "558 Rahway Ave, Union, NJ 07083",
-    description: "Dine-In Take-Out",
+    description: "Dine-In Take-Out American Burger Fried-Chicken",
     rating: 4.2,
     review_count: 238,
     price_rating: "$",
@@ -175,7 +175,7 @@ restaurant9.photo.attach(io: restaurant9img, filename: 'subwaybanner.jpeg')
 restaurant10 = Restaurant.create({
     name: "Union Plaza Diner",
     address: "2466 US-22, Union, NJ 07083",
-    description: "Dine-In",
+    description: "Dine-In Take-Out Mexican American Healthy",
     rating: 4.1,
     review_count: 1650,
     price_rating: "$$",
