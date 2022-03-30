@@ -2,7 +2,9 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: image_url('BG1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: image_url('BG1.png');
 }
 
 #splash-hamburger {
