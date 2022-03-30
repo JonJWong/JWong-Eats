@@ -34,7 +34,7 @@ class SearchModal extends React.Component {
         filtered.push(restaurant);
       }
     })
-
+    
     return filtered;
   }
 

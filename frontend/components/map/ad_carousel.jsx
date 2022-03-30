@@ -1,4 +1,3 @@
-import { slice } from "lodash";
 import React from "react";
 
 const RESTAURANT_IMAGES = {
@@ -43,7 +42,7 @@ const CAROUSEL_CONTENTS = [
   },
   {
     title: 'Bunny Cafe',
-    description: 'Bunny cafe is an example of a user-created restaurant, featuring our bunny, Kuro',
+    description: 'Bunny Cafe is an example of a user-created restaurant, featuring our bunny, Kuro',
     link: "#/restaurants/20",
     imgUrl: 'https://jwong-eats-seeds.s3.amazonaws.com/bunnyad.jpg',
     className: 'carousel-bunny-cafe'
@@ -68,6 +67,15 @@ const CAROUSEL_CONTENTS = [
   }
 ]
 
+const INVERTED = {
+  1: 4,
+  2: 5,
+  3: 6,
+  4: 1,
+  5: 2,
+  6: 3
+}
+
 class AdCarousel extends React.Component {
   constructor(props) {
     super(props);
@@ -88,19 +96,23 @@ class AdCarousel extends React.Component {
     }, 10)
   }
 
+  // this method decides which direction the carousel will turn
   nextSlide(direction) {
+    const carousel = document.querySelector("#carousel-container");
     if (direction === "Right") {
       this.direction = "Right"
-      document.querySelector("#carousel-container").classList.add('carousel-container-transition');
-      document.querySelector("#carousel-container").style.transform = 'translateX(-100%)';
+      carousel.classList.add('carousel-container-transition');
+      carousel.style.transform = 'translateX(-100%)';
     }
     if (direction === "Left") {
       this.direction = "Left"
-      document.querySelector("#carousel-container").classList.add('carousel-container-transition');
-      document.querySelector("#carousel-container").style.transform = 'translateX(100%)';
+      carousel.classList.add('carousel-container-transition');
+      carousel.style.transform = 'translateX(0%)';
     }
   }
 
+  // when the css transition ends, it fires off the function to
+  // change the flex-order of the carousel elements
   addEvents() {
     const that = this;
 
@@ -110,8 +122,11 @@ class AdCarousel extends React.Component {
     })
   }
 
+  // based on the transition direction, this rearranges the items
   changeOrder() {
     const { length } = this.state;
+    const carousel = document.querySelector("#carousel-container");
+    const children = carousel.childNodes;
 
     if (this.direction === "Left") {
       if (this.current === length ) {
@@ -119,50 +134,67 @@ class AdCarousel extends React.Component {
       } else {
         this.current = (this.current + 3) % length
       }
-  
+      
       let order = 1;
   
       for (let i = this.current; i <= length; i++) {
         const slide = document.querySelector(`.carousel-item[data-position="${i}"]`)
         slide.style.order = order
-        order = (order + 3) % length;
+        order++;
       }
   
       for (let i = 1; i < this.current; i++) {
         const slide = document.querySelector(`.carousel-item[data-position="${i}"]`)
         slide.style.order = order
-        order = (order + 3) % length;
+        order++;
       }
-  
-      document.querySelector("#carousel-container").classList.remove('carousel-container-transition');
-      document.querySelector("#carousel-container").style.transform = 'translateX(0)';
+
+      carousel.classList.remove('carousel-container-transition');
+      carousel.style.transform = 'translateX(-100%)';
     }
 
     if (this.direction === "Right") {
-      if (this.current === length ) {
-        this.current = 1;
-      } else {
-        this.current = (this.current + 3) % length
-      }
+      if (children[0].style.order === '') {
+        if (this.current === length ) {
+          this.current = 1;
+        } else {
+          this.current = (this.current + 3) % length
+        }
   
-      let order = 2;
-  
-      for (let i = this.current; i <= length; i++) {
-        const slide = document.querySelector(`.carousel-item[data-position="${i}"]`)
-        slide.style.order = order
-        order = (order + 3) % length;
-      }
-  
-      for (let i = 1; i < this.current; i++) {
-        const slide = document.querySelector(`.carousel-item[data-position="${i}"]`)
-        slide.style.order = order
-        order = (order + 3) % length;
-      }
-  
-      document.querySelector("#carousel-container").classList.remove('carousel-container-transition');
-      document.querySelector("#carousel-container").style.transform = 'translateX(0)';
-    }
+        let order = 1
+    
+        for (let i = this.current; i <= length; i++) {
+          const slide = document.querySelector(`.carousel-item[data-position="${i}"]`)
+          slide.style.order = order
+          order++;
+        }
+    
+        for (let i = 1; i < this.current; i++) {
+          const slide = document.querySelector(`.carousel-item[data-position="${i}"]`)
+          slide.style.order = order
+          order++;
+        }
+    
+        carousel.classList.remove('carousel-container-transition');
+        carousel.style.transform = 'translateX(0)';
 
+      } else {
+        
+        this.current = this.current === 4 ? 1 : 4
+        let newOrder;
+
+        children[0].style.order === '4'
+          ? newOrder = [1, 2, 3, 4, 5, 6]
+          : newOrder = [4, 5, 6, 1, 2, 3];
+
+        newOrder.forEach((order, i) => {
+          children[i].style.order = order
+        })
+
+        carousel.classList.remove('carousel-container-transition');
+        carousel.style.transform = 'translateX(0)';
+      }
+    }
   }
 
   renderSlide(slide, index) {
@@ -208,39 +240,7 @@ class AdCarousel extends React.Component {
           </div>
         </div>
       )
-    } else {
-      return (
-        <div
-          className="carousel-item"
-          data-position={index + 1}
-          key={index + 1}>
-
-        <div className={`carousel-inner ${slide.className}`}>
-          <div className="carousel-inner-contents">
-
-            <div className="carousel-slide-title">
-              {slide.title}
-            </div>
-
-            <div className="carousel-slide-desc">
-              {slide.description}
-            </div>
-
-          </div>
-        </div>
-      </div>
-      )
     }
-  }
-
-  getRandomColor() {
-    return SELECT_COLORS[(Math.floor(Math.random() * SELECT_COLORS.length))]
-  }
-
-  getRandomRestaurant() {
-    const { restaurants } = this.props;
-    const randomIndex = Math.floor(Math.random * 20);
-    return restaurants['randomIndex']
   }
 
   render() {
