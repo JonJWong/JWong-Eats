@@ -6,10 +6,10 @@ const RESTAURANT_IMAGES = {
   3: 'https://jwong-eats-seeds.s3.amazonaws.com/zbanner.webp',
   4: 'https://jwong-eats-seeds.s3.amazonaws.com/JWongEatsRestaurant.png',
   5: 'https://jwong-eats-seeds.s3.amazonaws.com/cozybanner.jpg',
-  6: 'https://jwong-eats-seeds.s3.amazonaws.com/cfabanner.jepg',
+  6: 'https://jwong-eats-seeds.s3.amazonaws.com/cfabanner.jpeg',
   7: 'https://jwong-eats-seeds.s3.amazonaws.com/mcdbanner.jpeg',
   8: 'https://jwong-eats-seeds.s3.amazonaws.com/halalbanner.jpeg',
-  9: 'https://jwong-eats-seeds.s3.amazonaws.com/subwaybanner.jepg',
+  9: 'https://jwong-eats-seeds.s3.amazonaws.com/subwaybanner.jpeg',
   10: 'https://jwong-eats-seeds.s3.amazonaws.com/unionbanner.jpeg',
   11: 'https://jwong-eats-seeds.s3.amazonaws.com/wcbanner.jpeg',
   12: 'https://jwong-eats-seeds.s3.amazonaws.com/redbanner.jpg',
@@ -23,7 +23,7 @@ const RESTAURANT_IMAGES = {
   20: 'https://jwong-eats-seeds.s3.amazonaws.com/bunnyad.jpg'
 }
 
-const RANDOM_NUM = Math.floor(Math.random() * 20);
+const RANDOM_NUM = Math.floor(Math.random() * 20) + 1;
 
 const CAROUSEL_CONTENTS = [
   {
@@ -130,12 +130,14 @@ class AdCarousel extends React.Component {
 
           <div className="carousel-inner"
             style={{backgroundImage: `url('${slide.imgUrl}')`}}>
-            <div className="carousel-slide-title">
-              {slide.title}
-            </div>
+            <div className="carousel-inner-contents">
+              <div className="carousel-slide-title">
+                {slide.title}
+              </div>
 
-            <div className="carousel-slide-desc">
-              {slide.description}
+              <div className="carousel-slide-desc">
+                {slide.description}
+              </div>
             </div>
           </div>
         </a>
@@ -146,12 +148,19 @@ class AdCarousel extends React.Component {
           className="carousel-item"
           data-position={index + 1}
           key={index + 1}>
-        <div className="carousel-slide-title">
-          {slide.title}
-        </div>
 
-        <div className="carousel-slide-desc">
-          {slide.description}
+        <div className="carousel-inner">
+          <div className="carousel-inner-contents">
+
+            <div className="carousel-slide-title">
+              {slide.title}
+            </div>
+
+            <div className="carousel-slide-desc">
+              {slide.description}
+            </div>
+
+          </div>
         </div>
       </div>
       )

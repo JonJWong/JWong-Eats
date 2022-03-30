@@ -221,14 +221,13 @@
 .carousel-item, .carousel-inner {
   height: 130px;
   width: calc(33.33% - 39px);
-  background-color: darkgray;
   border-radius: 30px;
   justify-content: center;
   align-items: center;
   vertical-align: center;
   text-align: center;
   flex-shrink: 0;
-  color: white;
+  color: black;
   cursor: pointer;
 }
 
@@ -247,12 +246,23 @@
   height: 100%;
 }
 
+.carousel-inner-contents {
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 40px;
+}
+
 .carousel-slide-title {
-  font-size: 30px;
-  padding-bottom: 10px;
+  font-size: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .carousel-slide-desc {
+  font-size: 14px;
+  font-family: "Uber Light";
+  padding-bottom: 5px;
   width: 80%;
   margin: 0 auto;
 }
@@ -291,26 +301,10 @@
   background-color: lightgray;
 }
 
-#carousel-container:nth-child(1) {
-
+.carousel-inner {
+  background-color: black;
 }
 
 #carousel-container:nth-child(2) {
-
-}
-
-#carousel-container:nth-child(3) {
-
-}
-
-#carousel-container:nth-child(4) {
-
-}
-
-#carousel-container:nth-child(5) {
-
-}
-
-#carousel-container:nth-child(6) {
-
+  background-color: white;
 }
