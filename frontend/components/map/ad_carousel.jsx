@@ -99,20 +99,32 @@ class AdCarousel extends React.Component {
   // this method decides which direction the carousel will turn
   nextSlide(direction) {
     const carousel = document.querySelector("#carousel-container");
-    console.log("next slide")
+    const children = carousel.childNodes;
     if (direction === "Right") {
+      debugger
       this.direction = "Right"
+      carousel.style.transform = 'translateX(-100%)';
+      
+      this.current = this.current === 4 ? 1 : 4
+      let newOrder;
+      
+      children[0].style.order === '4'
+        ? newOrder = [1, 2, 3, 4, 5, 6]
+        : newOrder = [4, 5, 6, 1, 2, 3];
+      
+      newOrder.forEach((order, i) => {
+        children[i].style.order = order
+      })
+      
       carousel.classList.add('carousel-container-transition');
-      carousel.style.transform = carousel.style.tranform === 'translateX(-100%)'
-        ? 'translateX(0%)'
-        : 'translateX(-100%)';
+      carousel.style.transform = 'translateX(0%)';
     }
     if (direction === "Left") {
       this.direction = "Left"
+      carousel.style.transform = 'translateX(0%)';
+
       carousel.classList.add('carousel-container-transition');
-      carousel.style.transform = carousel.style.tranform === 'translateX(-100%)'
-        ? 'translateX(0%)'
-        : 'translateX(-100%)'
+      carousel.style.transform = 'translateX(-100%)';
     }
   }
 
@@ -123,7 +135,6 @@ class AdCarousel extends React.Component {
 
     document.querySelector("#carousel-container")
       .addEventListener('transitionend', () => {
-        console.log("transition end")
         that.changeOrder();
     })
   }
@@ -134,10 +145,7 @@ class AdCarousel extends React.Component {
     const carousel = document.querySelector("#carousel-container");
     const children = carousel.childNodes;
 
-    console.log(this.direction)
-
     if (this.direction === "Left") {
-      console.log("Left trigger")
       this.current = this.current === 4 ? 1 : 4
       let newOrder;
 
@@ -150,28 +158,21 @@ class AdCarousel extends React.Component {
       })
 
       carousel.classList.remove('carousel-container-transition');
-      carousel.style.transform = carousel.style.tranform === 'translateX(-100%)'
-        ? 'translateX(-100%)'
-        : 'translateX(0%)'
+      carousel.style.transform = '';
     }
 
     if (this.direction === "Right") {
-      console.log("Right trigger")
-      this.current = this.current === 4 ? 1 : 4
-      let newOrder;
-
-      children[0].style.order === '4'
-        ? newOrder = [1, 2, 3, 4, 5, 6]
-        : newOrder = [4, 5, 6, 1, 2, 3];
-
-      newOrder.forEach((order, i) => {
-        children[i].style.order = order
-      })
-
       carousel.classList.remove('carousel-container-transition');
-      carousel.style.transform = carousel.style.tranform === 'translateX(-100%)'
-        ? 'translateX(-100%)'
-        : 'translateX(0%)'
+      // this.current = this.current === 4 ? 1 : 4
+      // let newOrder;
+
+      // children[0].style.order === '4'
+      //   ? newOrder = [1, 2, 3, 4, 5, 6]
+      //   : newOrder = [4, 5, 6, 1, 2, 3];
+
+      // newOrder.forEach((order, i) => {
+      //   children[i].style.order = order
+      // })
     }
   }
 
@@ -234,7 +235,7 @@ class AdCarousel extends React.Component {
 
         </div>
 
-        <div id="carousel-container" className="carousel-container-transition">
+        <div id="carousel-container">
           {this.state.data.map((slide, index) => {
             return (
               this.renderSlide(slide, index)
