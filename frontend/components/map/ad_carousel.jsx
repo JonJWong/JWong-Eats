@@ -36,59 +36,92 @@ const SELECT_COLORS = [
   "lightcoral"
 ]
 
-function getRange(idx, length) {
-  let lower;
-  let upper;
-
-  if ((idx - 1) < 0) {
-    lower = length - 1
-  } else {
-    lower = idx - 1
+function getRange(idx) {
+  switch (idx) {
+    case 0:
+      return [5, 0, 1]
+    case 1:
+      return [0, 1, 2]
+    case 2:
+      return [1, 2, 3]
+    case 3:
+      return [2, 3, 4]
+    case 4:
+      return [3, 4, 5]
+    case 5:
+      return [4, 5, 0]
   }
-
-  if ((idx + 1) > (length - 1)) {
-    upper = 0
-  } else {
-    upper = idx + 1
-  }
-
-  return [lower, idx, upper]
 }
 
 class AdCarousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentIndex: 2,
       length: CAROUSEL_CONTENTS.length,
       data: CAROUSEL_CONTENTS
     }
 
-    this.prevSlide = this.prevSlide.bind(this);
+    this.current = 1;
+    this.addEvents = this.addEvents.bind(this);
+    this.changeOrder = this.changeOrder.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
   }
 
-  prevSlide() {
-    const { currentIndex, length } = this.state;
-    let range = getRange(currentIndex, length);
-    this.setState({ currentIndex: range[0] })
+  componentDidMount() {
+    setTimeout(() => {
+      this.addEvents();
+    }, 100)
   }
 
   nextSlide() {
-    const { currentIndex, length } = this.state;
-    let range = getRange(currentIndex, length);
-    this.setState({ currentIndex: range[2] })
+    document.querySelector("#carousel-container").classList.add('carousel-container-transition');
+    document.querySelector("#carousel-container").style.transform = 'translateX(-100%)';
+  }
+
+  addEvents() {
+    const that = this;
+
+    document.querySelector("#carousel-container")
+      .addEventListener('transitionend', () => {
+        this.changeOrder();
+    })
+  }
+
+  changeOrder() {
+    const { length } = this.state;
+
+    if (this.current === length ) {
+      this.current = 1;
+    } else {
+      this.current++
+    }
+
+    let order = 1;
+
+    for (let i = this.current; i <= length; i++) {
+      const slide = document.querySelector(`.carousel-item[data-position="${i}"]`)
+      slide.style.order = order
+      order = (order + 3) % length;
+    }
+
+
+    for (let i = 1; i < this.current; i++) {
+      const slide = document.querySelector(`.carousel-item[data-position="${i}"]`)
+      slide.style.order = order
+      order = (order + 3) % length;
+    }
+
+    document.querySelector("#carousel-container").classList.remove('carousel-container-transition');
+    document.querySelector("#carousel-container").style.transform = 'translateX(0)';
+
   }
 
   renderSlide(slide, index) {
-    const { currentIndex, length } = this.state;
-
-    let indices = getRange(currentIndex, length)
-
     if (slide.link) {
       return (
-        <a href={slide.link} key={index}
-        className={indices.includes(index) ? 'active github' : 'slide github'}
+        <a href={slide.link} key={index + 1}
+        className="carousel-item"
+        data-position={index + 1}
         >
           <div>
           <div className="carousel-slide-title">
@@ -104,8 +137,9 @@ class AdCarousel extends React.Component {
     } else {
       return (
         <div
-          className={indices.includes(index) ? 'active' : 'slide'}
-          key={index}>
+          className="carousel-item"
+          data-position={index + 1}
+          key={index + 1}>
         <div className="carousel-slide-title">
           {slide.title}
         </div>
@@ -130,14 +164,14 @@ class AdCarousel extends React.Component {
 
   render() {
     return (
-      <div id="carousel-container">
+      <div id="carousel-container-outer">
         <div
           id="carousel-left"
-          onClick={() => this.prevSlide()}>
+          onClick={() => console.log('hello')}>
           <i className="fa-solid fa-arrow-left"></i>
         </div>
 
-        <div id="carousel-contents">
+        <div id="carousel-container" className="carousel-container-transition">
           {this.state.data.map((slide, index) => {
             return (
               this.renderSlide(slide, index)
@@ -146,7 +180,7 @@ class AdCarousel extends React.Component {
         </div>
 
         <div
-          id="carousel-left"
+          id="carousel-right"
           onClick={() => this.nextSlide()}>
           <i className="fa-solid fa-arrow-right"></i>
         </div>
