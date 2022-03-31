@@ -4,7 +4,6 @@
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: image_url('BG1.png');
 }
 
 #splash-hamburger {
@@ -190,8 +189,16 @@
 #splash-myinfo-container {
   display: flex;
   position: absolute;
-  right: 30px;
-  bottom: 80px;
-  width: 200px;
+  right: 150px;
+  top: 25px;
+  width: 270px;
   justify-content: space-between;
+}
+
+#splash-myinfo-title {
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding-right: 20px;
 }
