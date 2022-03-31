@@ -156,6 +156,6 @@ When a user checks out a cart, and a transaction is processed, the current price
 
 - Images sourced from UberEats, Red Lobster, Olive Garden are property of their respective companies.
 
-[^1]: Since there did not seem to be a consistent API to scrape menus and menu items from restaurants, all the menu and item seeding was done manually, which resulted in a more limited selection (20 restaurants, 10 items each).
+[^1]: Since there did not seem to be a consistent API to scrape menus and menu items from restaurants, all the menu and item seeding was done manually, which resulted in a limited selection (20 restaurants, 10 items each).
 
 [^2]: Bunny Cafe is an imaginary restaurant based on my household, and our bunny, Kuro!
