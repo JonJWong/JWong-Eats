@@ -63,16 +63,42 @@ class Splash extends React.Component {
           </div>
         </div>
 
-        <div id="splash-github-fill">
-          <a href="https://github.com/JonJWong"
-            id="github"
+        <div id="splash-myinfo-container">
+          <div id="splash-github-fill">
+            <a href="https://github.com/JonJWong"
+              id="github"
+              target="_blank"
+              rel="noopener noreferrer">
+              <img
+                src='https://jwong-eats-seeds.s3.amazonaws.com/github.png'
+                id="splash-github-logo"
+                alt="github-logo" />
+            </a>
+          </div>
+
+          <div id="splash-linkedin-fill">
+            <a href="https://www.linkedin.com/in/jonjwong/"
+            id="linked"
             target="_blank"
             rel="noopener noreferrer">
-            <img
-              src='https://jwong-eats-seeds.s3.amazonaws.com/github.png'
-              id="splash-github-logo"
-              alt="github-logo" />
-          </a>
+              <img
+                src="https://jwong-eats-seeds.s3.amazonaws.com/linkedin.png"
+                id="splash-linkedin-logo"
+                alt="splash-linkedin-logo" />
+            </a>
+          </div>
+
+          <div id="splash-angel-fill">
+            <a href="https://angel.co/u/jonathan-wong-75"
+            id="angel"
+            target="_blank"
+            rel="noopener noreferrer">
+              <img
+                src="https://jwong-eats-seeds.s3.amazonaws.com/angellist.png"
+                id="splash-angellist-logo"
+                alt="splash-angellist-logo" />
+            </a>
+          </div>
         </div>
         
         <p id="credits">

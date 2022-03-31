@@ -153,21 +153,45 @@
   font-family: "Uber Light";
 }
 
-#splash-github-logo {
+#splash-github-logo, #splash-linkedin-logo, #splash-angellist-logo {
   height: 100%;
   width: 100%;
 }
 
 #splash-github-fill {
-  position: absolute;
-  right: 20px;
-  bottom: 60px;
   height: 50px;
   width: 50px;
   border-radius: 50%;
   transition: background-color .4s ease-in-out;
 }
 
-#splash-github-fill:hover {
-  background-color: white;
+#splash-github-fill:hover, #splash-linkedin-fill:hover, #splash-angel-fill:hover {
+  background-color: rgb(93, 183, 252);
+}
+
+#splash-angel-fill {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  transition: background-color .4s ease-in-out;
+}
+
+#splash-linkedin-fill {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  transition: background-color .4s ease-in-out;
+}
+
+#splash-angellist-logo {
+  object-fit: contain;
+}
+
+#splash-myinfo-container {
+  display: flex;
+  position: absolute;
+  right: 30px;
+  bottom: 80px;
+  width: 200px;
+  justify-content: space-between;
 }
