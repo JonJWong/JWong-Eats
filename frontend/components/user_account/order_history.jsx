@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import * as Util from "../../util/util";
 
+
+// Helper to turn the month into it's string version.
 function monthString(month) {
   switch (month) {
     case 0:
@@ -47,12 +48,14 @@ class OrderHistory extends React.Component {
     this.renderOrders = this.renderOrders.bind(this);
   }
 
+  // Get User, Restaurants, on component mount.
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.id)
       .then(() => this.props.fetchRestaurants())
       .then(() => this.setState({ loading: false }))
   }
 
+  // Only render an image with a link if the restaurant has a photo attached.
   ifPhoto(restaurant) {
     if (restaurant.photoUrl) {
       return (
@@ -68,6 +71,7 @@ class OrderHistory extends React.Component {
     }
   }
 
+  // Helper to open and close the receipt modal.
   toggleReceipt(currentTransaction = null, restName = null) {
     const nextState = !this.state.receiptOpen;
 
@@ -155,6 +159,7 @@ class OrderHistory extends React.Component {
     const { restaurants } = this.props;
     const { user } = this.props;
     
+    // Only render if the user has transactions
     if (user.transactions) {
       const transactions = Object.keys(user.transactions);
       return transactions.map(transId => {
@@ -176,7 +181,7 @@ class OrderHistory extends React.Component {
         }
         
         return (
-          // randomly assigned keys, refactor evenutally
+          // Randomly assigned keys, refactor evenutally
           <div className="history-order-container" key={Math.random() * total}>
             {this.ifPhoto(restaurant)}
             <div className="history-order-title-container">
@@ -225,6 +230,7 @@ class OrderHistory extends React.Component {
     }
   }
 
+  // Helper to format the date to be user-friendly.
   formattedDate(transaction) {
     const date = new Date(transaction.items[0].date)
     const month = monthString(date.getMonth());

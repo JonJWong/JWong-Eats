@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
-// circle marker params
+// Circle marker params
 const LIGHT_CIRCLE = {
   path: google.maps.SymbolPath.CIRCLE,
   scale: 15,
@@ -11,7 +11,7 @@ const LIGHT_CIRCLE = {
   strokeWeight: 0.4
 }
 
-// dark circle marker params
+// Dark circle marker params
 const DARK_CIRCLE = {
   path: google.maps.SymbolPath.CIRCLE,
   scale: 15,
@@ -21,7 +21,7 @@ const DARK_CIRCLE = {
   strokeWeight: 0.4
 }
 
-// map options for controls
+// Map options for controls
 const MAP_OPTIONS = {
   center: { lat: 40.6962131, lng: -74.302344 }, // Union, NJ
   zoom: 15,
@@ -30,14 +30,14 @@ const MAP_OPTIONS = {
   fullscreenControl: false
 };
 
-// maps query params
+// Maps query params
 const REQUEST = {
   location: MAP_OPTIONS.center,
   radius: 5000, // meters
   type: ['restaurant']
 }
 
-// map styling to hide default pois
+// Map styling to hide default pois
 const STYLES = {
   default: [],
   hide: [
@@ -86,10 +86,11 @@ class PickupMap extends React.Component{
     this.infoWindows = [];
   }
 
+  // Helper method for map API to create map markers.
   createMarker(place) {
     const map = this.map;
 
-    // create a new maker on the map per location
+    // Create a new maker on the map per location
     const marker = new google.maps.Marker({
       map: map,
       position: place.geometry.location,
@@ -101,10 +102,10 @@ class PickupMap extends React.Component{
       icon: LIGHT_CIRCLE
     })
 
-    // add markers to component attributes
+    // Add markers to component attributes
     this.markers.push(marker);
 
-    // sets marker content
+    // Sets marker content
     const infoWindowContent = 
     `<div class="marker-content">` +
 
@@ -121,18 +122,18 @@ class PickupMap extends React.Component{
       `<span class="infowindow-price">Price: ${'$'.repeat(place.price_level)}`+
     `</div>`;
 
-    // sets info window
+    // Sets info window for the marker
     const infoWindow = new google.maps.InfoWindow({
       content: infoWindowContent,
       maxWidth: 250
     })
 
-    // add infoWindows to component attributes
+    // Add infoWindows to component attributes
     this.infoWindows.push(infoWindow);
 
     const that = this;
 
-    // opens info window on click, closes all other open info windows
+    // Opens info window on click, closes all other open info windows
     marker.addListener("click", () => {
       that.closeInfoWindows();
       infoWindow.open({
@@ -142,7 +143,7 @@ class PickupMap extends React.Component{
       })
     })
 
-    // darkens circle on hover
+    // Darkens circle on hover
     marker.addListener("mouseover", () => {
       const label = marker.getLabel();
       label.color = "white"
@@ -151,7 +152,7 @@ class PickupMap extends React.Component{
       marker.setIcon(DARK_CIRCLE);
     })
 
-    // lightens circle when mouse not over
+    // Lightens circle when mouse not over
     marker.addListener("mouseout", () => {
       const label = marker.getLabel();
       label.color = "black";
@@ -161,15 +162,15 @@ class PickupMap extends React.Component{
     })
   }
 
-  // helper method to close other info windows
-  // we only want one open at a time
+  // Helper method to close other info windows.
+  // We only want one open at a time
   closeInfoWindows() {
     for (let window of this.infoWindows) {
       window.close();
     }
   }
 
-  // helper callback for the nearbySearch function
+  // Helper callback for the nearbySearch function
   mapCallback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
       for (let i = 0; i < results.length; i++) {
@@ -178,20 +179,20 @@ class PickupMap extends React.Component{
     }
   }
 
-  // set up map when component mounts;
+  // Set up map when component mounts;
   componentDidMount() {
     this.props.fetchRestaurants();
-    // wrap this.mapNode in a Google Map
+    // Wrap this.mapNode in a Google Map
     this.map = new google.maps.Map(this.mapNode, MAP_OPTIONS);
     this.map.setOptions({ styles: STYLES["hide"] });
-    // initialize places service
+    // Initialize places service
     this.service = new google.maps.places.PlacesService(this.map);
 
-    // populate map with markers
+    // Populate map with markers
     this.service.nearbySearch(REQUEST, this.mapCallback);
   }
 
-  // remove map, service, attributes when component unmounts
+  // Remove map, service, attributes when component unmounts
   componentWillUnmount() {
     this.map = null;
     this.service = null;

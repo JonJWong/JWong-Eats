@@ -7,6 +7,8 @@ class Main extends React.Component {
     super(props)
   }
 
+  // The main component only contains the nav bar. This is present on every
+  // page, but the main content is dynamic.
   render() {
     return (
       <NavBarContainer />

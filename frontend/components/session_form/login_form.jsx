@@ -11,7 +11,7 @@ class LoginForm extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // form handler methods
+  // Form handler methods
   handleSubmit(e) {
     e.preventDefault()
     const user = Object.assign({}, this.state);
@@ -22,7 +22,7 @@ class LoginForm extends React.Component{
     return e => this.setState({ [field]: e.currentTarget.value })
   }
 
-  // error display helper
+  // Error display helper
   renderErrors() {
     const { errors } = this.props;
     if (!errors) return null;
@@ -37,14 +37,14 @@ class LoginForm extends React.Component{
     )
   }
 
-  // add a listener (on mount) that clears errors when component unmounts
+  // Add a listener (on mount) that clears errors when component unmounts
   componentDidMount() {
     this.unlisten = this.props.history.listen(() => {
       this.props.clearSessionErrors();
     });
   }
 
-  // clear errors when component unmounts
+  // Clear errors when component unmounts
   componentWillUnmount() {
     this.unlisten();
   }

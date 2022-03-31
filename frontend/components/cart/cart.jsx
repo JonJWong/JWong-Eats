@@ -22,8 +22,8 @@ class Cart extends React.Component {
     this.priceSum = this.priceSum.bind(this);
   }
 
-  // make opening async so the slide transition works
-  // add a listener (on mount) that clears errors when component unmounts
+  // Make opening async so the slide transition works.
+  // Add a listener (on mount) that clears errors when component unmounts
   componentDidMount() {
     this.unlisten = this.props.history.listen(() => {
       this.props.clearCartErrors();
@@ -33,12 +33,12 @@ class Cart extends React.Component {
     }, 10)
   }
 
-  // clear errors when component unmounts
+  // Clear errors when component unmounts
   componentWillUnmount() {
     this.unlisten();
   }
 
-  // add class to open and close modal, and disable onClick to close while moving
+  // Add class to open and close modal, and disable onClick to close while moving
   toggleOpen() {
     const cart = document.querySelector(".cart-modal-content");
     const button = document.querySelector(".menu-checkout-wrapper")
@@ -51,14 +51,14 @@ class Cart extends React.Component {
     }, 500)
   }
 
-  // only allow onClick if things are not processing
+  // Only allow onClick if things are not processing
   conditionalToggle() {
     if (!this.state.processing) {
       this.closeAndRemove()
     }
   }
 
-  // trigger close animation for cart and "unmount" component
+  // Trigger close animation for cart and "unmount" component
   closeAndRemove() {
     const { toggleCart } = this.props;
     this.toggleOpen();
@@ -67,25 +67,25 @@ class Cart extends React.Component {
     }, 510)
   }
 
-  // change checkout button contents to show that things are moving
+  // Change checkout button contents to show that things are moving
   // and after a time, tell user whether or not checkout was successful
   sendCheckout() {
     const { checkout, cart } = this.props;
-    // set up transaction object to send to backend
+    // Set up transaction object to send to backend
     let transaction = {
       order: this.props.cart,
       userId: this.props.userId,
       total: this.priceSum()
     }
 
-    // set button content, and state to disallow modal close onClick
+    // Set button content, and state to disallow modal close onClick
     const button = document.querySelector("#menu-checkout");
     button.textContent = ("Processing...");
     this.setState({ processing: true })
 
-    // delay reporting to user so they can read what is going on
+    // Delay reporting to user so they can read what is going on
     setTimeout(() => {
-      // if the cart is not empty, tell the user checkout was successful, and
+      // If the cart is not empty, tell the user checkout was successful, and
       // then close + "unmount" the cart after another short delay.
       if (Object.keys(cart).length > 0) {
         button.textContent = ("Checked out!")
@@ -99,7 +99,7 @@ class Cart extends React.Component {
           this.closeAndRemove();
         }, 200)
       } else {
-        // if the cart was empty, reset button contents, set state to show error
+        // If the cart was empty, reset button contents, set state to show error
         button.textContent = `Go to checkout • ${this.priceSum()}`
         this.setState({ 
           error: true,
@@ -109,14 +109,14 @@ class Cart extends React.Component {
     }, 800)
   }
 
-  // helper to disallow spam on checkout button
+  // Helper to disallow spam on checkout button
   conditionalSendCheckout() {
     if (!this.state.processing) {
       this.sendCheckout()
     }
   }
 
-  // method to display a cart error, and after a short delay, remove the error
+  // Method to display a cart error, and after a short delay, remove the error
   // and reset error flag in state
   emptyCartError() {
     if (this.state.error) {
@@ -146,7 +146,7 @@ class Cart extends React.Component {
     )
   }
 
-  // method to adjust the price on checkout button to be an accurate
+  // Method to adjust the price on checkout button to be an accurate
   // representation with two digits
   priceSum() {
     let sum = 0;
@@ -166,22 +166,22 @@ class Cart extends React.Component {
     }
   }
 
-  // helper method to toggle error state
+  // Helper method to toggle error state
   comingSoon() {
     if (!this.state.soon) {
       this.setState({ soon: true })
     }
   }
 
-  // method to clear the cart after displaying a message that it is clearing
+  // Method to clear the cart after displaying a message that it is clearing
   delayCartClear() {
-    // set state and button contents
+    // Set state and button contents
     const { clearCart } = this.props;
     const button = document.querySelector("#cart-clear");
     button.textContent = "Clearing...";
     this.setState({ processing: true });
 
-    // after short delay, clear cartm report that cart is cleared, and
+    // After short delay, clear cartm report that cart is cleared, and
     // after another short delay, close and "unmount cart"
     const that = this;
     setTimeout(() => {
@@ -195,14 +195,14 @@ class Cart extends React.Component {
     }, 500)
   }
 
-  // helper to disallow spamming of cart clear button
+  // Helper to disallow spamming of cart clear button
   conditionalDelayCartClear() {
     if (!this.state.processing) {
       this.delayCartClear();
     }
   }
 
-  // render error and self-destruct after a small delay
+  // Render error and self-destruct after a small delay
   renderSoon() {
     if (this.state.soon) {
       setTimeout(() => {

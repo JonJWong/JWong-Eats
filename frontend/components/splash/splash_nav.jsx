@@ -12,13 +12,13 @@ class SplashNav extends React.Component {
     this.renderModal = this.renderModal.bind(this);
   }
 
-  // helper to open/close side modal
+  // Helper to open/close side modal
   toggleModal() {
     let setValue = !this.state.modalOpen;
     this.setState({ modalOpen: setValue })
   }
 
-  // render modal if state is open
+  // Eender modal if state is open
   renderModal() {
     if (this.state.modalOpen) {
       return <UserModalContainer toggleModal={this.toggleModal} />

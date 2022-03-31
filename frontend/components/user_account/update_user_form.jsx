@@ -12,19 +12,19 @@ class UpdateUserForm extends React.Component {
     this.update = this.update.bind(this);
   }
 
-  // add a listener (on mount) that clears errors when component unmounts
+  // Add a listener (on mount) that clears errors when component unmounts
   componentDidMount() {
     this.unlisten = this.props.history.listen(() => {
       this.props.clearSessionErrors();
     });
   }
 
-  // clear errors when component unmounts
+  // Clear errors when component unmounts
   componentWillUnmount() {
     this.unlisten();
   }
 
-  // form helper methods
+  // Form helper methods
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
@@ -35,7 +35,7 @@ class UpdateUserForm extends React.Component {
     return e => this.setState({ [field]: e.currentTarget.value })
   }
 
-  // error rendering helper
+  // Error rendering helper
   renderErrors() {
     const { errors } = this.props;
     if (!errors) {
@@ -52,7 +52,7 @@ class UpdateUserForm extends React.Component {
     )
   }
 
-  // if demo user, do not render a form, otherwise render form
+  // If current user is demo user, do not render a form, otherwise render form
   render() {
     if (this.state.id === 1) {
       return (

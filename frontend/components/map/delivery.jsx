@@ -4,6 +4,7 @@ import * as Util from "../../util/util";
 
 import AdCarousel from "./ad_carousel";
 
+// Constant with all categories as keys, their respective images as values.
 const ALL_CATEGORIES = {
   "default": "https://jwong-eats-seeds.s3.amazonaws.com/top_eats.png",
   "Dine In": "https://jwong-eats-seeds.s3.amazonaws.com/caribbean.png",
@@ -20,6 +21,7 @@ const ALL_CATEGORIES = {
   "Fried Chicken": "https://jwong-eats-seeds.s3.amazonaws.com/korean.png",
 }
 
+// Possible price filter/sort options.
 const SORT_OPTIONS = [
   "$",
   "$$",
@@ -51,6 +53,9 @@ class Delivery extends React.Component {
     document.title = "Order Food Online | JWongEats"
   }
 
+  // Helper to conditionally render restaurant image containers, used
+  // mostly during development, but might be useful in the future
+  // if restaurants with no banner images are added.
   ifImage(restaurant) {
     if (restaurant.photoUrl) {
       return (
@@ -65,7 +70,7 @@ class Delivery extends React.Component {
     }
   }
 
-  // methods for top category-bar
+  // Methods for top category-bar
   filter(category) {
     const { fetchRestaurants } = this.props;
     const topBar = document.querySelector("#delivery-top-picks");
@@ -83,6 +88,8 @@ class Delivery extends React.Component {
     })
   }
 
+  // Helper method to iterate through possible restaurant categories, and
+  // render their icons with images attached.
   renderFilterMenu() {
     return (
       <div id="delivery-categories">
@@ -133,7 +140,7 @@ class Delivery extends React.Component {
   }
 
 
-  // helper to filter through restaurants based on current sorting 
+  // Helper to filter through restaurants based on current sorting 
   sort(restaurants) {
     let options;
     if (this.state.priceRange.length > 0) {
@@ -153,7 +160,7 @@ class Delivery extends React.Component {
   }
 
 
-  // helper to adjust class and set state for current sorting
+  // Helper to adjust class and set state for current sorting
   togglePriceRange(option, e) {
     e.currentTarget.classList.toggle('delivery-sort-button-selected');
     const newState = this.state;
@@ -169,7 +176,7 @@ class Delivery extends React.Component {
     this.setState(newState);
   }
 
-  // helper to render the price buttons
+  // Helper to render the price buttons
   renderSortButtons() {
     return (
       <div id="delivery-left">
@@ -210,7 +217,7 @@ class Delivery extends React.Component {
   }
 
 
-  // render (sorted) restaurant list
+  // Render (sorted) restaurant list
   renderList() {
     let { restaurants } = this.state;
 

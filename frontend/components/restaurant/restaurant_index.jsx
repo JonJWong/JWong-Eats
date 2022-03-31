@@ -16,7 +16,7 @@ class RestaurantIndex extends React.Component {
     this.toggleItemModal = this.toggleItemModal.bind(this);
   }
 
-  // get restaurant, and knock loading screen off after mount and fetch
+  // Get restaurant, and knock loading screen off after mount and fetch
   componentDidMount() {
     const id = this.props.match.params.restaurantId
     this.props.fetchRestaurant(id)
@@ -26,7 +26,7 @@ class RestaurantIndex extends React.Component {
         }))
   }
 
-  // fetch restaurant if url changes on refresh
+  // Fetch restaurant if url changes on refresh
   componentDidUpdate(prevProps) {
     const { restaurant, fetchRestaurant } = this.props;
     const id = restaurant.id;
@@ -38,13 +38,13 @@ class RestaurantIndex extends React.Component {
     }
   }
 
-  // change state to render modal
+  // Change state to render modal
   toggleItemModal(item) {
     const newValue = !this.state.itemOpen;
     this.setState({ itemOpen: newValue, clickedItem: item })
   }
 
-  // if state is open, render modal
+  // Uf state is open, render modal
   renderItemModal() {
     if (this.state.itemOpen) {
       return <MenuItemContainer
@@ -53,7 +53,7 @@ class RestaurantIndex extends React.Component {
     }
   }
 
-  // set button to either + or item quantity
+  // Set button to either + or item quantity
   openButtonContents(id) {
     const { cart } = this.props;
     if (cart) {
@@ -65,8 +65,8 @@ class RestaurantIndex extends React.Component {
     }
   }
 
-  // if the item has an image, render the container with the image
-  // otherwise, render the container with no image and different styling
+  // If the item has an image, render the container with the image
+  // Otherwise, render the container with no image and different styling
   renderMenuItem(item, id) {
     if (item.photoUrl) {
       return (
@@ -116,6 +116,7 @@ class RestaurantIndex extends React.Component {
     }
   }
 
+  // Helper to adjust restaurant description to not have hyphens for display.
   renderDescription(description) {
     let words = description.split(" ");
     words = words.map(word => {
@@ -130,7 +131,7 @@ class RestaurantIndex extends React.Component {
   }
 
   render() {
-    // render loading screen if component has not loaded yet
+    // Render loading screen if component has not loaded yet
     const { loading } = this.state;
     if (loading) {
       return (
@@ -139,12 +140,12 @@ class RestaurantIndex extends React.Component {
         </div>
       )
     }
-    // deconstruct props and take restaurant object
+    // Deconstruct props and take restaurant object
     const restaurant = this.state.restaurant;
-    // set document title to restaurant info
+    // Set document title to restaurant info
     document.title = `Order ${restaurant.name} (${restaurant.address})`
 
-    // set variables to clean syntax below
+    // Set variables to clean syntax below
     const menu = restaurant.menu;
     const timePrompt = Util.timeDifferencePrompt(restaurant.hours)
 

@@ -15,13 +15,13 @@ class UserModal extends React.Component {
     this.rendertab = this.renderTab.bind(this);
   }
   
-  // helper method to toggle modal state
+  // Helper method to toggle modal state
   toggleTab() {
     const setValue = !this.state.tabOpen;
     this.setState({ tabOpen: setValue });
   }
 
-  // render modal if state is open
+  // Render modal if state is open
   renderTab() {
     if (this.state.tabOpen) {
       return <UserAccountContainer />
@@ -34,13 +34,13 @@ class UserModal extends React.Component {
     }, 10)
   }
 
-  // helper method to add/remove transition effect class
+  // Helper method to add/remove transition effect class
   toggleOpen() {
     const modal = document.querySelector('.modal-contents');
     modal.classList.toggle('modal-open')
   }
 
-  // helper method to trigger transition and "unmount" modal
+  // Helper method to trigger transition and "unmount" modal
   closeAndRemove() {
     const { toggleModal } = this.props;
     this.toggleOpen();

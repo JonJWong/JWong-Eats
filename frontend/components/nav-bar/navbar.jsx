@@ -35,17 +35,18 @@ class NavBar extends React.Component {
       })
   }
 
-  // helper to toggle state attributes to display modals
+  // Helper to toggle state attributes to display modals
   toggle(attr) {
     let setValue = !this.state[attr];
     this.setState({ [attr]: setValue })
   }
 
+  // Helper to set search field.
   update(value) {
     return e => this.setState({ [value]: e.currentTarget.value.toLowerCase() })
   }
 
-  // modal state helper-method
+  // Modal state helper-method
   renderModal() {
     if (this.state.modalOpen) {
       return <UserModalContainer
@@ -54,21 +55,21 @@ class NavBar extends React.Component {
     }
   }
 
-  // search modal open and close helpers
+  // Search modal open and close helpers
   openSearchModal() {
     const searchBar = document.querySelector(".nav-search-bar");
     searchBar.classList.add("search-expanded");
     this.setState({ searchOpen: true })
   }
 
-  // this technically ends the search that is ongoing (state)
+  // This technically ends the search that is ongoing (state)
   closeSearchModal() {
     const searchBar = document.querySelector(".nav-search-bar");
     searchBar.classList.remove("search-expanded");
     this.setState({ searchOpen: false })
   }
 
-  // helper to render search components if there is an ongoing search
+  // Helper to render search components if there is an ongoing search
   renderSearch() {
     if (this.state.searchOpen) {
       return <SearchModalContainer
@@ -79,21 +80,21 @@ class NavBar extends React.Component {
     }
   }
 
-  // cart state helper-method
+  // Cart state helper-method
   renderCart() {
     if (this.state.cartOpen) {
       return <CartContainer toggleCart={this.toggle} />
     }
   }
 
-  // item state helper-method
+  // Item state helper-method
   renderItem() {
     if (this.state.itemOpen) {
       return <MenuItemContainer value={this.state.searchValue} />
     }
   }
 
-  // pickup-delivery toggle based on state, pathname
+  // Pickup-delivery toggle based on state, pathname
   setButton() {
     if (this.props.location.pathname === "/delivery"
       && this.state.currentButton === "pickup") {
@@ -105,7 +106,7 @@ class NavBar extends React.Component {
     }
   }
 
-  // add quantity to cart button
+  // Add quantity to cart button
   cartNum() {
     if (Object.keys(this.props.cart).length > 0) {
       return `(${Object.keys(this.props.cart).length})`

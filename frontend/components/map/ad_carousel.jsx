@@ -1,5 +1,6 @@
 import React from "react";
 
+// restaurant banners to be used in carousel
 const RESTAURANT_IMAGES = {
   1: 'https://jwong-eats-seeds.s3.amazonaws.com/sofiabanner.jpeg',
   2: 'https://jwong-eats-seeds.s3.amazonaws.com/JWongEatsRestaurant.png',
@@ -23,8 +24,10 @@ const RESTAURANT_IMAGES = {
   20: 'https://jwong-eats-seeds.s3.amazonaws.com/bunnyad.jpg'
 }
 
+// random number per-refresh to generate a random restaurant.
 const RANDOM_NUM = Math.floor(Math.random() * 20) + 1;
 
+// array of carousel slides (objects)
 const CAROUSEL_CONTENTS = [
   {
     title: 'Eat from this restaurant!',
@@ -67,15 +70,6 @@ const CAROUSEL_CONTENTS = [
   }
 ]
 
-const INVERTED = {
-  1: 4,
-  2: 5,
-  3: 6,
-  4: 1,
-  5: 2,
-  6: 3
-}
-
 class AdCarousel extends React.Component {
   constructor(props) {
     super(props);
@@ -90,38 +84,65 @@ class AdCarousel extends React.Component {
     this.nextSlide = this.nextSlide.bind(this);
   }
 
+  // When the component mounts, add the event-listener to the carousel container
+  // that way transitions work properly
   componentDidMount() {
     setTimeout(() => {
       this.addEvents();
     }, 10)
   }
 
-  // this method decides which direction the carousel will turn
+  // This method decides which direction the carousel will turn
   nextSlide(direction) {
+    // Select carousel for reference within the method
     const carousel = document.querySelector("#carousel-container");
     const children = carousel.childNodes;
+
     if (direction === "Right") {
+      // Change direction attribute, different operations per direction
       this.direction = "Right"
+
+      // Pre-emptively shift the carousel over to the left, so the transition
+      // looks like it's moving to the right when we move it again.
+      // There is no transition applied at this stage
       carousel.style.transform = 'translateX(-100%)';
       
       let newOrder;
       
+      // Check the flex-order of the first child, to determine which slides to
+      // show. there are only two possible orders, since there are 6 slides
+      // and the carousel moves by 3 per click.
       children[0].style.order === '4'
         ? newOrder = [1, 2, 3, 4, 5, 6]
         : newOrder = [4, 5, 6, 1, 2, 3];
       
+      // Apply the new order to the children of the carousel
+      // this actually changes what is displayed on the screen
       newOrder.forEach((number, i) => {
         children[i].style.order = number
       })
+
+      // Add the transition class so that the carousel turns smoothly,
+      // and then move it over to the right.
+      // I don't know why this needs a setTimeout to work, but it's working.
       setTimeout(() => {
         carousel.classList.add('carousel-container-transition');
         carousel.style.transform = 'translateX(0%)';
       }, 1)
     }
+
+    // The order of operations is opposite for left, since the list has elements
+    // that exist to the right already, so there is no need for pre-emptive
+    // translation.
     if (direction === "Left") {
       this.direction = "Left"
+      
+      // Setting this to 0 just in case, but it should be 0 coming to this stage
       carousel.style.transform = 'translateX(0%)';
       
+      // Applying the transition, and then moving the carousel over.
+      // since the event listener fires off when the transition ends,
+      // the order will be changed when it settles.
       carousel.classList.add('carousel-container-transition');
       carousel.style.transform = 'translateX(-100%)';
     }
@@ -140,31 +161,47 @@ class AdCarousel extends React.Component {
 
   // based on the transition direction, this rearranges the items
   changeOrder() {
-    const { length } = this.state;
     const carousel = document.querySelector("#carousel-container");
     const children = carousel.childNodes;
 
+    // re-order the elements after the transition ends when moving left
     if (this.direction === "Left") {
       let newOrder;
 
+      // Check the flex-order of the first child, to determine which slides to
+      // show. there are only two possible orders, since there are 6 slides
+      // and the carousel moves by 3 per click.
       children[0].style.order === '4'
         ? newOrder = [1, 2, 3, 4, 5, 6]
         : newOrder = [4, 5, 6, 1, 2, 3];
 
+      // Apply the new order to the children of the carousel
+      // this actually changes what is displayed on the screen
       newOrder.forEach((order, i) => {
         children[i].style.order = order
       })
 
+      // Remove the transition property from the carousel, and then resetting
+      // the translation. This ensures that the re-arranging is not seen by
+      // the user.
       carousel.classList.remove('carousel-container-transition');
       carousel.style.transform = '';
     }
 
+    // Since right-facing movement needs to be re-ordered before translating
+    // the eventlistener will just remove the transition class, since the
+    // carousel will be ready for another movement at this point.
     if (this.direction === "Right") {
+      // Remove the transition property from the carousel, and then resetting
+      // the translation. This ensures that the re-arranging is not seen by
+      // the user.
       carousel.classList.remove('carousel-container-transition');
       carousel.style.transform = '';
     }
   }
 
+  // Based on the content of the slides, it will render a different container.
+  // Some slides have links, some do not.
   renderSlide(slide, index) {
     if (slide.link) {
       return (

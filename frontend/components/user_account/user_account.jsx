@@ -11,12 +11,12 @@ class UserAccount extends React.Component {
     this.unToggle = this.unToggle.bind(this)
   }
   
-  // helper method to toggle modal open/close
+  // Helper method to toggle modal open/close
   unToggle() {
     this.setState({ toggled: false })
   }
 
-  // either render order history or edit form
+  // Either render order history or edit form
   render() {
     const { currentUser } = this.props;
     if (this.state.toggled === true) {

@@ -10,7 +10,7 @@ class SearchModal extends React.Component {
     this.filterResults = this.filterResults.bind(this);
   }
 
-  // only allow closing of the search bar if it exists, to avoid null errors
+  // Only allow closing of the search bar if it exists, to avoid null errors
   conditionalClose() {
     const wrapper = document.querySelector(".search-contents-wrapper");
     if (wrapper) {
@@ -23,7 +23,7 @@ class SearchModal extends React.Component {
     }
   }
 
-  // compare searchbar contents to restaurant names
+  // Compare searchbar contents to restaurant names
   filterResults(value) {
     const { restaurants } = this.props;
     const filtered = [];
@@ -38,11 +38,11 @@ class SearchModal extends React.Component {
     return filtered;
   }
 
-  // display the results that return from the search filter
+  // Display the results that return from the search filter
   renderResults(value) {
     const results = this.filterResults(value);
 
-    // add transition for height
+    // Add transition for height
     setTimeout(() => {
       const wrapper = document.querySelector(".search-contents-wrapper");
       if (wrapper) {
@@ -50,7 +50,7 @@ class SearchModal extends React.Component {
       }
     }, 10)
 
-    // check if searchbar is empty, if it is not empty, render list
+    // Check if searchbar is empty, if it is not empty, render list
     if (value !== "") {
       return (
         <div className="search-contents-wrapper">
