@@ -21,7 +21,9 @@ UberEats</a> inspired Full-Stack single-page website, where you can browse and o
 
 Users can search through available restaurants as shown:
 
-<img src="https://media.giphy.com/media/SlK7350XmLG6LnUDHo/giphy.gif" alt="search-gif" style="margin: 0 auto"></img>
+<p align="center">
+  <img src="https://media.giphy.com/media/SlK7350XmLG6LnUDHo/giphy.gif" alt="search-gif"></img>
+</p>
 
 Restaurants are fetched upon the site's initial load, and the searching is handled through JavaScript logic on the front-end. This saves time and computation, since there is no need for any AJAX requests or database queries.
 
@@ -50,7 +52,9 @@ The filtering of restaurants on the Delivery homepage is handled differently, to
 
 Users can select icons on the top of the screen that reflect categories that the available restaurants fall into. This is then dynamically rendered onto the page by accessing the database through rails (When a button is pressed, an AJAX request is sent with a category parameter).
 
-<img src="https://media.giphy.com/media/DmZpv2ljRn4ExgZeni/giphy.gif"></img>
+<p align="center">
+  <img src="https://media.giphy.com/media/DmZpv2ljRn4ExgZeni/giphy.gif"></img>
+</p>
 
 ```ruby
 def index
@@ -112,7 +116,9 @@ sort(restaurants) {
 
 Users can see their past orders, as well as a breakdown of prices and quantities through the receipt.
 
-<img src="https://media.giphy.com/media/zLaOtiz8fI7OypGpVD/giphy.gif"></img>
+<p align="center">
+  <img src="https://media.giphy.com/media/zLaOtiz8fI7OypGpVD/giphy.gif"></img>
+</p>
 
 When a user checks out a cart, and a transaction is processed, the current prices of items are saved as a transaction in the database, independent from what the current item's prices are. That way, if the items were ever to change prices in the future, the price change would not affect any orders retroactively, and the integrity of the transaction table would remain.
 
