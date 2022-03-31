@@ -282,7 +282,7 @@ class Delivery extends React.Component {
 
         <div id="delivery-topbar">
           <div id="delivery-stores">All stores</div>
-          <h1 id="delivery-top-picks">Top picks for you:</h1>
+          <h1 id="delivery-top-picks">Top picks for you</h1>
         </div>
 
         {this.renderSortButtons()}
