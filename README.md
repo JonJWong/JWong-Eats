@@ -1,14 +1,14 @@
-## JWongEats
-#
+# JWongEats
 
 Welcome to JWongEats, an <a href="http://ubereats.com/" target="_blank" rel="noopener noreferrer">
 UberEats</a> inspired Full-Stack single-page website, where you can browse and order from restaurants local to Union, New Jersey.
+
+<img src="https://github.com/JonJWong/JWong-Eats/blob/main/app/assets/images/readme-main.png"></img>
 
 <a href="https://jwong-eats.herokuapp.com/#/splash" target="_blank" rel="noopener noreferrer">Live Link</a>
 
 
 ## Table of Contents
-#
 
 - [Features](features)
 - [Technologies Used](technologies-used)
@@ -17,9 +17,7 @@ UberEats</a> inspired Full-Stack single-page website, where you can browse and o
 
 ## Features
 
-
 ### Dynamic Searching
-#
 
 Users can search through available restaurants as shown:
 
@@ -47,7 +45,6 @@ This function iterates through the available restaurants, and saves the appropri
 
 #
 ### Restaurant Filtering
-#
 
 The filtering of restaurants on the Delivery homepage is handled differently, to show another possibble approach.
 
@@ -69,6 +66,47 @@ end
 
 When this controller action hits, it will either send back a JSON object containing the filtered results, or all restaurants. This approach allows one thunk-action to handle multiple scenarios.
 
+The price filter works through the front-end, where the price buttons are toggle-able, to select or de-select a desired price range.
+
+```javaScript
+togglePriceRange(option, e) {
+  e.currentTarget.classList.toggle('delivery-sort-button-selected');
+  const newState = this.state;
+  if (!newState.priceRange.some(ele => ele === option)
+    && option !== "None") {
+      newState.priceRange.push(option);
+  } else if (option === "None") {
+    newState.priceRange = [];
+  } else {
+    newState.priceRange = 
+      newState.priceRange.filter(ele => ele !== option);
+  }
+  this.setState(newState);
+}
+```
+
+The modified state is then used to filter the components accordingly:
+
+```javaScript
+sort(restaurants) {
+  let options;
+  if (this.state.priceRange.length > 0) {
+    options = this.state.priceRange
+  }
+
+  const newRestaurants = {};
+  
+  Object.keys(restaurants).map(id => {
+    let restaurant = restaurants[id];
+    if (options?.includes(restaurant.price_rating)) {
+      newRestaurants[id] = restaurant
+    }
+  })
+  
+  return newRestaurants;
+}
+```
+
 #
 ### Order History
 
@@ -77,8 +115,6 @@ Users can see their past orders, as well as a breakdown of prices and quantities
 <img src="https://media.giphy.com/media/zLaOtiz8fI7OypGpVD/giphy.gif"></img>
 
 When a user checks out a cart, and a transaction is processed, the current prices of items are saved as a transaction in the database, independent from what the current item's prices are. That way, if the items were ever to change prices in the future, the price change would not affect any orders retroactively, and the integrity of the transaction table would remain.
-
-
 
 #
 ### Technologies used
@@ -108,8 +144,12 @@ When a user checks out a cart, and a transaction is processed, the current price
 #
 ### Future Plans
 
+- Add Google Geocoding, Distance Matrix API support to allow for ETA calculation for delivery.
+- Add a post-checkout screen detailing the order information while showing route between restaurant and user.
+- Add Omni-auth for Google and Facebook login options.
 
 
 #
 ### Credit
 
+Bunny Cafe is an imaginary restaurant based on my household, and our bunny, Kuro!
