@@ -55,7 +55,7 @@ const CAROUSEL_CONTENTS = [
   },
   {
     title: 'AppAcademy',
-    description: 'This site was created by Jonathan Wong as a Full-Stack final project for AppAcademy.',
+    description: 'This site was created by Jonathan Wong as a Full-Stack clone during his time at AppAcademy.',
     imgUrl: 'https://jwong-eats-seeds.s3.amazonaws.com/appacademylogo.png',
     className: 'carousel-aa-logo'
   },
