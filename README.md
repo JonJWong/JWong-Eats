@@ -21,7 +21,7 @@ UberEats</a> inspired Full-Stack single-page website, where you can browse and o
 
 Users can search through available restaurants as shown:
 
-<img src="https://media.giphy.com/media/SlK7350XmLG6LnUDHo/giphy.gif" alt="search-gif"></img>
+<img src="https://media.giphy.com/media/SlK7350XmLG6LnUDHo/giphy.gif" alt="search-gif" style="margin: 0 auto"></img>
 
 Restaurants are fetched upon the site's initial load, and the searching is handled through JavaScript logic on the front-end. This saves time and computation, since there is no need for any AJAX requests or database queries.
 
