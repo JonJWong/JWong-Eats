@@ -116,11 +116,8 @@
   display: block;
   text-align: center;
   background-color: black;
-  outline: white 1px solid;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+  border-radius: 30px;
+  border: white 1px solid;
   width: 35px;
   z-index: 1;
 }
@@ -142,11 +139,8 @@
   font-size: 30px;
   text-align: center;
   background-color: black;
-  outline: white 1px solid;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+  border-radius: 30px;
+  border: white 1px solid;
   padding-left: 5px;
   padding-right: 5px;
   width: 35px;
