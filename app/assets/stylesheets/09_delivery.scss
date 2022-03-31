@@ -116,9 +116,11 @@
 }
 
 #delivery-categories {
-  width: 70%;
+  max-width: 90%;
+  min-width: 80%;
   margin: 0 auto;
-  height: 10vh;
+  max-height: 250px;
+  min-height: 110px;
   padding-top: 98px;
   margin-bottom: 20px;
   padding-bottom: 10px;
@@ -197,6 +199,8 @@
 }
 
 #carousel-container-outer {
+  padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   width: 90%;
   height: 200px;
