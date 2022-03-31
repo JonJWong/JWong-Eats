@@ -158,8 +158,8 @@
 }
 
 #splash-github-fill {
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   transition: background-color .4s ease-in-out;
 }
@@ -169,15 +169,15 @@
 }
 
 #splash-angel-fill {
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   transition: background-color .4s ease-in-out;
 }
 
 #splash-linkedin-fill {
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   transition: background-color .4s ease-in-out;
 }
@@ -190,8 +190,8 @@
   display: flex;
   position: absolute;
   right: 150px;
-  top: 25px;
-  width: 270px;
+  top: 35px;
+  width: 200px;
   justify-content: space-between;
 }
 
@@ -200,5 +200,5 @@
   align-items: center;
   justify-content: center;
   display: flex;
-  padding-right: 20px;
+  padding-right: 10px;
 }
