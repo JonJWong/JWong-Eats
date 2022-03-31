@@ -103,7 +103,7 @@ class OrderHistory extends React.Component {
   
             <div id="receipt-modal-price-row">
               <div>Total</div>
-              <div>{total}</div>
+              <div>$ {parseFloat(total).toFixed(2)}</div>
             </div>
   
             <div id="receipt-item-wrapper">
@@ -119,7 +119,7 @@ class OrderHistory extends React.Component {
                       {item.item_name}
                     </div>
                     <div className="receipt-item-price">
-                      ${parseFloat(item.item_price).toFixed(2)}
+                      $ {parseFloat(item.item_price).toFixed(2)}
                     </div>
                   </div>
                 )
@@ -131,7 +131,7 @@ class OrderHistory extends React.Component {
                 Subtotal:
               </div>
               <div id="receipt-payment-price">
-                ${total}
+                $ {parseFloat(total).toFixed(2)}
               </div>
             </div>
   
@@ -182,7 +182,7 @@ class OrderHistory extends React.Component {
             <div className="history-order-title-container">
               <div className="history-order-title">{restName}</div>
               <div className="history-order-subtitle">
-                {items.length} Items for ${total} • {this.formattedDate(currentTransaction)} • 
+                {items.length} Items for $ {parseFloat(total).toFixed(2)} • {this.formattedDate(currentTransaction)} • 
                 <button
                   onClick={() => this.toggleReceipt(currentTransaction, restName)}
                   className="history-view-receipt">
