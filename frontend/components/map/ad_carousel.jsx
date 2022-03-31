@@ -101,28 +101,27 @@ class AdCarousel extends React.Component {
     const carousel = document.querySelector("#carousel-container");
     const children = carousel.childNodes;
     if (direction === "Right") {
-      debugger
       this.direction = "Right"
       carousel.style.transform = 'translateX(-100%)';
       
-      this.current = this.current === 4 ? 1 : 4
       let newOrder;
       
       children[0].style.order === '4'
         ? newOrder = [1, 2, 3, 4, 5, 6]
         : newOrder = [4, 5, 6, 1, 2, 3];
       
-      newOrder.forEach((order, i) => {
-        children[i].style.order = order
+      newOrder.forEach((number, i) => {
+        children[i].style.order = number
       })
-      
-      carousel.classList.add('carousel-container-transition');
-      carousel.style.transform = 'translateX(0%)';
+      setTimeout(() => {
+        carousel.classList.add('carousel-container-transition');
+        carousel.style.transform = 'translateX(0%)';
+      }, 1)
     }
     if (direction === "Left") {
       this.direction = "Left"
       carousel.style.transform = 'translateX(0%)';
-
+      
       carousel.classList.add('carousel-container-transition');
       carousel.style.transform = 'translateX(-100%)';
     }
@@ -146,7 +145,6 @@ class AdCarousel extends React.Component {
     const children = carousel.childNodes;
 
     if (this.direction === "Left") {
-      this.current = this.current === 4 ? 1 : 4
       let newOrder;
 
       children[0].style.order === '4'
@@ -163,16 +161,7 @@ class AdCarousel extends React.Component {
 
     if (this.direction === "Right") {
       carousel.classList.remove('carousel-container-transition');
-      // this.current = this.current === 4 ? 1 : 4
-      // let newOrder;
-
-      // children[0].style.order === '4'
-      //   ? newOrder = [1, 2, 3, 4, 5, 6]
-      //   : newOrder = [4, 5, 6, 1, 2, 3];
-
-      // newOrder.forEach((order, i) => {
-      //   children[i].style.order = order
-      // })
+      carousel.style.transform = '';
     }
   }
 
