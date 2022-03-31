@@ -1,7 +1,7 @@
 # JWongEats
 
 Welcome to JWongEats, an <a href="http://ubereats.com/" target="_blank" rel="noopener noreferrer">
-UberEats</a> inspired Full-Stack single-page website, where you can browse and order from restaurants local to Union, New Jersey.
+UberEats</a> inspired Full-Stack single-page website, where you can browse and order from restaurants local to Union, New Jersey[^1].
 
 <img src="https://github.com/JonJWong/JWong-Eats/blob/main/app/assets/images/readme-main.png"></img>
 
@@ -139,6 +139,8 @@ When a user checks out a cart, and a transaction is processed, the current price
   
   - AWS S3 handles image hosting to allow for a more lightweight and modular implementation of the app. Images changed on the buckets will reflect on the site with no need to change the code.
 
+  - Webpack and Babel.js transpile the code
+
 - __Hosting__: JWongEats is hosted on heroku.
 
 #
@@ -153,3 +155,5 @@ When a user checks out a cart, and a transaction is processed, the current price
 ### Credit
 
 Bunny Cafe is an imaginary restaurant based on my household, and our bunny, Kuro!
+
+[^1]: Since there did not seem to be a consistent API to scrape menus and menu items from restaurants, all the menu and item seeding was done manually, which resulted in a more limited selection (20 restaurants, 10 items each).
