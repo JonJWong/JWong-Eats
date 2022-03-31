@@ -1,21 +1,21 @@
-# JWongEats
+<h1>JWongEats</h1>
 
 Welcome to JWongEats, an <a href="http://ubereats.com/" target="_blank" rel="noopener noreferrer">
-UberEats</a> inspired Full-Stack single-page website, where you can browse and order from restaurants local to Union, New Jersey[^1].
+UberEats</a> inspired Full-Stack single-page website, where you can browse and order from restaurants local to Union, New Jersey[^1][^2].
 
 <img src="https://github.com/JonJWong/JWong-Eats/blob/main/app/assets/images/readme-main.png"></img>
 
 <a href="https://jwong-eats.herokuapp.com/#/splash" target="_blank" rel="noopener noreferrer">Live Link</a>
 
 
-## Table of Contents
+<h2 id="table-of-contents">Table of Contents</h2>
 
-- [Features](features)
-- [Technologies Used](technologies-used)
-- [Future Plans](future-plans)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Future Plans](#future-plans)
 
 
-## Features
+<h2 id="features">Features</h2>
 
 ### Dynamic Searching
 
@@ -46,7 +46,7 @@ This function iterates through the available restaurants, and saves the appropri
 #
 ### Restaurant Filtering
 
-The filtering of restaurants on the Delivery homepage is handled differently, to show another possibble approach.
+The filtering of restaurants on the Delivery homepage is handled differently, to show another possible approach.
 
 Users can select icons on the top of the screen that reflect categories that the available restaurants fall into. This is then dynamically rendered onto the page by accessing the database through rails (When a button is pressed, an AJAX request is sent with a category parameter).
 
@@ -117,7 +117,7 @@ Users can see their past orders, as well as a breakdown of prices and quantities
 When a user checks out a cart, and a transaction is processed, the current prices of items are saved as a transaction in the database, independent from what the current item's prices are. That way, if the items were ever to change prices in the future, the price change would not affect any orders retroactively, and the integrity of the transaction table would remain.
 
 #
-### Technologies used
+<h2 id="technologies-used">Technologies used</h2>
 
 - __Front End__: React.js, Redux
 
@@ -144,7 +144,7 @@ When a user checks out a cart, and a transaction is processed, the current price
 - __Hosting__: JWongEats is hosted on heroku.
 
 #
-### Future Plans
+<h2 id="future-plans">Future Plans</h2>
 
 - Add Google Geocoding, Distance Matrix API support to allow for ETA calculation for delivery.
 - Add a post-checkout screen detailing the order information while showing route between restaurant and user.
@@ -154,6 +154,8 @@ When a user checks out a cart, and a transaction is processed, the current price
 #
 ### Credit
 
-Bunny Cafe is an imaginary restaurant based on my household, and our bunny, Kuro!
+- Images sourced from UberEats, Red Lobster, Olive Garden are property of their respective companies.
 
 [^1]: Since there did not seem to be a consistent API to scrape menus and menu items from restaurants, all the menu and item seeding was done manually, which resulted in a more limited selection (20 restaurants, 10 items each).
+
+[^2]: Bunny Cafe is an imaginary restaurant based on my household, and our bunny, Kuro!
