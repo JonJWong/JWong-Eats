@@ -156,7 +156,6 @@ When a user checks out a cart, and a transaction is processed, the current price
 - Add a post-checkout screen detailing the order information while showing route between restaurant and user.
 - Add Omni-auth for Google and Facebook login options.
 
-
 #
 ### Credit
 

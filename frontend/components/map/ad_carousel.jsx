@@ -1,11 +1,13 @@
 import React from "react";
 
-// restaurant banners to be used in carousel
+// Restaurant banners to be used in carousel
+// Refactor this later to use restaurant images since only bunny cafe needs to
+// be different
 const RESTAURANT_IMAGES = {
   1: 'https://jwong-eats-seeds.s3.amazonaws.com/sofiabanner.jpeg',
-  2: 'https://jwong-eats-seeds.s3.amazonaws.com/JWongEatsRestaurant.png',
+  2: 'https://jwong-eats-seeds.s3.amazonaws.com/signaturzbanner.jpeg',
   3: 'https://jwong-eats-seeds.s3.amazonaws.com/zbanner.webp',
-  4: 'https://jwong-eats-seeds.s3.amazonaws.com/JWongEatsRestaurant.png',
+  4: 'https://jwong-eats-seeds.s3.amazonaws.com/cadillacbanner.jpeg',
   5: 'https://jwong-eats-seeds.s3.amazonaws.com/cozybanner.jpg',
   6: 'https://jwong-eats-seeds.s3.amazonaws.com/cfabanner.jpeg',
   7: 'https://jwong-eats-seeds.s3.amazonaws.com/mcdbanner.jpeg',
