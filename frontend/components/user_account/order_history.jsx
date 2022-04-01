@@ -213,13 +213,13 @@ class OrderHistory extends React.Component {
               })}
             </div>
   
-            <div className="history-store-button">
-              <Link
-                to={`/restaurants/${first}`}
-                className="history-store-button-text">
+            <Link
+              to={`/restaurants/${first}`}
+              className="history-store-button">
+              <div className="history-store-button-text">
                 View Store
-              </Link>
-            </div>
+              </div>
+            </Link>
           </div>
         )
       })

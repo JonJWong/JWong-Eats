@@ -98,9 +98,25 @@ class AdCarousel extends React.Component {
     const carousel = document.querySelector("#carousel-container");
     const children = carousel.childNodes;
 
+    // The order of operations is opposite for left, since the list has elements
+    // that exist to the right already, so there is no need for pre-emptive
+    // translation.
     if (direction === "Right") {
-      // Change direction attribute, different operations per direction
       this.direction = "Right"
+      
+      // Setting this to 0 just in case, but it should be 0 coming to this stage
+      carousel.style.transform = 'translateX(0%)';
+      
+      // Applying the transition, and then moving the carousel over.
+      // since the event listener fires off when the transition ends,
+      // the order will be changed when it settles.
+      carousel.classList.add('carousel-container-transition');
+      carousel.style.transform = 'translateX(-100%)';
+    }
+
+    if (direction === "Left") {
+      // Change direction attribute, different operations per direction
+      this.direction = "Left"
 
       // Pre-emptively shift the carousel over to the left, so the transition
       // looks like it's moving to the right when we move it again.
@@ -130,22 +146,6 @@ class AdCarousel extends React.Component {
         carousel.style.transform = 'translateX(0%)';
       }, 1)
     }
-
-    // The order of operations is opposite for left, since the list has elements
-    // that exist to the right already, so there is no need for pre-emptive
-    // translation.
-    if (direction === "Left") {
-      this.direction = "Left"
-      
-      // Setting this to 0 just in case, but it should be 0 coming to this stage
-      carousel.style.transform = 'translateX(0%)';
-      
-      // Applying the transition, and then moving the carousel over.
-      // since the event listener fires off when the transition ends,
-      // the order will be changed when it settles.
-      carousel.classList.add('carousel-container-transition');
-      carousel.style.transform = 'translateX(-100%)';
-    }
   }
 
   // when the css transition ends, it fires off the function to
@@ -166,6 +166,18 @@ class AdCarousel extends React.Component {
 
     // re-order the elements after the transition ends when moving left
     if (this.direction === "Left") {
+      // Remove the transition property from the carousel, and then resetting
+      // the translation. This ensures that the re-arranging is not seen by
+      // the user.
+      carousel.classList.remove('carousel-container-transition');
+      carousel.style.transform = '';
+    }
+
+    // Since right-facing movement needs to be re-ordered before translating
+    // the eventlistener will just remove the transition class, since the
+    // carousel will be ready for another movement at this point.
+    if (this.direction === "Right") {
+
       let newOrder;
 
       // Check the flex-order of the first child, to determine which slides to
@@ -181,17 +193,6 @@ class AdCarousel extends React.Component {
         children[i].style.order = order
       })
 
-      // Remove the transition property from the carousel, and then resetting
-      // the translation. This ensures that the re-arranging is not seen by
-      // the user.
-      carousel.classList.remove('carousel-container-transition');
-      carousel.style.transform = '';
-    }
-
-    // Since right-facing movement needs to be re-ordered before translating
-    // the eventlistener will just remove the transition class, since the
-    // carousel will be ready for another movement at this point.
-    if (this.direction === "Right") {
       // Remove the transition property from the carousel, and then resetting
       // the translation. This ensures that the re-arranging is not seen by
       // the user.
