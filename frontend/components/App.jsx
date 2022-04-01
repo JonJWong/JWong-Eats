@@ -23,6 +23,7 @@ const App = () => {
       </Switch>
       
       <ProtectedRoute path="/" component={MainContainer} />
+      
       <Switch>
         <ProtectedRoute exact path="/delivery" component={DeliveryContainer} />
         <ProtectedRoute exact path="/pickup" component={PickupContainer} />
