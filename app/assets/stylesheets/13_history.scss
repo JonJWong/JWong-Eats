@@ -200,12 +200,14 @@
 .receipt-item-container {
   display: grid;
   grid-template-columns: 50px auto 100px;
+  grid-template-rows: auto auto;
   padding-top: 15px;
   padding-bottom: 15px;
   font-family: "Uber Regular";
 }
 
 .receipt-item-quantity {
+  grid-area: 1 / 1 / 3 / 2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -215,7 +217,17 @@
 }
 
 .receipt-item-name {
+  grid-area: 1 / 2 / 2 / 3;
   align-self: center;
+}
+
+.receipt-item-subtitle {
+  grid-area: 2 / 2 / 3 / 3;
+  font-family: "Uber Light";
+}
+
+.receipt-item-price {
+  grid-area: 1 / 3 / 2 / 4;
 }
 
 #receipt-payment-container {

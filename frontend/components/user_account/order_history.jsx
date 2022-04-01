@@ -122,6 +122,9 @@ class OrderHistory extends React.Component {
                     <div className="receipt-item-name">
                       {item.item_name}
                     </div>
+                    <div className="receipt-item-subtitle">
+                      {this.props.restaurants[item.restaurant_id].name}
+                    </div>
                     <div className="receipt-item-price">
                       $ {parseFloat(item.item_price).toFixed(2)}
                     </div>
