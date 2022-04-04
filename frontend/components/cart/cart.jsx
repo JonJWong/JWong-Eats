@@ -71,6 +71,8 @@ class Cart extends React.Component {
   // and after a time, tell user whether or not checkout was successful
   sendCheckout() {
     const { checkout, cart } = this.props;
+    const push = this.props.history.push;
+    let id;
     // Set up transaction object to send to backend
     let transaction = {
       order: this.props.cart,
@@ -81,7 +83,7 @@ class Cart extends React.Component {
     // Set button content, and state to disallow modal close onClick
     const button = document.querySelector("#menu-checkout");
     button.textContent = ("Processing...");
-    this.setState({ processing: true })
+    this.setState({ processing: true });
 
     // Delay reporting to user so they can read what is going on
     setTimeout(() => {
@@ -90,6 +92,10 @@ class Cart extends React.Component {
       if (Object.keys(cart).length > 0) {
         button.textContent = ("Checked out!")
         checkout(transaction)
+          .then(res => {
+            id = res.id.id
+          })
+
         Util.saveState({ entities : {
           cart: {}
           }
@@ -97,6 +103,7 @@ class Cart extends React.Component {
 
         setTimeout(() => {
           this.closeAndRemove();
+          push(`/checkout/${id}`)
         }, 200)
       } else {
         // If the cart was empty, reset button contents, set state to show error

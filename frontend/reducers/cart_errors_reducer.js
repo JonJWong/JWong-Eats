@@ -9,7 +9,7 @@ const cartErrorsReducer = (state=_nullCartErrors, action) => {
     case RECEIVE_CART_ERRORS:
       return action.errors;;
     case CLEAR_CART_ERRORS:
-      return _nullSessionErrors;
+      return _nullCartErrors;
     default:
       return state;
   }

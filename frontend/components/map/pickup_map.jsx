@@ -74,7 +74,6 @@ const STYLES = {
 };
 
 class PickupMap extends React.Component{
-
   constructor(props){
     super(props);
     this.createMarker = this.createMarker.bind(this);

@@ -33,9 +33,10 @@ export const removeCartItem = (quantity, item) => {
   }
 }
 
-export const clearCart = () => {
+export const clearCart = (id) => {
   return {
-    type: CLEAR_CART
+    type: CLEAR_CART,
+    id
   }
 }
 
@@ -56,6 +57,6 @@ export const clearCartErrors = () => {
 export const postTransaction = (cart) => (dispatch) => {
   return CartAPIUtil.postTransaction(cart)
     .then(
-      () => dispatch(clearCart()),
+      id => dispatch(clearCart(id)),
       err => dispatch(receiveCartErrors(err)))
 }
