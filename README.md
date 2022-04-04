@@ -153,7 +153,6 @@ When a user checks out a cart, and a transaction is processed, the current price
 <h2 id="future-plans">Future Plans</h2>
 
 - Add Google Geocoding, Distance Matrix API support to allow for ETA calculation for delivery.
-- Add a post-checkout screen detailing the order information while showing route between restaurant and user.
 - Add Omni-auth for Google and Facebook login options.
 
 #
