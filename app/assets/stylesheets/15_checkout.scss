@@ -38,7 +38,7 @@
 
 .checkout-order-item-container {
   display: grid;
-  grid-template-columns: 50px auto 90px;
+  grid-template-columns: 70px auto 90px;
   grid-template-rows: auto auto;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -69,6 +69,7 @@
   grid-area: 2 / 2 / 3 / 3;
   font-size: 14px;
   font-family: "Uber Light";
+  padding-top: 5px;
 }
 
 .checkout-order-item-price {
