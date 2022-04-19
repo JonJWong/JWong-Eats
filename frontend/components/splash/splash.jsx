@@ -76,7 +76,6 @@ class Splash extends React.Component {
         </div>
 
         <div id="splash-myinfo-container">
-          <div id="splash-myinfo-title">My Links: </div>
 
           <div id="splash-github-fill">
             <a href="https://github.com/JonJWong"
