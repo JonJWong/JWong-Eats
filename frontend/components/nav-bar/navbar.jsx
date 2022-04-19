@@ -108,9 +108,11 @@ class NavBar extends React.Component {
 
   // Add quantity to cart button
   cartNum() {
-    if (Object.keys(this.props.cart).length > 0) {
-      return `(${Object.keys(this.props.cart).length})`
-    }
+    let sum = 0
+    Object.values(this.props.cart).forEach(item => {
+      sum += item.quantity
+    })
+    return sum
   }
 
   render() {
