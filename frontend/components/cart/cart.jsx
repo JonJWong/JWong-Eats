@@ -1,5 +1,5 @@
 import React from "react";
-import CartItemContainer from "./cart_item_container";
+import CartItem from "./cart_item";
 import * as Util from "../../util/util";
 
 import { connect } from "react-redux";
@@ -251,7 +251,7 @@ class Cart extends React.Component {
           <div id="cart-items">
             {Object.values(this.props.cart).map((item, i) => {
               return (
-                <CartItemContainer
+                <CartItem
                   item={item}
                   key={`${item.quantity}+${item.id}+${item.name}`}
                 />
