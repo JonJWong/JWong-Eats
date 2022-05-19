@@ -1,22 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import UserModalContainer from '../user_modal/user_modal_container';
-import CartContainer from "../cart/cart_container";
+import React from "react";
+import { Link } from "react-router-dom";
+import UserModalContainer from "../user_modal/user_modal_container";
+import Cart from "../cart/cart";
 import MenuItemContainer from "../restaurant/menu_item_container";
 import SearchModalContainer from "./search_modal_container";
 import { withRouter } from "react-router-dom";
 
 class NavBar extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       modalOpen: false,
       cartOpen: false,
       itemOpen: false,
       searchOpen: false,
       currentButton: "delivery",
-      searchValue: ""
-    }
+      searchValue: "",
+    };
 
     this.update = this.update.bind(this);
     this.openSearchModal = this.openSearchModal.bind(this);
@@ -27,31 +27,31 @@ class NavBar extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchRestaurants()
-      .then(action => {
-        this.setState({
-          restaurants: action.restaurants
-        })
-      })
+    this.props.fetchRestaurants().then((action) => {
+      this.setState({
+        restaurants: action.restaurants,
+      });
+    });
   }
 
   // Helper to toggle state attributes to display modals
   toggle(attr) {
     let setValue = !this.state[attr];
-    this.setState({ [attr]: setValue })
+    this.setState({ [attr]: setValue });
   }
 
   // Helper to set search field.
   update(value) {
-    return e => this.setState({ [value]: e.currentTarget.value.toLowerCase() })
+    return (e) =>
+      this.setState({ [value]: e.currentTarget.value.toLowerCase() });
   }
 
   // Modal state helper-method
   renderModal() {
     if (this.state.modalOpen) {
-      return <UserModalContainer
-        toggleModal={this.toggle}
-        className="modal-open" />
+      return (
+        <UserModalContainer toggleModal={this.toggle} className="modal-open" />
+      );
     }
   }
 
@@ -59,72 +59,79 @@ class NavBar extends React.Component {
   openSearchModal() {
     const searchBar = document.querySelector(".nav-search-bar");
     searchBar.classList.add("search-expanded");
-    this.setState({ searchOpen: true })
+    this.setState({ searchOpen: true });
   }
 
   // This technically ends the search that is ongoing (state)
   closeSearchModal() {
     const searchBar = document.querySelector(".nav-search-bar");
     searchBar.classList.remove("search-expanded");
-    this.setState({ searchOpen: false })
+    this.setState({ searchOpen: false });
   }
 
   // Helper to render search components if there is an ongoing search
   renderSearch() {
     if (this.state.searchOpen) {
-      return <SearchModalContainer
-        restaurants={this.state.restaurants}
-        searchOpen={this.state.searchOpen}
-        closeSearchModal={this.closeSearchModal}
-        value={this.state.searchValue} />
+      return (
+        <SearchModalContainer
+          restaurants={this.state.restaurants}
+          searchOpen={this.state.searchOpen}
+          closeSearchModal={this.closeSearchModal}
+          value={this.state.searchValue}
+        />
+      );
     }
   }
 
   // Cart state helper-method
   renderCart() {
     if (this.state.cartOpen) {
-      return <CartContainer toggleCart={this.toggle} />
+      return <Cart toggleCart={this.toggle} />;
     }
   }
 
   // Item state helper-method
   renderItem() {
     if (this.state.itemOpen) {
-      return <MenuItemContainer value={this.state.searchValue} />
+      return <MenuItemContainer value={this.state.searchValue} />;
     }
   }
 
   // Pickup-delivery toggle based on state, pathname
   setButton() {
-    if (this.props.location.pathname === "/delivery"
-      && this.state.currentButton === "pickup") {
-        this.setState({ currentButton: "delivery" })
+    if (
+      this.props.location.pathname === "/delivery" &&
+      this.state.currentButton === "pickup"
+    ) {
+      this.setState({ currentButton: "delivery" });
     }
-    if (this.props.location.pathname === "/pickup"
-      && this.state.currentButton === "delivery") {
-        this.setState({ currentButton: "pickup" })
+    if (
+      this.props.location.pathname === "/pickup" &&
+      this.state.currentButton === "delivery"
+    ) {
+      this.setState({ currentButton: "pickup" });
     }
   }
 
   // Add quantity to cart button
   cartNum() {
-    let sum = 0
-    Object.values(this.props.cart).forEach(item => {
-      sum += item.quantity
-    })
-    return sum
+    let sum = 0;
+    Object.values(this.props.cart).forEach((item) => {
+      sum += item.quantity;
+    });
+    return sum;
   }
 
   render() {
     return (
       <nav id="nav-bar">
-
         <div id="nav-contents">
-
           <div id="nav-left">
-            <button onClick={() => this.toggle('modalOpen')}
-              className="hamburger">
-                <i className="fas fa-bars fa-xl"></i>
+            <button
+              onClick={() => this.toggle("modalOpen")}
+              className="hamburger"
+            >
+              <i className="fas fa-bars fa-xl"></i>
             </button>
 
             <Link to={`/${this.state.currentButton}`} className="eats-logo" />
@@ -132,53 +139,56 @@ class NavBar extends React.Component {
             <div id="method-slider">
               <Link
                 to="/delivery"
-                className={ this.state.currentButton === "delivery"
-                  ? "delivery-button focused-button"
-                  : "delivery-button" }
-                >Delivery
+                className={
+                  this.state.currentButton === "delivery"
+                    ? "delivery-button focused-button"
+                    : "delivery-button"
+                }
+              >
+                Delivery
               </Link>
 
               <Link
                 to="/pickup"
-                className={ this.state.currentButton === "pickup"
-                  ? "pickup-button focused-button"
-                  : "pickup-button" }
-                >Pickup
+                className={
+                  this.state.currentButton === "pickup"
+                    ? "pickup-button focused-button"
+                    : "pickup-button"
+                }
+              >
+                Pickup
               </Link>
             </div>
 
             <div id="nav-address-info">
               <i className="fas fa-map-marker-alt"></i>
-                { this.state.currentButton === "delivery"
-                  ? "Union, NJ  •  now"
-                  : "Union, NJ  •  Pick up now"
-                }
+              {this.state.currentButton === "delivery"
+                ? "Union, NJ  •  now"
+                : "Union, NJ  •  Pick up now"}
             </div>
 
             <div className="nav-search-bar">
               <i className="fas fa-search"></i>
-              <input type='text'
+              <input
+                type="text"
                 className="nav-search-area"
                 placeholder="Search restaurants by name"
-                onChange={this.update('searchValue')}
+                onChange={this.update("searchValue")}
                 onClick={() => this.openSearchModal()}
               />
             </div>
 
-            <button onClick={() => this.toggle('cartOpen')}
-              id="cart-button">
-                <i className="fas fa-shopping-cart"></i>Cart {this.cartNum()}
+            <button onClick={() => this.toggle("cartOpen")} id="cart-button">
+              <i className="fas fa-shopping-cart"></i>Cart {this.cartNum()}
             </button>
           </div>
-
-
         </div>
         {this.renderSearch()}
         {this.renderModal()}
         {this.renderCart()}
         {this.setButton()}
       </nav>
-    )
+    );
   }
 }
 
