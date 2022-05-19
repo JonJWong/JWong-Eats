@@ -21,11 +21,12 @@
 #food-modal-content {
   position: fixed;
   top: 10%;
-  bottom: auto;
+  bottom: 10%;
   right: 30%;
   left: 30%;
   background-color: white;
   z-index: 8;
+  overflow-y: scroll;
 }
 
 #food-modal-image {
