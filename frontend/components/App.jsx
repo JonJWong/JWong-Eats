@@ -9,7 +9,7 @@ import DeliveryContainer from "./map/delivery_container";
 import PickupContainer from "./map/pickup_container";
 import RestaurantIndexContainer from "./restaurant/restaurant_index_container";
 import OrderHistoryContainer from "./user_account/order_history_container";
-import CheckoutContainer from "./cart/checkout_container";
+import Checkout from "./cart/checkout";
 
 import { Route } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
@@ -23,20 +23,26 @@ const App = () => {
         <AuthRoute exact path="/splash" component={SplashContainer} />
         <AuthRoute path="/" component={SplashContainer} />
       </Switch>
-      
+
       <ProtectedRoute path="/" component={MainContainer}>
         <DeliveryContainer />
       </ProtectedRoute>
-      
+
       <Switch>
         <ProtectedRoute exact path="/delivery" component={DeliveryContainer} />
         <ProtectedRoute exact path="/pickup" component={PickupContainer} />
-        <ProtectedRoute path="/orderhistory/:id" component={OrderHistoryContainer} />
-        <ProtectedRoute path="/restaurants/:restaurantId" component={RestaurantIndexContainer} />
-        <ProtectedRoute path="/checkout/:id" component={CheckoutContainer} />
+        <ProtectedRoute
+          path="/orderhistory/:id"
+          component={OrderHistoryContainer}
+        />
+        <ProtectedRoute
+          path="/restaurants/:restaurantId"
+          component={RestaurantIndexContainer}
+        />
+        <ProtectedRoute path="/checkout/:id" component={Checkout} />
       </Switch>
     </div>
-  )
-}
+  );
+};
 
 export default App;
