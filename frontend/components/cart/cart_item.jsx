@@ -58,46 +58,40 @@ class CartItem extends React.Component {
     });
   }
 
-  // Conditional render of cart item based on whether or not the item has an
-  // image attached to it
-  drawContainer(item) {
-    if (item.photoUrl) {
-      return (
-        <div className="cart-item-container">
-          {this.drawMenu()}
-
-          <div className="cart-item-name">{item.item_name}</div>
-
-          <div className="cart-item-price">
-            ${parseFloat(item.item_price).toFixed(2)}
-          </div>
-
-          <img
-            src={item.photoUrl}
-            alt={`${item.item_name} image`}
-            className="cart-item-photo"
-          />
-        </div>
-      );
-    } else {
-      return (
-        <div className="cart-item-container">
-          {this.drawMenu()}
-
-          <div className="cart-item-name">{item.item_name}</div>
-
-          <div className="cart-item-price">
-            ${parseFloat(item.item_price).toFixed(2)}
-          </div>
-        </div>
-      );
-    }
-  }
-
   render() {
     const item = this.state.item;
 
-    return this.drawContainer(item);
+    return (
+      <>
+        {item.photoUrl ? (
+          <div className="cart-item-container">
+            {this.drawMenu()}
+
+            <div className="cart-item-name">{item.item_name}</div>
+
+            <div className="cart-item-price">
+              ${parseFloat(item.item_price).toFixed(2)}
+            </div>
+
+            <img
+              src={item.photoUrl}
+              alt={`${item.item_name} image`}
+              className="cart-item-photo"
+            />
+          </div>
+        ) : (
+          <div className="cart-item-container">
+            {this.drawMenu()}
+
+            <div className="cart-item-name">{item.item_name}</div>
+
+            <div className="cart-item-price">
+              ${parseFloat(item.item_price).toFixed(2)}
+            </div>
+          </div>
+        )}
+      </>
+    );
   }
 }
 
