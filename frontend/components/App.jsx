@@ -2,7 +2,7 @@ import React from "react";
 import { Switch } from "react-router";
 
 import SplashContainer from "./splash/splash_container";
-import MainContainer from "./main/main_container";
+import Main from "./main/main";
 import LoginFormContainer from "./session_form/login_form_container";
 import SignupFormContainer from "./session_form/signup_form_container";
 import DeliveryContainer from "./map/delivery_container";
@@ -24,7 +24,7 @@ const App = () => {
         <AuthRoute path="/" component={SplashContainer} />
       </Switch>
 
-      <ProtectedRoute path="/" component={MainContainer}>
+      <ProtectedRoute path="/" component={Main}>
         <DeliveryContainer />
       </ProtectedRoute>
 
