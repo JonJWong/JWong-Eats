@@ -5,7 +5,7 @@ import SplashContainer from "./splash/splash_container";
 import Main from "./main/main";
 import LoginFormContainer from "./session_form/login_form_container";
 import SignupFormContainer from "./session_form/signup_form_container";
-import DeliveryContainer from "./map/delivery_container";
+import Delivery from "./map/delivery";
 import PickupContainer from "./map/pickup_container";
 import RestaurantIndexContainer from "./restaurant/restaurant_index_container";
 import OrderHistoryContainer from "./user_account/order_history_container";
@@ -25,11 +25,11 @@ const App = () => {
       </Switch>
 
       <ProtectedRoute path="/" component={Main}>
-        <DeliveryContainer />
+        <Delivery />
       </ProtectedRoute>
 
       <Switch>
-        <ProtectedRoute exact path="/delivery" component={DeliveryContainer} />
+        <ProtectedRoute exact path="/delivery" component={Delivery} />
         <ProtectedRoute exact path="/pickup" component={PickupContainer} />
         <ProtectedRoute
           path="/orderhistory/:id"
