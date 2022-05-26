@@ -6,7 +6,7 @@ import Main from "./main/main";
 import LoginFormContainer from "./session_form/login_form_container";
 import SignupFormContainer from "./session_form/signup_form_container";
 import Delivery from "./map/delivery";
-import PickupContainer from "./map/pickup_container";
+import Pickup from "./map/pickup";
 import RestaurantIndexContainer from "./restaurant/restaurant_index_container";
 import OrderHistoryContainer from "./user_account/order_history_container";
 import Checkout from "./cart/checkout";
@@ -30,7 +30,7 @@ const App = () => {
 
       <Switch>
         <ProtectedRoute exact path="/delivery" component={Delivery} />
-        <ProtectedRoute exact path="/pickup" component={PickupContainer} />
+        <ProtectedRoute exact path="/pickup" component={Pickup} />
         <ProtectedRoute
           path="/orderhistory/:id"
           component={OrderHistoryContainer}
