@@ -181,6 +181,7 @@
     "wildcard": "^2.0.0"
   },
   "devDependencies": {
+    "@types/jquery": "^3.5.16",
     "@types/lodash.merge": "^4.6.7",
     "redux-logger": "^3.0.6"
   },
