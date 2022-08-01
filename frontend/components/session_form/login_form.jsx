@@ -9,18 +9,18 @@ class LoginForm extends React.Component{
       password: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  };
 
   // Form handler methods
   handleSubmit(e) {
     e.preventDefault()
     const user = Object.assign({}, this.state);
-    this.props.login(user)
-  }
+    this.props.login(user);
+  };
 
   update(field) {
-    return e => this.setState({ [field]: e.currentTarget.value })
-  }
+    return e => this.setState({ [field]: e.currentTarget.value });
+  };
 
   // Error display helper
   renderErrors() {
@@ -34,20 +34,20 @@ class LoginForm extends React.Component{
           </li>
         ))}
       </ul>
-    )
-  }
+    );
+  };
 
   // Add a listener (on mount) that clears errors when component unmounts
   componentDidMount() {
     this.unlisten = this.props.history.listen(() => {
       this.props.clearSessionErrors();
     });
-  }
+  };
 
   // Clear errors when component unmounts
   componentWillUnmount() {
     this.unlisten();
-  }
+  };
 
   render() {
     const { formType, login } = this.props;
@@ -105,8 +105,8 @@ class LoginForm extends React.Component{
           </Link>
         </div>
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 export default LoginForm;

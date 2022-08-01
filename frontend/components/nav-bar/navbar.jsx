@@ -1,10 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import UserModalContainer from "../user_modal/user_modal_container";
 import Cart from "../cart/cart";
 import MenuItemContainer from "../restaurant/menu_item_container";
 import SearchModalContainer from "./search_modal_container";
-import { withRouter } from "react-router-dom";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -24,7 +23,7 @@ class NavBar extends React.Component {
     this.cartNum = this.cartNum.bind(this);
     this.toggle = this.toggle.bind(this);
     this.setButton = this.setButton.bind(this);
-  }
+  };
 
   componentDidMount() {
     this.props.fetchRestaurants().then((action) => {
@@ -32,19 +31,19 @@ class NavBar extends React.Component {
         restaurants: action.restaurants,
       });
     });
-  }
+  };
 
   // Helper to toggle state attributes to display modals
   toggle(attr) {
     let setValue = !this.state[attr];
     this.setState({ [attr]: setValue });
-  }
+  };
 
   // Helper to set search field.
   update(value) {
     return (e) =>
       this.setState({ [value]: e.currentTarget.value.toLowerCase() });
-  }
+  };
 
   // Modal state helper-method
   renderModal() {
@@ -52,22 +51,22 @@ class NavBar extends React.Component {
       return (
         <UserModalContainer toggleModal={this.toggle} className="modal-open" />
       );
-    }
-  }
+    };
+  };
 
   // Search modal open and close helpers
   openSearchModal() {
     const searchBar = document.querySelector(".nav-search-bar");
     searchBar.classList.add("search-expanded");
     this.setState({ searchOpen: true });
-  }
+  };
 
   // This technically ends the search that is ongoing (state)
   closeSearchModal() {
     const searchBar = document.querySelector(".nav-search-bar");
     searchBar.classList.remove("search-expanded");
     this.setState({ searchOpen: false });
-  }
+  };
 
   // Helper to render search components if there is an ongoing search
   renderSearch() {
@@ -80,22 +79,22 @@ class NavBar extends React.Component {
           value={this.state.searchValue}
         />
       );
-    }
-  }
+    };
+  };
 
   // Cart state helper-method
   renderCart() {
     if (this.state.cartOpen) {
       return <Cart toggleCart={this.toggle} />;
-    }
-  }
+    };
+  };
 
   // Item state helper-method
   renderItem() {
     if (this.state.itemOpen) {
       return <MenuItemContainer value={this.state.searchValue} />;
-    }
-  }
+    };
+  };
 
   // Pickup-delivery toggle based on state, pathname
   setButton() {
@@ -110,8 +109,8 @@ class NavBar extends React.Component {
       this.state.currentButton === "delivery"
     ) {
       this.setState({ currentButton: "pickup" });
-    }
-  }
+    };
+  };
 
   // Add quantity to cart button
   cartNum() {
@@ -120,7 +119,7 @@ class NavBar extends React.Component {
       sum += item.quantity;
     });
     return sum;
-  }
+  };
 
   render() {
     return (
@@ -189,7 +188,7 @@ class NavBar extends React.Component {
         {this.setButton()}
       </nav>
     );
-  }
-}
+  };
+};
 
 export default withRouter(NavBar);

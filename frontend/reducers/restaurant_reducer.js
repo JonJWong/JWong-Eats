@@ -5,12 +5,12 @@ const restaurantReducer = (state = {}, action) => {
 
   switch(action.type) {
     case RECEIVE_RESTAURANT:
-      return Object.assign({}, state, { [action.restaurant.id]: action.restaurant })
+      return Object.assign({}, state, { [action.restaurant.id]: action.restaurant });
     case RECEIVE_RESTAURANTS:
-      return Object.assign({}, state, action.restaurants)
+      return Object.assign({}, state, action.restaurants);
     default:
-      return state
-  }
-}
+      return state;
+  };
+};
 
 export default restaurantReducer;

@@ -8,14 +8,14 @@ const mapStateToProps = (state) => {
   return {
     user: state.entities.users[state.session.id],
     restaurants: state.entities.restaurants
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchUser: userId => dispatch(fetchUser(userId)),
     fetchRestaurants: category => dispatch(fetchRestaurants(category))
-  }
-}
+  };
+};
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(OrderHistory));

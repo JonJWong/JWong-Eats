@@ -8,14 +8,14 @@ const mapStateToProps = (state) => {
     errors: state.errors.session,
     cart: state.entities.cart,
     restaurants: state.entities.restaurants
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     clearSessionErrors: () => dispatch(clearSessionErrors()),
     fetchRestaurants: category => dispatch(fetchRestaurants(category))
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

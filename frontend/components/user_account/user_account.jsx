@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import UpdateUserFormContainer from "./update_user_form_container";
 
 class UserAccount extends React.Component {
@@ -7,20 +6,20 @@ class UserAccount extends React.Component {
     super(props);
     this.state = {
       toggled: false
-    }
-    this.unToggle = this.unToggle.bind(this)
-  }
+    };
+    this.unToggle = this.unToggle.bind(this);
+  };
   
   // Helper method to toggle modal open/close
   unToggle() {
-    this.setState({ toggled: false })
-  }
+    this.setState({ toggled: false });
+  };
 
   // Either render order history or edit form
   render() {
     const { currentUser } = this.props;
     if (this.state.toggled === true) {
-      return(
+      return (
         <div>
           <div className="user-info">
             <span className="profile-photo" />
@@ -32,7 +31,7 @@ class UserAccount extends React.Component {
           </div>
             <UpdateUserFormContainer unToggle={this.unToggle} />
         </div>
-      )
+      );
     } else {
       return (
         <div>
@@ -48,9 +47,9 @@ class UserAccount extends React.Component {
             </button>
           </div>
         </div>
-      )
-    }
-  }
-}
+      );
+    };
+  };
+};
 
 export default UserAccount;

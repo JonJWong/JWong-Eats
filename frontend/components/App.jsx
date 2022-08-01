@@ -11,7 +11,6 @@ import RestaurantIndexContainer from "./restaurant/restaurant_index_container";
 import OrderHistoryContainer from "./user_account/order_history_container";
 import Checkout from "./cart/checkout";
 
-import { Route } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => {

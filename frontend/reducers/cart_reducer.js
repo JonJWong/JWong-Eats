@@ -13,7 +13,7 @@ const cartReducer = (state = {}, action) => {
     item = action.item;
     itemId = item.id;
     item.quantity ||= 0;
-  }
+  };
 
   switch (action.type) {
     case ADD_CART_ITEM:
@@ -26,7 +26,7 @@ const cartReducer = (state = {}, action) => {
         // otherwise increment the quantity and return
         newState[itemId].quantity += action.quantity;
         return Object.assign({}, state, newState)
-      }
+      };
     case UPDATE_CART_ITEM:
       // update item quantity
       newState[itemId].quantity = action.quantity;
@@ -34,7 +34,7 @@ const cartReducer = (state = {}, action) => {
       // otherwise return state with updated quantity
       if (newState[itemId].quantity <= 0) {
         delete newState.itemId;
-      }
+      };
       return newState;
     case REMOVE_CART_ITEM:
       delete newState[itemId];
@@ -43,7 +43,7 @@ const cartReducer = (state = {}, action) => {
       return {};
     default:
       return state;
-  }
-}
+  };
+};
 
 export default cartReducer;

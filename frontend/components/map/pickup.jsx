@@ -12,12 +12,12 @@ import {
 class Pickup extends React.Component {
   constructor(props) {
     super(props);
-  }
+  };
 
   componentDidMount() {
     this.props.fetchRestaurants();
     document.title = "Order Food Online | JWongEats";
-  }
+  };
 
   render() {
     const { restaurants } = this.props;
@@ -66,8 +66,8 @@ class Pickup extends React.Component {
         <PickupMap />
       </div>
     );
-  }
-}
+  };
+};
 
 const mapStateToProps = (state) => {
   return {

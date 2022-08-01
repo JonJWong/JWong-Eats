@@ -8,14 +8,14 @@ const mapStateToProps = ({ entities }, ownProps) => {
   return {
     restaurant: entities.restaurants[ownProps.match.params.restaurantId],
     cart: entities.cart
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchRestaurant: restaurantId => dispatch(fetchRestaurant(restaurantId)),
     addCartItem: (quantity, item) => dispatch(addCartItem(quantity, item))
-  }
-}
+  };
+};
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(RestaurantIndex));

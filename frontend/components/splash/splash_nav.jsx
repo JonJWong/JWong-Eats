@@ -7,23 +7,23 @@ class SplashNav extends React.Component {
     super(props)
     this.state = {
       modalOpen: false,
-    }
+    };
     this.toggleModal = this.toggleModal.bind(this);
     this.renderModal = this.renderModal.bind(this);
-  }
+  };
 
   // Helper to open/close side modal
   toggleModal() {
     let setValue = !this.state.modalOpen;
     this.setState({ modalOpen: setValue })
-  }
+  };
 
   // Eender modal if state is open
   renderModal() {
     if (this.state.modalOpen) {
       return <UserModalContainer toggleModal={this.toggleModal} />
-    }
-  }
+    };
+  };
 
   render() {
     return (
@@ -51,8 +51,8 @@ class SplashNav extends React.Component {
         
         {this.renderModal()}
       </nav>
-    )
-  }
-}
+    );
+  };
+};
 
 export default SplashNav;

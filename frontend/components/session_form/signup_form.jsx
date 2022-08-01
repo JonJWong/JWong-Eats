@@ -12,22 +12,22 @@ class SignUpForm extends React.Component {
       address: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  };
 
   // Form handler methods
   handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.signup(user)
-  }
+    this.props.signup(user);
+  };
 
   update(field) {
     return e => this.setState({[field]: e.currentTarget.value})
-  }
+  };
 
   // Error display helper
   renderErrors() {
-    const {errors} = this.props
+    const {errors} = this.props;
     if(!errors) return null;
     return(
       <ul className="auth-errors">
@@ -37,20 +37,20 @@ class SignUpForm extends React.Component {
           </li>
         ))}
       </ul>
-    )
-  }
+    );
+  };
 
   // Add a listener (on mount) that clears errors when component unmounts
   componentDidMount() {
     this.unlisten = this.props.history.listen(() => {
       this.props.clearSessionErrors();
     });
-  }
+  };
 
   // Clear errors when component unmounts
   componentWillUnmount() {
     this.unlisten();
-  }  
+  };
 
   render() {
     const { login } = this.props;
@@ -142,8 +142,8 @@ class SignUpForm extends React.Component {
           </Link>
         </div>
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 export default SignUpForm;

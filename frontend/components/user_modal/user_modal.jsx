@@ -7,38 +7,38 @@ class UserModal extends React.Component {
     super(props);
     this.state = {
       tabOpen: false
-    }
+    };
 
     this.closeAndRemove = this.closeAndRemove.bind(this);
     this.toggleOpen = this.toggleOpen.bind(this);
     this.toggleTab = this.toggleTab.bind(this);
     this.rendertab = this.renderTab.bind(this);
-  }
+  };
   
   // Helper method to toggle modal state
   toggleTab() {
     const setValue = !this.state.tabOpen;
     this.setState({ tabOpen: setValue });
-  }
+  };
 
   // Render modal if state is open
   renderTab() {
     if (this.state.tabOpen) {
       return <UserAccountContainer />
-    }
-  }
+    };
+  };
 
   componentDidMount() {
     setTimeout(() => {
       this.toggleOpen();
-    }, 10)
-  }
+    }, 10);
+  };
 
   // Helper method to add/remove transition effect class
   toggleOpen() {
     const modal = document.querySelector('.modal-contents');
-    modal.classList.toggle('modal-open')
-  }
+    modal.classList.toggle('modal-open');
+  };
 
   // Helper method to trigger transition and "unmount" modal
   closeAndRemove() {
@@ -46,8 +46,8 @@ class UserModal extends React.Component {
     this.toggleOpen();
     setTimeout(() => {
       toggleModal("modalOpen");
-    }, 510)
-  }
+    }, 510);
+  };
 
   render() {
     const open = this.state.tabOpen;

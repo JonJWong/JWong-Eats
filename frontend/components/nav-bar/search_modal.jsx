@@ -8,7 +8,7 @@ class SearchModal extends React.Component {
     this.conditionalClose = this.conditionalClose.bind(this);
     this.renderResults = this.renderResults.bind(this);
     this.filterResults = this.filterResults.bind(this);
-  }
+  };
 
   // Only allow closing of the search bar if it exists, to avoid null errors
   conditionalClose() {
@@ -20,8 +20,8 @@ class SearchModal extends React.Component {
       }, 500)
     } else {
       this.props.closeSearchModal();
-    }
-  }
+    };
+  };
 
   // Compare searchbar contents to restaurant names
   filterResults(value) {
@@ -32,11 +32,11 @@ class SearchModal extends React.Component {
       const restaurant = restaurants[id];
       if (restaurant.name.toLowerCase().includes(value)) {
         filtered.push(restaurant);
-      }
-    })
+      };
+    });
     
     return filtered;
-  }
+  };
 
   // Display the results that return from the search filter
   renderResults(value) {
@@ -47,7 +47,7 @@ class SearchModal extends React.Component {
       const wrapper = document.querySelector(".search-contents-wrapper");
       if (wrapper) {
         document.querySelector(".search-contents-wrapper").classList.add("drop");
-      }
+      };
     }, 10)
 
     // Check if searchbar is empty, if it is not empty, render list
@@ -76,12 +76,12 @@ class SearchModal extends React.Component {
                   </div>
                 </div>
               </Link>
-            )
+            );
           })}
         </div>
-      )
-    }
-  }
+      );
+    };
+  };
 
   render() {
     return (
@@ -90,8 +90,8 @@ class SearchModal extends React.Component {
         onClick={() => this.conditionalClose()}>
           {this.renderResults(this.props.value)}
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 export default SearchModal;

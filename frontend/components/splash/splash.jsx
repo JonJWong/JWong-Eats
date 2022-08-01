@@ -1,40 +1,40 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SplashNavContainer from "./splash_nav_container"
+import SplashNavContainer from "./splash_nav_container";
 
 const BG_IMG_URLS = [
   "https://jwong-eats-seeds.s3.amazonaws.com/BG1.png",
   "https://jwong-eats-seeds.s3.amazonaws.com/BG2.png",
   "https://jwong-eats-seeds.s3.amazonaws.com/BG3.png",
   "https://jwong-eats-seeds.s3.amazonaws.com/BG4.png"
-]
+];
 
 function randomUrl() {
   return BG_IMG_URLS[Math.floor(Math.random() * BG_IMG_URLS.length)]
-}
+};
 
 class Splash extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       prompt: false
-    }
+    };
 
     this.signinPrompt = this.signinPrompt.bind(this);
     this.promptSignin = this.promptSignin.bind(this);
-  }
+  };
 
   // Pseudo-error when Find Food is clicked
   signinPrompt() {
     if (this.state.prompt) {
       return <div className="auth-errors">Please sign in first.</div>
-    }
-  }
+    };
+  };
 
   // Helper method to toggle whether or not pseudo-error is displayed
   promptSignin() {
     this.setState({ prompt: true })
-  }
+  };
 
   render() {
     return (
@@ -120,8 +120,8 @@ class Splash extends React.Component {
           Copyright Disclaimer under Section 107 of the copyright act 1976, allowance is made for fair use for purposes such as criticism, comment, news reporting, scholarship, and research. Fair use is a use permitted by copyright statute that might otherwise be infringing. Non-profit, educational or personal use tips the balance in favour of fair use.
         </p>
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
-export default Splash
+export default Splash;

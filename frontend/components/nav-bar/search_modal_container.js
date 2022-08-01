@@ -5,13 +5,13 @@ import { fetchRestaurants, fetchRestaurant } from "../../actions/restaurant_acti
 const mapStateToProps = (state) => {
   return {
     restaurants: state.entities.restaurants
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchRestaurants: category => dispatch(fetchRestaurants(category))
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchModal);

@@ -7,25 +7,25 @@ class MenuItem extends React.Component {
     this.state = {
       quantity: 1,
       addingItem: false
-    }
+    };
 
     this.conditionalAddToCart = this.conditionalAddToCart.bind(this);
     this.conditionalModalClose = this.conditionalModalClose.bind(this);
     this.addToCart = this.addToCart.bind(this);
-  }
+  };
 
   // Quantity button helpers
   increment() {
     const newQuant = this.state.quantity + 1;
-    this.setState({ quantity: newQuant })
-  }
+    this.setState({ quantity: newQuant });
+  };
 
   decrement() {
     if (this.state.quantity > 1) {
       const newQuant = this.state.quantity - 1;
-      this.setState({ quantity: newQuant })
-    }
-  }
+      this.setState({ quantity: newQuant });
+    };
+  };
 
   // Delay and change button when adding items to cart, and after
   // a short delay, report success and "unmount cart"
@@ -37,7 +37,7 @@ class MenuItem extends React.Component {
 
     left.textContent = "Adding...";
     button.style.backgroundColor = "darkgrey";
-    this.setState({ addingItem: true })
+    this.setState({ addingItem: true });
 
     const that = this;
 
@@ -51,24 +51,24 @@ class MenuItem extends React.Component {
       });
       setTimeout(() => {
         toggleItemModal();
-      }, 500)
-    }, 800)
-  }
+      }, 500);
+    }, 800);
+  };
 
   // Helper to disallow spamming add button
   conditionalAddToCart(quantity, item) {
     if (!this.state.addingItem) {
       this.addToCart(quantity, item);
-    }
-  }
+    };
+  };
 
   // Only allow onClick to close modal if things are not happening
   conditionalModalClose() {
     const { toggleItemModal } = this.props;
     if (!this.state.addingItem) {
       toggleItemModal();
-    }
-  }
+    };
+  };
 
   // Render a different container for menu-item depending on whether or not
   // the item has a photo attached
@@ -125,7 +125,7 @@ class MenuItem extends React.Component {
 
           </div>
         </div>
-      )
+      );
     } else {
       return (
         <div id="food-modal-content">
@@ -173,9 +173,9 @@ class MenuItem extends React.Component {
 
         </div>
       </div>
-      )
-    }
-  }
+      );
+    };
+  };
 
   render() {
     const { item } = this.props;
@@ -187,8 +187,8 @@ class MenuItem extends React.Component {
         </div>
         {this.renderItem(item)}
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 export default MenuItem;

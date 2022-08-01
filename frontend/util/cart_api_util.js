@@ -3,5 +3,5 @@ export const postTransaction = (cart) => {
     method: 'POST',
     url: `api/transactions`,
     data: {cart}
-  })
-}
+  });
+};

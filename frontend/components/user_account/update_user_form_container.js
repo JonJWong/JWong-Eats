@@ -8,14 +8,14 @@ const mapStateToProps = ({entities, session, errors}) => {
   return {
     currentUser: entities.users[session.id],
     errors: errors.session
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     changeUserInfo: user => dispatch(changeUserInfo(user)),
     clearSessionErrors: () => dispatch(clearSessionErrors())
-  }
-}
+  };
+};
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UpdateUserForm));

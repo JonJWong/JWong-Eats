@@ -6,13 +6,13 @@ const mapStateToProps = ({entities, session, errors}) => {
   return {
     currentUser: entities.users[session.id],
     errors: errors.session
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     logout: () => dispatch(logout())
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserAccount);

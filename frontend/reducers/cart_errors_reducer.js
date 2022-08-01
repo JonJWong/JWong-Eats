@@ -12,7 +12,7 @@ const cartErrorsReducer = (state=_nullCartErrors, action) => {
       return _nullCartErrors;
     default:
       return state;
-  }
+  };
 };
 
 export default cartErrorsReducer;

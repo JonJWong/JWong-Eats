@@ -29,8 +29,8 @@ function monthString(month) {
       return "Nov";
     case 11:
       return "Dec";
-  }
-}
+  };
+};
 
 class OrderHistory extends React.Component {
   constructor(props) {
@@ -40,20 +40,20 @@ class OrderHistory extends React.Component {
       receiptOpen: false,
       currentTransaction: null,
       restName: null
-    }
+    };
 
     this.toggleReceipt = this.toggleReceipt.bind(this);
     this.renderReceipt = this.renderReceipt.bind(this);
     this.ifPhoto = this.ifPhoto.bind(this);
     this.renderOrders = this.renderOrders.bind(this);
-  }
+  };
 
   // Get User, Restaurants, on component mount.
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.id)
       .then(() => this.props.fetchRestaurants())
-      .then(() => this.setState({ loading: false }))
-  }
+      .then(() => this.setState({ loading: false }));
+  };
 
   // Only render an image with a link if the restaurant has a photo attached.
   ifPhoto(restaurant) {
@@ -67,9 +67,9 @@ class OrderHistory extends React.Component {
               className="history-order-photo"/>
           </div>
         </Link>
-      )
-    }
-  }
+      );
+    };
+  };
 
   // Helper to open and close the receipt modal.
   toggleReceipt(currentTransaction = null, restName = null) {
@@ -79,8 +79,8 @@ class OrderHistory extends React.Component {
       receiptOpen: nextState,
       currentTransaction: currentTransaction,
       restName: restName
-    })
-  }
+    });
+  };
 
 
   // random key, refactor eventually
@@ -129,7 +129,7 @@ class OrderHistory extends React.Component {
                       $ {parseFloat(item.item_price).toFixed(2)}
                     </div>
                   </div>
-                )
+                );
               })}
             </div>
   
@@ -154,9 +154,9 @@ class OrderHistory extends React.Component {
             id="receipt-modal-block"
             onClick={() => this.toggleReceipt()}></div>
         </div>
-      )
-    }
-  }
+      );
+    };
+  };
 
   renderOrders() {
     const { restaurants } = this.props;
@@ -181,7 +181,7 @@ class OrderHistory extends React.Component {
         } else {
           restName = 
             `${restaurant.name} and others...`;
-        }
+        };
         
         return (
           // Randomly assigned keys, refactor evenutally
@@ -212,7 +212,7 @@ class OrderHistory extends React.Component {
                         </div>
                     </div>
                   </div>
-                )
+                );
               })}
             </div>
   
@@ -229,7 +229,7 @@ class OrderHistory extends React.Component {
     } else {
       return (
         <h3 id="no-orders">You do not have any past orders.</h3>
-      )
+      );
     }
   }
 
@@ -240,7 +240,7 @@ class OrderHistory extends React.Component {
     const day = date.getDate();
     const time = date.toLocaleTimeString('en-US');
     return `${month} ${day} at ${time}`
-  }
+  };
 
   render() {
     const { loading } = this.state;
@@ -249,8 +249,8 @@ class OrderHistory extends React.Component {
         <div className="loading-screen-bg">
           <div className="loading-element"></div>
         </div>
-      )
-    }
+      );
+    };
 
     return (
       <div className="history-body">
@@ -260,8 +260,8 @@ class OrderHistory extends React.Component {
         </div>
         {this.renderReceipt()}
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 export default OrderHistory;

@@ -10,6 +10,10 @@
   "dependencies": {
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@types/websocket": "^1.0.5",
     "acorn": "^8.7.0",
     "acorn-import-assertions": "^1.8.0",
     "ajv": "^6.12.6",
@@ -161,6 +165,7 @@
     "tiny-invariant": "^1.2.0",
     "tiny-warning": "^1.0.3",
     "to-fast-properties": "^2.0.0",
+    "typescript": "^4.9.4",
     "unicode-canonical-property-names-ecmascript": "^2.0.0",
     "unicode-match-property-ecmascript": "^2.0.0",
     "unicode-match-property-value-ecmascript": "^2.0.0",
@@ -176,6 +181,7 @@
     "wildcard": "^2.0.0"
   },
   "devDependencies": {
+    "@types/lodash.merge": "^4.6.7",
     "redux-logger": "^3.0.6"
   },
   "scripts": {

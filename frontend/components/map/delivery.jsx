@@ -44,7 +44,7 @@ class Delivery extends React.Component {
     this.renderList = this.renderList.bind(this);
     this.renderFilterMenu = this.renderFilterMenu.bind(this);
     this.ifImage = this.ifImage.bind(this);
-  }
+  };
 
   componentDidMount() {
     this.props.fetchRestaurants().then((action) =>
@@ -52,9 +52,9 @@ class Delivery extends React.Component {
         loading: false,
         restaurants: action.restaurants,
       })
-    );
+    )
     document.title = "Order Food Online | JWongEats";
-  }
+  };
 
   // Helper to conditionally render restaurant image containers, used
   // mostly during development, but might be useful in the future
@@ -70,8 +70,8 @@ class Delivery extends React.Component {
       );
     } else {
       return <div className="image-filler"></div>;
-    }
-  }
+    };
+  };
 
   // Methods for top category-bar
   filter(category) {
@@ -82,14 +82,14 @@ class Delivery extends React.Component {
       topBar.textContent = category;
     } else {
       topBar.textContent = "Top picks for you";
-    }
+    };
 
     fetchRestaurants(category).then((action) => {
       this.setState({
         restaurants: action.restaurants,
       });
     });
-  }
+  };
 
   // Helper method to iterate through possible restaurant categories, and
   // render their icons with images attached.
@@ -134,18 +134,18 @@ class Delivery extends React.Component {
                 <div className="delivery-filter-text">{category}</div>
               </button>
             );
-          }
+          };
         })}
       </div>
     );
-  }
+  };
 
   // Helper to filter through restaurants based on current sorting
   sort(restaurants) {
     let options;
     if (this.state.priceRange.length > 0) {
       options = this.state.priceRange;
-    }
+    };
 
     const newRestaurants = {};
 
@@ -153,11 +153,11 @@ class Delivery extends React.Component {
       let restaurant = restaurants[id];
       if (options?.includes(restaurant.price_rating)) {
         newRestaurants[id] = restaurant;
-      }
+      };
     });
 
     return newRestaurants;
-  }
+  };
 
   // Helper to adjust class and set state for current sorting
   togglePriceRange(option, e) {
@@ -172,9 +172,9 @@ class Delivery extends React.Component {
       newState.priceRange = [];
     } else {
       newState.priceRange = newState.priceRange.filter((ele) => ele !== option);
-    }
+    };
     this.setState(newState);
-  }
+  };
 
   // Helper to render the price buttons
   renderSortButtons() {
@@ -204,13 +204,13 @@ class Delivery extends React.Component {
                     <div className="sort-option-text">{option}</div>
                   </button>
                 );
-              }
+              };
             })}
           </div>
         </div>
       </div>
     );
-  }
+  };
 
   // Render (sorted) restaurant list
   renderList() {
@@ -218,7 +218,7 @@ class Delivery extends React.Component {
 
     if (this.state.priceRange.length > 0) {
       restaurants = this.sort(restaurants);
-    }
+    };
 
     return (
       <div id="delivery-restaurant-list">
@@ -249,7 +249,7 @@ class Delivery extends React.Component {
         })}
       </div>
     );
-  }
+  };
 
   render() {
     const { loading } = this.state;
@@ -260,7 +260,7 @@ class Delivery extends React.Component {
           <div className="loading-element"></div>
         </div>
       );
-    }
+    };
 
     return (
       <div id="delivery-container">
@@ -278,8 +278,8 @@ class Delivery extends React.Component {
         {this.renderList()}
       </div>
     );
-  }
-}
+  };
+};
 
 const mapStateToProps = (state) => {
   return {
