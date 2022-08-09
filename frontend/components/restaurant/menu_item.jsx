@@ -6,8 +6,8 @@ class MenuItem extends React.Component {
     super(props);
     this.state = {
       quantity: 1,
-      addingItem: false
-    }
+      addingItem: false,
+    };
 
     this.conditionalAddToCart = this.conditionalAddToCart.bind(this);
     this.conditionalModalClose = this.conditionalModalClose.bind(this);
@@ -17,13 +17,13 @@ class MenuItem extends React.Component {
   // Quantity button helpers
   increment() {
     const newQuant = this.state.quantity + 1;
-    this.setState({ quantity: newQuant })
+    this.setState({ quantity: newQuant });
   }
 
   decrement() {
     if (this.state.quantity > 1) {
       const newQuant = this.state.quantity - 1;
-      this.setState({ quantity: newQuant })
+      this.setState({ quantity: newQuant });
     }
   }
 
@@ -37,22 +37,23 @@ class MenuItem extends React.Component {
 
     left.textContent = "Adding...";
     button.style.backgroundColor = "darkgrey";
-    this.setState({ addingItem: true })
+    this.setState({ addingItem: true });
 
     const that = this;
 
     setTimeout(() => {
       addCartItem(quantity, item);
-      left.textContent = "Added!"
+      left.textContent = "Added!";
 
-      Util.saveState({ entities: {
-        cart: that.props.cart
-        }
+      Util.saveState({
+        entities: {
+          cart: that.props.cart,
+        },
       });
       setTimeout(() => {
         toggleItemModal();
-      }, 500)
-    }, 800)
+      }, 500);
+    }, 800);
   }
 
   // Helper to disallow spamming add button
@@ -77,15 +78,16 @@ class MenuItem extends React.Component {
     if (item.photoUrl) {
       return (
         <div id="food-modal-content">
-
           <button
             id="food-modal-close"
-            onClick={() => this.conditionalModalClose()}>
-              <i className="fa-solid fa-x"></i>
+            onClick={() => this.conditionalModalClose()}
+          >
+            <i className="fa-solid fa-x"></i>
           </button>
 
           <div id="food-modal-item">
-            <img src={item.photoUrl}
+            <img
+              src={item.photoUrl}
               alt={`${item.item_name} image`}
               id="food-modal-image"
             />
@@ -93,46 +95,48 @@ class MenuItem extends React.Component {
             <div id="food-modal-description">{item.description}</div>
             <div id="food-modal-addon">Add-On support coming soon!</div>
             <div id="food-modal-calorie-warning">
-              2,000 calories a day is used for general nutrition advice, 
-              but calorie needs vary. 
-              Additional nutrition information available upon request.
+              2,000 calories a day is used for general nutrition advice, but
+              calorie needs vary. Additional nutrition information available
+              upon request.
             </div>
           </div>
 
           <div id="food-modal-controls">
             <div id="food-modal-quant-control">
-              <button onClick={() => this.decrement()}
-                className="food-modal-control-button">
-                  <i className="fas fa-minus"></i>
+              <button
+                onClick={() => this.decrement()}
+                className="food-modal-control-button"
+              >
+                <i className="fas fa-minus"></i>
               </button>
               <div id="food-modal-quantity">{quantity}</div>
-              <button onClick={() => this.increment()}
-                className="food-modal-control-button">
-                  <i className="fas fa-plus"></i>
+              <button
+                onClick={() => this.increment()}
+                className="food-modal-control-button"
+              >
+                <i className="fas fa-plus"></i>
               </button>
             </div>
 
             <button
               id="food-modal-add-order"
-              onClick={() => this.conditionalAddToCart(quantity, item)}>
-              <div id="food-modal-add-left">
-                Add {quantity} to order
-              </div>
+              onClick={() => this.conditionalAddToCart(quantity, item)}
+            >
+              <div id="food-modal-add-left">Add {quantity} to order</div>
               <div id="food-modal-add-right">
-                ${Util.priceMultiple(quantity, item.item_price).toFixed(2)}
+                ${Util.priceMultiple(quantity, item.item_price)}
               </div>
             </button>
-
           </div>
         </div>
-      )
+      );
     } else {
       return (
         <div id="food-modal-content">
-
           <button
             id="food-modal-close"
-            onClick={() => this.conditionalModalClose()}>
+            onClick={() => this.conditionalModalClose()}
+          >
             <i className="fa-solid fa-x"></i>
           </button>
 
@@ -141,39 +145,41 @@ class MenuItem extends React.Component {
             <div id="food-modal-description">{item.description}</div>
             <div id="food-modal-addon">Add-On support coming soon!</div>
             <div id="food-modal-calorie-warning">
-              2,000 calories a day is used for general nutrition advice, 
-              but calorie needs vary. 
-              Additional nutrition information available upon request.
+              2,000 calories a day is used for general nutrition advice, but
+              calorie needs vary. Additional nutrition information available
+              upon request.
             </div>
           </div>
 
-        <div id="food-modal-controls">
-          <div id="food-modal-quant-control">
-            <button onClick={() => this.decrement()}
-              className="food-modal-control-button">
+          <div id="food-modal-controls">
+            <div id="food-modal-quant-control">
+              <button
+                onClick={() => this.decrement()}
+                className="food-modal-control-button"
+              >
                 <i className="fas fa-minus"></i>
-            </button>
-            <div id="food-modal-quantity">{quantity}</div>
-            <button onClick={() => this.increment()}
-              className="food-modal-control-button">
+              </button>
+              <div id="food-modal-quantity">{quantity}</div>
+              <button
+                onClick={() => this.increment()}
+                className="food-modal-control-button"
+              >
                 <i className="fas fa-plus"></i>
+              </button>
+            </div>
+
+            <button
+              id="food-modal-add-order"
+              onClick={() => this.conditionalAddToCart(quantity, item)}
+            >
+              <div id="food-modal-add-left">Add {quantity} to order</div>
+              <div id="food-modal-add-right">
+                ${Util.priceMultiple(quantity, item.item_price).toFixed(2)}
+              </div>
             </button>
           </div>
-
-          <button
-            id="food-modal-add-order"
-            onClick={() => this.conditionalAddToCart(quantity, item)}>
-            <div id="food-modal-add-left">
-              Add {quantity} to order
-            </div>
-            <div id="food-modal-add-right">
-              ${Util.priceMultiple(quantity, item.item_price).toFixed(2)}
-            </div>
-          </button>
-
         </div>
-      </div>
-      )
+      );
     }
   }
 
@@ -182,12 +188,13 @@ class MenuItem extends React.Component {
 
     return (
       <div id="food-modal-container">
-        <div id="food-modal-block"
-          onClick={() => this.conditionalModalClose()}>
-        </div>
+        <div
+          id="food-modal-block"
+          onClick={() => this.conditionalModalClose()}
+        ></div>
         {this.renderItem(item)}
       </div>
-    )
+    );
   }
 }
 

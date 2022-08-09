@@ -1,25 +1,4 @@
-.cart-modal-open {
-  transform: translate(0%, 0%);
-}
-
-.cart-error {
-  font-family: "Uber Light";
-  font-size: 14px;
-}
-
-.cart-item-photo {
-  min-height: 100px;
-  max-height: 110px;
-  min-width: 100px;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  justify-self: right;
-  background-color: aqua;
-  grid-area: 1 / 3 / 3 / 4;
-}
-
-#cart-modal {
+aside.cart-modal {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -27,7 +6,7 @@
   left: 0;
   z-index: 6;
 
-  #cart-modal-block {
+  .cart-modal-block {
     position: fixed;
     left: 0;
     top: 0;
@@ -55,7 +34,11 @@
     transition: transform .4s ease .1s;
     transform: translate(100%, 0%);
 
-    #cart-close {
+    &.cart-modal-open {
+      transform: translate(0%, 0%);
+    }
+
+    .cart-close {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -64,28 +47,28 @@
       border-radius: 20px;
     }
     
-    #cart-header {
+    header {
       display: block;
       padding-top: 10px;
 
-      #cart-title {
+      h2 {
         font-family: "Uber Regular";
         font-size: 46px;
         padding-bottom: 10px;
       }
 
-      #cart-address {
+      h3 {
         font-family: "Uber Light";
         font-size: 16px;
         padding-bottom: 10px;
       }
 
-      #cart-top-buttons {
+      div {
         height: 40px;
         padding-top: 10px;
         padding-bottom: 15px;
 
-        #cart-add-items, #cart-group-order {
+        button {
           position: relative;
           height: 100%;
           margin-left: 5px;
@@ -96,20 +79,25 @@
           background-color: #eeeeee;
         }
 
-        #cart-add-items:hover, #cart-group-order:hover {
+        button:hover {
           background-color: rgb(218, 218, 218);
         }
       }
     }
 
-    #cart-items {
+    p {
+      font-family: "Uber Light";
+      font-size: 14px;
+    }
+
+    ul {
       width: 95%;
       height: auto;
       display: grid;
       grid-template-columns: 1fr;
       padding-bottom: 20px;
 
-      .cart-item-container {
+      li {
         width: 100%;
         min-height: 100px;
         max-height: 200px;
@@ -118,7 +106,7 @@
         grid-template-rows: .5fr 1fr;
         padding-bottom: 15px;
 
-        .item-quant-dropdown {
+        select {
           background-color: #eeeeee;
           border-radius: 20px;
           height: 40px;
@@ -128,7 +116,7 @@
           grid-area: 1 / 1 / 3 / 2;
         }
 
-        .cart-item-name {
+        h3 {
           grid-area: 1 / 2 / 2 / 3;
           height: 40px;
           width: 100%;
@@ -136,27 +124,39 @@
           align-self: start;
         }
 
-        .cart-item-price {
+        p {
           font-family: "Uber Light";
           height: auto;
           justify-self: start;
           align-self: start;
           grid-area: 2 / 2 / 3 / 3;
         }
-      }
 
-      #cart-clear {
-        width: 100%;
-        color: red;
-        text-align: center;
-        font-size: 16px;
-        height: 25px;
+        img {
+          min-height: 100px;
+          max-height: 110px;
+          min-width: 100px;
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          justify-self: right;
+          background-color: aqua;
+          grid-area: 1 / 3 / 3 / 4;
+        }
       }
       
-      .cart-errors {
+      ul {
         position: relative;
         padding-bottom: 140px;
       }
+    }
+    
+    .cart-clear {
+      width: 100%;
+      color: red;
+      text-align: center;
+      font-size: 16px;
+      height: 25px;
     }
   }
 
@@ -172,7 +172,11 @@
     display: block;
     z-index: 9;
 
-    #menu-checkout-container {
+    &.cart-modal-open {
+      transform: translate(0%, 0%);
+    }
+
+    div {
       box-shadow: 0px 0px 10px 10px rgba(117, 117, 117, 0.1);
       background-color: white;
       display: flex;
@@ -184,7 +188,7 @@
       bottom: 0px;
       width: 100%;
 
-      #menu-checkout {
+      button {
         font-family: "Uber Regular";
         align-self: center;
         color: white;
@@ -196,7 +200,7 @@
         width: 90%;
       }
 
-      #menu-checkout:hover {
+      button:hover {
         background-color: rgb(80, 80, 80);
       }
     }
