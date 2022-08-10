@@ -1,19 +1,4 @@
-.hamburger {
-  border-style: none;
-  background-color: rgba(0, 0, 0, 0);
-  height: auto;
-  padding-right: 20px;
-  cursor: pointer
-}
-
-.eats-logo {
-  content: image_url('JWongEats.png');
-  height: 48px;
-  padding-right: 2vw;
-  width: auto;
-}
-
-#nav-bar {
+nav {
   height: 48px;
   background-color: white;
   width: 100%;
@@ -27,116 +12,133 @@
   position: fixed;
   top: 0;
   z-index: 5;
-}
 
-#nav-left {
-  display: flex;
-  width: auto;
-}
+  .nav-left {
+    display: flex;
+    width: auto;
 
-#method-slider, #search-bar {
-  width: 170px;
-  height: auto;
-  border-radius: 25px;
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  background-color:#eeeeee;
-}
+    .hamburger {
+      border-style: none;
+      background-color: rgba(0, 0, 0, 0);
+      height: auto;
+      padding-right: 20px;
+      cursor: pointer
+    }
 
-.delivery-button, .pickup-button {
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  vertical-align: middle;
-  margin-top: 3px;
-  margin-bottom: 3px;
-}
+    .eats-logo {
+      content: image_url('JWongEats.png');
+      height: 48px;
+      padding-right: 2vw;
+      width: auto;
+    }
 
-.delivery-button {
-  width: 80px;
-  margin-left: 5px;
-  margin-right: 5px;
-  padding-left: 11px;
-  padding-right: 11px;
-}
+    .nav-rounded {
+      width: 170px;
+      height: auto;
+      border-radius: 25px;
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+      background-color:#eeeeee;
+    }
 
-.pickup-button {
-  width: 80px;
-  margin-left: -5px;
-  margin-right: 5px;
-  padding-left: 11px;
-  padding-right: 11px;
-}
+    span {
+      a {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        vertical-align: middle;
+        margin-top: 3px;
+        margin-bottom: 3px;
 
-.focused-button {
-  background-color: white;
-  border-radius: 24px;
-}
+        &.delivery-button {
+          width: 80px;
+          margin-left: 5px;
+          margin-right: 5px;
+          padding-left: 11px;
+          padding-right: 11px;
+        }
+        
+        &.pickup-button {
+          width: 80px;
+          margin-left: -5px;
+          margin-right: 5px;
+          padding-left: 11px;
+          padding-right: 11px;
+        }
 
-#cart-button {
-  position: fixed;
-  right: 2vw;
-  height: 40px;
-  width: 100px;
-  border-radius: 20px;
-  border-style: none;
-  font-size: 16px;
-  margin-top: 3px;
-  color: white;
-  background-color: black;
-}
+        &.focused-button {
+          background-color: white;
+          border-radius: 24px;
+        }
+      }
+    }
 
-.fa-search {
-  margin-left: 10px;
-  margin-right: 10px;
-}
+    p {
+      font-family: "Uber Regular";
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #eeeeee;
+      padding-right: 20px;
+      margin-left: 20px;
+      border-radius: 60px;
 
-.fa-shopping-cart {
-  margin-right: 10px;
-}
+      &:hover {
+        background-color: lightgrey;
+      }
+    }
 
-#cart-button:hover {
-  background-color: rgb(62, 62, 62);
-}
+    .nav-search {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: margin-left .6s ease, width .6s ease;
+      width: 30%;
+      margin-left: 2vw;
+      background-color: #eeeeee;
+      border-radius: 25px;
 
-.nav-search-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: margin-left .6s ease, width .6s ease;
-  width: 30%;
-  margin-left: 2vw;
-  background-color: #eeeeee;
-  border-radius: 25px;
-}
+      .fa-search {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
 
-.nav-search-area {
-  font-family: "Uber Regular";
-  width: 90%;
-  font-size: 16px;
-}
+      input {
+        font-family: "Uber Regular";
+        width: 90%;
+        font-size: 16px;
+      }
 
-#nav-address-info {
-  font-family: "Uber Regular";
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #eeeeee;
-  padding-right: 20px;
-  margin-left: 20px;
-  border-radius: 60px;
-}
+      &.search-expanded {
+        z-index: 6;
+        margin-left: -350px;
+        width: 50%;
+      }
+    }
 
-#nav-address-info:hover {
-  background-color: lightgrey;
-}
+    .cart-button {
+      position: fixed;
+      right: 2vw;
+      height: 40px;
+      width: 100px;
+      border-radius: 20px;
+      border-style: none;
+      font-size: 16px;
+      margin-top: 3px;
+      color: white;
+      background-color: black;
 
-.search-expanded {
-  z-index: 6;
-  margin-left: -350px;
-  width: 50%;
+      .fa-shopping-cart {
+        margin-right: 10px;
+      }
+
+      &:hover {
+        background-color: rgb(62, 62, 62);
+      }
+    }
+  }
 }

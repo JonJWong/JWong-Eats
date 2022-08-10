@@ -35,17 +35,17 @@ class Pickup extends React.Component {
                           Price: {restaurants[id].price_rating}
                         </p>
 
-                        <div className="restaurant-hours">
+                        <p className="restaurant-hours">
                           {Util.timeDifferencePrompt(restaurants[id].hours)}
-                        </div>
+                        </p>
 
-                        <div className="restaurant-rating">
+                        <p className="restaurant-rating">
                           {restaurants[id].rating.toFixed(1)}
-                        </div>
+                        </p>
 
-                        <div className="restaurant-reviewcount">
+                        <p className="restaurant-reviewcount">
                           Reviews: {restaurants[id].review_count}
-                        </div>
+                        </p>
                       </div>
                     </div>
                   </Link>
