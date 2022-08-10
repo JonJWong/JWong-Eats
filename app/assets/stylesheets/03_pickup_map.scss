@@ -1,144 +1,145 @@
-#map-container {
-  position: fixed;
-  min-width: 300px;
-  top: 0px;
-  left: 830px;
-  right: 0px;
-  width: calc(100% - 830px);
-  height: 100%;
-  padding-bottom: 11px;
-  background-color: black;
-}
-
-#pickup-container {
+.pickup-container {
   position: fixed;
   top: 98px;
   bottom: 0;
   left: 0;
   right: 0;
-}
+  
+  section {
+    background-color: white;
+    position: fixed;
+    margin-top: 96px;
+    max-width: 830px;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    height: auto;
+    overflow-y: scroll;
+    z-index: 1;
 
-.infowindow-photo {
-  width: 200px;
-  height: 120px;
-}
+    h2 {
+      padding-left: 30px;
+      font-size: 30px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
 
-.infowindow-title {
-  font-size: 16px;
-}
+    ul {
+      margin-left: 30px;
+      width: 750px;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 20px;
 
-.infowindow-rating, .infowindow-price {
-  font-size: 12px;
-  padding-left: 5px;
-  padding-right: 5px
-}
+      li a {
+        .restaurant-container {
+          width: 100%;
+          height: auto;
+          padding-left: 10px;
+          padding-right: 10px;
+          padding-top: 10px;
+          padding-bottom: 5px;
 
-.infowindow-reviewcount {
-  font-size: 12px;
-}
+          &:hover {
+            background-color: #eeeeee;
+          }
 
-#pickup-restaurants {
-  background-color: white;
-  position: fixed;
-  margin-top: 96px;
-  max-width: 830px;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  height: auto;
-  overflow-y: scroll;
-  z-index: 1;
-}
+          img {
+            object-fit: cover;
+            min-width: 220px;
+            height: 200px;
+            width: 100%;
+            background-color: lightblue;
+          }
 
-#pickup-title {
-  padding-left: 30px;
-  font-size: 30px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
+          .restaurant-bottom {
+            display: grid;
+            height: 30%;
+            grid-template-columns: repeat(4 auto);
+            grid-template-rows: repeat(2 auto);
+            grid-column-gap: 10px;
 
-#pickup-restaurant-list {
-  margin-left: 30px;
-  width: 750px;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(2, 1fr);
-  margin-bottom: 20px;
-}
+            * {
+              justify-self: center;
+              align-self: center;
+            }
 
-.restaurant-container {
-  width: 100%;
-  height: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 5px;
-}
+            h5 {
+              margin-top: 5px;
+              font-size: 100%;
+              display: block;
+              width: 100%;
+              grid-area: 1 / 1 / 2 / 6;
+            }
 
-.restaurant-container:hover {
-  background-color: #eeeeee;
-}
+            .restaurant-hours, .restaurant-price, .restaurant-reviewcount {
+              font-family: "Uber Light";
+            }
 
-.restaurant-bottom {
-  display: grid;
-  height: 30%;
-  grid-template-columns: repeat(4 auto);
-  grid-template-rows: repeat(2 auto);
-  grid-column-gap: 10px;
-}
+            .restaurant-price {
+              font-size: 14px;
+              grid-area: 2 / 2 / 3 / 3;
+            }
 
-.restaurant-hours, .restaurant-name, .restaurant-price,
-.restaurant-rating, .restaurant-reviewcount {
-  justify-self: center;
-  align-self: center;
-}
+            .restaurant-hours {
+              justify-self: stretch;
+              font-size: 14px;
+              grid-area: 2 / 1 / 3 / 2;
+            }
 
-.restaurant-image {
-  object-fit: cover;
-  min-width: 220px;
-  height: 200px;
-  width: 100%;
-  background-color: lightblue;
-}
+            .restaurant-rating {
+              position: relative;
+              bottom: 20px;
+              font-size: 14px;
+              background-color: #eeeeee;
+              width: 20px;
+              padding-left: 10px;
+              padding-right: 10px;
+              padding-top: 10px;
+              padding-bottom: 10px;
+              border-radius: 20px;
+              grid-area: 2 / 5 / 3 / 6;
+            }
 
-.restaurant-name {
-  margin-top: 5px;
-  font-size: 100%;
-  display: block;
-  width: 100%;
-  grid-area: 1 / 1 / 2 / 6;
-}
+            .restaurant-reviewcount {
+              font-size: 14px;
+              grid-area: 2 / 4 / 3 / 5;
+            }
+          }
+        }
+      }
+    }
+  }
 
-.restaurant-hours, .restaurant-price, .restaurant-reviewcount {
-  font-family: "Uber Light";
-}
+  .pickup-map {
+    position: fixed;
+    min-width: 300px;
+    top: 0px;
+    left: 830px;
+    right: 0px;
+    width: calc(100% - 830px);
+    height: 100%;
+    padding-bottom: 11px;
+    background-color: black;
 
-.restaurant-hours {
-  justify-self: stretch;
-  font-size: 14px;
-  grid-area: 2 / 1 / 3 / 2;
-}
-
-.restaurant-price {
-  font-size: 14px;
-  grid-area: 2 / 2 / 3 / 3;
-}
-
-.restaurant-reviewcount {
-  font-size: 14px;
-  grid-area: 2 / 4 / 3 / 5;
-}
-
-.restaurant-rating {
-  position: relative;
-  bottom: 20px;
-  font-size: 14px;
-  background-color: #eeeeee;
-  width: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 20px;
-  grid-area: 2 / 5 / 3 / 6;
+    .iw-photo {
+      width: 200px;
+      height: 120px;
+    }
+    
+    .iw-title {
+      font-size: 16px;
+    }
+    
+    .iw-rating, .iw-price {
+      font-size: 12px;
+      padding-left: 5px;
+      padding-right: 5px
+    }
+    
+    .iw-reviewcount {
+      font-size: 12px;
+    }
+  } 
 }

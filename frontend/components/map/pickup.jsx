@@ -17,48 +17,45 @@ class Pickup extends React.Component {
     const { restaurants } = this.props;
 
     return (
-      <div id="pickup-container">
-        <div id="pickup-restaurants">
-          <div id="pickup-title">Pickup Nearby</div>
-          <div id="pickup-restaurant-list">
+      <main className="pickup-container">
+        <section>
+          <h2>Pickup Nearby</h2>
+          <ul>
             {Object.keys(restaurants).map((id) => {
               return (
-                <Link key={id} to={`/restaurants/${id}`}>
-                  <div className="restaurant-container" key={id}>
-                    <img
-                      src={restaurants[id].photoUrl}
-                      className="restaurant-image"
-                    />
+                <li key={id}>
+                  <Link to={`/restaurants/${id}`}>
+                    <div className="restaurant-container" key={id}>
+                      <img src={restaurants[id].photoUrl} />
 
-                    <div className="restaurant-bottom">
-                      <h5 className="restaurant-name">
-                        {restaurants[id].name}
-                      </h5>
+                      <div className="restaurant-bottom">
+                        <h5>{restaurants[id].name}</h5>
 
-                      <div className="restaurant-price">
-                        Price: {restaurants[id].price_rating}
-                      </div>
+                        <p className="restaurant-price">
+                          Price: {restaurants[id].price_rating}
+                        </p>
 
-                      <div className="restaurant-hours">
-                        {Util.timeDifferencePrompt(restaurants[id].hours)}
-                      </div>
+                        <div className="restaurant-hours">
+                          {Util.timeDifferencePrompt(restaurants[id].hours)}
+                        </div>
 
-                      <div className="restaurant-rating">
-                        {restaurants[id].rating.toFixed(1)}
-                      </div>
+                        <div className="restaurant-rating">
+                          {restaurants[id].rating.toFixed(1)}
+                        </div>
 
-                      <div className="restaurant-reviewcount">
-                        Reviews: {restaurants[id].review_count}
+                        <div className="restaurant-reviewcount">
+                          Reviews: {restaurants[id].review_count}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </li>
               );
             })}
-          </div>
-        </div>
+          </ul>
+        </section>
         <PickupMap />
-      </div>
+      </main>
     );
   }
 }
