@@ -32,8 +32,8 @@ class MenuItem extends React.Component {
   addToCart(quantity, item) {
     const { addCartItem, toggleItemModal } = this.props;
 
-    const left = document.querySelector("#add-left");
-    const button = document.querySelector("#food-modal-add-order");
+    const left = document.querySelector(".add-left");
+    const button = document.querySelector("#add-order");
 
     left.textContent = "Adding...";
     button.style.backgroundColor = "darkgrey";
@@ -105,7 +105,10 @@ class MenuItem extends React.Component {
               </button>
             </section>
 
-            <button onClick={() => this.conditionalAddToCart(quantity, item)}>
+            <button
+              id="add-order"
+              onClick={() => this.conditionalAddToCart(quantity, item)}
+            >
               <div className="add-left">Add {quantity} to order</div>
               <div className="add-right">
                 ${Util.priceMultiple(quantity, item.item_price)}
@@ -117,10 +120,7 @@ class MenuItem extends React.Component {
     } else {
       return (
         <div className="food-modal-content">
-          <button
-            id="food-modal-close"
-            onClick={() => this.conditionalModalClose()}
-          >
+          <button onClick={() => this.conditionalModalClose()}>
             <i className="fa-solid fa-x"></i>
           </button>
 
@@ -146,7 +146,10 @@ class MenuItem extends React.Component {
               </button>
             </section>
 
-            <button onClick={() => this.conditionalAddToCart(quantity, item)}>
+            <button
+              id="add-order"
+              onClick={() => this.conditionalAddToCart(quantity, item)}
+            >
               <div className="add-left">Add {quantity} to order</div>
               <div className="add-right">
                 ${Util.priceMultiple(quantity, item.item_price)}
