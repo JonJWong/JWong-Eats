@@ -32,7 +32,7 @@ class MenuItem extends React.Component {
   addToCart(quantity, item) {
     const { addCartItem, toggleItemModal } = this.props;
 
-    const left = document.querySelector("#food-modal-add-left");
+    const left = document.querySelector("#add-left");
     const button = document.querySelector("#food-modal-add-order");
 
     left.textContent = "Adding...";
@@ -77,62 +77,46 @@ class MenuItem extends React.Component {
     const { quantity } = this.state;
     if (item.photoUrl) {
       return (
-        <div id="food-modal-content">
-          <button
-            id="food-modal-close"
-            onClick={() => this.conditionalModalClose()}
-          >
+        <div className="food-modal-content">
+          <button onClick={() => this.conditionalModalClose()}>
             <i className="fa-solid fa-x"></i>
           </button>
 
-          <div id="food-modal-item">
-            <img
-              src={item.photoUrl}
-              alt={`${item.item_name} image`}
-              id="food-modal-image"
-            />
-            <div id="food-modal-name">{item.item_name}</div>
-            <div id="food-modal-description">{item.description}</div>
-            <div id="food-modal-addon">Add-On support coming soon!</div>
-            <div id="food-modal-calorie-warning">
+          <div className="food-modal-item">
+            <img src={item.photoUrl} alt={`${item.item_name} image`} />
+            <h3>{item.item_name}</h3>
+            <p>{item.description}</p>
+            <h4>Add-On support coming soon!</h4>
+            <footer>
               2,000 calories a day is used for general nutrition advice, but
               calorie needs vary. Additional nutrition information available
               upon request.
-            </div>
+            </footer>
           </div>
 
-          <div id="food-modal-controls">
-            <div id="food-modal-quant-control">
-              <button
-                onClick={() => this.decrement()}
-                className="food-modal-control-button"
-              >
+          <footer>
+            <section>
+              <button onClick={() => this.decrement()}>
                 <i className="fas fa-minus"></i>
               </button>
-              <div id="food-modal-quantity">{quantity}</div>
-              <button
-                onClick={() => this.increment()}
-                className="food-modal-control-button"
-              >
+              <p>{quantity}</p>
+              <button onClick={() => this.increment()}>
                 <i className="fas fa-plus"></i>
               </button>
-            </div>
+            </section>
 
-            <button
-              id="food-modal-add-order"
-              onClick={() => this.conditionalAddToCart(quantity, item)}
-            >
-              <div id="food-modal-add-left">Add {quantity} to order</div>
-              <div id="food-modal-add-right">
+            <button onClick={() => this.conditionalAddToCart(quantity, item)}>
+              <div className="add-left">Add {quantity} to order</div>
+              <div className="add-right">
                 ${Util.priceMultiple(quantity, item.item_price)}
               </div>
             </button>
-          </div>
+          </footer>
         </div>
       );
     } else {
       return (
-        <div id="food-modal-content">
+        <div className="food-modal-content">
           <button
             id="food-modal-close"
             onClick={() => this.conditionalModalClose()}
@@ -140,44 +124,35 @@ class MenuItem extends React.Component {
             <i className="fa-solid fa-x"></i>
           </button>
 
-          <div id="food-modal-item">
-            <div id="food-modal-name-nophoto">{item.item_name}</div>
-            <div id="food-modal-description">{item.description}</div>
-            <div id="food-modal-addon">Add-On support coming soon!</div>
-            <div id="food-modal-calorie-warning">
+          <div className="food-modal-item">
+            <h2>{item.item_name}</h2>
+            <p>{item.description}</p>
+            <h4>Add-On support coming soon!</h4>
+            <footer>
               2,000 calories a day is used for general nutrition advice, but
               calorie needs vary. Additional nutrition information available
               upon request.
-            </div>
+            </footer>
           </div>
 
-          <div id="food-modal-controls">
-            <div id="food-modal-quant-control">
-              <button
-                onClick={() => this.decrement()}
-                className="food-modal-control-button"
-              >
+          <footer>
+            <section>
+              <button onClick={() => this.decrement()}>
                 <i className="fas fa-minus"></i>
               </button>
-              <div id="food-modal-quantity">{quantity}</div>
-              <button
-                onClick={() => this.increment()}
-                className="food-modal-control-button"
-              >
+              <p>{quantity}</p>
+              <button onClick={() => this.increment()}>
                 <i className="fas fa-plus"></i>
               </button>
-            </div>
+            </section>
 
-            <button
-              id="food-modal-add-order"
-              onClick={() => this.conditionalAddToCart(quantity, item)}
-            >
-              <div id="food-modal-add-left">Add {quantity} to order</div>
-              <div id="food-modal-add-right">
-                ${Util.priceMultiple(quantity, item.item_price).toFixed(2)}
+            <button onClick={() => this.conditionalAddToCart(quantity, item)}>
+              <div className="add-left">Add {quantity} to order</div>
+              <div className="add-right">
+                ${Util.priceMultiple(quantity, item.item_price)}
               </div>
             </button>
-          </div>
+          </footer>
         </div>
       );
     }
@@ -187,13 +162,13 @@ class MenuItem extends React.Component {
     const { item } = this.props;
 
     return (
-      <div id="food-modal-container">
+      <section className="food-modal">
         <div
-          id="food-modal-block"
+          className="food-modal-block"
           onClick={() => this.conditionalModalClose()}
-        ></div>
+        />
         {this.renderItem(item)}
-      </div>
+      </section>
     );
   }
 }
