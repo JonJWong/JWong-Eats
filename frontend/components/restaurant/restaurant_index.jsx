@@ -74,52 +74,34 @@ class RestaurantIndex extends React.Component {
   renderMenuItem(item, id) {
     if (item.photoUrl) {
       return (
-        <div
-          className="menu-item-container"
-          key={id}
-          onClick={() => this.toggleItemModal(item)}
-        >
-          <button
-            className="menu-open-item"
-            onClick={() => this.toggleItemModal(item)}
-          >
+        <li key={id} onClick={() => this.toggleItemModal(item)}>
+          <button onClick={() => this.toggleItemModal(item)}>
             {this.openButtonContents(id)}
           </button>
 
-          <div className="menu-item-info">
+          <section>
             <div className="menu-item-photo-wrapper">
-              <img src={item.photoUrl} className="menu-item-photo"></img>
+              <img src={item.photoUrl}></img>
             </div>
-            <div className="menu-item-name">{item.item_name}</div>
-            <div className="menu-item-price">
-              ${parseFloat(item.item_price).toFixed(2)}
-            </div>
-            <div className="menu-item-description">{item.description}</div>
-          </div>
-        </div>
+            <h3>{item.item_name}</h3>
+            <span>${parseFloat(item.item_price).toFixed(2)}</span>
+            <article>{item.description}</article>
+          </section>
+        </li>
       );
     } else {
       return (
-        <div
-          className="menu-item-container"
-          key={id}
-          onClick={() => this.toggleItemModal(item)}
-        >
-          <button
-            className="menu-open-item"
-            onClick={() => this.toggleItemModal(item)}
-          >
+        <li key={id} onClick={() => this.toggleItemModal(item)}>
+          <button onClick={() => this.toggleItemModal(item)}>
             {this.openButtonContents(id)}
           </button>
 
-          <div className="menu-item-info">
-            <div className="menu-item-name">{item.item_name}</div>
-            <div className="menu-item-price">
-              ${parseFloat(item.item_price).toFixed(2)}
-            </div>
-            <div className="menu-item-description">{item.description}</div>
-          </div>
-        </div>
+          <section>
+            <h3>{item.item_name}</h3>
+            <span>${parseFloat(item.item_price).toFixed(2)}</span>
+            <article>{item.description}</article>
+          </section>
+        </li>
       );
     }
   }
@@ -158,30 +140,26 @@ class RestaurantIndex extends React.Component {
     const timePrompt = Util.timeDifferencePrompt(restaurant.hours);
 
     return (
-      <div id="restaurant-page-container">
-        <div id="restaurant-banner-wrapper">
-          <img src={restaurant.photoUrl} id="restaurant-banner" />
-        </div>
+      <div className="restaurant">
+        <img src={restaurant.photoUrl} />
 
-        <div id="restaurant-info">
-          <div id="restaurant-page-name">{restaurant.name}</div>
-          <div id="restaurant-small">
-            <div id="restaurant-small-info">
-              {this.renderDescription(restaurant.description)}
-            </div>
+        <section>
+          <h2>{restaurant.name}</h2>
+          <p>
+            <p>{this.renderDescription(restaurant.description)}</p>
             <i className="fas fa-star"></i> {restaurant.rating.toFixed(1)} (
             {restaurant.review_count} Ratings) • {restaurant.price_rating} •{" "}
             {timePrompt}
-          </div>
-        </div>
+          </p>
+        </section>
 
-        <div id="menu-items-wrapper">
-          <div id="menu-items-list">
+        <div className="menu-items-wrapper">
+          <ul>
             {Object.keys(menu).map((id) => {
               const item = menu[id];
               return this.renderMenuItem(item, id);
             })}
-          </div>
+          </ul>
         </div>
 
         {this.renderItemModal()}
