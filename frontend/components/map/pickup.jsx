@@ -17,7 +17,7 @@ class Pickup extends React.Component {
     const { restaurants } = this.props;
 
     return (
-      <main className="pickup-container">
+      <div className="pickup-container">
         <section>
           <h2>Pickup Nearby</h2>
           <ul>
@@ -55,7 +55,7 @@ class Pickup extends React.Component {
           </ul>
         </section>
         <PickupMap />
-      </main>
+      </div>
     );
   }
 }

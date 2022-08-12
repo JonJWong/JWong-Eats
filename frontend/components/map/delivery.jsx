@@ -239,7 +239,7 @@ class Delivery extends React.Component {
     }
 
     return (
-      <main className="delivery-container">
+      <div className="delivery-container">
         {this.renderFilterMenu()}
 
         <AdCarousel restaurants={this.state.restaurants} />
@@ -252,7 +252,7 @@ class Delivery extends React.Component {
         {this.renderSortButtons()}
 
         {this.renderList()}
-      </main>
+      </div>
     );
   }
 }
