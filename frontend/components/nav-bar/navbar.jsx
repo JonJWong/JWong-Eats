@@ -124,7 +124,7 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <nav>
+      <nav className="main-nav">
         <div>
           <section className="nav-left">
             <button
