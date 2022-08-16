@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-class LoginForm extends React.Component{
+class LoginForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,13 +13,13 @@ class LoginForm extends React.Component{
 
   // Form handler methods
   handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.login(user)
+    this.props.login(user);
   }
 
   update(field) {
-    return e => this.setState({ [field]: e.currentTarget.value })
+    return (e) => this.setState({ [field]: e.currentTarget.value });
   }
 
   // Error display helper
@@ -28,13 +28,11 @@ class LoginForm extends React.Component{
     if (!errors) return null;
     return (
       <ul className="auth-errors">
-        {errors.map((error,idx) => (
-          <li key={idx}>
-            {error}
-          </li>
+        {errors.map((error, idx) => (
+          <li key={idx}>{error}</li>
         ))}
       </ul>
-    )
+    );
   }
 
   // Add a listener (on mount) that clears errors when component unmounts
@@ -51,61 +49,60 @@ class LoginForm extends React.Component{
 
   render() {
     const { formType, login } = this.props;
-    const signup = (formType === 'signup');
+    const signup = formType === "signup";
 
-    return(
-      <div id="login-form-container">
-        <div id="login-top-bar">
+    return (
+      <div className="session-form login">
+        <div className="session-top">
           <div className="eats-logo-white" />
         </div>
 
-        <div id="login-form-contents">
+        <section>
           {this.renderErrors()}
 
           <form onSubmit={this.handleSubmit}>
-            <h1 className="login-prompt">Email</h1>
-            <input 
-              type="text" 
+            <h1 className="session-prompt">Email</h1>
+            <input
+              type="text"
               onChange={this.update("email")}
               value={this.state.email}
-              className="login-input-field"
               placeholder="Enter email"
             />
 
-            <h1 className="login-prompt">Password</h1>
-            <input 
-              type="password" 
+            <h1 className="session-prompt">Password</h1>
+            <input
+              type="password"
               onChange={this.update("password")}
               value={this.state.password}
-              className="login-input-field"
               placeholder="Enter password"
             />
 
-            <button type="submit" id="login-login-button">
+            <button type="submit" className="session-button">
               Login <i className="fas fa-arrow-right fa-lg"></i>
             </button>
           </form>
 
-          <p className="login-text">Don't have an account with us?</p>
+          <p className="session-text">Don't have an account with us?</p>
 
           <button
-            onClick={()=>login({
-              email: 'demo_user@email.com',
-              password: 'password'
-            })}
-            id="login-demo-button">
-              <i className="fas fa-save fa-lg"></i> Demo Login
+            onClick={() =>
+              login({
+                email: "demo_user@email.com",
+                password: "password",
+              })
+            }
+            className="session-button demo-button"
+          >
+            <i className="fas fa-save fa-lg"></i> Demo Login
           </button>
 
-          <Link
-            to={signup ? "/login" : "/signup"}
-            id="login-signup-button">
-              <i className="fas fa-sign-in"></i>
-              {signup ? "Log in" : "Sign up"}
+          <Link to={signup ? "/login" : "/signup"} className="session-button">
+            <i className="fas fa-sign-in"></i>
+            {signup ? "Log in" : "Sign up"}
           </Link>
-        </div>
+        </section>
       </div>
-    )
+    );
   }
 }
 
