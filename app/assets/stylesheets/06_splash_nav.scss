@@ -1,203 +1,199 @@
-#splash {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-#splash-hamburger {
-  border-style: none;
-  background-color: rgba(0, 0, 0, 0);
-  height: auto;
-  margin-right: 20px;
-  cursor: pointer
-}
-
-#splash-eats-logo {
-  content: image_url('JWongEats.png');
-  height: 48px;
-  margin-right: 2vw;
-  width: auto;
-}
-
-#splash-nav-bar {
+.splash-nav {
   height: 48px;
   display: block;
   padding-top: 24px;
   padding-bottom: 24px;
   padding-right: 40px;
   padding-left: 40px;
+
+  > section {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+
+    div {
+      &.left {
+        display: flex;
+  
+        button {
+          border-style: none;
+          background-color: rgba(0, 0, 0, 0);
+          height: auto;
+          margin-right: 20px;
+          cursor: pointer
+        }
+        
+        div.splash-logo {
+          content: image_url('JWongEats.png');
+          height: 48px;
+          margin-right: 2vw;
+          width: auto;
+        }
+      }
+
+      a {
+        font-family: "Uber Regular";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 24px;
+        width: 90px;
+        text-align: center;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        border-radius: 24px;
+        border-style: none;
+        font-size: 16px;
+        color: white;
+        background-color: #000000;
+
+        &:hover {
+          background-color: rgb(62, 62, 62);
+        }
+      }
+    }
+  }
 }
 
-#splash-nav-contents {
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
-}
+.splash {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-#splash-left {
-  display: flex;
-}
+  > section {
+    margin-top: 35vh;
+    margin-left: 40px;
 
-#splash-nav-login {
-  font-family: "Uber Regular";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 24px;
-  width: 90px;
-  text-align: center;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  border-radius: 24px;
-  border-style: none;
-  font-size: 16px;
-  color: white;
-  background-color: #000000;
-}
+    h1 {
+      font-family: "Uber Regular";
+      font-size: 55px;
+      margin-bottom: 30px;
+    }
 
-#splash-nav-login:hover {
-  background-color: rgb(62, 62, 62);
-}
+    .fake-bar {
+      display: flex;
 
-#splash-body {
-  margin-top: 35vh;
-  margin-left: 40px;
-}
+      p {
+        font-family: "Uber Regular";
+        width: 30%;
+        background-color: white;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 20px;
+        margin-bottom: 25px;
 
-#splash-title {
-  font-family: "Uber Regular";
-  font-size: 55px;
-  margin-bottom: 30px;
-}
+        .fa-map-marker-alt {
+          margin-right: 15px;
+          margin-left: 15px;
+        }
+      }
 
-#splash-fake-bar {
-  display: flex;
-}
+      span {
+        font-family: "Uber Regular";
+        display: flex;
+        margin-left: 10px;
+        background-color: white;
+        height: 20px;
+        padding-left: 15px;
+        padding-right: 20px;
+        padding-top: 15px;
+        padding-bottom: 15px;
 
-#splash-prefill-search {
-  font-family: "Uber Regular";
-  width: 30%;
-  background-color: white;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  font-size: 20px;
-  margin-bottom: 25px;
-}
+        .fa-clock {
+          padding-top: 3px;
+          margin-right: 20px;
+        }
 
-#splash-deliver {
-  font-family: "Uber Regular";
-  display: flex;
-  margin-left: 10px;
-  background-color: white;
-  height: 20px;
-  padding-left: 15px;
-  padding-right: 20px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
+        div {
+          font-size: 16px;
+          padding-top: 3px;
+        }
 
-#splash-deliver-text {
-  font-size: 16px;
-  padding-top: 3px;
-}
+        .fa-angle-down {
+          margin-left: 15px;
+          padding-top: 3px;
+        }
+      }
 
-.fa-map-marker-alt {
-  margin-right: 15px;
-  margin-left: 15px;
-}
+      button {
+        font-family: "Uber Regular";
+        background-color: black;
+        color: white;
+        height: 20px;
+        font-size: 16px;
+        padding-top: 15px;
+        padding-bottom: 35px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: 15px;
+      }
+    }
 
-.fa-clock {
-  padding-top: 3px;
-  margin-right: 20px;
-}
+    .splash-prompt {
+      font-family: "Uber Regular";
 
-.fa-angle-down {
-  margin-left: 15px;
-  padding-top: 3px;
-}
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
 
-#splash-signin-prompt {
-  font-family: "Uber Regular";
-}
+  > article {
+    display: flex;
+    position: absolute;
+    right: 150px;
+    top: 35px;
+    width: 100px;
+    justify-content: space-between;
 
-#splash-find-food {
-  font-family: "Uber Regular";
-  background-color: black;
-  color: white;
-  height: 20px;
-  font-size: 16px;
-  padding-top: 15px;
-  padding-bottom: 35px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: 15px;
-}
+    .splash-fill {
+      &.github {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        transition: background-color .4s ease-in-out;
+      }
+  
+      &.linkedin {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        transition: background-color .4s ease-in-out;
+      }
+  
+      &.angel {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        transition: background-color .4s ease-in-out;
+      }
 
-#splash-bottom-signin {
-  text-decoration: underline;
-}
+      &:hover {
+        background-color: rgb(93, 183, 252);
+      }
 
-#credits {
-  position: absolute;
-  padding-left: 30px;
-  padding-right: 30px;
-  text-align: center;
-  bottom: 25px;
-  font-size: 12px;
-  font-family: "Uber Light";
-}
+      .splash-logo {
+        height: 100%;
+        width: 100%;
 
-#splash-github-logo, #splash-linkedin-logo, #splash-angellist-logo {
-  height: 100%;
-  width: 100%;
-}
+        &.angel-logo {
+          object-fit: contain;
+        }
+      }
+    }
+  }
 
-#splash-github-fill {
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  transition: background-color .4s ease-in-out;
-}
-
-#splash-github-fill:hover, #splash-linkedin-fill:hover, #splash-angel-fill:hover {
-  background-color: rgb(93, 183, 252);
-}
-
-#splash-angel-fill {
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  transition: background-color .4s ease-in-out;
-}
-
-#splash-linkedin-fill {
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  transition: background-color .4s ease-in-out;
-}
-
-#splash-angellist-logo {
-  object-fit: contain;
-}
-
-#splash-myinfo-container {
-  display: flex;
-  position: absolute;
-  right: 150px;
-  top: 35px;
-  width: 100px;
-  justify-content: space-between;
-}
-
-#splash-myinfo-title {
-  font-size: 20px;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  padding-right: 10px;
+  > footer {
+    position: absolute;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+    bottom: 25px;
+    font-size: 12px;
+    font-family: "Uber Light";
+  }
 }
