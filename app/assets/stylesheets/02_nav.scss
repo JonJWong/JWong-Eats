@@ -83,9 +83,14 @@ nav.main-nav {
       align-items: center;
       justify-content: center;
       background-color: #eeeeee;
-      padding-right: 20px;
+      padding: 0px 20px;
       margin-left: 20px;
       border-radius: 60px;
+
+      .fa-map-marker-alt {
+        margin-right: 5px;
+        margin-left: 5px;
+      }
 
       &:hover {
         background-color: lightgrey;
