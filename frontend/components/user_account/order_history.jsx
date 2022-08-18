@@ -45,12 +45,8 @@ class OrderHistory extends React.Component {
     if (restaurant.photoUrl) {
       return (
         <Link to={`/restaurants/${restaurant.id}`}>
-          <div className="history-order-photo-wrapper">
-            <img
-              src={restaurant.photoUrl}
-              alt={`${restaurant.name}-photo`}
-              className="history-order-photo"
-            />
+          <div>
+            <img src={restaurant.photoUrl} alt={`${restaurant.name}-photo`} />
           </div>
         </Link>
       );
@@ -75,62 +71,57 @@ class OrderHistory extends React.Component {
       const { restName } = this.state;
 
       return (
-        <div id="receipt-modal-container">
-          <div id="receipt-modal-contents">
-            <div id="receipt-modal-header">
-              <button
-                id="receipt-modal-close"
-                onClick={() => this.toggleReceipt()}
-              >
+        <section>
+          <article>
+            <header>
+              <button onClick={() => this.toggleReceipt()}>
                 <i className="fa-solid fa-x fa-lg"></i>
               </button>
-              <div id="receipt-modal-title">Receipt from:</div>
-              <div id="receipt-modal-restname">{restName}</div>
-            </div>
+              <h3>Receipt from:</h3>
+              <p>{restName}</p>
+            </header>
 
-            <div id="receipt-modal-price-row">
-              <div>Total</div>
-              <div>$ {parseFloat(total).toFixed(2)}</div>
-            </div>
+            <section>
+              <p>Total</p>
+              <p>$ {parseFloat(total).toFixed(2)}</p>
+            </section>
 
-            <div id="receipt-item-wrapper">
+            <ul>
               {Object.values(items).map((item) => {
                 return (
-                  <div className="receipt-item-container" key={Math.random()}>
-                    <div className="receipt-item-quantity">
-                      {item.item_quantity}
-                    </div>
-                    <div className="receipt-item-name">{item.item_name}</div>
+                  <li key={Math.random()}>
+                    <p>{item.item_quantity}</p>
+                    <h3>{item.item_name}</h3>
                     <div className="receipt-item-subtitle">
                       {this.props.restaurants[item.restaurant_id].name}
                     </div>
                     <div className="receipt-item-price">
                       $ {parseFloat(item.item_price).toFixed(2)}
                     </div>
-                  </div>
+                  </li>
                 );
               })}
+            </ul>
+
+            <div className="receipt-payment">
+              <p className="receipt-total">Subtotal:</p>
+              <p id="receipt-price">$ {parseFloat(total).toFixed(2)}</p>
             </div>
 
-            <div id="receipt-payment-container">
-              <div id="receipt-bottom-total">Subtotal:</div>
-              <div id="receipt-payment-price">
-                $ {parseFloat(total).toFixed(2)}
-              </div>
+            <div className="receipt-footer">
+              Thank you for shopping JWongEats!
             </div>
 
-            <div id="receipt-footer">Thank you for shopping JWongEats!</div>
-
-            <div id="receipt-payment-subtitle">
+            <footer>
               No temporary holds were placed on any payment methods. This site
               does not take any forms of payment.
-            </div>
-          </div>
+            </footer>
+          </article>
           <div
-            id="receipt-modal-block"
+            className="receipt-modal-block"
             onClick={() => this.toggleReceipt()}
-          ></div>
-        </div>
+          />
+        </section>
       );
     }
   }
@@ -160,52 +151,44 @@ class OrderHistory extends React.Component {
 
         return (
           // Randomly assigned keys, refactor evenutally
-          <div className="history-order-container" key={Math.random() * total}>
+          <li key={Math.random() * total}>
             {this.ifPhoto(restaurant)}
-            <div className="history-order-title-container">
-              <div className="history-order-title">{restName}</div>
-              <div className="history-order-subtitle">
+            <header>
+              <h2>{restName}</h2>
+              <p>
                 {items.length} Items for $ {parseFloat(total).toFixed(2)} •{" "}
                 {this.formattedDate(currentTransaction)} •
                 <button
                   onClick={() =>
                     this.toggleReceipt(currentTransaction, restName)
                   }
-                  className="history-view-receipt"
                 >
                   View Receipt
                 </button>
-              </div>
-            </div>
+              </p>
+            </header>
 
-            <div className="history-item-list">
+            <ul>
               {items.map((item) => {
                 const currRest = restaurants[item.restaurant_id].name;
                 return (
-                  <div
-                    className="history-item-wrapper"
-                    key={Math.random() * total}
-                  >
-                    <div className="history-item-quantity">
-                      {item.item_quantity}
-                    </div>
-                    <div className="history-item-title">
+                  <li key={Math.random() * total}>
+                    <p>{item.item_quantity}</p>
+                    <h3>
                       {item.item_name}
-                      <div className="history-rest-name">- {currRest}</div>
-                    </div>
-                  </div>
+                      <span>- {currRest}</span>
+                    </h3>
+                  </li>
                 );
               })}
-            </div>
+            </ul>
 
-            <Link to={`/restaurants/${first}`} className="history-store-button">
-              <div className="history-store-button-text">View Store</div>
-            </Link>
-          </div>
+            <Link to={`/restaurants/${first}`}>View Store</Link>
+          </li>
         );
       });
     } else {
-      return <h3 id="no-orders">You do not have any past orders.</h3>;
+      return <li className="no-orders">You do not have any past orders.</li>;
     }
   }
 
@@ -230,8 +213,8 @@ class OrderHistory extends React.Component {
 
     return (
       <div className="history-body">
-        <h2 className="history-header">Past Orders</h2>
-        <div className="history-container">{this.renderOrders()}</div>
+        <h2>Past Orders</h2>
+        <ul>{this.renderOrders()}</ul>
         {this.renderReceipt()}
       </div>
     );
