@@ -19,7 +19,7 @@
     top: 98px;
   }
 
-  > ul {
+  > ul.order-list {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -108,7 +108,7 @@
         }
       }
 
-      > a {
+      .store-link {
         background-color: black;
         height: 50px;
         display: flex;
@@ -121,7 +121,7 @@
       }
     }
 
-    h3.no-orders {
+    li.no-orders {
       font-size: 26px;
       padding-left: 50px;
     }

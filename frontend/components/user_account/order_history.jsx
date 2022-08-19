@@ -183,7 +183,9 @@ class OrderHistory extends React.Component {
               })}
             </ul>
 
-            <Link to={`/restaurants/${first}`}>View Store</Link>
+            <Link to={`/restaurants/${first}`} className="store-link">
+              View Store
+            </Link>
           </li>
         );
       });
@@ -214,7 +216,7 @@ class OrderHistory extends React.Component {
     return (
       <div className="history-body">
         <h2>Past Orders</h2>
-        <ul>{this.renderOrders()}</ul>
+        <ul className="order-list">{this.renderOrders()}</ul>
         {this.renderReceipt()}
       </div>
     );
