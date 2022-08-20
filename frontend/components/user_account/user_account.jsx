@@ -25,7 +25,7 @@ class UserAccount extends React.Component {
             <span className="profile-photo" />
             <button
               onClick={() => this.setState({ toggled: false })}
-              id="profile-cancel"
+              className="profile-cancel"
             >
               Cancel
             </button>
