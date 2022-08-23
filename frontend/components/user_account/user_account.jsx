@@ -22,10 +22,10 @@ class UserAccount extends React.Component {
       return (
         <div>
           <div className="user-info">
-            <span className="profile-photo" />
+            <span />
             <button
+              className="cancel-button"
               onClick={() => this.setState({ toggled: false })}
-              className="profile-cancel"
             >
               Cancel
             </button>
@@ -37,12 +37,12 @@ class UserAccount extends React.Component {
       return (
         <div>
           <div className="user-info">
-            <span className="profile-photo"></span>
-            <span className="profile-name">
+            <span />
+            <p>
               {currentUser.first_name} {currentUser.last_name}
-            </span>
+            </p>
             <button
-              id="profile-edit-button"
+              className="profile-edit-button"
               onClick={() => this.setState({ toggled: true })}
             >
               Edit Account

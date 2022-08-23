@@ -33,24 +33,26 @@
         }
       }
 
-      a {
-        font-family: "Uber Regular";
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 24px;
-        width: 90px;
-        text-align: center;
-        padding-top: 12px;
-        padding-bottom: 12px;
-        border-radius: 24px;
-        border-style: none;
-        font-size: 16px;
-        color: white;
-        background-color: #000000;
-
-        &:hover {
-          background-color: rgb(62, 62, 62);
+      &.right {
+        a {
+          font-family: "Uber Regular";
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 24px;
+          width: 90px;
+          text-align: center;
+          padding-top: 12px;
+          padding-bottom: 12px;
+          border-radius: 24px;
+          border-style: none;
+          font-size: 16px;
+          color: white;
+          background-color: #000000;
+  
+          &:hover {
+            background-color: rgb(62, 62, 62);
+          }
         }
       }
     }

@@ -47,68 +47,67 @@ class UserModal extends React.Component {
 
     if (currentUser && !open) {
       return (
-        <div id="user-modal">
-          <div className="modal-contents">
-            <div className="user-info">
+        <div className="user-modal">
+          <section className="modal-contents">
+            <header className="user-info">
               <span className="profile-photo" />
-              <span className="profile-name">{currentUser.first_name}</span>
+              <p>{currentUser.first_name}</p>
 
               <button
                 onClick={() => this.toggleTab()}
-                id={open ? "close-account-button" : "view-account-button"}
+                className={open ? "close-button" : "view-button"}
               >
                 {open ? "Close" : "View Account"}
               </button>
-            </div>
+            </header>
 
-            <Link to={`/orderhistory/${currentUser.id}`} id="orders-link">
-              <div
-                className="orders-link-container"
-                onClick={() => this.closeAndRemove()}
-              >
+            <Link to={`/orderhistory/${currentUser.id}`}>
+              <div onClick={() => this.closeAndRemove()}>
                 <i className="fas fa-receipt"></i> Orders
               </div>
             </Link>
 
-            <div id="modal-signout-container">
-              <button onClick={() => logout()} id="modal-signout">
-                Sign Out
-              </button>
-            </div>
-          </div>
+            <footer>
+              <button onClick={() => logout()}>Sign Out</button>
+            </footer>
+          </section>
 
-          <div id="user-modal-block" onClick={() => this.closeAndRemove()} />
+          <div
+            className="user-modal-block"
+            onClick={() => this.closeAndRemove()}
+          />
         </div>
       );
     } else if (currentUser && open) {
       return (
-        <div id="user-modal">
-          <div className="modal-contents">
+        <div className="user-modal">
+          <section className="modal-contents">
             {this.state.tabOpen && <UserAccountContainer />}
 
             <button
               onClick={() => this.toggleTab()}
-              id={open ? "close-account-button" : "view-account-button"}
+              className={open ? "close-button" : "view-button"}
             >
               {open ? "Close" : "View Account"}
             </button>
 
-            <div id="modal-signout-container">
-              <button onClick={() => logout()} id="modal-signout">
-                Sign Out
-              </button>
-            </div>
-          </div>
+            <footer>
+              <button onClick={() => logout()}>Sign Out</button>
+            </footer>
+          </section>
 
-          <div id="user-modal-block" onClick={() => this.closeAndRemove()} />
+          <div
+            className="user-modal-block"
+            onClick={() => this.closeAndRemove()}
+          />
         </div>
       );
     } else {
       return (
-        <div id="splash-user-modal">
+        <div className="splash-user-modal">
           <div className="modal-contents">
-            <Link to="/login">
-              <div id="splash-modal-login">Sign In</div>
+            <Link className="splash-link" to="/login">
+              Sign In
             </Link>
 
             <button
@@ -118,13 +117,16 @@ class UserModal extends React.Component {
                   password: "password",
                 })
               }
-              id="splash-modal-demo"
+              className="splash-link"
             >
               Demo Login
             </button>
           </div>
 
-          <div id="user-modal-block" onClick={() => this.closeAndRemove()} />
+          <div
+            className="user-modal-block"
+            onClick={() => this.closeAndRemove()}
+          />
         </div>
       );
     }
