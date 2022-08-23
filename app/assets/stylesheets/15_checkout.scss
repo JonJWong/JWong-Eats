@@ -51,6 +51,7 @@
           font-size: 18px;
           grid-area: 1 / 2 / 2 / 3;
           justify-self: start;
+          text-align: left;
         }
 
         h3 {
@@ -70,7 +71,7 @@
       }
     }
 
-    h2 {
+    > h2 {
       font-size: 24px;
       padding-bottom: 20px;
       text-align: center;
