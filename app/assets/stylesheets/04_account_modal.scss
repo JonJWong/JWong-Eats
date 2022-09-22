@@ -1,15 +1,15 @@
 .user-info {
   display: grid;
-  width: 100%;
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(2, auto);
+  width: 100%;
   
   span {
-    grid-area: 1 / 1 / 3 / 2;
-    content: image_url('silhouette.png');
-    width: 50px;
     border-radius: 50%;
+    content: image_url('silhouette.png');
+    grid-area: 1 / 1 / 3 / 2;
     height: auto;
+    width: 50px;
   }
 
   p {
@@ -19,13 +19,12 @@
   }
 
   .cancel-button {
-    font-size: 20px;
     background-color: #eeeeee;
-    width: 100px;
-    margin-left: 40px;
-    padding-top: 10px;
-    padding-bottom: 10px;
     border-radius: 25px;
+    font-size: 20px;
+    margin-left: 40px;
+    padding: 10px 0px;
+    width: 100px;
   }
 
   .profile-edit-button {
@@ -45,38 +44,37 @@
 
 .user-modal {
   section {
-    position: fixed;
-    top: 0;
+    background: rgb(255, 255, 255);
     bottom: 0;
     left: 0;
-    right: auto;
-    width: 200px;
-    background: rgb(255, 255, 255);
-    z-index: 3;
     padding: 2%;
-    transition: transform .4s ease .1s;
+    position: fixed;
+    right: auto;
+    top: 0;
     transform: translate(-100%, 0%);
+    transition: transform .4s ease .1s;
+    width: 200px;
     z-index: 10;
 
     header {
       .view-button {
+        color: #048848;
         font-family: "Uber Regular";
         font-size: 16px;
-        color: #048848;
         grid-area: 2 / 2 / 3 / 3;
         justify-self: center;
       }
       
       .close-button {
-        font-size: 16px;
         color: #000000;
+        font-size: 16px;
         margin-top: 0px;
       }      
     }
 
     a {
-      font-size: 18px;
       font-family: "Uber Regular";
+      font-size: 18px;
       margin-top: 0;
       position: relative;
       top: 4%;
@@ -87,27 +85,26 @@
     }
 
     footer {
-      width: 100%;
       border-bottom: 2px #eeeeee solid;
       padding-bottom: 20px;
+      width: 100%;
 
       button {
-        margin-top: 80%;
-        font-size: 18px;
         color: rgb(107, 107, 107);
+        font-size: 18px;
+        margin-top: 80%;
       }
     }
   }
 }
 
 .user-modal-block {
-  position: fixed;
-  top: 0;
+  background: rgb(0, 0, 0);
   bottom: 0;
   left: 0;
-  right: 0;
-  z-index: 2;
   opacity: .8;
-  background: rgb(0, 0, 0);
+  position: fixed;
+  right: 0;
+  top: 0;
   z-index: 9;
 }

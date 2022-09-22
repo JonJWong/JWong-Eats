@@ -1,35 +1,35 @@
 .splash-user-modal {
   .modal-contents {
-    position: fixed;
-    top: 0;
+    background: rgb(255, 255, 255);
     bottom: 0;
     left: 0;
-    right: auto;
-    width: 200px;
-    background: rgb(255, 255, 255);
-    z-index: 10;
     padding: 2%;
+    position: fixed;
+    right: auto;
+    top: 0;
     transition: transform .4s ease .1s;
     transform: translate(-100%, 0%);
+    width: 200px;
+    z-index: 10;
 
     &.modal-open {
       transform: translate(0%, 0%);
     }
 
     a {
-      display: flex;
       align-items: center;
+      display: flex;
       justify-content: center;
       margin-bottom: 20px;
     }
 
     .splash-link {
-      font-family: "Uber Regular";
-      font-size: 16px;
-      width: 200px;
-      height: 50px;
       background-color: black;
       color: white;
+      font-family: "Uber Regular";
+      font-size: 16px;
+      height: 50px;
+      width: 200px;
     }
   }
 }

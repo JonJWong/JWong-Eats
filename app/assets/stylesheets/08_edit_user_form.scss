@@ -8,19 +8,17 @@
     }
 
     input {
-      margin-top: 5px;
-      margin-bottom: 5px;
       background-color: #eeeeee;
       font-size: 16px;
+      margin: 5px 0px;
       width: 200px;
     }
 
     input[type=submit] {
       color: #048848;
-      font-size: 20px;
-      margin-left: 20px;
       cursor: pointer;
-      margin-top: 15px;
+      font-size: 20px;
+      margin: 15px 0px 0px 20px;
     }
   }
 }
