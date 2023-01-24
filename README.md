@@ -5,7 +5,7 @@ UberEats</a> inspired Full-Stack single-page website, where you can browse and o
 
 <img src="https://github.com/JonJWong/JWong-Eats/blob/main/app/assets/images/readme-main.png"></img>
 
-<a href="https://jwong-eats.herokuapp.com/#/splash" target="_blank" rel="noopener noreferrer">Live Link</a>
+<a href="https://jwongeats.herokuapp.com/#/splash" target="_blank" rel="noopener noreferrer">Live Link</a>
 
 
 <h2 id="table-of-contents">Table of Contents</h2>
