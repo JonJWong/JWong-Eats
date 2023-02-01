@@ -12,7 +12,7 @@
 
     <script src="https://kit.fontawesome.com/bec3e432dc.js" crossorigin="anonymous"></script>
     <%= favicon_link_tag asset_path('favicon.ico') %>
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['MAPS_API_KEY']}&libraries=places" %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['MAPS_API_KEY']}&callback=Function.prototype&libraries=places" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
