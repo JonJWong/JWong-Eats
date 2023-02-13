@@ -142,7 +142,7 @@ class AdCarousel extends React.Component {
 
       // Add the transition class so that the carousel turns smoothly,
       // and then move it over to the right.
-      // I don't know why this needs a setTimeout to work, but it's working.
+      // setTimeout needed because this needs to execute last.
       setTimeout(() => {
         carousel.classList.add('carousel-container-transition');
         carousel.style.transform = 'translateX(0%)';
