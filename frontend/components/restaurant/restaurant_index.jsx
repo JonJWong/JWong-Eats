@@ -4,11 +4,11 @@ import MenuItemContainer from "./menu_item_container";
 
 class RestaurantIndex extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       loading: true,
-      itemOpen: false
-    }
+      itemOpen: false,
+    };
 
     this.openButtonContents = this.openButtonContents.bind(this);
     this.renderMenuItem = this.renderMenuItem.bind(this);
@@ -18,12 +18,13 @@ class RestaurantIndex extends React.Component {
 
   // Get restaurant, and knock loading screen off after mount and fetch
   componentDidMount() {
-    const id = this.props.match.params.restaurantId
-    this.props.fetchRestaurant(id)
-      .then(action => this.setState({
-          loading: false,
-          restaurant: action.restaurant
-        }))
+    const id = this.props.match.params.restaurantId;
+    this.props.fetchRestaurant(id).then((action) =>
+      this.setState({
+        loading: false,
+        restaurant: action.restaurant,
+      })
+    );
   }
 
   // Fetch restaurant if url changes on refresh
@@ -32,24 +33,27 @@ class RestaurantIndex extends React.Component {
     const id = restaurant.id;
 
     if (this.props.location.pathname !== prevProps.location.pathname) {
-      fetchRestaurant(id).then(action => {
-        this.setState({ restaurant: action.restaurant })
-      })
+      fetchRestaurant(id).then((action) => {
+        this.setState({ restaurant: action.restaurant });
+      });
     }
   }
 
   // Change state to render modal
   toggleItemModal(item) {
     const newValue = !this.state.itemOpen;
-    this.setState({ itemOpen: newValue, clickedItem: item })
+    this.setState({ itemOpen: newValue, clickedItem: item });
   }
 
   // Uf state is open, render modal
   renderItemModal() {
     if (this.state.itemOpen) {
-      return <MenuItemContainer
-        item={this.state.clickedItem}
-        toggleItemModal={this.toggleItemModal} />
+      return (
+        <MenuItemContainer
+          item={this.state.clickedItem}
+          toggleItemModal={this.toggleItemModal}
+        />
+      );
     }
   }
 
@@ -58,9 +62,9 @@ class RestaurantIndex extends React.Component {
     const { cart } = this.props;
     if (cart) {
       if (Object.keys(cart).includes(id)) {
-        return `${cart[id].quantity}`
+        return `${cart[id].quantity}`;
       } else {
-      return (<i className="fa-solid fa-plus"></i>)
+        return <i className="fa-solid fa-plus"></i>;
       }
     }
   }
@@ -70,14 +74,16 @@ class RestaurantIndex extends React.Component {
   renderMenuItem(item, id) {
     if (item.photoUrl) {
       return (
-        <div className="menu-item-container"
+        <div
+          className="menu-item-container"
           key={id}
-          onClick={() => this.toggleItemModal(item)}>
-
-          <button 
+          onClick={() => this.toggleItemModal(item)}
+        >
+          <button
             className="menu-open-item"
-            onClick={() => this.toggleItemModal(item)}>
-              {this.openButtonContents(id)}
+            onClick={() => this.toggleItemModal(item)}
+          >
+            {this.openButtonContents(id)}
           </button>
 
           <div className="menu-item-info">
@@ -91,42 +97,44 @@ class RestaurantIndex extends React.Component {
             <div className="menu-item-description">{item.description}</div>
           </div>
         </div>
-      )
+      );
     } else {
       return (
-      <div className="menu-item-container"
-        key={id}
-        onClick={() => this.toggleItemModal(item)}>
-
-          <button 
+        <div
+          className="menu-item-container"
+          key={id}
+          onClick={() => this.toggleItemModal(item)}
+        >
+          <button
             className="menu-open-item"
-            onClick={() => this.toggleItemModal(item)}>
-              {this.openButtonContents(id)}
+            onClick={() => this.toggleItemModal(item)}
+          >
+            {this.openButtonContents(id)}
           </button>
 
-        <div className="menu-item-info">
-          <div className="menu-item-name">{item.item_name}</div>
-          <div className="menu-item-price">
-            ${parseFloat(item.item_price).toFixed(2)}
+          <div className="menu-item-info">
+            <div className="menu-item-name">{item.item_name}</div>
+            <div className="menu-item-price">
+              ${parseFloat(item.item_price).toFixed(2)}
+            </div>
+            <div className="menu-item-description">{item.description}</div>
           </div>
-          <div className="menu-item-description">{item.description}</div>
         </div>
-      </div>
-      )
+      );
     }
   }
 
   // Helper to adjust restaurant description to not have hyphens for display.
   renderDescription(description) {
     let words = description.split(" ");
-    words = words.map(word => {
+    words = words.map((word) => {
       let split = word.split("-");
       if (split.length > 1) {
-        return split.join(" ")
+        return split.join(" ");
       } else {
-        return word
+        return word;
       }
-    })
+    });
     return words.join(", ");
   }
 
@@ -138,16 +146,16 @@ class RestaurantIndex extends React.Component {
         <div className="loading-screen-bg">
           <div className="loading-element"></div>
         </div>
-      )
+      );
     }
     // Deconstruct props and take restaurant object
     const restaurant = this.state.restaurant;
     // Set document title to restaurant info
-    document.title = `Order ${restaurant.name} (${restaurant.address})`
+    document.title = `Order ${restaurant.name} (${restaurant.address})`;
 
     // Set variables to clean syntax below
     const menu = restaurant.menu;
-    const timePrompt = Util.timeDifferencePrompt(restaurant.hours)
+    const timePrompt = Util.timeDifferencePrompt(restaurant.hours);
 
     return (
       <div id="restaurant-page-container">
@@ -161,23 +169,24 @@ class RestaurantIndex extends React.Component {
             <div id="restaurant-small-info">
               {this.renderDescription(restaurant.description)}
             </div>
-            <i className="fas fa-star"></i> {Util.addZero(restaurant.rating)} ({restaurant.review_count} Ratings) • {restaurant.price_rating} • {timePrompt}
+            <i className="fas fa-star"></i> {restaurant.rating.toFixed(1)} (
+            {restaurant.review_count} Ratings) • {restaurant.price_rating} •{" "}
+            {timePrompt}
           </div>
         </div>
 
         <div id="menu-items-wrapper">
           <div id="menu-items-list">
-            {Object.keys(menu).map(id => {
+            {Object.keys(menu).map((id) => {
               const item = menu[id];
-              return (
-                this.renderMenuItem(item, id)
-              )})}
+              return this.renderMenuItem(item, id);
+            })}
           </div>
         </div>
 
         {this.renderItemModal()}
       </div>
-    )
+    );
   }
 }
 

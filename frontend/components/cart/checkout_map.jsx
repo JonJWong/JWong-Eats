@@ -7,8 +7,8 @@ const LIGHT_CIRCLE = {
   fillColor: "#FFFFFF",
   strokeColor: "#FFFFFF",
   fillOpacity: 1.0,
-  strokeWeight: 0.4
-}
+  strokeWeight: 0.4,
+};
 
 // Dark circle marker params
 const DARK_CIRCLE = {
@@ -17,10 +17,10 @@ const DARK_CIRCLE = {
   fillColor: "#000000",
   strokeColor: "#000000",
   fillOpacity: 1.0,
-  strokeWeight: 0.4
-}
+  strokeWeight: 0.4,
+};
 
-const CENTER = { lat: 40.6962131, lng: -74.302344 } // Union, NJ
+const CENTER = { lat: 40.6962131, lng: -74.302344 }; // Union, NJ
 
 // Map options for controls
 const MAP_OPTIONS = {
@@ -36,81 +36,81 @@ const MAP_OPTIONS = {
   maxZoom: 17,
   restriction: {
     latLngBounds: {
-      north: CENTER.lat + .03,
-      south: CENTER.lat - .03,
-      east: CENTER.lng + .07,
-      west: CENTER.lng - .07
-    }
-  }
+      north: CENTER.lat + 0.03,
+      south: CENTER.lat - 0.03,
+      east: CENTER.lng + 0.07,
+      west: CENTER.lng - 0.07,
+    },
+  },
 };
 
 // Maps query params
 const REQUEST = {
   location: MAP_OPTIONS.center,
   radius: 5000, // meters
-  type: ['restaurant']
-}
+  type: ["restaurant"],
+};
 
 // Styles constant for night mode and hiding default POIs
 const STYLES = {
   default: [
     {
       featureType: "administrative",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "administrative.land_parcel",
       elementType: "labels",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi",
       elementType: "labels.text",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.business",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.business",
       elementType: "geometry",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.government",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.medical",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.park",
       elementType: "labels.text",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.place_of_worship",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.school",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.sports_complex",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "road.local",
       elementType: "labels",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "transit",
-      stylers: [{visibility: "off"}]
-    }
+      stylers: [{ visibility: "off" }],
+    },
   ],
   dark: [
     { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
@@ -193,67 +193,67 @@ const STYLES = {
     },
     {
       featureType: "administrative",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "administrative.land_parcel",
       elementType: "labels",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi",
       elementType: "labels.text",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.business",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.business",
       elementType: "geometry",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.government",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.medical",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.park",
       elementType: "labels.text",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.place_of_worship",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.school",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.sports_complex",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "road.local",
       elementType: "labels",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "transit",
-      stylers: [{visibility: "off"}]
-    }
+      stylers: [{ visibility: "off" }],
+    },
   ],
   hiding: [
     {
       featureType: "administrative",
       elementType: "labels",
-      stylers: [{ visibility: "off" }]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.business",
@@ -281,9 +281,9 @@ class CheckoutMap extends React.Component {
     const hour = new Date().getHours();
     let styles;
     if (hour < 7 || hour > 17) {
-      styles = STYLES["dark"]
+      styles = STYLES["dark"];
     } else {
-      styles = STYLES["default"]
+      styles = STYLES["default"];
     }
     // apply styles by time of day
     this.map.setOptions({ styles: styles });
@@ -291,9 +291,11 @@ class CheckoutMap extends React.Component {
 
   render() {
     return (
-      <div ref={map => this.mapNode = map } id="checkout-map-container">
-      </div>
-    )
+      <div
+        ref={(map) => (this.mapNode = map)}
+        className="checkout-map-container"
+      ></div>
+    );
   }
 }
 

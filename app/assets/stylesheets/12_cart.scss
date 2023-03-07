@@ -1,204 +1,208 @@
-#cart-modal {
+aside.cart-modal {
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
   z-index: 6;
-}
 
-#cart-modal-block {
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 6;
-  background-color: rgba(80, 80, 80, .8);
-}
+  .cart-modal-block {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 6;
+    background-color: rgba(80, 80, 80, .8);
+  }
 
-.cart-modal-content {
-  overflow-y: scroll;
-  position: fixed;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  left: 72%;
-  padding-top: 20px;
-  padding-left: 20px;
-  background-color: white;
-  z-index: 9;
-  transition: transform .4s ease .1s;
-  transform: translate(100%, 0%);
-}
+  .cart-modal-content::-webkit-scrollbar {
+    display: none;
+  }
 
-.cart-modal-content::-webkit-scrollbar {
-  display: none;
-}
+  .cart-modal-content {
+    overflow-y: scroll;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 72%;
+    padding-top: 20px;
+    padding-left: 20px;
+    background-color: white;
+    z-index: 9;
+    transition: transform .4s ease .1s;
+    transform: translate(100%, 0%);
 
-#cart-close {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  width: 40px;
-  border-radius: 20px;
-}
+    &.cart-modal-open {
+      transform: translate(0%, 0%);
+    }
 
-#cart-header {
-  display: block;
-  padding-top: 10px;
-}
+    .cart-close {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      width: 40px;
+      border-radius: 20px;
+    }
+    
+    header {
+      display: block;
+      padding-top: 10px;
 
-#cart-title {
-  font-family: "Uber Regular";
-  font-size: 46px;
-  padding-bottom: 10px;
-}
+      h2 {
+        font-family: "Uber Regular";
+        font-size: 46px;
+        padding-bottom: 10px;
+      }
 
-#cart-address {
-  font-family: "Uber Light";
-  font-size: 16px;
-  padding-bottom: 10px;
-}
+      h3 {
+        font-family: "Uber Light";
+        font-size: 16px;
+        padding-bottom: 10px;
+      }
 
-#cart-top-buttons {
-  height: 40px;
-  padding-top: 10px;
-  padding-bottom: 15px;
-}
+      div {
+        height: 40px;
+        padding-top: 10px;
+        padding-bottom: 15px;
 
-#cart-add-items, #cart-group-order {
-  position: relative;
-  height: 100%;
-  margin-left: 5px;
-  margin-right: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 20px;
-  background-color: #eeeeee;
-}
+        button {
+          position: relative;
+          height: 100%;
+          margin-left: 5px;
+          margin-right: 5px;
+          padding-left: 10px;
+          padding-right: 10px;
+          border-radius: 20px;
+          background-color: #eeeeee;
+        }
 
-#cart-add-items:hover, #cart-group-order:hover {
-  background-color: rgb(218, 218, 218);
-}
+        button:hover {
+          background-color: rgb(218, 218, 218);
+        }
+      }
+    }
 
-#cart-items {
-  width: 95%;
-  height: auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  padding-bottom: 20px;
-}
+    p {
+      font-family: "Uber Light";
+      font-size: 14px;
+    }
 
-.menu-checkout-wrapper {
-  transition: transform .4s ease .1s;
-  transform: translate(100%, 0%);
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 72%;
-  right: 0;
-  width: 28%;
-  display: block;
-  z-index: 9; 
-}
+    ul {
+      width: 95%;
+      height: auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      padding-bottom: 20px;
 
-.cart-modal-open {
-  transform: translate(0%, 0%);
-}
+      li {
+        width: 100%;
+        min-height: 100px;
+        max-height: 200px;
+        display: grid;
+        grid-template-columns: 1fr 4fr 2fr;
+        grid-template-rows: .5fr 1fr;
+        padding-bottom: 15px;
 
-#menu-checkout-container {
-  box-shadow: 0px 0px 10px 10px rgba(117, 117, 117, 0.1);
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-self: flex-end;
-  height: 100px;
-  position: relative;
-  top: auto;
-  bottom: 0px;
-  width: 100%;
-}
+        select {
+          background-color: #eeeeee;
+          border-radius: 20px;
+          height: 40px;
+          width: 45px;
+          text-align: center;
+          border-style: none;
+          grid-area: 1 / 1 / 3 / 2;
+        }
 
-#menu-checkout {
-  font-family: "Uber Regular";
-  align-self: center;
-  color: white;
-  height: 60px;
-  background-color: black;
-  font-size: 18px;
-  text-align: center;
-  margin: 0 auto;
-  width: 90%;
-}
+        h3 {
+          grid-area: 1 / 2 / 2 / 3;
+          height: 40px;
+          width: 100%;
+          justify-self: start;
+          align-self: start;
+        }
 
-#menu-checkout:hover {
-  background-color: rgb(80, 80, 80);
-}
+        p {
+          font-family: "Uber Light";
+          height: auto;
+          justify-self: start;
+          align-self: start;
+          grid-area: 2 / 2 / 3 / 3;
+        }
 
-.cart-error {
-  font-family: "Uber Light";
-  font-size: 14px;
-}
+        img {
+          min-height: 100px;
+          max-height: 110px;
+          min-width: 100px;
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          justify-self: right;
+          background-color: aqua;
+          grid-area: 1 / 3 / 3 / 4;
+        }
+      }
+      
+      ul {
+        position: relative;
+        padding-bottom: 140px;
+      }
+    }
+    
+    .cart-clear {
+      width: 100%;
+      color: red;
+      text-align: center;
+      font-size: 16px;
+      height: 25px;
+    }
+  }
 
-.cart-item-container {
-  width: 100%;
-  min-height: 100px;
-  max-height: 200px;
-  display: grid;
-  grid-template-columns: 1fr 4fr 2fr;
-  grid-template-rows: .5fr 1fr;
-  padding-bottom: 15px;
-}
+  .menu-checkout-wrapper {
+    transition: transform .4s ease .1s;
+    transform: translate(100%, 0%);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 72%;
+    right: 0;
+    width: 28%;
+    display: block;
+    z-index: 9;
 
-.item-quant-dropdown {
-  background-color: #eeeeee;
-  border-radius: 20px;
-  height: 40px;
-  width: 45px;
-  text-align: center;
-  border-style: none;
-  grid-area: 1 / 1 / 3 / 2;
-}
+    &.cart-modal-open {
+      transform: translate(0%, 0%);
+    }
 
-.cart-item-name {
-  grid-area: 1 / 2 / 2 / 3;
-  height: 40px;
-  width: 100%;
-  justify-self: start;
-  align-self: start;
-}
+    div {
+      box-shadow: 0px 0px 10px 10px rgba(117, 117, 117, 0.1);
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-self: flex-end;
+      height: 100px;
+      position: relative;
+      top: auto;
+      bottom: 0px;
+      width: 100%;
 
-.cart-item-price {
-  font-family: "Uber Light";
-  height: auto;
-  justify-self: start;
-  align-self: start;
-  grid-area: 2 / 2 / 3 / 3;
-}
+      button {
+        font-family: "Uber Regular";
+        align-self: center;
+        color: white;
+        height: 60px;
+        background-color: black;
+        font-size: 18px;
+        text-align: center;
+        margin: 0 auto;
+        width: 90%;
+      }
 
-.cart-item-photo {
-  min-height: 100px;
-  max-height: 110px;
-  min-width: 100px;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  justify-self: right;
-  background-color: aqua;
-  grid-area: 1 / 3 / 3 / 4;
-}
-
-#cart-clear {
-  width: 100%;
-  color: red;
-  text-align: center;
-  font-size: 16px;
-  height: 25px;
-}
-
-.cart-errors {
-  position: relative;
-  padding-bottom: 140px;
+      button:hover {
+        background-color: rgb(80, 80, 80);
+      }
+    }
+  }
 }
