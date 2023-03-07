@@ -198,7 +198,7 @@
   background-color: lightgray;
 }
 
-#carousel-container-outer {
+.carousel-container-outer {
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
@@ -208,123 +208,120 @@
   padding-right: 5%;
   align-items: center;
   overflow: hidden;
-}
 
-#carousel-container {
-  position: relative;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  height: 100%;
-  width: 100%;
-}
+  button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+    background-color: #eeeeee;
+    padding: 10px;
+    display: block;
+    border-radius: 20px;
+  }
 
-.carousel-container-transition {
-  transition: transform 0.7s ease-in-out;
-}
+  button:hover {
+    background-color: lightgray;
+  }
 
-.carousel-item, .carousel-inner {
-  height: 130px;
-  width: calc(33.33% - 39px);
-  border-radius: 30px;
-  justify-content: center;
-  align-items: center;
-  vertical-align: center;
-  text-align: center;
-  flex-shrink: 0;
-  color: black;
-  cursor: pointer;
-}
+  .blocker {
+    position: absolute;
+    z-index: 1;
+    height: 200px;
+    background-color: white;
 
-.carousel-item {
-  margin: 0px 12px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
+    &.right {
+      left: 92%;
+      right: 0;
+    }
 
-.carousel-inner {
-  background-size: cover;
-  background-position: (0%, 0%);
-  padding-top: 5px;
-  padding-bottom: 65px;
-  width: 100%;
-  height: 100%;
-}
+    &.left {
+      right: 92%;
+      left: 0;
+    }
+  }
 
-.carousel-inner-contents {
-  background-color: white;
-  width: 80%;
-  margin: 0 auto;
-  border-radius: 40px;
-}
+  section.carousel-container {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
 
-.carousel-slide-title {
-  font-size: 20px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
+    &:nth-child(2) {
+      background-color: white;
+    }
 
-.carousel-slide-desc {
-  font-size: 14px;
-  font-family: "Uber Light";
-  padding-bottom: 5px;
-  width: 80%;
-  margin: 0 auto;
-}
+    &.sliding {
+      transition: transform 0.7s ease-in-out;
+    }
 
-#carousel-right, #carousel-left {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  z-index: 2;
-  background-color: #eeeeee;
-  padding: 10px;
-  display: block;
-  border-radius: 20px;
-}
+    .carousel-item, .carousel-inner {
+      height: 130px;
+      width: calc(33.33% - 39px);
+      border-radius: 30px;
+      justify-content: center;
+      align-items: center;
+      vertical-align: center;
+      text-align: center;
+      flex-shrink: 0;
+      color: black;
+      cursor: pointer;
 
-#carousel-left-blocker, #carousel-right-blocker {
-  position: absolute;
-  z-index: 1;
-  height: 200px;
-  background-color: white;
-}
+      section {
+        background-color: white;
+        width: 80%;
+        margin: 0 auto;
+        border-radius: 40px;
 
-#carousel-right-blocker {
-  left: 92%;
-  right: 0;
-}
+        h3 {
+          font-size: 20px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
 
-#carousel-left-blocker {
-  right: 92%;
-  left: 0;
-}
+        p {
+          font-size: 14px;
+          font-family: "Uber Light";
+          padding-bottom: 5px;
+          width: 80%;
+          margin: 0 auto;
+        }
+      }
+    }
 
-#carousel-right:hover, #carousel-left:hover {
-  background-color: lightgray;
-}
+    .carousel-item {
+      margin: 0px 12px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    
+    .carousel-inner {
+      background-size: cover;
+      background-position: (0%, 0%);
+      padding-top: 5px;
+      padding-bottom: 65px;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      background-repeat: no-repeat;
 
-.carousel-inner {
-  background-color: black;
-  background-repeat: no-repeat;
-}
+      &.github-ad, &.rilakkuma {
+        background-size: 30%;
+        background-position: center;
+      }
 
-#carousel-container:nth-child(2) {
-  background-color: white;
-}
+      &.github-ad {
+        background-color: #eeeeee;
+      }
 
-.carousel-github-ad, .carousel-rilakkuma {
-  background-size: 30%;
-  background-position: center;
-}
-
-.carousel-github-ad {
-  background-color: #eeeeee;
-}
-
-.carousel-rilakkuma {
-  background-color: yellow;
-  background-position-y: 50px;
+      &.rilakkuma {
+        background-color: yellow;
+        background-position-y: 50px;
+      }
+    }
+  }
 }
