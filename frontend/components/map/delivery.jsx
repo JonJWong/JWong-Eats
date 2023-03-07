@@ -55,13 +55,7 @@ class Delivery extends React.Component {
   // if restaurants with no banner images are added.
   ifImage(restaurant) {
     if (restaurant.photoUrl) {
-      return (
-        <img
-          src={restaurant.photoUrl}
-          id="delivery-restaurant-image"
-          alt={`${restaurant.name} image`}
-        />
-      );
+      return <img src={restaurant.photoUrl} alt={`${restaurant.name} image`} />;
     } else {
       return <div className="image-filler"></div>;
     }
@@ -70,7 +64,7 @@ class Delivery extends React.Component {
   // Methods for top category-bar
   filter(category) {
     const { fetchRestaurants } = this.props;
-    const topBar = document.querySelector("#delivery-top-picks");
+    const topBar = document.querySelector(".top-picks");
 
     if (category) {
       topBar.textContent = category;
@@ -89,48 +83,38 @@ class Delivery extends React.Component {
   // render their icons with images attached.
   renderFilterMenu() {
     return (
-      <div id="delivery-categories">
+      <ul className="delivery-categories">
         {Object.keys(ALL_CATEGORIES).map((category) => {
           let filterName = category.split(" ").join("-");
           if (category === "default") {
             return (
-              <button
-                className="delivery-filter-button"
-                onClick={() => this.filter()}
-                key={"default"}
-              >
-                <div className="delivery-filter-icon-wrapper">
+              <li onClick={() => this.filter()} key={"default"}>
+                <div>
                   <img
                     src={ALL_CATEGORIES[category]}
-                    className="delivery-filter-icon"
                     alt={`${category}-icon`}
                   />
                 </div>
 
-                <div className="delivery-filter-text">All Restaurants</div>
-              </button>
+                <p>All Restaurants</p>
+              </li>
             );
           } else {
             return (
-              <button
-                className="delivery-filter-button"
-                onClick={() => this.filter(filterName)}
-                key={filterName}
-              >
-                <div className="delivery-filter-icon-wrapper">
+              <li onClick={() => this.filter(filterName)} key={filterName}>
+                <div>
                   <img
                     src={ALL_CATEGORIES[category]}
-                    className="delivery-filter-icon"
                     alt={`${category}-icon`}
                   />
                 </div>
 
-                <div className="delivery-filter-text">{category}</div>
-              </button>
+                <p>{category}</p>
+              </li>
             );
           }
         })}
-      </div>
+      </ul>
     );
   }
 
@@ -155,7 +139,7 @@ class Delivery extends React.Component {
 
   // Helper to adjust class and set state for current sorting
   togglePriceRange(option, e) {
-    e.currentTarget.classList.toggle("delivery-sort-button-selected");
+    e.currentTarget.classList.toggle("sort-button-selected");
     const newState = this.state;
     if (
       !newState.priceRange.some((ele) => ele === option) &&
@@ -173,16 +157,15 @@ class Delivery extends React.Component {
   // Helper to render the price buttons
   renderSortButtons() {
     return (
-      <div id="delivery-left">
-        <div id="delivery-sort-wrapper">
-          <div className="delivery-left-header">Price Range</div>
+      <aside className="left-sort">
+        <section className="sticky">
+          <h2>Price Range</h2>
           <div className="sort-button-wrapper">
             {SORT_OPTIONS.map((option) => {
               if (option === "None") {
                 return (
                   <button
                     key={option}
-                    className="delivery-sort-button"
                     onClick={(e) => this.togglePriceRange(option, e)}
                   >
                     <div className="sort-option-text">None</div>
@@ -192,7 +175,6 @@ class Delivery extends React.Component {
                 return (
                   <button
                     key={option}
-                    className="delivery-sort-button"
                     onClick={(e) => this.togglePriceRange(option, e)}
                   >
                     <div className="sort-option-text">{option}</div>
@@ -201,8 +183,8 @@ class Delivery extends React.Component {
               }
             })}
           </div>
-        </div>
-      </div>
+        </section>
+      </aside>
     );
   }
 
@@ -215,25 +197,25 @@ class Delivery extends React.Component {
     }
 
     return (
-      <div id="delivery-restaurant-list">
+      <section className="delivery-restaurant-list">
         {Object.keys(restaurants).map((id) => {
           return (
             <Link key={id} to={`/restaurants/${id}`}>
-              <div id="delivery-restaurant-container">
+              <div>
                 {this.ifImage(restaurants[id])}
 
-                <div id="delivery-restaurant-bottom">
-                  <h5 id="delivery-restaurant-name">{restaurants[id].name}</h5>
+                <div className="deliv-bottom">
+                  <h5>{restaurants[id].name}</h5>
 
-                  <div id="delivery-restaurant-price">
+                  <div className="deliv-price">
                     Price: {restaurants[id].price_rating}
                   </div>
 
-                  <div id="delivery-restaurant-hours">
+                  <div className="deliv-hours">
                     {Util.timeDifferencePrompt(restaurants[id].hours)}
                   </div>
 
-                  <div id="delivery-restaurant-rating">
+                  <div className="deliv-rating">
                     {restaurants[id].rating.toFixed(1)}
                   </div>
                 </div>
@@ -241,7 +223,7 @@ class Delivery extends React.Component {
             </Link>
           );
         })}
-      </div>
+      </section>
     );
   }
 
@@ -257,20 +239,20 @@ class Delivery extends React.Component {
     }
 
     return (
-      <div id="delivery-container">
+      <main className="delivery-container">
         {this.renderFilterMenu()}
 
         <AdCarousel restaurants={this.state.restaurants} />
 
-        <div id="delivery-topbar">
-          <div id="delivery-stores">All stores</div>
-          <h1 id="delivery-top-picks">Top picks for you</h1>
-        </div>
+        <header>
+          <h1>All stores</h1>
+          <h2 className="top-picks">Top picks for you</h2>
+        </header>
 
         {this.renderSortButtons()}
 
         {this.renderList()}
-      </div>
+      </main>
     );
   }
 }
