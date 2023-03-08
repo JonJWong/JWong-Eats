@@ -39,7 +39,7 @@ class Checkout extends React.Component {
       : `${restaurant.name} and others...`;
 
     return (
-      <main className="checkout-order-container">
+      <div className="checkout-order-container">
         <section>
           <header>Your Order from {restName}</header>
 
@@ -67,7 +67,7 @@ class Checkout extends React.Component {
           </footer>
         </section>
         <CheckoutMap />
-      </main>
+      </div>
     );
   }
 }

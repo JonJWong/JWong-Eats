@@ -1,4 +1,4 @@
-#food-modal-container {
+.food-modal {
   overflow-x: hidden;
   position: fixed;
   top: 0;
@@ -6,152 +6,157 @@
   left: 0;
   right: 0;
   z-index: 6;
-}
 
-#food-modal-block {
-  background-color: rgba(80, 80, 80, .8);
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 7;
-}
+  .food-modal-block {
+    background-color: rgba(80, 80, 80, .8);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 7;
+  }
 
-#food-modal-content {
-  position: fixed;
-  top: 10%;
-  bottom: 10%;
-  right: 30%;
-  left: 30%;
-  background-color: white;
-  z-index: 8;
-  overflow-y: scroll;
-}
+  .food-modal-content {
+    position: fixed;
+    top: 10%;
+    bottom: 10%;
+    right: 30%;
+    left: 30%;
+    background-color: white;
+    z-index: 8;
+    overflow-y: scroll;
 
-#food-modal-image {
-  width: 100%;
-  max-height: 450px;
-  height: 70%;
-  object-fit: cover;
-}
+    > button {
+      background-color: white;
+      padding: 10px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 30px;
+      vertical-align: middle;
+      position: relative;
+      left: 10px;
+      bottom: auto;
+      right: auto;
+      top: 10px;
+    }
 
-#food-modal-name {
-  font-size: 30px;
-  padding-bottom: 15px;
-  padding-left: 20px;
-  padding-top: 20px;
-}
+    .food-modal-item {
+      img {
+        width: 100%;
+        max-height: 450px;
+        height: 70%;
+        object-fit: cover;
+      }
 
-#food-modal-name-nophoto {
-  font-size: 30px;
-  padding-top: 20px;
-  padding-bottom: 15px;
-  padding-left: 20px;
-}
+      h2 {
+        font-size: 30px;
+        padding-top: 20px;
+        padding-bottom: 15px;
+        padding-left: 20px;
+      }
 
-#food-modal-description {
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 40px;
-  font-family: "Uber Light";
-  font-size: 16px;
-}
+      h3 {
+        font-size: 30px;
+        padding-bottom: 15px;
+        padding-left: 20px;
+        padding-top: 20px;
+      }
 
-#food-modal-addon {
-  padding-left: 20px;
-  padding-bottom: 20px;
-}
+      p {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 40px;
+        font-family: "Uber Light";
+        font-size: 16px;
+      }
 
-#food-modal-calorie-warning {
-  font-family: "Uber Light";
-  font-size: 14px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
-  border-bottom: #eeeeee 2px solid;
-}
+      h4 {
+        padding-left: 20px;
+        padding-bottom: 20px;
+      }
 
-#food-modal-quant-control {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+      footer {
+        font-family: "Uber Light";
+        font-size: 14px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        border-bottom: #eeeeee 2px solid;
+      }
+    }
 
-#food-modal-controls {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 40px;
-}
+    footer {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 40px;
 
-.food-modal-control-button {
-  background-color: #eeeeee;
-  width: 36px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-radius: 30px;
-  height: 35px;
-}
+      section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        button {
+          background-color: #eeeeee;
+          width: 36px;
+          padding-left: 5px;
+          padding-right: 5px;
+          border-radius: 30px;
+          height: 35px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
 
-.food-modal-control-button:hover {
-  background-color: lightgray;
-}
+          &:hover {
+            background-color: lightgray;
+          }
 
-.food-modal-control-button:active {
-  background-color: gray;
-}
+          &:active {
+            background-color: gray;
+          }
+        }
+  
+        p {
+          width: 20px;
+          padding-left: 5px;
+          padding-right: 5px;
+          font-size: 16px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
 
-#food-modal-quantity {
-  width: 20px;
-  padding-left: 5px;
-  padding-right: 5px;
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+      button {
+        justify-self: end;
+        background-color: black;
+        color: white;
+        max-width: 85%;
+        min-width: 40%;
+        height: 100%;
+        width: 75%;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
 
-#food-modal-add-order {
-  justify-self: end;
-  background-color: black;
-  color: white;
-  max-width: 85%;
-  min-width: 40%;
-  height: 100%;
-  width: 75%;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-}
-
-#food-modal-add-left {
-  font-size: 18px;
-  justify-self: right;
-  align-self: center;
-}
-
-#food-modal-add-right {
-  justify-self: right;
-  align-self: center;
-  font-size: 18px;
-}
-
-#food-modal-close {
-  background-color: white;
-  padding: 10px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 30px;
-  vertical-align: middle;
-  position: relative;
-  left: 10px;
-  bottom: auto;
-  right: auto;
-  top: 10px;
+        .add-left {
+          font-size: 18px;
+          justify-self: right;
+          align-self: center;
+        }
+        
+        .add-right {
+          justify-self: right;
+          align-self: center;
+          font-size: 18px;
+        }
+      }
+    }
+  }
 }

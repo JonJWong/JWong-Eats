@@ -8,8 +8,8 @@ const LIGHT_CIRCLE = {
   fillColor: "#FFFFFF",
   strokeColor: "#FFFFFF",
   fillOpacity: 1.0,
-  strokeWeight: 0.4
-}
+  strokeWeight: 0.4,
+};
 
 // Dark circle marker params
 const DARK_CIRCLE = {
@@ -18,10 +18,10 @@ const DARK_CIRCLE = {
   fillColor: "#000000",
   strokeColor: "#000000",
   fillOpacity: 1.0,
-  strokeWeight: 0.4
-}
+  strokeWeight: 0.4,
+};
 
-const CENTER = { lat: 40.6962131, lng: -74.302344 } // Union, NJ
+const CENTER = { lat: 40.6962131, lng: -74.302344 }; // Union, NJ
 
 // Map options for controls
 const MAP_OPTIONS = {
@@ -36,81 +36,81 @@ const MAP_OPTIONS = {
   maxZoom: 17,
   restriction: {
     latLngBounds: {
-      north: CENTER.lat + .03,
-      south: CENTER.lat - .03,
-      east: CENTER.lng + .07,
-      west: CENTER.lng - .07
-    }
-  }
+      north: CENTER.lat + 0.03,
+      south: CENTER.lat - 0.03,
+      east: CENTER.lng + 0.07,
+      west: CENTER.lng - 0.07,
+    },
+  },
 };
 
 // Maps query params
 const REQUEST = {
   location: MAP_OPTIONS.center,
   radius: 5000, // meters
-  type: ['restaurant']
-}
+  type: ["restaurant"],
+};
 
 // Styles constant for night mode and hiding default POIs
 const STYLES = {
   default: [
     {
       featureType: "administrative",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "administrative.land_parcel",
       elementType: "labels",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi",
       elementType: "labels.text",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.business",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.business",
       elementType: "geometry",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.government",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.medical",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.park",
       elementType: "labels.text",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.place_of_worship",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.school",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.sports_complex",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "road.local",
       elementType: "labels",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "transit",
-      stylers: [{visibility: "off"}]
-    }
+      stylers: [{ visibility: "off" }],
+    },
   ],
   dark: [
     { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
@@ -193,67 +193,67 @@ const STYLES = {
     },
     {
       featureType: "administrative",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "administrative.land_parcel",
       elementType: "labels",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi",
       elementType: "labels.text",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.business",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.business",
       elementType: "geometry",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.government",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.medical",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.park",
       elementType: "labels.text",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.place_of_worship",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.school",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.sports_complex",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "road.local",
       elementType: "labels",
-      stylers: [{visibility: "off"}]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "transit",
-      stylers: [{visibility: "off"}]
-    }
+      stylers: [{ visibility: "off" }],
+    },
   ],
   hiding: [
     {
       featureType: "administrative",
       elementType: "labels",
-      stylers: [{ visibility: "off" }]
+      stylers: [{ visibility: "off" }],
     },
     {
       featureType: "poi.business",
@@ -267,8 +267,8 @@ const STYLES = {
   ],
 };
 
-class PickupMap extends React.Component{
-  constructor(props){
+class PickupMap extends React.Component {
+  constructor(props) {
     super(props);
     this.createMarker = this.createMarker.bind(this);
     this.mapCallback = this.mapCallback.bind(this);
@@ -289,37 +289,33 @@ class PickupMap extends React.Component{
       position: place.geometry.location,
       title: place.name,
       label: {
-        text :`${place.rating}`,
-        color: "black"
+        text: `${place.rating}`,
+        color: "black",
       },
-      icon: LIGHT_CIRCLE
-    })
+      icon: LIGHT_CIRCLE,
+    });
 
     // Add markers to component attributes
     this.markers.push(marker);
 
     // Sets marker content
-    const infoWindowContent = 
-    `<div class="marker-content">` +
-
+    const infoWindowContent =
+      `<div class="marker-content">` +
       `<img src="${place.photos[0].getUrl()}"
-        alt="restaurant-photo" class="infowindow-photo"></img>` +
-
-      `<h3 class="infowindow-title">${place.name}</h3>` +
-
-      `<span class="infowindow-rating">Rating: ${place.rating}</span>` +
-      `<span class="infowindow-reviewcount">
+        alt="restaurant-photo" class="iw-photo"></img>` +
+      `<h3 class="iw-title">${place.name}</h3>` +
+      `<span class="iw-rating">Rating: ${place.rating}</span>` +
+      `<span class="iw-reviewcount">
 
         Reviews: ${place.user_ratings_total}</span>` +
-        
-      `<span class="infowindow-price">Price: ${'$'.repeat(place.price_level)}`+
-    `</div>`;
+      `<span class="iw-price">Price: ${"$".repeat(place.price_level)}` +
+      `</div>`;
 
     // Sets info window for the marker
     const infoWindow = new google.maps.InfoWindow({
       content: infoWindowContent,
-      maxWidth: 250
-    })
+      maxWidth: 250,
+    });
 
     // Add infoWindows to component attributes
     this.infoWindows.push(infoWindow);
@@ -332,18 +328,18 @@ class PickupMap extends React.Component{
       infoWindow.open({
         anchor: marker,
         map,
-        shouldFocus: false
-      })
-    })
+        shouldFocus: false,
+      });
+    });
 
     // Darkens circle on hover
     marker.addListener("mouseover", () => {
       const label = marker.getLabel();
-      label.color = "white"
+      label.color = "white";
       marker.setLabel(label);
 
       marker.setIcon(DARK_CIRCLE);
-    })
+    });
 
     // Lightens circle when mouse not over
     marker.addListener("mouseout", () => {
@@ -351,8 +347,8 @@ class PickupMap extends React.Component{
       label.color = "black";
       marker.setLabel(label);
 
-      marker.setIcon(LIGHT_CIRCLE)
-    })
+      marker.setIcon(LIGHT_CIRCLE);
+    });
   }
 
   // Helper method to close other info windows.
@@ -367,7 +363,7 @@ class PickupMap extends React.Component{
   mapCallback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
       for (let i = 0; i < results.length; i++) {
-        this.createMarker(results[i])
+        this.createMarker(results[i]);
       }
     }
   }
@@ -382,9 +378,9 @@ class PickupMap extends React.Component{
     const hour = new Date().getHours();
     let styles;
     if (hour < 7 || hour > 17) {
-      styles = STYLES["dark"]
+      styles = STYLES["dark"];
     } else {
-      styles = STYLES["default"]
+      styles = STYLES["default"];
     }
     // apply styles by time of day
     this.map.setOptions({ styles: styles });
@@ -397,7 +393,7 @@ class PickupMap extends React.Component{
 
     google.maps.event.addListener(this.map, "click", () => {
       this.closeInfoWindows();
-    })
+    });
   }
 
   // Remove map, service, attributes when component unmounts
@@ -410,27 +406,30 @@ class PickupMap extends React.Component{
 
   render() {
     return (
-      <div ref={ map => this.mapNode = map } id='map-container'>
-      </div>
-      // <div id='map-container'>Map goes here</div>
-    )
+      <div ref={(map) => (this.mapNode = map)} className="pickup-map"></div>
+    );
   }
 }
 
-import { connect } from 'react-redux';
-import { fetchRestaurant, fetchRestaurants } from '../../actions/restaurant_actions';
+import { connect } from "react-redux";
+import {
+  fetchRestaurant,
+  fetchRestaurants,
+} from "../../actions/restaurant_actions";
 
 const mapStateToProps = (state) => {
   return {
-    restaurants: state.entities.restaurants
-  }
-}
+    restaurants: state.entities.restaurants,
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchRestaurants: category => dispatch(fetchRestaurants(category)),
-    fetchRestaurant: restaurantId => dispatch(fetchRestaurant(restaurantId))
-  }
-}
+    fetchRestaurants: (category) => dispatch(fetchRestaurants(category)),
+    fetchRestaurant: (restaurantId) => dispatch(fetchRestaurant(restaurantId)),
+  };
+};
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PickupMap));
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(PickupMap)
+);

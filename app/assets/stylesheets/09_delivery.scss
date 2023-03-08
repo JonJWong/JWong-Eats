@@ -1,330 +1,312 @@
-#delivery-container {
+.delivery-container {
   max-width: 100%;
-}
 
-#delivery-banner-ads {
-  margin: 0 auto;
-  width: 90%;
-  height: 20vh;
-  background-color: plum;
-  margin-top: 50px;
-}
+  ul.delivery-categories {
+    max-width: 90%;
+    min-width: 80%;
+    margin: 0 auto;
+    max-height: 250px;
+    min-height: 110px;
+    padding-top: 98px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: #eeeeee 2px solid;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 
-#delivery-topbar {
-  display: grid;
-  width: 90%;
-  grid-template-columns: 3fr 7fr;
-}
+    li {
+      font-size: 16px;
+      font-family: "Uber Regular";
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-#delivery-stores {
-  grid-column: 1;
-  font-size: 30px;
-  margin-top: 30px;
-  margin-left: 30px;
-  margin-bottom: 30px;
-}
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
 
-#delivery-top-picks {
-  grid-column: 2;
-  font-size: 45px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
+        img {
+          height: 50px;
+          width: auto;
+        }
+      }
+      
+      div:hover {
+        background-color: #eeeeee;
+        border-radius: 50%;
+      }
+    }
+  }
 
-#delivery-restaurant-list {
-  position: absolute;
-  width: 70vw;
-  right: 0;
-  padding-right: 20px;
-  padding-bottom: 20px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
+  .carousel-container-outer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    width: 90%;
+    height: 200px;
+    padding-left: 5%;
+    padding-right: 5%;
+    align-items: center;
+    overflow: hidden;
+  
+    button {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      z-index: 2;
+      background-color: #eeeeee;
+      padding: 10px;
+      display: block;
+      border-radius: 20px;
+    }
+  
+    button:hover {
+      background-color: lightgray;
+    }
+  
+    .blocker {
+      position: absolute;
+      z-index: 1;
+      height: 200px;
+      background-color: white;
+  
+      &.right {
+        left: 92%;
+        right: 0;
+      }
+  
+      &.left {
+        right: 92%;
+        left: 0;
+      }
+    }
+  
+    section.carousel-container {
+      position: relative;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      height: 100%;
+      width: 100%;
+  
+      &:nth-child(2) {
+        background-color: white;
+      }
+  
+      &.sliding {
+        transition: transform 0.7s ease-in-out;
+      }
+  
+      .carousel-item, .carousel-inner {
+        height: 130px;
+        width: calc(33.33% - 39px);
+        border-radius: 30px;
+        justify-content: center;
+        align-items: center;
+        vertical-align: center;
+        text-align: center;
+        flex-shrink: 0;
+        color: black;
+        cursor: pointer;
+  
+        section {
+          background-color: white;
+          width: 80%;
+          margin: 0 auto;
+          border-radius: 40px;
+  
+          h3 {
+            font-size: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+          }
+  
+          p {
+            font-size: 14px;
+            font-family: "Uber Light";
+            padding-bottom: 5px;
+            width: 80%;
+            margin: 0 auto;
+          }
+        }
+      }
+  
+      .carousel-item {
+        margin: 0px 12px;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      
+      .carousel-inner {
+        background-size: cover;
+        background-position: (0%, 0%);
+        padding-top: 5px;
+        padding-bottom: 65px;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        background-repeat: no-repeat;
+  
+        &.github-ad, &.rilakkuma {
+          background-size: 30%;
+          background-position: center;
+        }
+  
+        &.github-ad {
+          background-color: #eeeeee;
+        }
+  
+        &.rilakkuma {
+          background-color: yellow;
+          background-position-y: 50px;
+        }
+      }
+    }
+  }
 
-#delivery-restaurant-container {
-  min-height: 200px;
-}
+  header {
+    display: grid;
+    width: 90%;
+    grid-template-columns: 3fr 7fr;
 
-#delivery-restaurant-image {
-  min-width: 200px;
-  width: 100%;
-  object-fit: cover;
-  height: 150px;
-}
+    h1 {
+      grid-column: 1;
+      font-size: 30px;
+      margin-top: 30px;
+      margin-left: 30px;
+      margin-bottom: 30px;
+    }
 
-#delivery-restaurant-bottom {
-  display: grid;
-  height: 30%;
-  grid-template-columns: repeat(3 auto);
-  grid-template-rows: repeat(2 auto);
-  grid-column-gap: 10px;
-}
+    h2.top-picks {
+      grid-column: 2;
+      font-size: 45px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
 
-#delivery-restaurant-hours, #delivery-restaurant-name, #delivery-restaurant-price,
-#delivery-restaurant-rating, #delivery-restaurant-reviewcount {
-  justify-self: center;
-  align-self: center;
-}
+  aside {
+    float: left;
+    height: 800px;
+    top: 150px;
+    width: 25vw;
+    padding-left: 30px;
 
-#delivery-restaurant-name {
-  margin-top: 5px;
-  font-size: 100%;
-  display: block;
-  width: 100%;
-  grid-area: 1 / 1 / 2 / 3;
-}
+    section.sticky {
+      position: sticky;
+      top: 150px;
 
-#delivery-restaurant-hours {
-  justify-self: stretch;
-  font-family: "Uber Light";
-  font-size: 14px;
-  grid-area: 2 / 2 / 3 / 3;
-}
+      h2 {
+        font-size: 24px;
+        padding-bottom: 15px;
+        border-bottom: 2px #eeeeee solid;
+      }
+      
+      .sort-button-wrapper {
+        width: 200px;
+        padding-top: 15px;
+        padding-left: 10px;
+        display: flex;
+        justify-content: space-between;
 
-#delivery-restaurant-price {
-  justify-self: start;
-  font-family: "Uber Light";
-  font-size: 14px;
-  grid-area: 2 / 1 / 3 / 2;
-}
+        button {
+          width: auto;
+          font-size: 16px;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border-radius: 30px;
+          background-color: #eeeeee;
+        }
 
-#delivery-restaurant-reviewcount {
-  font-size: 14px;
-  grid-area: 2 / 3 / 3 / 4;
-}
+        &.sort-button-selected {
+          background-color: lightgray;
+        }
+      }
+    }
+  }
 
-#delivery-restaurant-rating {
-  justify-self: center;
-  font-size: 14px;
-  background-color: #eeeeee;
-  width: 20px;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 20px;
-  grid-area: 1 / 3 / 2 / 4;
-}
+  section.delivery-restaurant-list {
+    position: absolute;
+    width: 70vw;
+    right: 0;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 
-.image-filler {
-  display: block;
-  min-width: 200px;
-  width: 100%;
-  height: 150px;
-  background-color: aqua;
-}
+    a div{
 
-#delivery-categories {
-  max-width: 90%;
-  min-width: 80%;
-  margin: 0 auto;
-  max-height: 250px;
-  min-height: 110px;
-  padding-top: 98px;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: #eeeeee 2px solid;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
+      img {
+        min-width: 200px;
+        width: 100%;
+        object-fit: cover;
+        height: 150px;
+      }
 
-.delivery-filter-button {
-  font-size: 16px;
-  font-family: "Uber Regular";
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+      .image-filler {
+        display: block;
+        min-width: 200px;
+        width: 100%;
+        height: 150px;
+        background-color: aqua;
+      }
 
-.delivery-filter-icon {
-  height: 50px;
-  width: auto;
-}
+      .deliv-bottom {
+        display: grid;
+        height: 30%;
+        grid-template-columns: repeat(3 auto);
+        grid-template-rows: repeat(2 auto);
+        grid-column-gap: 10px;
 
-.delivery-filter-icon-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60px;
-  height: 60px;
-}
+        * {
+          justify-self: center;
+          align-self: center;
+        }
 
-.delivery-filter-icon-wrapper:hover {
-  background-color: #eeeeee;
-  border-radius: 50%;
-}
+        h5 {
+          margin-top: 5px;
+          font-size: 100%;
+          display: block;
+          width: 100%;
+          grid-area: 1 / 1 / 2 / 3;
+        }
 
-#delivery-left {
-  float: left;
-  height: 800px;
-  top: 150px;
-  width: 25vw;
-  padding-left: 30px;
-}
+        .deliv-price {
+          justify-self: start;
+          font-family: "Uber Light";
+          font-size: 14px;
+          grid-area: 2 / 1 / 3 / 2;
+        }
+        
+        .deliv-hours {
+          justify-self: stretch;
+          font-family: "Uber Light";
+          font-size: 14px;
+          grid-area: 2 / 2 / 3 / 3;
+        }
 
-#delivery-sort-wrapper {
-  position: sticky;
-  top: 150px;
-}
-
-.delivery-left-header {
-  font-size: 24px;
-  padding-bottom: 15px;
-  border-bottom: 2px #eeeeee solid;
-}
-
-.sort-button-wrapper {
-  width: 200px;
-  padding-top: 15px;
-  padding-left: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.delivery-sort-button {
-  width: auto;
-  font-size: 16px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 30px;
-  background-color: #eeeeee;
-}
-
-.delivery-sort-button-selected {
-  background-color: lightgray;
-}
-
-#carousel-container-outer {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  display: flex;
-  width: 90%;
-  height: 200px;
-  padding-left: 5%;
-  padding-right: 5%;
-  align-items: center;
-  overflow: hidden;
-}
-
-#carousel-container {
-  position: relative;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  height: 100%;
-  width: 100%;
-}
-
-.carousel-container-transition {
-  transition: transform 0.7s ease-in-out;
-}
-
-.carousel-item, .carousel-inner {
-  height: 130px;
-  width: calc(33.33% - 39px);
-  border-radius: 30px;
-  justify-content: center;
-  align-items: center;
-  vertical-align: center;
-  text-align: center;
-  flex-shrink: 0;
-  color: black;
-  cursor: pointer;
-}
-
-.carousel-item {
-  margin: 0px 12px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.carousel-inner {
-  background-size: cover;
-  background-position: (0%, 0%);
-  padding-top: 5px;
-  padding-bottom: 65px;
-  width: 100%;
-  height: 100%;
-}
-
-.carousel-inner-contents {
-  background-color: white;
-  width: 80%;
-  margin: 0 auto;
-  border-radius: 40px;
-}
-
-.carousel-slide-title {
-  font-size: 20px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.carousel-slide-desc {
-  font-size: 14px;
-  font-family: "Uber Light";
-  padding-bottom: 5px;
-  width: 80%;
-  margin: 0 auto;
-}
-
-#carousel-right, #carousel-left {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  z-index: 2;
-  background-color: #eeeeee;
-  padding: 10px;
-  display: block;
-  border-radius: 20px;
-}
-
-#carousel-left-blocker, #carousel-right-blocker {
-  position: absolute;
-  z-index: 1;
-  height: 200px;
-  background-color: white;
-}
-
-#carousel-right-blocker {
-  left: 92%;
-  right: 0;
-}
-
-#carousel-left-blocker {
-  right: 92%;
-  left: 0;
-}
-
-#carousel-right:hover, #carousel-left:hover {
-  background-color: lightgray;
-}
-
-.carousel-inner {
-  background-color: black;
-  background-repeat: no-repeat;
-}
-
-#carousel-container:nth-child(2) {
-  background-color: white;
-}
-
-.carousel-github-ad, .carousel-rilakkuma {
-  background-size: 30%;
-  background-position: center;
-}
-
-.carousel-github-ad {
-  background-color: #eeeeee;
-}
-
-.carousel-rilakkuma {
-  background-color: yellow;
-  background-position-y: 50px;
+        .deliv-rating {
+          justify-self: center;
+          font-size: 14px;
+          background-color: #eeeeee;
+          width: 20px;
+          padding-left: 8px;
+          padding-right: 8px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border-radius: 20px;
+          grid-area: 1 / 3 / 2 / 4;
+        }
+      }
+    }
+  }
 }

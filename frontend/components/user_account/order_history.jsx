@@ -1,36 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
-// Helper to turn the month into it's string version.
-function monthString(month) {
-  switch (month) {
-    case 0:
-      return "Jan";
-    case 1:
-      return "Feb";
-    case 2:
-      return "Mar";
-    case 3:
-      return "Apr";
-    case 4:
-      return "May";
-    case 5:
-      return "Jun";
-    case 6:
-      return "Jul";
-    case 7:
-      return "Aug";
-    case 8:
-      return "Sep";
-    case 9:
-      return "Oct";
-    case 10:
-      return "Nov";
-    case 11:
-      return "Dec";
-  }
-}
+const MONTH_TO_STR = {
+  0: "Jan",
+  1: "Feb",
+  2: "Mar",
+  3: "Apr",
+  4: "May",
+  5: "Jun",
+  6: "Jul",
+  7: "Aug",
+  8: "Sep",
+  9: "Oct",
+  10: "Nov",
+  11: "Dec",
+};
 
 class OrderHistory extends React.Component {
   constructor(props) {
@@ -39,8 +23,8 @@ class OrderHistory extends React.Component {
       loading: true,
       receiptOpen: false,
       currentTransaction: null,
-      restName: null
-    }
+      restName: null,
+    };
 
     this.toggleReceipt = this.toggleReceipt.bind(this);
     this.renderReceipt = this.renderReceipt.bind(this);
@@ -50,9 +34,10 @@ class OrderHistory extends React.Component {
 
   // Get User, Restaurants, on component mount.
   componentDidMount() {
-    this.props.fetchUser(this.props.match.params.id)
+    this.props
+      .fetchUser(this.props.match.params.id)
       .then(() => this.props.fetchRestaurants())
-      .then(() => this.setState({ loading: false }))
+      .then(() => this.setState({ loading: false }));
   }
 
   // Only render an image with a link if the restaurant has a photo attached.
@@ -60,14 +45,11 @@ class OrderHistory extends React.Component {
     if (restaurant.photoUrl) {
       return (
         <Link to={`/restaurants/${restaurant.id}`}>
-          <div className="history-order-photo-wrapper">
-            <img
-              src={restaurant.photoUrl}
-              alt={`${restaurant.name}-photo`}
-              className="history-order-photo"/>
+          <div>
+            <img src={restaurant.photoUrl} alt={`${restaurant.name}-photo`} />
           </div>
         </Link>
-      )
+      );
     }
   }
 
@@ -78,168 +60,147 @@ class OrderHistory extends React.Component {
     this.setState({
       receiptOpen: nextState,
       currentTransaction: currentTransaction,
-      restName: restName
-    })
+      restName: restName,
+    });
   }
-
 
   // random key, refactor eventually
   renderReceipt() {
     if (this.state.receiptOpen) {
-    const { total, items } = this.state.currentTransaction;
-    const { restName } = this.state;
+      const { total, items } = this.state.currentTransaction;
+      const { restName } = this.state;
 
       return (
-        <div id="receipt-modal-container">
-          <div id="receipt-modal-contents">
-  
-            <div id="receipt-modal-header">
-              <button
-                id="receipt-modal-close"
-                onClick={() => this.toggleReceipt()}>
-                  <i className="fa-solid fa-x fa-lg"></i>
+        <section>
+          <article>
+            <header>
+              <button onClick={() => this.toggleReceipt()}>
+                <i className="fa-solid fa-x fa-lg"></i>
               </button>
-              <div id="receipt-modal-title">
-                Receipt from:
-              </div>
-              <div id="receipt-modal-restname">{restName}</div>
-            </div>
-  
-            <div id="receipt-modal-price-row">
-              <div>Total</div>
-              <div>$ {parseFloat(total).toFixed(2)}</div>
-            </div>
-  
-            <div id="receipt-item-wrapper">
-              {Object.values(items).map(item => {
+              <h3>Receipt from:</h3>
+              <p>{restName}</p>
+            </header>
+
+            <section>
+              <p>Total</p>
+              <p>$ {parseFloat(total).toFixed(2)}</p>
+            </section>
+
+            <ul>
+              {Object.values(items).map((item) => {
                 return (
-                  <div
-                    className="receipt-item-container"
-                    key={Math.random()}>
-                    <div className="receipt-item-quantity">
-                      {item.item_quantity}
-                    </div>
-                    <div className="receipt-item-name">
-                      {item.item_name}
-                    </div>
+                  <li key={Math.random()}>
+                    <p>{item.item_quantity}</p>
+                    <h3>{item.item_name}</h3>
                     <div className="receipt-item-subtitle">
                       {this.props.restaurants[item.restaurant_id].name}
                     </div>
                     <div className="receipt-item-price">
                       $ {parseFloat(item.item_price).toFixed(2)}
                     </div>
-                  </div>
-                )
+                  </li>
+                );
               })}
+            </ul>
+
+            <div className="receipt-payment">
+              <p className="receipt-total">Subtotal:</p>
+              <p id="receipt-price">$ {parseFloat(total).toFixed(2)}</p>
             </div>
-  
-            <div id="receipt-payment-container">
-              <div id="receipt-bottom-total">
-                Subtotal:
-              </div>
-              <div id="receipt-payment-price">
-                $ {parseFloat(total).toFixed(2)}
-              </div>
-            </div>
-  
-            <div id="receipt-footer">
+
+            <div className="receipt-footer">
               Thank you for shopping JWongEats!
             </div>
-            
-            <div id="receipt-payment-subtitle">
-              No temporary holds were placed on any payment methods. This site does not take any forms of payment.
-            </div>
-          </div>
+
+            <footer>
+              No temporary holds were placed on any payment methods. This site
+              does not take any forms of payment.
+            </footer>
+          </article>
           <div
-            id="receipt-modal-block"
-            onClick={() => this.toggleReceipt()}></div>
-        </div>
-      )
+            className="receipt-modal-block"
+            onClick={() => this.toggleReceipt()}
+          />
+        </section>
+      );
     }
   }
 
   renderOrders() {
     const { restaurants } = this.props;
     const { user } = this.props;
-    
+
     // Only render if the user has transactions
     if (user.transactions) {
       const transactions = Object.keys(user.transactions);
-      return transactions.map(transId => {
+      return transactions.map((transId) => {
         const currentTransaction = user.transactions[transId];
         const { items, total } = currentTransaction;
-  
+
         const first = items[0].restaurant_id;
-  
+
         let restName;
-  
+
         const restaurant = restaurants[first];
-  
-        if (items.every(item => item.restaurant_id === first)) {
-          restName = 
-            `${restaurant.name} - ${restaurant.address}`;
+
+        if (items.every((item) => item.restaurant_id === first)) {
+          restName = `${restaurant.name} - ${restaurant.address}`;
         } else {
-          restName = 
-            `${restaurant.name} and others...`;
+          restName = `${restaurant.name} and others...`;
         }
-        
+
         return (
           // Randomly assigned keys, refactor evenutally
-          <div className="history-order-container" key={Math.random() * total}>
+          <li key={Math.random() * total}>
             {this.ifPhoto(restaurant)}
-            <div className="history-order-title-container">
-              <div className="history-order-title">{restName}</div>
-              <div className="history-order-subtitle">
-                {items.length} Items for $ {parseFloat(total).toFixed(2)} • {this.formattedDate(currentTransaction)} • 
+            <header>
+              <h2>{restName}</h2>
+              <p>
+                {items.length} Items for $ {parseFloat(total).toFixed(2)} •{" "}
+                {this.formattedDate(currentTransaction)} •
                 <button
-                  onClick={() => this.toggleReceipt(currentTransaction, restName)}
-                  className="history-view-receipt">
-                    View Receipt
+                  onClick={() =>
+                    this.toggleReceipt(currentTransaction, restName)
+                  }
+                >
+                  View Receipt
                 </button>
-              </div>
-            </div>
-            
-            <div className="history-item-list">
-              {items.map(item => {
-                const currRest = restaurants[item.restaurant_id].name
+              </p>
+            </header>
+
+            <ul>
+              {items.map((item) => {
+                const currRest = restaurants[item.restaurant_id].name;
                 return (
-                  <div className="history-item-wrapper" key={Math.random() * total}>
-                    <div className="history-item-quantity">{item.item_quantity}</div>
-                    <div className="history-item-title">
+                  <li key={Math.random() * total}>
+                    <p>{item.item_quantity}</p>
+                    <h3>
                       {item.item_name}
-                        <div className="history-rest-name">
-                          - {currRest}
-                        </div>
-                    </div>
-                  </div>
-                )
+                      <span>- {currRest}</span>
+                    </h3>
+                  </li>
+                );
               })}
-            </div>
-  
-            <Link
-              to={`/restaurants/${first}`}
-              className="history-store-button">
-              <div className="history-store-button-text">
-                View Store
-              </div>
+            </ul>
+
+            <Link to={`/restaurants/${first}`} className="store-link">
+              View Store
             </Link>
-          </div>
-        )
-      })
+          </li>
+        );
+      });
     } else {
-      return (
-        <h3 id="no-orders">You do not have any past orders.</h3>
-      )
+      return <li className="no-orders">You do not have any past orders.</li>;
     }
   }
 
   // Helper to format the date to be user-friendly.
   formattedDate(transaction) {
-    const date = new Date(transaction.items[0].date)
-    const month = monthString(date.getMonth());
+    const date = new Date(transaction.items[0].date);
+    const month = MONTH_TO_STR[date.getMonth()];
     const day = date.getDate();
-    const time = date.toLocaleTimeString('en-US');
-    return `${month} ${day} at ${time}`
+    const time = date.toLocaleTimeString("en-US");
+    return `${month} ${day} at ${time}`;
   }
 
   render() {
@@ -249,18 +210,16 @@ class OrderHistory extends React.Component {
         <div className="loading-screen-bg">
           <div className="loading-element"></div>
         </div>
-      )
+      );
     }
 
     return (
       <div className="history-body">
-        <h2 className="history-header">Past Orders</h2>
-        <div className="history-container">
-          {this.renderOrders()}
-        </div>
+        <h2>Past Orders</h2>
+        <ul className="order-list">{this.renderOrders()}</ul>
         {this.renderReceipt()}
       </div>
-    )
+    );
   }
 }
 

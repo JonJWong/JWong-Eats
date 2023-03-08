@@ -6,256 +6,253 @@
   bottom: 0;
   height: calc(100% - 98px);
   width: 100%;
-}
 
-.history-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  padding-right: 50px;
-}
+  > h2 {
+    font-family: "Uber Medium";
+    background-color: white;
+    font-size: 35px;
+    padding-left: 40px;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    width: 300px;
+    position: sticky;
+    top: 98px;
+  }
 
-.history-header {
-  font-family: "Uber Medium";
-  background-color: white;
-  font-size: 35px;
-  padding-left: 40px;
-  padding-top: 15px;
-  padding-bottom: 25px;
-  width: 300px;
-  position: sticky;
-  top: 98px;
-}
+  > ul.order-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding-right: 50px;
 
-.history-order-photo-wrapper {
-  display: inline-block;
-  width: 250px;
-  height: 150px;
-  width: auto;
-}
+    > li {
+      min-height: 150px;
+      min-width: 1050px;
+      padding-top: 15px;
+      width: calc(100% - 40px);
+      padding-left: 40px;
+      display: grid;
+      grid-template-columns: 330px auto 200px;
+      grid-template-rows: 70px auto;
+      padding-bottom: 10px;
+      border-bottom: 2px #eeeeee solid;
 
-.history-order-photo {
-  width: 300px;
-  height: 140px;
-  object-fit: cover;
-}
+      &:last-child {
+        border-bottom: none;
+      }
 
-.history-order-container {
-  min-height: 150px;
-  min-width: 1050px;
-  padding-top: 15px;
-  width: calc(100% - 40px);
-  padding-left: 40px;
-  display: grid;
-  grid-template-columns: 330px auto 200px;
-  grid-template-rows: 70px auto;
-  padding-bottom: 10px;
-  border-bottom: 2px #eeeeee solid;
-}
+      > a > div {
+        display: inline-block;
+        width: 250px;
+        height: 150px;
+        width: auto;
 
-.history-order-container:last-child {
-  border-bottom: none;
-}
+        > img {
+          width: 300px;
+          height: 140px;
+          object-fit: cover;
+        }
+      }
 
-.history-order-title {
-  font-family: "Uber Regular";
-  font-size: 20px;
-  padding-bottom: 15px;
-}
+      header {
+        h2 {
+          font-family: "Uber Regular";
+          font-size: 20px;
+          padding-bottom: 15px;
+        }
 
-.history-order-subtitle {
-  font-size: 14px;
-  display: flex;
-  font-family: "Uber Light";
-}
+        p {
+          font-size: 14px;
+          display: flex;
+          font-family: "Uber Light";
 
-.history-view-receipt {
-  padding-left: 5px;
-  font-family: "Uber Regular";
-  text-decoration: underline;
-}
+          button {
+            padding-left: 5px;
+            font-family: "Uber Regular";
+            text-decoration: underline;
+          }
+        }
+      }
 
-.history-item-wrapper {
-  display: flex;
-  padding-bottom: 20px;
-}
+      ul {
+        grid-area: 2 / 2 / 3 / 3;
 
-.history-item-quantity {
-  display: flex;
-  font-family: "Uber Regular";
-  color: black;
-  font-size: 14px;
-  justify-content: center;
-  align-items: center;
-  width: 20px;
-  height: 20px;
-  border: 1px #eeeeee solid;
-}
+        > li {
+          display: flex;
+          padding-bottom: 20px;
 
-.history-item-title {
-  font-family: "Uber Regular";
-  padding-left: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+          p {
+            display: flex;
+            font-family: "Uber Regular";
+            color: black;
+            font-size: 14px;
+            justify-content: center;
+            align-items: center;
+            width: 20px;
+            height: 20px;
+            border: 1px #eeeeee solid;
+          }
 
-.history-title-container {
-  grid-area: 1 / 2 / 2 / 3;
-}
+          h3 {
+            font-family: "Uber Regular";
+            padding-left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-.history-item-list {
-  grid-area: 2 / 2 / 3 / 3;
-}
+            span {
+              font-family: "Uber Light";
+              padding-left: 5px;
+            }
+          }
+        }
+      }
 
-.history-store-button {
-  background-color: black;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  grid-area: 1 / 3 / 3 / 4;
-}
+      .store-link {
+        background-color: black;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: 1 / 3 / 3 / 4;
+        text-align: center;
+        width: auto;
+        color: white;
+      }
+    }
 
-.history-store-button-text {
-  text-align: center;
-  width: auto;
-  color: white;
-}
+    li.no-orders {
+      font-size: 26px;
+      padding-left: 50px;
+    }
+  }
 
-.history-rest-name {
-  font-family: "Uber Light";
-  padding-left: 5px;
-}
+  > section {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
 
-#no-orders {
-  font-size: 26px;
-  padding-left: 50px;
-}
+    article {
+      padding: 20px;
+      position: fixed;
+      overflow-y: scroll;
+      max-height: 750px;
+      left: 32%;
+      right: 32%;
+      top: 10%;
+      bottom: auto;
+      background-color: white;
+      z-index: 11;
 
-#receipt-modal-container {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 10;
-}
+      header {
+        button {
+          height: 30px;
+          width: 30px;
+        }
 
-#receipt-modal-block {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: rgba(80, 80, 80, .8);
-}
+        h3 {
+          font-size: 24px;
+          padding-top: 20px;
+        }
 
-#receipt-modal-contents {
-  padding: 20px;
-  position: fixed;
-  overflow-y: scroll;
-  max-height: 750px;
-  left: 32%;
-  right: 32%;
-  top: 10%;
-  bottom: auto;
-  background-color: white;
-  z-index: 11;
-}
+        p {
+          font-size: 16px;
+          font-family: "Uber Light";
+          padding-top: 10px;
+          padding-bottom: 20px;
+          border-bottom: lightgray 2px solid;
+        }
+      }
 
-#receipt-modal-close {
-  height: 30px;
-  width: 30px;
-}
+      section {
+        display: flex;
+        justify-content: space-between;
+        font-size: 24px;
+        padding: 20px;
+        border-bottom: lightgray 2px solid;
+      }
 
-#receipt-modal-title {
-  font-size: 24px;
-  padding-top: 20px;
-}
+      ul {
+        padding-top: 20px;
+        padding-left: 10px;
+        padding-bottom: 20px;
+        border-bottom: lightgray 2px solid;
 
-#receipt-modal-restname {
-  font-size: 16px;
-  font-family: "Uber Light";
-  padding-top: 10px;
-  padding-bottom: 20px;
-  border-bottom: lightgray 2px solid;
-}
+        li {
+          display: grid;
+          grid-template-columns: 50px auto 100px;
+          grid-template-rows: auto auto;
+          padding-top: 15px;
+          padding-bottom: 15px;
+          font-family: "Uber Regular";
 
-#receipt-modal-price-row {
-  display: flex;
-  justify-content: space-between;
-  font-size: 24px;
-  padding: 20px;
-  border-bottom: lightgray 2px solid;
-}
+          p {
+            grid-area: 1 / 1 / 3 / 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30px;
+            width: 30px;
+            border: 1px #eeeeee solid;
+          }
 
-#receipt-item-wrapper {
-  padding-top: 20px;
-  padding-left: 10px;
-  padding-bottom: 20px;
-  border-bottom: lightgray 2px solid;
-}
+          h3 {
+            grid-area: 1 / 2 / 2 / 3;
+            align-self: center;
+          }
 
-.receipt-item-container {
-  display: grid;
-  grid-template-columns: 50px auto 100px;
-  grid-template-rows: auto auto;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  font-family: "Uber Regular";
-}
+          .receipt-item-subtitle {
+            grid-area: 2 / 2 / 3 / 3;
+            font-family: "Uber Light";
+          }
 
-.receipt-item-quantity {
-  grid-area: 1 / 1 / 3 / 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30px;
-  width: 30px;
-  border: 1px #eeeeee solid;
-}
+          .receipt-item-price {
+            grid-area: 1 / 3 / 2 / 4;
+          }
+        }
+      }
 
-.receipt-item-name {
-  grid-area: 1 / 2 / 2 / 3;
-  align-self: center;
-}
+      .receipt-payment {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        border-bottom: lightgray 2px solid;
 
-.receipt-item-subtitle {
-  grid-area: 2 / 2 / 3 / 3;
-  font-family: "Uber Light";
-}
+        .receipt-total {
+          font-size: 24px;
+        }
 
-.receipt-item-price {
-  grid-area: 1 / 3 / 2 / 4;
-}
+        .receipt-price {
+          font-size: 24px;
+          padding-bottom: 15px;
+        }
+      }
 
-#receipt-payment-container {
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 10px;
-  border-bottom: lightgray 2px solid;
-}
+      .receipt-footer {
+        font-size: 30px;
+        padding-top: 30px;
+        padding-bottom: 10px;
+        text-align: center;
+      }
 
-#receipt-bottom-total {
-  font-size: 24px;
-}
+      footer {
+        font-size: 12px;
+        font-family: "Uber Light";
+        text-align: center;
+      }
+    }
 
-#receipt-payment-price {
-  font-size: 24px;
-  padding-bottom: 15px;
-}
-
-#receipt-footer {
-  font-size: 30px;
-  padding-top: 30px;
-  padding-bottom: 10px;
-  text-align: center;
-}
-
-#receipt-payment-subtitle {
-  font-size: 12px;
-  font-family: "Uber Light";
-  text-align: center;
+    .receipt-modal-block {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(80, 80, 80, .8);
+    }
+  }
 }

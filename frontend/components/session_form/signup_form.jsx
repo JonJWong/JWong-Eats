@@ -9,35 +9,33 @@ class SignUpForm extends React.Component {
       password: "",
       first_name: "",
       last_name: "",
-      address: ""
+      address: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   // Form handler methods
   handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.signup(user)
+    this.props.signup(user);
   }
 
   update(field) {
-    return e => this.setState({[field]: e.currentTarget.value})
+    return (e) => this.setState({ [field]: e.currentTarget.value });
   }
 
   // Error display helper
   renderErrors() {
-    const {errors} = this.props
-    if(!errors) return null;
-    return(
+    const { errors } = this.props;
+    if (!errors) return null;
+    return (
       <ul className="auth-errors">
-        {errors.map((error,idx) => (
-          <li key={idx}>
-            {error}
-          </li>
+        {errors.map((error, idx) => (
+          <li key={idx}>{error}</li>
         ))}
       </ul>
-    )
+    );
   }
 
   // Add a listener (on mount) that clears errors when component unmounts
@@ -50,99 +48,93 @@ class SignUpForm extends React.Component {
   // Clear errors when component unmounts
   componentWillUnmount() {
     this.unlisten();
-  }  
+  }
 
   render() {
     const { login } = this.props;
 
-    return(
-      <div id="signup-form-container">
-        <div id="signup-top-bar">
+    return (
+      <div className="session-form signup">
+        <div className="session-top">
           <div className="eats-logo-white" />
         </div>
 
-        <div id="signup-form-contents">
-        {this.renderErrors()}
-        
+        <section>
+          {this.renderErrors()}
+
           <form onSubmit={this.handleSubmit}>
-            <p className="signup-prompt">Email</p>
-            <input 
-              type="text" 
+            <p className="session-prompt">Email</p>
+            <input
+              type="text"
               onChange={this.update("email")}
               value={this.state.email}
-              className="signup-input-field"
               placeholder="Enter email (required)"
             />
 
-            <p className="signup-prompt">Password</p>
-            <input 
-              type="password" 
+            <p className="session-prompt">Password</p>
+            <input
+              type="password"
               onChange={this.update("password")}
               value={this.state.password}
-              className="signup-input-field"
               placeholder="Enter password (required)"
             />
 
-            <p className="signup-prompt">First Name</p>
-            <input 
-              type="text" 
+            <p className="session-prompt">First Name</p>
+            <input
+              type="text"
               onChange={this.update("first_name")}
               value={this.state.first_name}
-              className="signup-input-field"
               placeholder="Your first name (required)"
             />
 
-            <p className="signup-prompt">Last Name</p>
-            <input 
-              type="text" 
+            <p className="session-prompt">Last Name</p>
+            <input
+              type="text"
               onChange={this.update("last_name")}
               value={this.state.last_name}
-              className="signup-input-field"
               placeholder="Your last name (required)"
             />
 
-            <p className="signup-prompt">Address</p>
-            <input 
-              type="text" 
+            <p className="session-prompt">Address</p>
+            <input
+              type="text"
               onChange={this.update("address")}
               value={this.state.address}
-              className="signup-input-field"
               placeholder="Your address (required)"
             />
 
-            <p id="login-legal">
-              By proceeding, you DO NOT consent to get calls or SMS messages, 
+            <footer>
+              By proceeding, you DO NOT consent to get calls or SMS messages,
               including by automated dialer, from JWongEats and its affiliates
-              to this number. 
-              Text “STOP” to 89203 to opt out.
-            </p>
+              since we do not accept phone numbers. You do not need to text to
+              opt out.
+            </footer>
 
-            <button
-              id="signup-signup-button"
-              type="submit">
-                <i className="fas fa-sign-in"></i>Sign Up
+            <button className="session-button" type="submit">
+              <i className="fas fa-sign-in"></i>Sign Up
             </button>
           </form>
 
-          <p className="signup-text">Don't want to sign up?</p>
+          <p className="session-text">Don't want to sign up?</p>
 
           <button
-            onClick={()=>login({
-              email: 'demo_user@email.com',
-              password: 'password'
-            })}
-            id="signup-demo-button">
-              <i className="fas fa-save fa-lg"></i> Demo Login
+            onClick={() =>
+              login({
+                email: "demo_user@email.com",
+                password: "password",
+              })
+            }
+            className="session-button demo-button"
+          >
+            <i className="fas fa-save fa-lg"></i> Demo Login
           </button>
 
-          <Link
-            to="/login"
-            id="signup-login-button">
-              Login <i className="fas fa-arrow-right fa-lg"></i>
+          <Link to="/login" className="session-button">
+            Login <i className="fas fa-arrow-right fa-lg"></i>
           </Link>
-        </div>
+        </section>
       </div>
-    )
+    );
   }
 }
 
