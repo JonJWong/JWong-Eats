@@ -5,18 +5,15 @@
     .eats-logo-white {
       content: image_url('JWongEatsWhite.png');
       height: 48px;
+      padding: 10px 0px 10px 30px;
       width: auto;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      padding-left: 30px;
     }
   }
 
   .session-prompt {
     font-family: "Uber Light";
+    margin: 0px 0px 15px 15px;
     text-align: left;
-    margin-left: 15px;
-    margin-bottom: 15px;
   }
 
   .session-text {
@@ -25,16 +22,13 @@
   }
 
   .session-button {
+    background: black;
+    border-radius: 23px;
+    color: white;
     font-family: "Uber Regular";
     font-size: 20px;
-    background: black;
-    color: white;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 23px;
     margin-bottom: 15px;
+    padding: 10px 15px;
 
     &.demo-button {
       margin-right: 15px;
@@ -64,43 +58,37 @@
 
   &.login {
     section {
-      width: 432px;
-      position: absolute;
-      margin-top: auto;
-      margin-bottom: auto;
-      margin-left: auto;
-      margin-right: auto;
-      top: 30%;
       bottom: 0;
-      right: 0;
-      left: 0;
-      text-align: center;
       font-size: 24px;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: 30%;
+      width: 432px;
     }
   }
 
   &.signup {
     section {
-      width: 432px;
-      position: absolute;
-      margin-top: auto;
-      margin-bottom: auto;
-      margin-left: auto;
-      margin-right: auto;
-      top: 20%;
       bottom: 0;
-      right: 0;
-      left: 0;
-      text-align: center;
       font-size: 24px;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: 20%;
+      width: 432px;
     }
 
     form footer {
-      font-family: "Uber Light";
-      text-align: left;
-      font-size: 14px;
       color: #757575;
+      font-family: "Uber Light";
+      font-size: 14px;
       margin-bottom: 15px;
+      text-align: left;
     }
   }
 }

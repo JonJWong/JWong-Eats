@@ -1,76 +1,71 @@
 .pickup-container {
-  position: fixed;
-  top: 98px;
   bottom: 0;
   left: 0;
+  position: fixed;
   right: 0;
+  top: 98px;
   
   section {
     background-color: white;
-    position: fixed;
-    margin-top: 96px;
-    max-width: 830px;
-    width: 100%;
-    top: 0;
     bottom: 0;
     height: auto;
+    margin-top: 96px;
+    max-width: 830px;
     overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    width: 100%;
     z-index: 1;
 
     h2 {
-      padding-left: 30px;
       font-size: 30px;
-      margin-top: 30px;
-      margin-bottom: 30px;
+      margin: 30px 0px;
+      padding-left: 30px;
     }
 
     ul {
-      margin-left: 30px;
-      width: 750px;
       display: grid;
       gap: 20px;
       grid-template-columns: repeat(2, 1fr);
-      margin-bottom: 20px;
+      margin: 0px 0px 20px 30px;
+      width: 750px;
 
       li a {
         .restaurant-container {
-          width: 100%;
           height: auto;
-          padding-left: 10px;
-          padding-right: 10px;
-          padding-top: 10px;
-          padding-bottom: 5px;
+          padding: 10px 10px 5px 10px;
+          width: 100%;
 
           &:hover {
             background-color: #eeeeee;
           }
 
           img {
-            object-fit: cover;
-            min-width: 220px;
-            height: 200px;
-            width: 100%;
             background-color: lightblue;
+            height: 200px;
+            min-width: 220px;
+            object-fit: cover;
+            width: 100%;
           }
 
           .restaurant-bottom {
             display: grid;
-            height: 30%;
+            grid-column-gap: 10px;
             grid-template-columns: repeat(4 auto);
             grid-template-rows: repeat(2 auto);
-            grid-column-gap: 10px;
+            height: 30%;
 
             * {
-              justify-self: center;
               align-self: center;
+              justify-self: center;
             }
 
             h5 {
-              margin-top: 5px;
-              font-size: 100%;
               display: block;
-              width: 100%;
+              font-size: 100%;
               grid-area: 1 / 1 / 2 / 6;
+              margin-top: 5px;
+              width: 100%;
             }
 
             .restaurant-hours, .restaurant-price, .restaurant-reviewcount {
@@ -83,23 +78,20 @@
             }
 
             .restaurant-hours {
-              justify-self: stretch;
               font-size: 14px;
               grid-area: 2 / 1 / 3 / 2;
+              justify-self: stretch;
             }
 
             .restaurant-rating {
-              position: relative;
+              background-color: #eeeeee;
+              border-radius: 20px;
               bottom: 20px;
               font-size: 14px;
-              background-color: #eeeeee;
-              width: 20px;
-              padding-left: 10px;
-              padding-right: 10px;
-              padding-top: 10px;
-              padding-bottom: 10px;
-              border-radius: 20px;
               grid-area: 2 / 5 / 3 / 6;
+              padding: 10px;
+              position: relative;
+              width: 20px;
             }
 
             .restaurant-reviewcount {
@@ -113,19 +105,19 @@
   }
 
   .pickup-map {
-    position: fixed;
-    min-width: 300px;
-    top: 0px;
-    left: 830px;
-    right: 0px;
-    width: calc(100% - 830px);
-    height: 100%;
-    padding-bottom: 11px;
     background-color: black;
+    height: 100%;
+    left: 830px;
+    min-width: 300px;
+    padding-bottom: 11px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    width: calc(100% - 830px);
 
     .iw-photo {
-      width: 200px;
       height: 120px;
+      width: 200px;
     }
     
     .iw-title {
@@ -134,8 +126,7 @@
     
     .iw-rating, .iw-price {
       font-size: 12px;
-      padding-left: 5px;
-      padding-right: 5px
+      padding: 0px 5px;
     }
     
     .iw-reviewcount {

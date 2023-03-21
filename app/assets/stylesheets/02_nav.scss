@@ -1,16 +1,13 @@
 nav.main-nav {
-  height: 48px;
   background-color: white;
-  width: 100%;
-  max-width: 100vw;
-  display: block;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  padding-right: 40px;
-  padding-left: 40px;
   border-bottom: #eeeeee 2px solid;
+  display: block;
+  height: 48px;
+  max-width: 100vw;
+  padding: 24px 40px;
   position: fixed;
   top: 0;
+  width: 100%;
   z-index: 5;
 
   .nav-left {
@@ -18,11 +15,11 @@ nav.main-nav {
     width: auto;
 
     .hamburger {
-      border-style: none;
       background-color: rgba(0, 0, 0, 0);
+      border-style: none;
+      cursor: pointer;
       height: auto;
       padding-right: 20px;
-      cursor: pointer
     }
 
     .eats-logo {
@@ -33,40 +30,35 @@ nav.main-nav {
     }
 
     .nav-rounded {
-      width: 170px;
-      height: auto;
+      align-content: center;
+      background-color:#eeeeee;
       border-radius: 25px;
       display: flex;
       flex-direction: row;
-      align-content: center;
-      background-color:#eeeeee;
+      height: auto;
+      width: 170px;
     }
 
     span {
       a {
-        font-size: 14px;
-        display: flex;
         align-items: center;
+        display: flex;
+        font-size: 14px;
         justify-content: center;
+        margin: 3px 0px;
         text-align: center;
         vertical-align: middle;
-        margin-top: 3px;
-        margin-bottom: 3px;
 
         &.delivery-button {
+          margin: 3px;
+          padding: 0px 11px;
           width: 80px;
-          margin-left: 5px;
-          margin-right: 5px;
-          padding-left: 11px;
-          padding-right: 11px;
         }
         
         &.pickup-button {
+          margin: 3px;
+          padding: 0px 11px;
           width: 80px;
-          margin-left: -5px;
-          margin-right: 5px;
-          padding-left: 11px;
-          padding-right: 11px;
         }
 
         &.focused-button {
@@ -77,19 +69,18 @@ nav.main-nav {
     }
 
     p {
+      align-items: center;
+      background-color: #eeeeee;
+      border-radius: 60px;
+      display: flex;
       font-family: "Uber Regular";
       font-size: 14px;
-      display: flex;
-      align-items: center;
       justify-content: center;
-      background-color: #eeeeee;
-      padding: 0px 20px;
       margin-left: 20px;
-      border-radius: 60px;
+      padding: 0px 20px;
 
       .fa-map-marker-alt {
-        margin-right: 5px;
-        margin-left: 5px;
+        margin: 0px 5px;
       }
 
       &:hover {
@@ -98,44 +89,43 @@ nav.main-nav {
     }
 
     .nav-search {
-      display: flex;
       align-items: center;
-      justify-content: center;
-      transition: margin-left .6s ease, width .6s ease;
-      width: 30%;
-      margin-left: 2vw;
       background-color: #eeeeee;
       border-radius: 25px;
+      display: flex;
+      justify-content: center;
+      margin-left: 2vw;
+      transition: margin-left .6s ease, width .6s ease;
+      width: 30%;
 
       .fa-search {
-        margin-left: 10px;
-        margin-right: 10px;
+        margin: 0px 10px;
       }
 
       input {
         font-family: "Uber Regular";
-        width: 90%;
         font-size: 16px;
+        width: 90%;
       }
 
       &.search-expanded {
-        z-index: 6;
         margin-left: -350px;
         width: 50%;
+        z-index: 6;
       }
     }
 
     .cart-button {
-      position: fixed;
-      right: 2vw;
-      height: 40px;
-      width: 100px;
+      background-color: black;
       border-radius: 20px;
       border-style: none;
-      font-size: 16px;
-      margin-top: 3px;
       color: white;
-      background-color: black;
+      font-size: 16px;
+      height: 40px;
+      margin-top: 3px;
+      position: fixed;
+      right: 2vw;
+      width: 100px;
 
       .fa-shopping-cart {
         margin-right: 10px;

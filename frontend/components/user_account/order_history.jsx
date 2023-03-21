@@ -132,7 +132,7 @@ class OrderHistory extends React.Component {
 
     // Only render if the user has transactions
     if (user.transactions) {
-      const transactions = Object.keys(user.transactions);
+      const transactions = Object.keys(user.transactions).reverse();
       return transactions.map((transId) => {
         const currentTransaction = user.transactions[transId];
         const { items, total } = currentTransaction;
@@ -156,7 +156,10 @@ class OrderHistory extends React.Component {
             <header>
               <h2>{restName}</h2>
               <p>
-                {items.length} Items for $ {parseFloat(total).toFixed(2)} •{" "}
+                {items.length > 1
+                  ? items.length + " Items" + " "
+                  : items.length + " Item" + " "}
+                for $ {parseFloat(total).toFixed(2)} •
                 {this.formattedDate(currentTransaction)} •
                 <button
                   onClick={() =>

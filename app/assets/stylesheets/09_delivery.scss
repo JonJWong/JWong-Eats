@@ -2,32 +2,31 @@
   max-width: 100%;
 
   ul.delivery-categories {
-    max-width: 90%;
-    min-width: 80%;
-    margin: 0 auto;
-    max-height: 250px;
-    min-height: 110px;
-    padding-top: 98px;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+    align-items: center;
     border-bottom: #eeeeee 2px solid;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    margin: 0 auto 20px auto;
+    max-height: 250px;
+    max-width: 90%;
+    min-height: 110px;
+    min-width: 80%;
+    padding: 98px 0px 10px 0px;
 
     li {
-      font-size: 16px;
-      font-family: "Uber Regular";
+      align-items: center;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      font-size: 16px;
+      font-family: "Uber Regular";
+      cursor: pointer;
 
       div {
-        display: flex;
-        justify-content: center;
         align-items: center;
-        width: 60px;
+        display: flex;
         height: 60px;
+        justify-content: center;
+        width: 60px;
 
         img {
           height: 50px;
@@ -43,27 +42,23 @@
   }
 
   .carousel-container-outer {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    display: flex;
-    width: 90%;
-    height: 200px;
-    padding-left: 5%;
-    padding-right: 5%;
     align-items: center;
+    display: flex;
+    height: 200px;
     overflow: hidden;
+    padding: 20px 5%;
+    width: 90%;
   
     button {
-      position: relative;
+      align-items: center;
+      background-color: #eeeeee;
+      border-radius: 20px;
       display: flex;
       justify-content: center;
-      align-items: center;
+      padding: 10px;
+      position: relative;
       text-align: center;
       z-index: 2;
-      background-color: #eeeeee;
-      padding: 10px;
-      display: block;
-      border-radius: 20px;
     }
   
     button:hover {
@@ -71,10 +66,10 @@
     }
   
     .blocker {
+      background-color: white;
+      height: 200px;
       position: absolute;
       z-index: 1;
-      height: 200px;
-      background-color: white;
   
       &.right {
         left: 92%;
@@ -82,17 +77,17 @@
       }
   
       &.left {
-        right: 92%;
         left: 0;
+        right: 92%;
       }
     }
   
     section.carousel-container {
-      position: relative;
       display: flex;
-      flex-wrap: nowrap;
       flex-direction: row;
+      flex-wrap: nowrap;
       height: 100%;
+      position: relative;
       width: 100%;
   
       &:nth-child(2) {
@@ -104,54 +99,50 @@
       }
   
       .carousel-item, .carousel-inner {
-        height: 130px;
-        width: calc(33.33% - 39px);
-        border-radius: 30px;
-        justify-content: center;
         align-items: center;
-        vertical-align: center;
-        text-align: center;
-        flex-shrink: 0;
+        border-radius: 30px;
         color: black;
         cursor: pointer;
+        flex-shrink: 0;
+        height: 130px;
+        justify-content: center;
+        text-align: center;
+        vertical-align: center;
+        width: calc(33.33% - 39px);
   
         section {
           background-color: white;
-          width: 80%;
-          margin: 0 auto;
           border-radius: 40px;
+          margin: 0 auto;
+          width: 80%;
   
           h3 {
             font-size: 20px;
-            padding-top: 5px;
-            padding-bottom: 5px;
+            padding: 5px 0px;
           }
   
           p {
             font-size: 14px;
             font-family: "Uber Light";
+            margin: 0 auto;
             padding-bottom: 5px;
             width: 80%;
-            margin: 0 auto;
           }
         }
       }
   
       .carousel-item {
-        margin: 0px 12px;
-        margin-left: 20px;
-        margin-right: 20px;
+        margin: 0px 20px;
       }
       
       .carousel-inner {
-        background-size: cover;
-        background-position: (0%, 0%);
-        padding-top: 5px;
-        padding-bottom: 65px;
-        width: 100%;
-        height: 100%;
         background-color: black;
+        background-position: (0%, 0%);
         background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        padding: 5px 0px 65px 0px;
+        width: 100%;
   
         &.github-ad, &.rilakkuma {
           background-size: 30%;
@@ -172,58 +163,51 @@
 
   header {
     display: grid;
-    width: 90%;
     grid-template-columns: 3fr 7fr;
+    width: 90%;
 
     h1 {
-      grid-column: 1;
       font-size: 30px;
-      margin-top: 30px;
-      margin-left: 30px;
-      margin-bottom: 30px;
+      grid-column: 1;
+      margin: 30px 0px 30px 30px;
     }
 
     h2.top-picks {
-      grid-column: 2;
       font-size: 45px;
-      margin-top: 30px;
-      margin-bottom: 30px;
+      grid-column: 2;
+      margin: 30px 0px;
     }
   }
 
   aside {
     float: left;
     height: 800px;
+    padding-left: 30px;
     top: 150px;
     width: 25vw;
-    padding-left: 30px;
 
     section.sticky {
       position: sticky;
       top: 150px;
 
       h2 {
+        border-bottom: 2px #eeeeee solid;
         font-size: 24px;
         padding-bottom: 15px;
-        border-bottom: 2px #eeeeee solid;
       }
       
       .sort-button-wrapper {
-        width: 200px;
-        padding-top: 15px;
-        padding-left: 10px;
         display: flex;
         justify-content: space-between;
+        padding: 15px 0px 0px 10px;
+        width: 200px;
 
         button {
-          width: auto;
-          font-size: 16px;
-          padding-left: 15px;
-          padding-right: 15px;
-          padding-top: 10px;
-          padding-bottom: 10px;
-          border-radius: 30px;
           background-color: #eeeeee;
+          border-radius: 30px;
+          font-size: 16px;
+          padding: 10px 15px;
+          width: auto;
         }
 
         &.sort-button-selected {
@@ -234,77 +218,72 @@
   }
 
   section.delivery-restaurant-list {
-    position: absolute;
-    width: 70vw;
-    right: 0;
-    padding-right: 20px;
-    padding-bottom: 20px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0px 20px 20px 0px;
+    position: absolute;
+    right: 0;
+    width: 70vw;
 
     a div{
-
       img {
-        min-width: 200px;
-        width: 100%;
-        object-fit: cover;
         height: 150px;
+        min-width: 200px;
+        object-fit: cover;
+        width: 100%;
       }
 
       .image-filler {
+        background-color: aqua;
         display: block;
+        height: 150px;
         min-width: 200px;
         width: 100%;
-        height: 150px;
-        background-color: aqua;
       }
 
       .deliv-bottom {
         display: grid;
-        height: 30%;
+        grid-column-gap: 10px;
         grid-template-columns: repeat(3 auto);
         grid-template-rows: repeat(2 auto);
-        grid-column-gap: 10px;
+        height: 30%;
 
         * {
-          justify-self: center;
           align-self: center;
+          justify-self: center;
         }
 
         h5 {
-          margin-top: 5px;
-          font-size: 100%;
           display: block;
-          width: 100%;
+          font-size: 100%;
           grid-area: 1 / 1 / 2 / 3;
+          margin-top: 5px;
+          width: 100%;
         }
 
         .deliv-price {
-          justify-self: start;
           font-family: "Uber Light";
           font-size: 14px;
           grid-area: 2 / 1 / 3 / 2;
+          justify-self: start;
         }
         
         .deliv-hours {
-          justify-self: stretch;
+          grid-area: 2 / 2 / 3 / 3;
           font-family: "Uber Light";
           font-size: 14px;
-          grid-area: 2 / 2 / 3 / 3;
+          justify-self: stretch;
         }
 
         .deliv-rating {
-          justify-self: center;
-          font-size: 14px;
           background-color: #eeeeee;
-          width: 20px;
-          padding-left: 8px;
-          padding-right: 8px;
-          padding-top: 10px;
-          padding-bottom: 10px;
           border-radius: 20px;
+          font-size: 14px;
           grid-area: 1 / 3 / 2 / 4;
+          justify-self: center;
+          padding: 10px 8px;
+          width: 20px;
         }
       }
     }

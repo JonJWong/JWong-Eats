@@ -1,22 +1,20 @@
 .history-body {
-  position: absolute;
-  top: 98px;
-  left: 0;
-  right: 0;
   bottom: 0;
   height: calc(100% - 98px);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 98px;
   width: 100%;
 
   > h2 {
-    font-family: "Uber Medium";
     background-color: white;
+    font-family: "Uber Medium";
     font-size: 35px;
-    padding-left: 40px;
-    padding-top: 15px;
-    padding-bottom: 25px;
-    width: 300px;
+    padding: 15px 0px 25px 40px;
     position: sticky;
     top: 98px;
+    width: 300px;
   }
 
   > ul.order-list {
@@ -26,16 +24,14 @@
     padding-right: 50px;
 
     > li {
-      min-height: 150px;
-      min-width: 1050px;
-      padding-top: 15px;
-      width: calc(100% - 40px);
-      padding-left: 40px;
+      border-bottom: 2px #eeeeee solid;
       display: grid;
       grid-template-columns: 330px auto 200px;
       grid-template-rows: 70px auto;
-      padding-bottom: 10px;
-      border-bottom: 2px #eeeeee solid;
+      min-height: 150px;
+      min-width: 1050px;
+      padding: 15px 0px 10px 40px;
+      width: calc(100% - 40px);
 
       &:last-child {
         border-bottom: none;
@@ -43,18 +39,19 @@
 
       > a > div {
         display: inline-block;
-        width: 250px;
         height: 150px;
         width: auto;
 
         > img {
-          width: 300px;
           height: 140px;
           object-fit: cover;
+          width: 300px;
         }
       }
 
-      header {
+      > header {
+        grid-area: 1 / 2 / 2 / 3;
+
         h2 {
           font-family: "Uber Regular";
           font-size: 20px;
@@ -62,13 +59,13 @@
         }
 
         p {
-          font-size: 14px;
           display: flex;
           font-family: "Uber Light";
+          font-size: 14px;
 
           button {
-            padding-left: 5px;
             font-family: "Uber Regular";
+            padding-left: 5px;
             text-decoration: underline;
           }
         }
@@ -82,23 +79,23 @@
           padding-bottom: 20px;
 
           p {
+            align-items: center;
+            border: 1px #eeeeee solid;
+            color: black;
             display: flex;
             font-family: "Uber Regular";
-            color: black;
             font-size: 14px;
-            justify-content: center;
-            align-items: center;
-            width: 20px;
             height: 20px;
-            border: 1px #eeeeee solid;
+            justify-content: center;
+            width: 20px;
           }
 
           h3 {
-            font-family: "Uber Regular";
-            padding-left: 20px;
-            display: flex;
-            justify-content: center;
             align-items: center;
+            display: flex;
+            font-family: "Uber Regular";
+            justify-content: center;
+            padding-left: 20px;
 
             span {
               font-family: "Uber Light";
@@ -109,15 +106,15 @@
       }
 
       .store-link {
-        background-color: black;
-        height: 50px;
-        display: flex;
-        justify-content: center;
         align-items: center;
+        background-color: black;
+        color: white;
+        display: flex;
         grid-area: 1 / 3 / 3 / 4;
+        height: 50px;
+        justify-content: center;
         text-align: center;
         width: auto;
-        color: white;
       }
     }
 
@@ -128,23 +125,23 @@
   }
 
   > section {
-    position: fixed;
+    bottom: 0;
     left: 0;
+    position: fixed;
     right: 0;
     top: 0;
-    bottom: 0;
     z-index: 10;
 
     article {
+      background-color: white;
+      bottom: auto;
+      left: 32%;
+      max-height: 750px;
+      overflow-y: scroll;
       padding: 20px;
       position: fixed;
-      overflow-y: scroll;
-      max-height: 750px;
-      left: 32%;
       right: 32%;
       top: 10%;
-      bottom: auto;
-      background-color: white;
       z-index: 11;
 
       header {
@@ -159,54 +156,50 @@
         }
 
         p {
-          font-size: 16px;
-          font-family: "Uber Light";
-          padding-top: 10px;
-          padding-bottom: 20px;
           border-bottom: lightgray 2px solid;
+          font-family: "Uber Light";
+          font-size: 16px;
+          padding: 10px 0px 20px 0px;
         }
       }
 
       section {
-        display: flex;
-        justify-content: space-between;
-        font-size: 24px;
-        padding: 20px;
         border-bottom: lightgray 2px solid;
+        display: flex;
+        font-size: 24px;
+        justify-content: space-between;
+        padding: 20px;
       }
 
       ul {
-        padding-top: 20px;
-        padding-left: 10px;
-        padding-bottom: 20px;
         border-bottom: lightgray 2px solid;
+        padding: 20px 0px 20px 10px;
 
         li {
           display: grid;
+          font-family: "Uber Regular";
           grid-template-columns: 50px auto 100px;
           grid-template-rows: auto auto;
-          padding-top: 15px;
-          padding-bottom: 15px;
-          font-family: "Uber Regular";
+          padding: 15px 0px;
 
           p {
-            grid-area: 1 / 1 / 3 / 2;
-            display: flex;
-            justify-content: center;
             align-items: center;
-            height: 30px;
-            width: 30px;
             border: 1px #eeeeee solid;
+            display: flex;
+            grid-area: 1 / 1 / 3 / 2;
+            height: 30px;
+            justify-content: center;
+            width: 30px;
           }
 
           h3 {
-            grid-area: 1 / 2 / 2 / 3;
             align-self: center;
+            grid-area: 1 / 2 / 2 / 3;
           }
 
           .receipt-item-subtitle {
-            grid-area: 2 / 2 / 3 / 3;
             font-family: "Uber Light";
+            grid-area: 2 / 2 / 3 / 3;
           }
 
           .receipt-item-price {
@@ -216,11 +209,10 @@
       }
 
       .receipt-payment {
-        padding: 20px;
+        border-bottom: lightgray 2px solid;
         display: flex;
         justify-content: space-between;
-        padding-bottom: 10px;
-        border-bottom: lightgray 2px solid;
+        padding: 20px 20px 10px 20px;
 
         .receipt-total {
           font-size: 24px;
@@ -234,25 +226,24 @@
 
       .receipt-footer {
         font-size: 30px;
-        padding-top: 30px;
-        padding-bottom: 10px;
+        padding: 30px 0px 10px 0px;
         text-align: center;
       }
 
       footer {
-        font-size: 12px;
         font-family: "Uber Light";
+        font-size: 12px;
         text-align: center;
       }
     }
 
     .receipt-modal-block {
-      position: fixed;
+      background-color: rgba(80, 80, 80, .8);
+      bottom: 0;
       left: 0;
+      position: fixed;
       right: 0;
       top: 0;
-      bottom: 0;
-      background-color: rgba(80, 80, 80, .8);
     }
   }
 }
